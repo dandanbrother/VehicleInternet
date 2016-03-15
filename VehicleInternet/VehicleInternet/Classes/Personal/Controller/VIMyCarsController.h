@@ -1,5 +1,5 @@
 //
-//  VIPersonalController.h
+//  VIMyCarsController.h
 //  VehicleInternet
 //
 //  Created by 倪丁凡 on 16/3/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VIPersonalController : UITableViewController
+@interface VIMyCarsController : UITableViewController
 
 @end

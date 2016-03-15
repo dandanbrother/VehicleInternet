@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		94467E6A1C969B4F00618EC9 /* VIPersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94467E691C969B4F00618EC9 /* VIPersonalController.m */; };
-		94467E6E1C96ADF800618EC9 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 94467E6D1C96ADF800618EC9 /* NSString+Hash.m */; };
+		9497C3411C9800640008BACA /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497C3401C9800640008BACA /* NSString+Hash.m */; };
+		9497C3441C9816D30008BACA /* VIPeccancyInfotmation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497C3431C9816D30008BACA /* VIPeccancyInfotmation.m */; };
+		9497C3471C981E600008BACA /* VIPersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497C3461C981E600008BACA /* VIPersonalController.m */; };
+		9497C34A1C982A980008BACA /* VICarInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497C3491C982A980008BACA /* VICarInfoModel.m */; };
+		9497C3501C9831570008BACA /* VIMyCarsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497C34F1C9831570008BACA /* VIMyCarsController.m */; };
+		9497C3561C98395D0008BACA /* CarInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9497C3551C98395D0008BACA /* CarInfo.plist */; };
 		F30F7E931C950C8D0081A41E /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F30F7E921C950C8D0081A41E /* mapapi.bundle */; };
 		F30F7EAA1C9538BF0081A41E /* VIHomeMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30F7EA91C9538BF0081A41E /* VIHomeMapController.m */; };
 		F30F7F001C97A8B20081A41E /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -68,10 +72,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		94467E681C969B4F00618EC9 /* VIPersonalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPersonalController.h; sourceTree = "<group>"; };
-		94467E691C969B4F00618EC9 /* VIPersonalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPersonalController.m; sourceTree = "<group>"; };
-		94467E6C1C96ADF800618EC9 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
-		94467E6D1C96ADF800618EC9 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		9497C33F1C9800640008BACA /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		9497C3401C9800640008BACA /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		9497C3421C9816D30008BACA /* VIPeccancyInfotmation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPeccancyInfotmation.h; sourceTree = "<group>"; };
+		9497C3431C9816D30008BACA /* VIPeccancyInfotmation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPeccancyInfotmation.m; sourceTree = "<group>"; };
+		9497C3451C981E600008BACA /* VIPersonalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPersonalController.h; sourceTree = "<group>"; };
+		9497C3461C981E600008BACA /* VIPersonalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPersonalController.m; sourceTree = "<group>"; };
+		9497C3481C982A980008BACA /* VICarInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICarInfoModel.h; sourceTree = "<group>"; };
+		9497C3491C982A980008BACA /* VICarInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICarInfoModel.m; sourceTree = "<group>"; };
+		9497C34E1C9831570008BACA /* VIMyCarsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMyCarsController.h; sourceTree = "<group>"; };
+		9497C34F1C9831570008BACA /* VIMyCarsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMyCarsController.m; sourceTree = "<group>"; };
+		9497C3551C98395D0008BACA /* CarInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CarInfo.plist; sourceTree = "<group>"; };
 		F30F7E921C950C8D0081A41E /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = VehicleInternet/Framework/BaiduMap/BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		F30F7EA81C9538BF0081A41E /* VIHomeMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIHomeMapController.h; sourceTree = "<group>"; };
 		F30F7EA91C9538BF0081A41E /* VIHomeMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIHomeMapController.m; sourceTree = "<group>"; };
@@ -148,11 +159,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		94467E6B1C96ADF800618EC9 /* MD5 */ = {
+		9497C33E1C9800640008BACA /* MD5 */ = {
 			isa = PBXGroup;
 			children = (
-				94467E6C1C96ADF800618EC9 /* NSString+Hash.h */,
-				94467E6D1C96ADF800618EC9 /* NSString+Hash.m */,
+				9497C33F1C9800640008BACA /* NSString+Hash.h */,
+				9497C3401C9800640008BACA /* NSString+Hash.m */,
 			);
 			path = MD5;
 			sourceTree = "<group>";
@@ -300,8 +311,12 @@
 		F30F7EA51C950CE60081A41E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				94467E681C969B4F00618EC9 /* VIPersonalController.h */,
-				94467E691C969B4F00618EC9 /* VIPersonalController.m */,
+				9497C3421C9816D30008BACA /* VIPeccancyInfotmation.h */,
+				9497C3431C9816D30008BACA /* VIPeccancyInfotmation.m */,
+				9497C3451C981E600008BACA /* VIPersonalController.h */,
+				9497C3461C981E600008BACA /* VIPersonalController.m */,
+				9497C34E1C9831570008BACA /* VIMyCarsController.h */,
+				9497C34F1C9831570008BACA /* VIMyCarsController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -309,6 +324,9 @@
 		F30F7EA61C950CE60081A41E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9497C3481C982A980008BACA /* VICarInfoModel.h */,
+				9497C3491C982A980008BACA /* VICarInfoModel.m */,
+				9497C3551C98395D0008BACA /* CarInfo.plist */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,13 +341,11 @@
 		F3F0B2A51C95099F00989506 = {
 			isa = PBXGroup;
 			children = (
-
 				F32FD8FA1C97B42800804053 /* SystemConfiguration.framework */,
 				F32FD8F81C97B41A00804053 /* Security.framework */,
 				F32FD8F61C97B40500804053 /* CoreTelephony.framework */,
 				F32FD8F41C97B3F800804053 /* libstdc++.6.0.9.tbd */,
 				F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */,
-
 				F30F7E921C950C8D0081A41E /* mapapi.bundle */,
 				F39F9D0B1C950AD8001B8D69 /* libsqlite3.0.tbd */,
 				F39F9D091C950ACD001B8D69 /* OpenGLES.framework */,
@@ -397,6 +413,7 @@
 		F3F0B2E41C9509D300989506 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				9497C33E1C9800640008BACA /* MD5 */,
 				F3F0B2E71C9509ED00989506 /* BaiduMap */,
 			);
 			path = Framework;
@@ -528,6 +545,7 @@
 				F3F0B2C11C95099F00989506 /* LaunchScreen.storyboard in Resources */,
 				F30F7E931C950C8D0081A41E /* mapapi.bundle in Resources */,
 				F3F0B2BE1C95099F00989506 /* Assets.xcassets in Resources */,
+				9497C3561C98395D0008BACA /* CarInfo.plist in Resources */,
 				F3F0B2BC1C95099F00989506 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,10 +587,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				F3F0B2B61C95099F00989506 /* AppDelegate.mm in Sources */,
-				94467E6A1C969B4F00618EC9 /* VIPersonalController.m in Sources */,
+				9497C3501C9831570008BACA /* VIMyCarsController.m in Sources */,
+				9497C3441C9816D30008BACA /* VIPeccancyInfotmation.m in Sources */,
+				9497C34A1C982A980008BACA /* VICarInfoModel.m in Sources */,
+				9497C3471C981E600008BACA /* VIPersonalController.m in Sources */,
 				F30F7EAA1C9538BF0081A41E /* VIHomeMapController.m in Sources */,
+				9497C3411C9800640008BACA /* NSString+Hash.m in Sources */,
 				F3F0B2B31C95099F00989506 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
