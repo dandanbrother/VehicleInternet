@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 @interface ViewController ()
 
@@ -17,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    AVObject *testObject = [AVObject objectWithClassName:@"TestObject"];
+    [testObject setObject:@"bar" forKey:@"foo"];
+    [testObject save];
 }
 
 - (void)didReceiveMemoryWarning {
