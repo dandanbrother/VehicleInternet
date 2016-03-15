@@ -73,7 +73,13 @@
     if (_mapManager==nil) {
         _mapManager = [[BMKMapManager alloc]init];
     }
-    BOOL ret = [_mapManager start:@"CpVALBsZIouu5TAt485fEBRX"  generalDelegate:self];
+    
+    /**
+     *  tomorrow.VehicleInternetJM     o3DCdN1FZZKaT3gK0B8f3TkT
+     *  tomorrow.VehicleInternet       CpVALBsZIouu5TAt485fEBRX
+     *
+     */
+    BOOL ret = [_mapManager start:@"o3DCdN1FZZKaT3gK0B8f3TkT"  generalDelegate:self];
     
     if (!ret) {
         NSLog(@"baiduMap failed");
