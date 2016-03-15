@@ -15,6 +15,9 @@
 		F32FD8F71C97B40500804053 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F61C97B40500804053 /* CoreTelephony.framework */; };
 		F32FD8F91C97B41A00804053 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F81C97B41A00804053 /* Security.framework */; };
 		F32FD8FB1C97B42800804053 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8FA1C97B42800804053 /* SystemConfiguration.framework */; };
+		F32FD9141C97CA2300804053 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD90F1C97CA2300804053 /* UIImage+ImageEffects.m */; };
+		F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9111C97CA2300804053 /* UIView+JMPosition.m */; };
+		F32FD9161C97CA2300804053 /* UIView+JMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9131C97CA2300804053 /* UIView+JMTool.m */; };
 		F39F9D061C950AB7001B8D69 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D051C950AB7001B8D69 /* CoreLocation.framework */; };
 		F39F9D081C950AC3001B8D69 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D071C950AC3001B8D69 /* QuartzCore.framework */; };
 		F39F9D0A1C950ACD001B8D69 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D091C950ACD001B8D69 /* OpenGLES.framework */; };
@@ -74,6 +77,14 @@
 		F32FD8F61C97B40500804053 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		F32FD8F81C97B41A00804053 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F32FD8FA1C97B42800804053 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F32FD90D1C97CA2300804053 /* JMTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMTool.h; sourceTree = "<group>"; };
+		F32FD90E1C97CA2300804053 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		F32FD90F1C97CA2300804053 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		F32FD9101C97CA2300804053 /* UIView+JMPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JMPosition.h"; sourceTree = "<group>"; };
+		F32FD9111C97CA2300804053 /* UIView+JMPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JMPosition.m"; sourceTree = "<group>"; };
+		F32FD9121C97CA2300804053 /* UIView+JMTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JMTool.h"; sourceTree = "<group>"; };
+		F32FD9131C97CA2300804053 /* UIView+JMTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JMTool.m"; sourceTree = "<group>"; };
+		F32FD9211C97CB0700804053 /* VehicleInternet.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleInternet.pch; sourceTree = "<group>"; };
 		F39F9D051C950AB7001B8D69 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F39F9D071C950AC3001B8D69 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F39F9D091C950ACD001B8D69 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -145,75 +156,24 @@
 		F30F7E941C950CE60081A41E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F30F7E951C950CE60081A41E /* Appointment */,
-				F30F7E991C950CE60081A41E /* Common */,
-				F30F7E9A1C950CE60081A41E /* Lib */,
-				F30F7E9B1C950CE60081A41E /* Login */,
+				F32FD91C1C97CAC600804053 /* Common */,
+				F32FD90B1C97CA1200804053 /* Tool */,
+				F32FD8FC1C97CA0000804053 /* Appointment */,
+				F32FD9011C97CA0000804053 /* Lib */,
+				F32FD9021C97CA0000804053 /* Login */,
+				F32FD9031C97CA0000804053 /* Music */,
+				F32FD9071C97CA0000804053 /* Personal */,
 				F30F7E9C1C950CE60081A41E /* Map */,
-				F30F7EA01C950CE60081A41E /* Music */,
-				F30F7EA41C950CE60081A41E /* Personal */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		F30F7E951C950CE60081A41E /* Appointment */ = {
-			isa = PBXGroup;
-			children = (
-				F30F7E961C950CE60081A41E /* Controller */,
-				F30F7E971C950CE60081A41E /* Model */,
-				F30F7E981C950CE60081A41E /* View */,
-			);
-			path = Appointment;
-			sourceTree = "<group>";
-		};
-		F30F7E961C950CE60081A41E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F30F7E971C950CE60081A41E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F30F7E981C950CE60081A41E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F30F7E991C950CE60081A41E /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		F30F7E9A1C950CE60081A41E /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
-		F30F7E9B1C950CE60081A41E /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		F30F7E9C1C950CE60081A41E /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				F32FD9171C97CA6900804053 /* Model */,
+				F32FD9181C97CA6900804053 /* View */,
 				F30F7E9D1C950CE60081A41E /* Controller */,
-				F30F7E9E1C950CE60081A41E /* Model */,
-				F30F7E9F1C950CE60081A41E /* View */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -227,76 +187,207 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		F30F7E9E1C950CE60081A41E /* Model */ = {
+		F32FD8FC1C97CA0000804053 /* Appointment */ = {
+			isa = PBXGroup;
+			children = (
+				F32FD8FD1C97CA0000804053 /* Controller */,
+				F32FD8FE1C97CA0000804053 /* Model */,
+				F32FD8FF1C97CA0000804053 /* View */,
+			);
+			path = Appointment;
+			sourceTree = "<group>";
+		};
+		F32FD8FD1C97CA0000804053 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F32FD8FE1C97CA0000804053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F30F7E9F1C950CE60081A41E /* View */ = {
+		F32FD8FF1C97CA0000804053 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		F30F7EA01C950CE60081A41E /* Music */ = {
+		F32FD9011C97CA0000804053 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				F30F7EA11C950CE60081A41E /* Controller */,
-				F30F7EA21C950CE60081A41E /* Model */,
-				F30F7EA31C950CE60081A41E /* View */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		F32FD9021C97CA0000804053 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F32FD9191C97CA7E00804053 /* Controller */,
+				F32FD91A1C97CA7E00804053 /* Model */,
+				F32FD91B1C97CA7E00804053 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F32FD9031C97CA0000804053 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				F32FD9041C97CA0000804053 /* Controller */,
+				F32FD9051C97CA0000804053 /* Model */,
+				F32FD9061C97CA0000804053 /* View */,
 			);
 			path = Music;
 			sourceTree = "<group>";
 		};
-		F30F7EA11C950CE60081A41E /* Controller */ = {
+		F32FD9041C97CA0000804053 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		F30F7EA21C950CE60081A41E /* Model */ = {
+		F32FD9051C97CA0000804053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F30F7EA31C950CE60081A41E /* View */ = {
+		F32FD9061C97CA0000804053 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		F30F7EA41C950CE60081A41E /* Personal */ = {
+		F32FD9071C97CA0000804053 /* Personal */ = {
 			isa = PBXGroup;
 			children = (
-				F30F7EA51C950CE60081A41E /* Controller */,
-				F30F7EA61C950CE60081A41E /* Model */,
-				F30F7EA71C950CE60081A41E /* View */,
+				F32FD9081C97CA0000804053 /* Controller */,
+				F32FD9091C97CA0000804053 /* Model */,
+				F32FD90A1C97CA0000804053 /* View */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
 		};
-		F30F7EA51C950CE60081A41E /* Controller */ = {
+		F32FD9081C97CA0000804053 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		F30F7EA61C950CE60081A41E /* Model */ = {
+		F32FD9091C97CA0000804053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F30F7EA71C950CE60081A41E /* View */ = {
+		F32FD90A1C97CA0000804053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F32FD90B1C97CA1200804053 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				F32FD90C1C97CA2300804053 /* JMTool */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		F32FD90C1C97CA2300804053 /* JMTool */ = {
+			isa = PBXGroup;
+			children = (
+				F32FD90D1C97CA2300804053 /* JMTool.h */,
+				F32FD90E1C97CA2300804053 /* UIImage+ImageEffects.h */,
+				F32FD90F1C97CA2300804053 /* UIImage+ImageEffects.m */,
+				F32FD9101C97CA2300804053 /* UIView+JMPosition.h */,
+				F32FD9111C97CA2300804053 /* UIView+JMPosition.m */,
+				F32FD9121C97CA2300804053 /* UIView+JMTool.h */,
+				F32FD9131C97CA2300804053 /* UIView+JMTool.m */,
+			);
+			path = JMTool;
+			sourceTree = "<group>";
+		};
+		F32FD9171C97CA6900804053 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F32FD9181C97CA6900804053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F32FD9191C97CA7E00804053 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F32FD91A1C97CA7E00804053 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F32FD91B1C97CA7E00804053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F32FD91C1C97CAC600804053 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F32FD91D1C97CAC600804053 /* Controller */,
+				F32FD91E1C97CAC600804053 /* Model */,
+				F32FD91F1C97CAC600804053 /* Other */,
+				F32FD9201C97CAC600804053 /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F32FD91D1C97CAC600804053 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F32FD91E1C97CAC600804053 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F32FD91F1C97CAC600804053 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F32FD9211C97CB0700804053 /* VehicleInternet.pch */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F32FD9201C97CAC600804053 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -550,8 +641,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32FD9141C97CA2300804053 /* UIImage+ImageEffects.m in Sources */,
+				F32FD9161C97CA2300804053 /* UIView+JMTool.m in Sources */,
 				F3F0B2B61C95099F00989506 /* AppDelegate.mm in Sources */,
 				F30F7EAA1C9538BF0081A41E /* VIHomeMapController.m in Sources */,
+				F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */,
 				F3F0B2B31C95099F00989506 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,6 +791,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap",
 					"$(PROJECT_DIR)/VehicleInternet",
 				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/VehicleInternet/Classes/Common/Other/VehicleInternet.pch";
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
@@ -714,6 +809,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap",
 					"$(PROJECT_DIR)/VehicleInternet",
 				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/VehicleInternet/Classes/Common/Other/VehicleInternet.pch";
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
