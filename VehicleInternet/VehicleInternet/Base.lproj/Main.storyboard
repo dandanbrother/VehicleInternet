@@ -27,7 +27,7 @@
         <!--地图-->
         <scene sceneID="dJX-n2-aAD">
             <objects>
-                <viewController id="08b-IO-78k" sceneMemberID="viewController">
+                <viewController id="08b-IO-78k" customClass="VIHomeMapController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YeQ-DG-6WR"/>
                         <viewControllerLayoutGuide type="bottom" id="Mea-J6-tTM"/>

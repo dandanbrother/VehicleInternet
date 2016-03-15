@@ -7,17 +7,29 @@
 //
 
 #import "AppDelegate.h"
+#import <AVOSCloud/AVOSCloud.h>
+
 
 
 @interface AppDelegate ()
-
+{
+    BMKMapManager* _mapManager;
+    BOOL isUpdata;
+}
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    
+    //初始化leancloud
+    [self leancloudSetupWithLaunchOptions:launchOptions];
+    //初始化百度地图
+    [self baiduMapSetup];
+    
+    
     return YES;
 }
 
@@ -41,6 +53,34 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Leancloud相关操作
+
+- (void)leancloudSetupWithLaunchOptions:(NSDictionary *)launchOptions
+{
+    [AVOSCloud setApplicationId:@"qkuNzgIaUA246v24WYFByeNd-gzGzoHsz"
+                      clientKey:@"TJVs6qapLKD7yLPOfmBVevlX"];
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
+
+    
+}
+//
+#pragma mark - 百度地图相关操作
+- (void)baiduMapSetup
+{
+    if (_mapManager==nil) {
+        _mapManager = [[BMKMapManager alloc]init];
+    }
+    BOOL ret = [_mapManager start:@"CpVALBsZIouu5TAt485fEBRX"  generalDelegate:self];
+    
+    if (!ret) {
+        NSLog(@"baiduMap failed");
+    }else
+    {
+        NSLog(@"baiduMap successed");
+    }
 }
 
 @end
