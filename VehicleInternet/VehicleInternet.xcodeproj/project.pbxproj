@@ -18,6 +18,7 @@
 		F32FD9141C97CA2300804053 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD90F1C97CA2300804053 /* UIImage+ImageEffects.m */; };
 		F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9111C97CA2300804053 /* UIView+JMPosition.m */; };
 		F32FD9161C97CA2300804053 /* UIView+JMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9131C97CA2300804053 /* UIView+JMTool.m */; };
+		F32FD9241C97F70900804053 /* LQXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9231C97F70900804053 /* LQXSwitch.m */; };
 		F39F9D061C950AB7001B8D69 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D051C950AB7001B8D69 /* CoreLocation.framework */; };
 		F39F9D081C950AC3001B8D69 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D071C950AC3001B8D69 /* QuartzCore.framework */; };
 		F39F9D0A1C950ACD001B8D69 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D091C950ACD001B8D69 /* OpenGLES.framework */; };
@@ -85,6 +86,8 @@
 		F32FD9121C97CA2300804053 /* UIView+JMTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JMTool.h"; sourceTree = "<group>"; };
 		F32FD9131C97CA2300804053 /* UIView+JMTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JMTool.m"; sourceTree = "<group>"; };
 		F32FD9211C97CB0700804053 /* VehicleInternet.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleInternet.pch; sourceTree = "<group>"; };
+		F32FD9221C97F70900804053 /* LQXSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQXSwitch.h; sourceTree = "<group>"; };
+		F32FD9231C97F70900804053 /* LQXSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQXSwitch.m; sourceTree = "<group>"; };
 		F39F9D051C950AB7001B8D69 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F39F9D071C950AC3001B8D69 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F39F9D091C950ACD001B8D69 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -329,6 +332,8 @@
 		F32FD9181C97CA6900804053 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F32FD9221C97F70900804053 /* LQXSwitch.h */,
+				F32FD9231C97F70900804053 /* LQXSwitch.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				F3F0B2B41C95099F00989506 /* AppDelegate.h */,
 				F3F0B2B51C95099F00989506 /* AppDelegate.mm */,
 				F3F0B2BA1C95099F00989506 /* Main.storyboard */,
+				F3F0B2BD1C95099F00989506 /* Assets.xcassets */,
 				F3F0B2B11C95099F00989506 /* Supporting Files */,
 			);
 			path = VehicleInternet;
@@ -440,7 +446,6 @@
 		F3F0B2B11C95099F00989506 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F3F0B2BD1C95099F00989506 /* Assets.xcassets */,
 				F3F0B2BF1C95099F00989506 /* LaunchScreen.storyboard */,
 				F3F0B2C21C95099F00989506 /* Info.plist */,
 				F3F0B2B21C95099F00989506 /* main.m */,
@@ -646,6 +651,7 @@
 				F3F0B2B61C95099F00989506 /* AppDelegate.mm in Sources */,
 				F30F7EAA1C9538BF0081A41E /* VIHomeMapController.m in Sources */,
 				F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */,
+				F32FD9241C97F70900804053 /* LQXSwitch.m in Sources */,
 				F3F0B2B31C95099F00989506 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
