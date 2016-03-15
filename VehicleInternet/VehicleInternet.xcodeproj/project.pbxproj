@@ -11,6 +11,10 @@
 		F30F7EAA1C9538BF0081A41E /* VIHomeMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30F7EA91C9538BF0081A41E /* VIHomeMapController.m */; };
 		F30F7F001C97A8B20081A41E /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F32FD8F31C97AA9800804053 /* AVOSCloud.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F32FD8F51C97B3F800804053 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F41C97B3F800804053 /* libstdc++.6.0.9.tbd */; };
+		F32FD8F71C97B40500804053 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F61C97B40500804053 /* CoreTelephony.framework */; };
+		F32FD8F91C97B41A00804053 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F81C97B41A00804053 /* Security.framework */; };
+		F32FD8FB1C97B42800804053 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8FA1C97B42800804053 /* SystemConfiguration.framework */; };
 		F39F9D061C950AB7001B8D69 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D051C950AB7001B8D69 /* CoreLocation.framework */; };
 		F39F9D081C950AC3001B8D69 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D071C950AC3001B8D69 /* QuartzCore.framework */; };
 		F39F9D0A1C950ACD001B8D69 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D091C950ACD001B8D69 /* OpenGLES.framework */; };
@@ -67,6 +71,10 @@
 		F30F7EA81C9538BF0081A41E /* VIHomeMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIHomeMapController.h; sourceTree = "<group>"; };
 		F30F7EA91C9538BF0081A41E /* VIHomeMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIHomeMapController.m; sourceTree = "<group>"; };
 		F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = VehicleInternet/AVOSCloud.framework; sourceTree = "<group>"; };
+		F32FD8F41C97B3F800804053 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		F32FD8F61C97B40500804053 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F32FD8F81C97B41A00804053 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F32FD8FA1C97B42800804053 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F39F9D051C950AB7001B8D69 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F39F9D071C950AC3001B8D69 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F39F9D091C950ACD001B8D69 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -101,6 +109,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32FD8FB1C97B42800804053 /* SystemConfiguration.framework in Frameworks */,
+				F32FD8F91C97B41A00804053 /* Security.framework in Frameworks */,
+				F32FD8F71C97B40500804053 /* CoreTelephony.framework in Frameworks */,
+				F32FD8F51C97B3F800804053 /* libstdc++.6.0.9.tbd in Frameworks */,
 				F39F9D0C1C950AD8001B8D69 /* libsqlite3.0.tbd in Frameworks */,
 				F39F9D0A1C950ACD001B8D69 /* OpenGLES.framework in Frameworks */,
 				F39F9D081C950AC3001B8D69 /* QuartzCore.framework in Frameworks */,
@@ -297,6 +309,10 @@
 		F3F0B2A51C95099F00989506 = {
 			isa = PBXGroup;
 			children = (
+				F32FD8FA1C97B42800804053 /* SystemConfiguration.framework */,
+				F32FD8F81C97B41A00804053 /* Security.framework */,
+				F32FD8F61C97B40500804053 /* CoreTelephony.framework */,
+				F32FD8F41C97B3F800804053 /* libstdc++.6.0.9.tbd */,
 				F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */,
 				F30F7E921C950C8D0081A41E /* mapapi.bundle */,
 				F39F9D0B1C950AD8001B8D69 /* libsqlite3.0.tbd */,
