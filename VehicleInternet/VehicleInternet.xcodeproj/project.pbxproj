@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94467E6A1C969B4F00618EC9 /* VIPersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94467E691C969B4F00618EC9 /* VIPersonalController.m */; };
+		94467E6E1C96ADF800618EC9 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 94467E6D1C96ADF800618EC9 /* NSString+Hash.m */; };
 		F30F7E931C950C8D0081A41E /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F30F7E921C950C8D0081A41E /* mapapi.bundle */; };
 		F30F7EAA1C9538BF0081A41E /* VIHomeMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30F7EA91C9538BF0081A41E /* VIHomeMapController.m */; };
 		F39F9D061C950AB7001B8D69 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D051C950AB7001B8D69 /* CoreLocation.framework */; };
@@ -49,6 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94467E681C969B4F00618EC9 /* VIPersonalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPersonalController.h; sourceTree = "<group>"; };
+		94467E691C969B4F00618EC9 /* VIPersonalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPersonalController.m; sourceTree = "<group>"; };
+		94467E6C1C96ADF800618EC9 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		94467E6D1C96ADF800618EC9 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		F30F7E921C950C8D0081A41E /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = VehicleInternet/Framework/BaiduMap/BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		F30F7EA81C9538BF0081A41E /* VIHomeMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIHomeMapController.h; sourceTree = "<group>"; };
 		F30F7EA91C9538BF0081A41E /* VIHomeMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIHomeMapController.m; sourceTree = "<group>"; };
@@ -119,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94467E6B1C96ADF800618EC9 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				94467E6C1C96ADF800618EC9 /* NSString+Hash.h */,
+				94467E6D1C96ADF800618EC9 /* NSString+Hash.m */,
+			);
+			path = MD5;
+			sourceTree = "<group>";
+		};
 		F30F7E941C950CE60081A41E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +277,8 @@
 		F30F7EA51C950CE60081A41E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				94467E681C969B4F00618EC9 /* VIPersonalController.h */,
+				94467E691C969B4F00618EC9 /* VIPersonalController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,6 +300,7 @@
 		F3F0B2A51C95099F00989506 = {
 			isa = PBXGroup;
 			children = (
+				94467E6B1C96ADF800618EC9 /* MD5 */,
 				F30F7E921C950C8D0081A41E /* mapapi.bundle */,
 				F39F9D0B1C950AD8001B8D69 /* libsqlite3.0.tbd */,
 				F39F9D091C950ACD001B8D69 /* OpenGLES.framework */,
@@ -448,7 +466,7 @@
 				TargetAttributes = {
 					F3F0B2AD1C95099F00989506 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = HR25JTF3LT;
+						DevelopmentTeam = 63FKDZ5Q3M;
 					};
 					F3F0B2C61C9509A000989506 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -516,7 +534,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3F0B2B91C95099F00989506 /* ViewController.mm in Sources */,
+				94467E6E1C96ADF800618EC9 /* NSString+Hash.m in Sources */,
 				F3F0B2B61C95099F00989506 /* AppDelegate.mm in Sources */,
+				94467E6A1C969B4F00618EC9 /* VIPersonalController.m in Sources */,
 				F30F7EAA1C9538BF0081A41E /* VIHomeMapController.m in Sources */,
 				F3F0B2B31C95099F00989506 /* main.m in Sources */,
 			);
@@ -657,15 +677,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/AVOSCloud",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap",
 				);
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -673,15 +697,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/AVOSCloud",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap",
 				);
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

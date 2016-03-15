@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Sps-5v-B4G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Sps-5v-B4G">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--预约-->
@@ -65,7 +65,7 @@
         <!--个人-->
         <scene sceneID="37L-Dd-Sd6">
             <objects>
-                <viewController id="I28-4K-OCA" sceneMemberID="viewController">
+                <viewController id="I28-4K-OCA" customClass="VIPersonalController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cZQ-ML-2oO"/>
                         <viewControllerLayoutGuide type="bottom" id="MJ4-bz-fZT"/>
@@ -75,11 +75,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="个人" id="aI9-wG-Zcw"/>
+                    <navigationItem key="navigationItem" title="个人" id="aI9-wG-Zcw">
+                        <barButtonItem key="rightBarButtonItem" title="违章查询" id="Pl9-zF-0L1"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEb-Ua-gmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="1362"/>
+            <point key="canvasLocation" x="858" y="1329"/>
         </scene>
         <!--地图-->
         <scene sceneID="rgw-nd-Lpo">
