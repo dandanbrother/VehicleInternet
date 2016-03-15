@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9497C3411C9800640008BACA /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497C3401C9800640008BACA /* NSString+Hash.m */; };
 		9497C3441C9816D30008BACA /* VIPeccancyInfotmation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497C3431C9816D30008BACA /* VIPeccancyInfotmation.m */; };
 		9497C3471C981E600008BACA /* VIPersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497C3461C981E600008BACA /* VIPersonalController.m */; };
 		9497C34A1C982A980008BACA /* VICarInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497C3491C982A980008BACA /* VICarInfoModel.m */; };
@@ -72,8 +71,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9497C33F1C9800640008BACA /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
-		9497C3401C9800640008BACA /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		9497C3421C9816D30008BACA /* VIPeccancyInfotmation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPeccancyInfotmation.h; sourceTree = "<group>"; };
 		9497C3431C9816D30008BACA /* VIPeccancyInfotmation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPeccancyInfotmation.m; sourceTree = "<group>"; };
 		9497C3451C981E600008BACA /* VIPersonalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPersonalController.h; sourceTree = "<group>"; };
@@ -159,15 +156,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9497C33E1C9800640008BACA /* MD5 */ = {
-			isa = PBXGroup;
-			children = (
-				9497C33F1C9800640008BACA /* NSString+Hash.h */,
-				9497C3401C9800640008BACA /* NSString+Hash.m */,
-			);
-			path = MD5;
-			sourceTree = "<group>";
-		};
 		F30F7E941C950CE60081A41E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,7 +401,6 @@
 		F3F0B2E41C9509D300989506 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				9497C33E1C9800640008BACA /* MD5 */,
 				F3F0B2E71C9509ED00989506 /* BaiduMap */,
 			);
 			path = Framework;
@@ -593,7 +580,6 @@
 				9497C34A1C982A980008BACA /* VICarInfoModel.m in Sources */,
 				9497C3471C981E600008BACA /* VIPersonalController.m in Sources */,
 				F30F7EAA1C9538BF0081A41E /* VIHomeMapController.m in Sources */,
-				9497C3411C9800640008BACA /* NSString+Hash.m in Sources */,
 				F3F0B2B31C95099F00989506 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
