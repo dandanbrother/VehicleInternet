@@ -252,7 +252,8 @@
         
     }else  //不显示
     {
-        
+//        NSArray *arr = [self.mapView.annotations
+//        [self.mapView removeAnnotations:self.resultArray];
     }
 }
 
@@ -284,8 +285,6 @@
     {
         //添加标注点
         BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc] init];
-
-
         annotation.coordinate = info.pt;
         annotation.title = info.name;
         [self.mapView addAnnotation:annotation];
