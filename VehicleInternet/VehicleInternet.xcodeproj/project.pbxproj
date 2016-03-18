@@ -24,6 +24,8 @@
 		F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9111C97CA2300804053 /* UIView+JMPosition.m */; };
 		F32FD9161C97CA2300804053 /* UIView+JMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9131C97CA2300804053 /* UIView+JMTool.m */; };
 		F32FD9241C97F70900804053 /* LQXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9231C97F70900804053 /* LQXSwitch.m */; };
+		F32FD9281C9A895000804053 /* HomeNavBarCityItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9261C9A895000804053 /* HomeNavBarCityItem.m */; };
+		F32FD9291C9A895000804053 /* HomeNavBarCityItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32FD9271C9A895000804053 /* HomeNavBarCityItem.xib */; };
 		F39F9D061C950AB7001B8D69 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D051C950AB7001B8D69 /* CoreLocation.framework */; };
 		F39F9D081C950AC3001B8D69 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D071C950AC3001B8D69 /* QuartzCore.framework */; };
 		F39F9D0A1C950ACD001B8D69 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D091C950ACD001B8D69 /* OpenGLES.framework */; };
@@ -102,6 +104,9 @@
 		F32FD9211C97CB0700804053 /* VehicleInternet.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleInternet.pch; sourceTree = "<group>"; };
 		F32FD9221C97F70900804053 /* LQXSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQXSwitch.h; sourceTree = "<group>"; };
 		F32FD9231C97F70900804053 /* LQXSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQXSwitch.m; sourceTree = "<group>"; };
+		F32FD9251C9A895000804053 /* HomeNavBarCityItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNavBarCityItem.h; sourceTree = "<group>"; };
+		F32FD9261C9A895000804053 /* HomeNavBarCityItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNavBarCityItem.m; sourceTree = "<group>"; };
+		F32FD9271C9A895000804053 /* HomeNavBarCityItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeNavBarCityItem.xib; sourceTree = "<group>"; };
 		F39F9D051C950AB7001B8D69 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F39F9D071C950AC3001B8D69 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F39F9D091C950ACD001B8D69 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -363,6 +368,9 @@
 		F32FD9181C97CA6900804053 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F32FD9251C9A895000804053 /* HomeNavBarCityItem.h */,
+				F32FD9261C9A895000804053 /* HomeNavBarCityItem.m */,
+				F32FD9271C9A895000804053 /* HomeNavBarCityItem.xib */,
 				F32FD9221C97F70900804053 /* LQXSwitch.h */,
 				F32FD9231C97F70900804053 /* LQXSwitch.m */,
 			);
@@ -626,6 +634,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32FD9291C9A895000804053 /* HomeNavBarCityItem.xib in Resources */,
 				F3F0B2C11C95099F00989506 /* LaunchScreen.storyboard in Resources */,
 				F30F7E931C950C8D0081A41E /* mapapi.bundle in Resources */,
 				F3F0B2BE1C95099F00989506 /* Assets.xcassets in Resources */,
@@ -673,6 +682,7 @@
 			files = (
 				F32FD9141C97CA2300804053 /* UIImage+ImageEffects.m in Sources */,
 				94CE0D781C985ED40065D966 /* VIMyCarsController.m in Sources */,
+				F32FD9281C9A895000804053 /* HomeNavBarCityItem.m in Sources */,
 				94CE0D7A1C985ED40065D966 /* VIPersonalController.m in Sources */,
 				94CE0D7F1C985EDA0065D966 /* VICarInfoModel.m in Sources */,
 				F32FD9161C97CA2300804053 /* UIView+JMTool.m in Sources */,

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeNavBarCityItem">
+            <rect key="frame" x="0.0" y="0.0" width="55" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="南京" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtG-3r-pks" userLabel="城市名">
+                    <rect key="frame" x="0.0" y="0.0" width="30" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="INT-r9-Ky0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B97-1h-Tlm">
+                    <rect key="frame" x="0.0" y="0.0" width="55" height="40"/>
+                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" image="home_navBar_downArrow">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="B97-1h-Tlm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8ys-1U-aSL"/>
+                <constraint firstAttribute="bottom" secondItem="B97-1h-Tlm" secondAttribute="bottom" id="K29-xS-YRk"/>
+                <constraint firstItem="jtG-3r-pks" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="P7O-Ar-8Rl"/>
+                <constraint firstItem="B97-1h-Tlm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Zw8-PD-s5p"/>
+                <constraint firstAttribute="bottom" secondItem="jtG-3r-pks" secondAttribute="bottom" id="mup-D8-LvN"/>
+                <constraint firstAttribute="trailing" secondItem="B97-1h-Tlm" secondAttribute="trailing" id="oun-R1-K3s"/>
+                <constraint firstItem="jtG-3r-pks" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" id="pdF-14-OEg"/>
+                <constraint firstItem="jtG-3r-pks" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="s3u-2q-h9e"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="pdF-14-OEg"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="cityBtn" destination="B97-1h-Tlm" id="hg1-bK-Z61"/>
+                <outlet property="cityLabel" destination="jtG-3r-pks" id="gdC-yf-Scg"/>
+            </connections>
+            <point key="canvasLocation" x="305.5" y="305"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_navBar_downArrow" width="17" height="10"/>
+    </resources>
+</document>
