@@ -17,8 +17,9 @@
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 #import <BaiduMapAPI_Map/BMKAnnotation.h>
 #import "LQXSwitch.h"
+#import "HomeNavBarCityItem.h"
 
-@interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate>
+@interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
 @property (nonatomic,strong) BMKMapView *mapView;
 
@@ -30,8 +31,12 @@
 
 @property (nonatomic,strong) BMKUserLocation *currentLocation;
 
-/** 存放 BMKPoiInfo */
+@property (nonatomic,strong) BMKRouteSearch *routeSearch;
+
+/** 搜索加油站的结果数组 存放 BMKPoiInfo */
 @property (nonatomic,strong) NSMutableArray *resultArray;
+/** 起始地和目的地输入时的模糊匹配数组 */
+@property (nonatomic,strong) NSMutableArray *poiMatchArray;
 
 @property (weak, nonatomic) IBOutlet UITextField *startTF;
 
@@ -39,6 +44,10 @@
 
 @property (nonatomic,strong) LQXSwitch *switchControl;
 
+@property (nonatomic,strong) HomeNavBarCityItem *cityItem;
+
+
+@property (nonatomic,strong) UITableView *poiMatchTableView;
 
 
 
@@ -57,14 +66,30 @@
     }
     return _resultArray;
 }
-
-#pragma mark - lifetime
+- (NSMutableArray *)poiMatchArray
+{
+    if (_poiMatchArray == nil) {
+        _poiMatchArray = [NSMutableArray array];
+    }
+    return _poiMatchArray;
+}
+- (UITableView *)poiMatchTableView
+{
+    if (_poiMatchTableView == nil) {
+        _poiMatchTableView = [[UITableView alloc] init];
+        _poiMatchTableView.delegate = self;
+        _poiMatchTableView.dataSource = self;
+    }
+    return _poiMatchTableView;
+}
+#pragma mark - Lifetime
 - (void)viewDidAppear:(BOOL)animated
 {
     self.mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     self.locationService.delegate = self;
     self.geoCodeSearch.delegate = self;
     self.poiSearch.delegate = self;
+    self.routeSearch.delegate = self;
     //开始定位
     [self startLocation];
     
@@ -76,13 +101,15 @@
     self.locationService.delegate = nil;
     self.geoCodeSearch.delegate = nil;
     self.poiSearch.delegate = nil;
+    self.routeSearch.delegate = nil;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
-    
+    /** 初始化自定义视图 */
+    [self setupCustomView];
     
     /** 初始化地图 */
     [self setupMap];
@@ -95,6 +122,7 @@
     self.geoCodeSearch = [[BMKGeoCodeSearch alloc] init];
     self.poiSearch = [[BMKPoiSearch alloc]init];
     self.currentLocation = [[BMKUserLocation alloc] init];
+    self.routeSearch = [[BMKRouteSearch alloc] init];
     
     
 
@@ -150,9 +178,41 @@
     switchLabel.font = [UIFont systemFontOfSize:12];
     switchLabel.text = @"显示加油站";
     switchLabel.textColor = [UIColor redColor];
-    
-  
-    
+
+}
+/**
+ * 初始化自定义视图
+ */
+- (void)setupCustomView
+{
+    self.cityItem = [HomeNavBarCityItem homeNavBarCityItem];
+    self.cityItem.backgroundColor = [UIColor clearColor];//这是View的背景颜色
+    [self.cityItem addTarget:self action:@selector(cityItemClick:)];
+    UIBarButtonItem *cityItem = [[UIBarButtonItem alloc] initWithCustomView:self.cityItem];
+    self.navigationItem.leftBarButtonItem = cityItem;
+}
+#pragma mark - 代理方法
+
+#pragma mark - UITextFieldDelegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField;
+{
+    NSLog(@"textFieldDidBeginEditing");
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"poiMatchCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    return cell;
 }
 
 #pragma mark - BMKMapViewDelegate
@@ -189,7 +249,7 @@
     
 }
 
-#pragma mark - BMKSearchDelegate
+#pragma mark - BMKPoiSearchDelegate
 
 - (void)onGetPoiResult:(BMKPoiSearch *)searcher result:(BMKPoiResult*)result errorCode:(BMKSearchErrorCode)error
 {
@@ -206,12 +266,33 @@
             [self.resultArray addObject:info];
         }
     } else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
-        NSLog(@"起始点有歧义");
+        NSLog(@"周围加油站起始点有歧义");
     } else {
-        NSLog(@"搜索失败");
+        NSLog(@"周围加油站搜索失败");
     }
+    //显示搜索到的加油站
     [self loadPoiSites];
+}
 
+
+#pragma BMKRouteSearchDelegate
+/**
+ *返回驾乘搜索结果
+ *@param searcher 搜索对象
+ *@param result 搜索结果，类型为BMKDrivingRouteResult
+ *@param error 错误号，@see BMKSearchErrorCode
+ */
+- (void)onGetDrivingRouteResult:(BMKRouteSearch*)searcher result:(BMKDrivingRouteResult*)result errorCode:(BMKSearchErrorCode)error
+{
+    if (error == BMK_SEARCH_NO_ERROR) {
+        NSLog(@"返回驾车路径成功---%d",result.routes.count);
+    }
+    else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
+        NSLog(@"返回驾车路径失败有歧义---%d",result.routes.count);
+    }
+    else {
+        NSLog(@"抱歉，未找到结果");
+    }
 }
 
 #pragma mark - 其他方法
@@ -242,27 +323,48 @@
         BOOL flag = [self.poiSearch poiSearchNearBy:option];
         if(flag)
         {
-            NSLog(@"周边检索发送成功");
+            NSLog(@"周围加油站检索发送成功");
         }
         else
         {  
-            NSLog(@"周边检索发送失败");  
+            NSLog(@"周围加油站检索发送失败");
         }
         
         
     }else  //不显示
     {
-//        NSArray *arr = [self.mapView.annotations
-//        [self.mapView removeAnnotations:self.resultArray];
+        NSArray *arr = [NSArray arrayWithArray:self.mapView.annotations];
+        [self.mapView removeAnnotations:arr];
     }
 }
-
+/**
+ * 查询路线
+ */
 - (IBAction)queryPathBtnClicked:(id)sender
 {
     [self.startTF resignFirstResponder];
     [self.destinationTF resignFirstResponder];
     
-    
+    BMKPlanNode *startNode = [[BMKPlanNode alloc] init];
+    startNode.cityName = @"南京市";
+    startNode.name = self.startTF.text;
+    BMKPlanNode *endNode = [[BMKPlanNode alloc] init];
+    endNode.cityName = @"南京市";
+    endNode.name = self.destinationTF.text;
+    BMKDrivingRoutePlanOption *transitRouteSearchOption =         [[BMKDrivingRoutePlanOption alloc]init];
+//    transitRouteSearchOption.drivingPolicy = BMK_DRIVING_DIS_FIRST;
+    transitRouteSearchOption.from = startNode;
+    transitRouteSearchOption.to = endNode;
+    BOOL flag = [self.routeSearch drivingSearch:transitRouteSearchOption];
+    if(flag)
+    {
+        NSLog(@"驾车路径规划检索发送成功:起始点---%@---目的地---%@",startNode.name,endNode.name);
+    }
+    else
+    {
+        NSLog(@"驾车路径规划检索发送失败");
+    }
+
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -289,8 +391,14 @@
         annotation.title = info.name;
         [self.mapView addAnnotation:annotation];
     }
-    
 
-    
+}
+
+/**
+ * 城市按钮点击
+ */
+- (void)cityItemClick:(HomeNavBarCityItem *)cityItem
+{
+    NSLog(@"cityItemClick");
 }
 @end
