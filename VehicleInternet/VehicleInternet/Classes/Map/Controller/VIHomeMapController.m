@@ -119,7 +119,19 @@
     self.currentLocation = [[BMKUserLocation alloc] init];
     self.routeSearch = [[BMKRouteSearch alloc] init];
     
-    
+    CLLocationCoordinate2D pt = (CLLocationCoordinate2D){32.1215900000,118.9374060000};
+    BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
+    reverseGeocodeSearchOption.reverseGeoPoint = pt;
+    BOOL flag = [self.geoCodeSearch reverseGeoCode:reverseGeocodeSearchOption];
+    if(flag)
+    {
+        NSLog(@"反geo检索发送成功");
+    }
+    else
+    {
+        NSLog(@"反geo检索发送失败");
+    }
+
 
 }
 
@@ -191,6 +203,7 @@
     self.poiMatchTableView = [[UITableView alloc] init];
     self.poiMatchTableView.delegate = self;
     self.poiMatchTableView.dataSource = self;
+    self.poiMatchTableView.hidden = YES;
     [self.view addSubview:self.poiMatchTableView];
     
     
@@ -201,7 +214,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField;
 {
 
-    self.poiMatchTableView.hidden = NO;
+//    self.poiMatchTableView.hidden = NO;
     self.poiMatchTableView.frame = CGRectMake(textField.x, textField.bottom, textField.width, 100);
     [self.view bringSubviewToFront:self.poiMatchTableView];
     
@@ -246,6 +259,7 @@
     {
         
     }
+    self.poiMatchTableView.hidden = YES;
 }
 
 #pragma mark - BMKMapViewDelegate
@@ -279,6 +293,19 @@
     NSLog(@"didUpdateBMKUserLocation---%f----%f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
     [self.mapView updateLocationData:userLocation];
     _mapView.centerCoordinate = userLocation.location.coordinate;
+    CLLocationCoordinate2D pt = (CLLocationCoordinate2D){self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude};
+    BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
+    reverseGeocodeSearchOption.reverseGeoPoint = pt;
+    BOOL flag = [self.geoCodeSearch reverseGeoCode:reverseGeocodeSearchOption];
+    if(flag)
+    {
+        NSLog(@"反geo检索发送成功");
+    }
+    else
+    {
+        NSLog(@"反geo检索发送失败");
+    }
+
     
 }
 
@@ -372,6 +399,17 @@
     }
 }
 
+
+#pragma mark - BMKGeoCodeSearchDelegate
+
+- (void) onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    
+
+    NSString *cityName = result.addressDetail.city;
+    NSString *subStr = [cityName substringWithRange:NSMakeRange(0, cityName.length - 1)];
+    self.cityItem.title = subStr;
+}
 #pragma mark - 其他方法
 /**
  * 开始定位
@@ -485,6 +523,16 @@
 - (void)textFieldValueChanged:(UITextField *)textField
 {
 
+    self.poiMatchTableView.hidden = NO;
+    
+    
+    if (textField.text.length == 0) {
+        self.poiMatchTableView.hidden = YES;
+        return;
+    }
+    
+    
+    
     UITextRange *selectedRange = [textField markedTextRange];
     NSString * newText = [textField textInRange:selectedRange];
     if(newText.length>0)
@@ -505,6 +553,8 @@
     {
         NSLog(@"城市内检索发送失败");
     }
+    
+    
 
     
 }
