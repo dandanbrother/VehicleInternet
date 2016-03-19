@@ -18,6 +18,8 @@
 #import <BaiduMapAPI_Map/BMKAnnotation.h>
 #import "LQXSwitch.h"
 #import "HomeNavBarCityItem.h"
+#import "VIMapPoiSearch.h"
+#import "VISearchSiteTextField.h"
 
 @interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
@@ -25,7 +27,7 @@
 
 @property (nonatomic,strong) BMKLocationService *locationService;
 
-@property (nonatomic,strong) BMKPoiSearch *poiSearch;
+@property (nonatomic,strong) VIMapPoiSearch *poiSearch;
 
 @property (nonatomic,strong) BMKGeoCodeSearch *geoCodeSearch;
 
@@ -33,14 +35,14 @@
 
 @property (nonatomic,strong) BMKRouteSearch *routeSearch;
 
-/** 搜索加油站的结果数组 存放 BMKPoiInfo */
+/** 搜索加油站的结果数组,存放BMKPoiInfo */
 @property (nonatomic,strong) NSMutableArray *resultArray;
-/** 起始地和目的地输入时的模糊匹配数组 */
+/** 起始地和目的地输入时的模糊匹配数组,存放BMKPoiInfo */
 @property (nonatomic,strong) NSMutableArray *poiMatchArray;
 
-@property (weak, nonatomic) IBOutlet UITextField *startTF;
+@property (weak, nonatomic) IBOutlet VISearchSiteTextField *startTF;
 
-@property (weak, nonatomic) IBOutlet UITextField *destinationTF;
+@property (weak, nonatomic) IBOutlet VISearchSiteTextField *destinationTF;
 
 @property (nonatomic,strong) LQXSwitch *switchControl;
 
@@ -73,15 +75,7 @@
     }
     return _poiMatchArray;
 }
-- (UITableView *)poiMatchTableView
-{
-    if (_poiMatchTableView == nil) {
-        _poiMatchTableView = [[UITableView alloc] init];
-        _poiMatchTableView.delegate = self;
-        _poiMatchTableView.dataSource = self;
-    }
-    return _poiMatchTableView;
-}
+
 #pragma mark - Lifetime
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -106,7 +100,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.startTF addTarget:self action:@selector(textFieldValueChanged:) forControlEvents:UIControlEventEditingChanged];
+    [self.destinationTF addTarget:self action:@selector(textFieldValueChanged:) forControlEvents:UIControlEventEditingChanged];
     
     /** 初始化自定义视图 */
     [self setupCustomView];
@@ -120,7 +115,7 @@
     self.locationService.distanceFilter = 40;
     self.locationService.desiredAccuracy = kCLLocationAccuracyBest;
     self.geoCodeSearch = [[BMKGeoCodeSearch alloc] init];
-    self.poiSearch = [[BMKPoiSearch alloc]init];
+    self.poiSearch = [[VIMapPoiSearch alloc]init];
     self.currentLocation = [[BMKUserLocation alloc] init];
     self.routeSearch = [[BMKRouteSearch alloc] init];
     
@@ -185,24 +180,38 @@
  */
 - (void)setupCustomView
 {
+    //导航栏城市按钮
     self.cityItem = [HomeNavBarCityItem homeNavBarCityItem];
     self.cityItem.backgroundColor = [UIColor clearColor];//这是View的背景颜色
     [self.cityItem addTarget:self action:@selector(cityItemClick:)];
     UIBarButtonItem *cityItem = [[UIBarButtonItem alloc] initWithCustomView:self.cityItem];
     self.navigationItem.leftBarButtonItem = cityItem;
+    
+    //模糊搜索表单
+    self.poiMatchTableView = [[UITableView alloc] init];
+    self.poiMatchTableView.delegate = self;
+    self.poiMatchTableView.dataSource = self;
+    [self.view addSubview:self.poiMatchTableView];
+    
+    
 }
 #pragma mark - 代理方法
 
 #pragma mark - UITextFieldDelegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField;
 {
-    NSLog(@"textFieldDidBeginEditing");
+
+    self.poiMatchTableView.hidden = NO;
+    self.poiMatchTableView.frame = CGRectMake(textField.x, textField.bottom, textField.width, 100);
+    [self.view bringSubviewToFront:self.poiMatchTableView];
+    
+    
 }
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.poiMatchArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -210,9 +219,33 @@
     static NSString *identifier = @"poiMatchCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
+    BMKPoiInfo *info = self.poiMatchArray[indexPath.row];
+    NSString *addStr = [NSString stringWithFormat:@"%@",info.name];
+    cell.detailTextLabel.text = info.address;
+    cell.textLabel.text = addStr;
+    cell.textLabel.font = [UIFont systemFontOfSize:11];
+    
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BMKPoiInfo *info = self.poiMatchArray[indexPath.row];
+    if ([self.startTF isFirstResponder])
+    {
+        self.startTF.siteInfo = info;
+        self.startTF.text = info.name;
+    }else if ([self.destinationTF isFirstResponder])
+    {
+        self.destinationTF.siteInfo = info;
+        self.destinationTF.text = info.name;
+    }else
+    {
+        
+    }
 }
 
 #pragma mark - BMKMapViewDelegate
@@ -254,24 +287,68 @@
 - (void)onGetPoiResult:(BMKPoiSearch *)searcher result:(BMKPoiResult*)result errorCode:(BMKSearchErrorCode)error
 {
     
-    if (error == BMK_SEARCH_NO_ERROR) {
+    if ([searcher isKindOfClass:[VIMapPoiSearch class]])
+    {
 
-        [self.resultArray removeAllObjects];
-        NSArray *tempArray = result.poiInfoList;
-        NSLog(@"加油站数量---%d",tempArray.count);
+        VIMapPoiSearch *mySearcher = (VIMapPoiSearch *)searcher;
         
-        for (int i =0; i < tempArray.count; i ++)
+        if (mySearcher.searchType == VIMapPoiSearchTypeCity)//城市内搜索(起始地,目的地)
         {
-            BMKPoiInfo *info = tempArray[i];
-            [self.resultArray addObject:info];
+//            NSLog(@"VIMapPoiSearchTypeCity");
+            if (error == BMK_SEARCH_NO_ERROR) {
+                
+                [self.poiMatchArray removeAllObjects];
+                NSArray *tempArray = result.poiInfoList;
+                NSLog(@"地点模糊匹配数量---%d",tempArray.count);
+                
+                for (int i =0; i < tempArray.count; i ++)
+                {
+                    BMKPoiInfo *info = tempArray[i];
+                    [self.poiMatchArray addObject:info];
+                    if (i == 0) {
+                        if ([self.startTF  isFirstResponder]) {
+                            self.startTF.siteInfo = info;
+                        }else
+                        {
+                            self.destinationTF.siteInfo = info;
+                        }
+                    }
+                }
+                
+            } else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
+                NSLog(@"地点模糊匹配起始点有歧义");
+            } else {
+                NSLog(@"地点模糊匹配搜索失败");
+            }
+           
+            [self.poiMatchTableView reloadData];
+
+            
+        }else //周围搜索(加油站)
+        {
+            if (error == BMK_SEARCH_NO_ERROR) {
+                
+                [self.resultArray removeAllObjects];
+                NSArray *tempArray = result.poiInfoList;
+                NSLog(@"加油站数量---%d",tempArray.count);
+                
+                for (int i =0; i < tempArray.count; i ++)
+                {
+                    BMKPoiInfo *info = tempArray[i];
+                    [self.resultArray addObject:info];
+                }
+            } else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
+                NSLog(@"周围加油站起始点有歧义");
+            } else {
+                NSLog(@"周围加油站搜索失败");
+            }
+            //显示搜索到的加油站
+            [self loadPoiSites];
         }
-    } else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
-        NSLog(@"周围加油站起始点有歧义");
-    } else {
-        NSLog(@"周围加油站搜索失败");
+        
     }
-    //显示搜索到的加油站
-    [self loadPoiSites];
+    
+   
 }
 
 
@@ -320,6 +397,7 @@
         option.keyword = @"加油站";
         //搜索半径(m)
         option.radius = 300000;
+        self.poiSearch.searchType = VIMapPoiSearchTypeNearby;
         BOOL flag = [self.poiSearch poiSearchNearBy:option];
         if(flag)
         {
@@ -371,6 +449,7 @@
 {
     [self.startTF resignFirstResponder];
     [self.destinationTF resignFirstResponder];
+    self.poiMatchTableView.hidden = YES;
 }
 
 /**
@@ -391,7 +470,6 @@
         annotation.title = info.name;
         [self.mapView addAnnotation:annotation];
     }
-
 }
 
 /**
@@ -400,5 +478,34 @@
 - (void)cityItemClick:(HomeNavBarCityItem *)cityItem
 {
     NSLog(@"cityItemClick");
+}
+/**
+ * 起始地,目的地-输入监听
+ */
+- (void)textFieldValueChanged:(UITextField *)textField
+{
+
+    UITextRange *selectedRange = [textField markedTextRange];
+    NSString * newText = [textField textInRange:selectedRange];
+    if(newText.length>0)
+        return;
+    NSLog(@"%@",textField.text);
+    
+    BMKCitySearchOption *citySearchOption = [[BMKCitySearchOption alloc]init];
+    citySearchOption.pageCapacity = 10;
+    citySearchOption.city = @"南京";
+    citySearchOption.keyword = textField.text;
+    self.poiSearch.searchType = VIMapPoiSearchTypeCity;
+    BOOL flag = [self.poiSearch poiSearchInCity:citySearchOption];
+    if(flag)
+    {
+        NSLog(@"城市内检索发送成功");
+    }
+    else
+    {
+        NSLog(@"城市内检索发送失败");
+    }
+
+    
 }
 @end

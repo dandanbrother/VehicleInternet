@@ -26,6 +26,8 @@
 		F32FD9241C97F70900804053 /* LQXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9231C97F70900804053 /* LQXSwitch.m */; };
 		F32FD9281C9A895000804053 /* HomeNavBarCityItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9261C9A895000804053 /* HomeNavBarCityItem.m */; };
 		F32FD9291C9A895000804053 /* HomeNavBarCityItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32FD9271C9A895000804053 /* HomeNavBarCityItem.xib */; };
+		F32FD9331C9C108100804053 /* VIMapPoiSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9321C9C108100804053 /* VIMapPoiSearch.m */; };
+		F32FD9361C9C1E3C00804053 /* VISearchSiteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9351C9C1E3C00804053 /* VISearchSiteTextField.m */; };
 		F39F9D061C950AB7001B8D69 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D051C950AB7001B8D69 /* CoreLocation.framework */; };
 		F39F9D081C950AC3001B8D69 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D071C950AC3001B8D69 /* QuartzCore.framework */; };
 		F39F9D0A1C950ACD001B8D69 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D091C950ACD001B8D69 /* OpenGLES.framework */; };
@@ -107,6 +109,10 @@
 		F32FD9251C9A895000804053 /* HomeNavBarCityItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNavBarCityItem.h; sourceTree = "<group>"; };
 		F32FD9261C9A895000804053 /* HomeNavBarCityItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNavBarCityItem.m; sourceTree = "<group>"; };
 		F32FD9271C9A895000804053 /* HomeNavBarCityItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeNavBarCityItem.xib; sourceTree = "<group>"; };
+		F32FD9311C9C108100804053 /* VIMapPoiSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMapPoiSearch.h; sourceTree = "<group>"; };
+		F32FD9321C9C108100804053 /* VIMapPoiSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMapPoiSearch.m; sourceTree = "<group>"; };
+		F32FD9341C9C1E3C00804053 /* VISearchSiteTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISearchSiteTextField.h; sourceTree = "<group>"; };
+		F32FD9351C9C1E3C00804053 /* VISearchSiteTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISearchSiteTextField.m; sourceTree = "<group>"; };
 		F39F9D051C950AB7001B8D69 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F39F9D071C950AC3001B8D69 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F39F9D091C950ACD001B8D69 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -361,6 +367,8 @@
 		F32FD9171C97CA6900804053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F32FD9311C9C108100804053 /* VIMapPoiSearch.h */,
+				F32FD9321C9C108100804053 /* VIMapPoiSearch.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -373,6 +381,8 @@
 				F32FD9271C9A895000804053 /* HomeNavBarCityItem.xib */,
 				F32FD9221C97F70900804053 /* LQXSwitch.h */,
 				F32FD9231C97F70900804053 /* LQXSwitch.m */,
+				F32FD9341C9C1E3C00804053 /* VISearchSiteTextField.h */,
+				F32FD9351C9C1E3C00804053 /* VISearchSiteTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -683,7 +693,9 @@
 				F32FD9141C97CA2300804053 /* UIImage+ImageEffects.m in Sources */,
 				94CE0D781C985ED40065D966 /* VIMyCarsController.m in Sources */,
 				F32FD9281C9A895000804053 /* HomeNavBarCityItem.m in Sources */,
+				F32FD9331C9C108100804053 /* VIMapPoiSearch.m in Sources */,
 				94CE0D7A1C985ED40065D966 /* VIPersonalController.m in Sources */,
+				F32FD9361C9C1E3C00804053 /* VISearchSiteTextField.m in Sources */,
 				94CE0D7F1C985EDA0065D966 /* VICarInfoModel.m in Sources */,
 				F32FD9161C97CA2300804053 /* UIView+JMTool.m in Sources */,
 				F3F0B2B61C95099F00989506 /* AppDelegate.mm in Sources */,
