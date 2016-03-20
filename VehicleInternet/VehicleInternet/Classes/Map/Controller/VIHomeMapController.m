@@ -105,7 +105,7 @@
     
     /** 初始化自定义视图 */
     [self setupCustomView];
-    
+    NSLog(@"111");
     /** 初始化地图 */
     [self setupMap];
     /** 初始化定位服务 */
