@@ -16,6 +16,7 @@
 #import <BaiduMapAPI_Base/BMKUserLocation.h>
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 #import <BaiduMapAPI_Map/BMKAnnotation.h>
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import "LQXSwitch.h"
 #import "HomeNavBarCityItem.h"
 #import "VIMapPoiSearch.h"
@@ -105,7 +106,7 @@
     
     /** 初始化自定义视图 */
     [self setupCustomView];
-    
+    NSLog(@"111");
     /** 初始化地图 */
     [self setupMap];
     /** 初始化定位服务 */
@@ -282,6 +283,25 @@
 //    }
 //}
 
+/**
+ *  根据overlay生成对应的View
+ *  @param mapView 地图View
+ *  @param overlay 指定的overlay
+ *  @return 生成的覆盖物View
+ */
+- (BMKOverlayView *)mapView:(BMKMapView *)mapView viewForOverlay:(id<BMKOverlay>)overlay
+{
+    //画折线
+    if ([overlay isKindOfClass:[BMKPolyline class]]) {
+        BMKPolylineView* polylineView = [[BMKPolylineView alloc] initWithOverlay:overlay];
+        polylineView.fillColor = [[UIColor yellowColor] colorWithAlphaComponent:0.7];
+        polylineView.strokeColor = [[UIColor greenColor] colorWithAlphaComponent:0.7];
+        polylineView.lineWidth = 5.0;
+        return polylineView;
+    }
+    return nil;
+}
+
 #pragma mark - BMKLocationServiceDelegate
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
@@ -389,7 +409,30 @@
 - (void)onGetDrivingRouteResult:(BMKRouteSearch*)searcher result:(BMKDrivingRouteResult*)result errorCode:(BMKSearchErrorCode)error
 {
     if (error == BMK_SEARCH_NO_ERROR) {
-        NSLog(@"返回驾车路径成功---%d",result.routes.count);
+        
+        BMKDrivingRouteLine *plan = (BMKDrivingRouteLine *)[result.routes objectAtIndex:0];
+        int size = (int)[plan.steps count];
+        int pointCount = 0;
+        for (int i = 0; i< size; i++) {
+            BMKDrivingStep *step = [plan.steps objectAtIndex:i];
+            pointCount += step.pointsCount;
+        }
+        BMKMapPoint *points = new BMKMapPoint[pointCount];
+        int k = 0;
+        for (int i = 0; i< size; i++) {
+            BMKDrivingStep *step = [plan.steps objectAtIndex:i];
+            for (int j= 0; j<step.pointsCount; j++) {
+                points[k].x = step.points[j].x;
+                points[k].y = step.points[j].y;
+                k++;
+            }
+        }
+        NSLog(@"点的个数:(%d)",k);
+        BMKPolyline *polyLine = [BMKPolyline polylineWithPoints:points count:pointCount];
+        [_mapView addOverlay:polyLine];
+        
+        
+        
     }
     else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
         NSLog(@"返回驾车路径失败有歧义---%d",result.routes.count);
@@ -461,14 +504,16 @@
     [self.startTF resignFirstResponder];
     [self.destinationTF resignFirstResponder];
     
+    BMKPoiInfo *startSiteInfo = self.startTF.siteInfo;
+    BMKPoiInfo *destinationSiteInfo = self.destinationTF.siteInfo;
+    
+    
     BMKPlanNode *startNode = [[BMKPlanNode alloc] init];
-    startNode.cityName = @"南京市";
-    startNode.name = self.startTF.text;
+    startNode.pt = startSiteInfo.pt;
     BMKPlanNode *endNode = [[BMKPlanNode alloc] init];
-    endNode.cityName = @"南京市";
-    endNode.name = self.destinationTF.text;
+    endNode.pt = destinationSiteInfo.pt;
     BMKDrivingRoutePlanOption *transitRouteSearchOption =         [[BMKDrivingRoutePlanOption alloc]init];
-//    transitRouteSearchOption.drivingPolicy = BMK_DRIVING_DIS_FIRST;
+    transitRouteSearchOption.drivingPolicy = BMK_DRIVING_DIS_FIRST;
     transitRouteSearchOption.from = startNode;
     transitRouteSearchOption.to = endNode;
     BOOL flag = [self.routeSearch drivingSearch:transitRouteSearchOption];
