@@ -36,7 +36,7 @@
 		94CE0D7E1C985EDA0065D966 /* CarInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94CE0D7B1C985EDA0065D966 /* CarInfo.plist */; };
 		94CE0D7F1C985EDA0065D966 /* VICarInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D7D1C985EDA0065D966 /* VICarInfoModel.m */; };
 		F30F7E931C950C8D0081A41E /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F30F7E921C950C8D0081A41E /* mapapi.bundle */; };
-		F30F7EAA1C9538BF0081A41E /* VIHomeMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30F7EA91C9538BF0081A41E /* VIHomeMapController.m */; };
+		F30F7EAA1C9538BF0081A41E /* VIHomeMapController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30F7EA91C9538BF0081A41E /* VIHomeMapController.mm */; };
 		F30F7F001C97A8B20081A41E /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F32FD8F31C97AA9800804053 /* AVOSCloud.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F32FD8F51C97B3F800804053 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F41C97B3F800804053 /* libstdc++.6.0.9.tbd */; };
@@ -47,6 +47,10 @@
 		F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9111C97CA2300804053 /* UIView+JMPosition.m */; };
 		F32FD9161C97CA2300804053 /* UIView+JMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9131C97CA2300804053 /* UIView+JMTool.m */; };
 		F32FD9241C97F70900804053 /* LQXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9231C97F70900804053 /* LQXSwitch.m */; };
+		F32FD9281C9A895000804053 /* HomeNavBarCityItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9261C9A895000804053 /* HomeNavBarCityItem.m */; };
+		F32FD9291C9A895000804053 /* HomeNavBarCityItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32FD9271C9A895000804053 /* HomeNavBarCityItem.xib */; };
+		F32FD9331C9C108100804053 /* VIMapPoiSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9321C9C108100804053 /* VIMapPoiSearch.m */; };
+		F32FD9361C9C1E3C00804053 /* VISearchSiteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9351C9C1E3C00804053 /* VISearchSiteTextField.m */; };
 		F39F9D061C950AB7001B8D69 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D051C950AB7001B8D69 /* CoreLocation.framework */; };
 		F39F9D081C950AC3001B8D69 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D071C950AC3001B8D69 /* QuartzCore.framework */; };
 		F39F9D0A1C950ACD001B8D69 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D091C950ACD001B8D69 /* OpenGLES.framework */; };
@@ -135,7 +139,7 @@
 		94CE0D7D1C985EDA0065D966 /* VICarInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICarInfoModel.m; sourceTree = "<group>"; };
 		F30F7E921C950C8D0081A41E /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = VehicleInternet/Framework/BaiduMap/BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		F30F7EA81C9538BF0081A41E /* VIHomeMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIHomeMapController.h; sourceTree = "<group>"; };
-		F30F7EA91C9538BF0081A41E /* VIHomeMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIHomeMapController.m; sourceTree = "<group>"; };
+		F30F7EA91C9538BF0081A41E /* VIHomeMapController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VIHomeMapController.mm; sourceTree = "<group>"; };
 		F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = VehicleInternet/AVOSCloud.framework; sourceTree = "<group>"; };
 		F32FD8F41C97B3F800804053 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		F32FD8F61C97B40500804053 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -151,6 +155,13 @@
 		F32FD9211C97CB0700804053 /* VehicleInternet.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleInternet.pch; sourceTree = "<group>"; };
 		F32FD9221C97F70900804053 /* LQXSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQXSwitch.h; sourceTree = "<group>"; };
 		F32FD9231C97F70900804053 /* LQXSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQXSwitch.m; sourceTree = "<group>"; };
+		F32FD9251C9A895000804053 /* HomeNavBarCityItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNavBarCityItem.h; sourceTree = "<group>"; };
+		F32FD9261C9A895000804053 /* HomeNavBarCityItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNavBarCityItem.m; sourceTree = "<group>"; };
+		F32FD9271C9A895000804053 /* HomeNavBarCityItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeNavBarCityItem.xib; sourceTree = "<group>"; };
+		F32FD9311C9C108100804053 /* VIMapPoiSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMapPoiSearch.h; sourceTree = "<group>"; };
+		F32FD9321C9C108100804053 /* VIMapPoiSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMapPoiSearch.m; sourceTree = "<group>"; };
+		F32FD9341C9C1E3C00804053 /* VISearchSiteTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISearchSiteTextField.h; sourceTree = "<group>"; };
+		F32FD9351C9C1E3C00804053 /* VISearchSiteTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISearchSiteTextField.m; sourceTree = "<group>"; };
 		F39F9D051C950AB7001B8D69 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F39F9D071C950AC3001B8D69 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F39F9D091C950ACD001B8D69 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -291,7 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				F30F7EA81C9538BF0081A41E /* VIHomeMapController.h */,
-				F30F7EA91C9538BF0081A41E /* VIHomeMapController.m */,
+				F30F7EA91C9538BF0081A41E /* VIHomeMapController.mm */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -447,6 +458,8 @@
 		F32FD9171C97CA6900804053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F32FD9311C9C108100804053 /* VIMapPoiSearch.h */,
+				F32FD9321C9C108100804053 /* VIMapPoiSearch.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -454,8 +467,13 @@
 		F32FD9181C97CA6900804053 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F32FD9251C9A895000804053 /* HomeNavBarCityItem.h */,
+				F32FD9261C9A895000804053 /* HomeNavBarCityItem.m */,
+				F32FD9271C9A895000804053 /* HomeNavBarCityItem.xib */,
 				F32FD9221C97F70900804053 /* LQXSwitch.h */,
 				F32FD9231C97F70900804053 /* LQXSwitch.m */,
+				F32FD9341C9C1E3C00804053 /* VISearchSiteTextField.h */,
+				F32FD9351C9C1E3C00804053 /* VISearchSiteTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -727,6 +745,7 @@
 				9490133F1C9F7F5700253715 /* wanglihong.jpg in Resources */,
 				949013421C9F7F5700253715 /* music.plist in Resources */,
 				949013331C9F7F5700253715 /* playing_btn_pause_h@2x.png in Resources */,
+				F32FD9291C9A895000804053 /* HomeNavBarCityItem.xib in Resources */,
 				F3F0B2C11C95099F00989506 /* LaunchScreen.storyboard in Resources */,
 				949013351C9F7F5700253715 /* playing_btn_play_h@2x.png in Resources */,
 				949013361C9F7F5700253715 /* playing_btn_play_n@2x.png in Resources */,
@@ -790,13 +809,16 @@
 				F32FD9141C97CA2300804053 /* UIImage+ImageEffects.m in Sources */,
 				94CE0D781C985ED40065D966 /* VIMyCarsController.m in Sources */,
 				948C87E41C9FD791006EB17A /* VIMusicListController.m in Sources */,
+				F32FD9281C9A895000804053 /* HomeNavBarCityItem.m in Sources */,
+				F32FD9331C9C108100804053 /* VIMapPoiSearch.m in Sources */,
 				94CE0D7A1C985ED40065D966 /* VIPersonalController.m in Sources */,
+				F32FD9361C9C1E3C00804053 /* VISearchSiteTextField.m in Sources */,
 				94CE0D7F1C985EDA0065D966 /* VICarInfoModel.m in Sources */,
 				948C87E11C9FD1D5006EB17A /* VIMusicModel.m in Sources */,
 				F32FD9161C97CA2300804053 /* UIView+JMTool.m in Sources */,
 				949012211C9F7C0200253715 /* VIMusicPlayerController.m in Sources */,
 				F3F0B2B61C95099F00989506 /* AppDelegate.mm in Sources */,
-				F30F7EAA1C9538BF0081A41E /* VIHomeMapController.m in Sources */,
+				F30F7EAA1C9538BF0081A41E /* VIHomeMapController.mm in Sources */,
 				F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */,
 				F32FD9241C97F70900804053 /* LQXSwitch.m in Sources */,
 				94CE0D791C985ED40065D966 /* VIPeccancyInfotmation.m in Sources */,
