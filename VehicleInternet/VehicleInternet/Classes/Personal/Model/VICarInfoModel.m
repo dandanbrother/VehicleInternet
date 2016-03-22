@@ -12,9 +12,7 @@
 
 - (instancetype)initWithDict:(NSDictionary *)dictionary {
     if (self = [super init]) {
-//        self.carBrand = dictionary[@"carBrand"];
-//        self.licenseNum = dictionary[@"licenseNum"];
-//        self.engineNum = dictionary[@"engineNum"];
+
         [self setValuesForKeysWithDictionary:dictionary];
     
     }

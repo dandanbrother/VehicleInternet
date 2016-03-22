@@ -17,8 +17,11 @@
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 #import <BaiduMapAPI_Map/BMKAnnotation.h>
 #import "LQXSwitch.h"
+#import "VIMusicPlayerController.h"
+#import "VIMusicModel.h"
 
-@interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate>
+
+@interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,AVAudioPlayerDelegate>
 
 @property (nonatomic,strong) BMKMapView *mapView;
 
@@ -39,6 +42,7 @@
 
 @property (nonatomic,strong) LQXSwitch *switchControl;
 
+@property (nonatomic, strong) NSArray *musicArr;
 
 
 
@@ -48,6 +52,19 @@
 @end
 
 @implementation VIHomeMapController
+
+- (NSArray *)musicArr{
+    if (!_musicArr) {
+        NSArray *arr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"music" ofType:@"plist"]];
+        
+        NSMutableArray *muteArr = [NSMutableArray array];
+        for (NSDictionary *dict in arr) {
+            [muteArr addObject:[VIMusicModel musicWithDict:dict]];
+        }
+        _musicArr = muteArr;
+    }
+    return _musicArr;
+}
 
 #pragma mark - 懒加载
 - (NSMutableArray *)resultArray
@@ -97,6 +114,33 @@
     self.currentLocation = [[BMKUserLocation alloc] init];
     
     
+
+    //创建播放器
+    NSString *path = [NSString stringWithFormat:@"%@/安静.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
+    //初始化AVAudioPlayer实例对象
+   AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    
+    //设置开始的音量
+    player.volume = .5;
+    
+    //设置当前的时间
+    player.currentTime = 0;
+    
+    //设置代理
+    player.delegate = self;
+    
+    //
+    BOOL isPlay = [player prepareToPlay];
+    
+    if (isPlay) {
+        
+        [player play];
+        
+    }else{
+        
+        NSLog(@"播放失败");
+    }
 
 }
 
@@ -198,7 +242,7 @@
 
         [self.resultArray removeAllObjects];
         NSArray *tempArray = result.poiInfoList;
-        NSLog(@"加油站数量---%d",tempArray.count);
+        NSLog(@"加油站数量---%lu",(unsigned long)tempArray.count);
         
         for (int i =0; i < tempArray.count; i ++)
         {
@@ -294,4 +338,5 @@
 
     
 }
+
 @end
