@@ -21,6 +21,7 @@
 #import "HomeNavBarCityItem.h"
 #import "VIMapPoiSearch.h"
 #import "VISearchSiteTextField.h"
+#import "VIMusicPlayerController.h"
 
 @interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
@@ -87,7 +88,7 @@
     self.routeSearch.delegate = self;
     //开始定位
     [self startLocation];
-    
+    NSLog(@"%lu",self.tabBarController.selectedIndex);
     
 }
 - (void)viewDidDisappear:(BOOL)animated
@@ -132,9 +133,12 @@
     {
         NSLog(@"反geo检索发送失败");
     }
-
-
+   
+    
+    
+    
 }
+
 
 #pragma mark - 初始化
 /**

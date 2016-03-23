@@ -81,11 +81,6 @@ static int time2 = 0;
 -(void)reloadData{
     startAndStopBtn.selected = NO;
     self.currentPage = page;
-
-    //后台播放
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setActive:YES error:nil];
-    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
     
     
     VIMusicModel *musicModel = self.musicArr[page];
@@ -110,8 +105,10 @@ static int time2 = 0;
     BOOL isPlay = [self.player prepareToPlay];
     
     if (isPlay) {
-        
-        [self.player play];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            
+            [self.player play];
+        });
         
     }else{
         
