@@ -11,5 +11,4 @@
 
 @interface VIMusicPlayerController : UIViewController
 @property (nonatomic, strong) AVAudioPlayer *player;
-
 @end

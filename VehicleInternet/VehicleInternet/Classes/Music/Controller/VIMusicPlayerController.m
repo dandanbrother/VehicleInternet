@@ -11,6 +11,7 @@
 #define kScreenH [UIScreen mainScreen].bounds.size.height - 49
 #import "VIMusicPlayerController.h"
 #import "VIMusicModel.h"
+#import "VIHomeMapController.h"
 #import "VIMusicListController.h"
 
 #pragma mark
@@ -29,6 +30,8 @@
 }
 @property (nonatomic, strong) NSArray *musicArr;
 @property (nonatomic, assign) NSInteger currentPage;
+@property (nonatomic, assign) NSNumber *currentTime;
+@property (nonatomic, assign) BOOL isPush;
 
 @end
 
@@ -55,6 +58,7 @@ static int time2 = 0;
     page = (int)indexPath.row;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -64,10 +68,18 @@ static int time2 = 0;
     //调用BottomView 底部视图
     [self BottomView];
     
+    self.currentPage = page;
+    NSLog(@"didload");
+    
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        self.currentTime = [user objectForKey:@"time"];
+        [self.player setCurrentTime:[self.currentTime floatValue]];
+    });
+    
     [self reloadData];
     
-    self.currentPage = page;
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -75,7 +87,6 @@ static int time2 = 0;
         [self reloadData];
     }
 }
-
 
 //改变数值的方法 刷新数据
 -(void)reloadData{
@@ -98,23 +109,27 @@ static int time2 = 0;
     //设置当前的时间
     self.player.currentTime = 0;
     
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        self.player.currentTime = [self.currentTime floatValue];
+
+    });
+    
+    
     //设置代理
     self.player.delegate = self;
-    
+        
     //
     BOOL isPlay = [self.player prepareToPlay];
-    
+        
     if (isPlay) {
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            
-            [self.player play];
-        });
-        
+        [self.player play];
+        NSLog(@"播放");
     }else{
-        
+            
         NSLog(@"播放失败");
     }
-    
+        
     //
     CADisplayLink *display = [CADisplayLink displayLinkWithTarget:self selector:@selector(display)];
     
@@ -123,10 +138,12 @@ static int time2 = 0;
     //给各个属性赋值
     _backView.image = [UIImage imageNamed:imageStr];
     slider.value = 0;
-   
+        
     totalLable.text = totalStr;
     startLable.text = [self floatToStr:slider.value];
     time2 = 0;
+
+    
 }
 
 
