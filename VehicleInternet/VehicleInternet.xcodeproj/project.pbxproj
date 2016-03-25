@@ -55,6 +55,7 @@
 		F39F9D081C950AC3001B8D69 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D071C950AC3001B8D69 /* QuartzCore.framework */; };
 		F39F9D0A1C950ACD001B8D69 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D091C950ACD001B8D69 /* OpenGLES.framework */; };
 		F39F9D0C1C950AD8001B8D69 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D0B1C950AD8001B8D69 /* libsqlite3.0.tbd */; };
+		F3DA65461CA373CE00E26AE4 /* VIAppointmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DA65451CA373CE00E26AE4 /* VIAppointmentModel.m */; };
 		F3F0B2B31C95099F00989506 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F0B2B21C95099F00989506 /* main.m */; };
 		F3F0B2B61C95099F00989506 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = F3F0B2B51C95099F00989506 /* AppDelegate.mm */; };
 		F3F0B2BC1C95099F00989506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F0B2BA1C95099F00989506 /* Main.storyboard */; };
@@ -166,6 +167,8 @@
 		F39F9D071C950AC3001B8D69 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F39F9D091C950ACD001B8D69 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		F39F9D0B1C950AD8001B8D69 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		F3DA65441CA373CE00E26AE4 /* VIAppointmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIAppointmentModel.h; sourceTree = "<group>"; };
+		F3DA65451CA373CE00E26AE4 /* VIAppointmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIAppointmentModel.m; sourceTree = "<group>"; };
 		F3F0B2AE1C95099F00989506 /* VehicleInternet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleInternet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F0B2B21C95099F00989506 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3F0B2B41C95099F00989506 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -327,6 +330,8 @@
 		F32FD8FE1C97CA0000804053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F3DA65441CA373CE00E26AE4 /* VIAppointmentModel.h */,
+				F3DA65451CA373CE00E26AE4 /* VIAppointmentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -814,6 +819,7 @@
 				94CE0D7A1C985ED40065D966 /* VIPersonalController.m in Sources */,
 				F32FD9361C9C1E3C00804053 /* VISearchSiteTextField.m in Sources */,
 				94CE0D7F1C985EDA0065D966 /* VICarInfoModel.m in Sources */,
+				F3DA65461CA373CE00E26AE4 /* VIAppointmentModel.m in Sources */,
 				948C87E11C9FD1D5006EB17A /* VIMusicModel.m in Sources */,
 				F32FD9161C97CA2300804053 /* UIView+JMTool.m in Sources */,
 				949012211C9F7C0200253715 /* VIMusicPlayerController.m in Sources */,
