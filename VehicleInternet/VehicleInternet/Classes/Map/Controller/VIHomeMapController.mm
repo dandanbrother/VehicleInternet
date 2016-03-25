@@ -23,7 +23,7 @@
 #import "VISearchSiteTextField.h"
 #import "VIMusicPlayerController.h"
 
-@interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+@interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UITabBarControllerDelegate>
 
 @property (nonatomic,strong) BMKMapView *mapView;
 
@@ -53,6 +53,7 @@
 
 @property (nonatomic,strong) UITableView *poiMatchTableView;
 
+@property (nonatomic, strong) AVAudioPlayer *player;
 
 
 - (IBAction)queryPathBtnClicked:(id)sender;
@@ -87,9 +88,7 @@
     self.poiSearch.delegate = self;
     self.routeSearch.delegate = self;
     //开始定位
-    [self startLocation];
-    NSLog(@"%lu",self.tabBarController.selectedIndex);
-    
+    [self startLocation];    
 }
 - (void)viewDidDisappear:(BOOL)animated
 {
@@ -100,6 +99,7 @@
     self.routeSearch.delegate = nil;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.startTF addTarget:self action:@selector(textFieldValueChanged:) forControlEvents:UIControlEventEditingChanged];
@@ -107,7 +107,6 @@
     
     /** 初始化自定义视图 */
     [self setupCustomView];
-    NSLog(@"111");
     /** 初始化地图 */
     [self setupMap];
     /** 初始化定位服务 */
@@ -134,9 +133,22 @@
         NSLog(@"反geo检索发送失败");
     }
    
+    UITabBarController *vc = self.tabBarController;
+    vc.delegate = self;
+    [self setupMusicPlayer];
     
-    
-    
+
+}
+
+#pragma mark - UITabBarControllerDelegate
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    if (tabBarController.selectedIndex == 2) {
+        float currentTime = self.player.currentTime;
+        NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+        [user setObject:[NSNumber numberWithFloat:currentTime] forKey:@"time"];
+        [self.player stop];
+
+    }
 }
 
 
@@ -607,4 +619,23 @@
 
     
 }
+
+- (void)setupMusicPlayer {
+    //后台播放
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setActive:YES error:nil];
+    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+    
+    //创建播放器
+    NSString *path = [NSString stringWithFormat:@"%@/安静.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    [self.player prepareToPlay];
+    self.player.volume = 0.5;
+    self.player.currentTime = 0;
+    self.player.numberOfLoops = -1;
+    [self.player play];
+    
+}
+
 @end

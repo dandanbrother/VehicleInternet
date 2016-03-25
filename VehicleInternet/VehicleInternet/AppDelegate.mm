@@ -6,20 +6,17 @@
 //  Copyright © 2016年 TomorJM. All rights reserved.
 //
 
-#import "AppDelegate.h"
-#import "VIMusicPlayerController.h"
-#import <AVFoundation/AVFoundation.h>
+#import "AppDelegate.h" 
 #import <AVOSCloud/AVOSCloud.h>
 
 
 
-@interface AppDelegate () <UITabBarControllerDelegate>
+@interface AppDelegate ()
 {
     BMKMapManager* _mapManager;
     BOOL isUpdata;
 }
 
-@property (nonatomic, strong) AVAudioPlayer *player;
 
 @end
 
@@ -34,17 +31,7 @@
     //初始化百度地图
     [self baiduMapSetup];
     
-    UITabBarController *vc = (UITabBarController *)self.window.rootViewController;
-    vc.delegate = self;
-    
-    [self setupMusicPlayer];
     return YES;
-}
-
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    if (tabBarController.selectedIndex == 2) {
-        [self.player stop];
-    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -103,21 +90,5 @@
     }
 }
 
-- (void)setupMusicPlayer {
-    //后台播放
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setActive:YES error:nil];
-    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
-    
-    //创建播放器
-    NSString *path = [NSString stringWithFormat:@"%@/安静.mp3", [[NSBundle mainBundle] resourcePath]];
-    NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-    [self.player prepareToPlay];
-    self.player.volume = 0.5;
-    self.player.numberOfLoops = -1;
-    [self.player play];
-
-}
 
 @end
