@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h" 
 #import <AVOSCloud/AVOSCloud.h>
+#import "VIAppointmentModel.h"
+#import "VIUserModel.h"
 
 
 
@@ -63,6 +65,10 @@
     [AVOSCloud setApplicationId:@"qkuNzgIaUA246v24WYFByeNd-gzGzoHsz"
                       clientKey:@"TJVs6qapLKD7yLPOfmBVevlX"];
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    /** 子类注册 */
+    [VIAppointmentModel registerSubclass];
+    [VIUserModel registerSubclass];
 
 
     

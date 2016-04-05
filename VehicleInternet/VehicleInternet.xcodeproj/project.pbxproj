@@ -51,10 +51,31 @@
 		F32FD9291C9A895000804053 /* HomeNavBarCityItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32FD9271C9A895000804053 /* HomeNavBarCityItem.xib */; };
 		F32FD9331C9C108100804053 /* VIMapPoiSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9321C9C108100804053 /* VIMapPoiSearch.m */; };
 		F32FD9361C9C1E3C00804053 /* VISearchSiteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9351C9C1E3C00804053 /* VISearchSiteTextField.m */; };
+		F3859E7C1CA58A8B0054D309 /* VIAppointmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3859E7B1CA58A8B0054D309 /* VIAppointmentController.m */; };
+		F3859E7F1CA58E140054D309 /* VIAppointmentComposeController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3859E7E1CA58E140054D309 /* VIAppointmentComposeController.m */; };
 		F39F9D061C950AB7001B8D69 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D051C950AB7001B8D69 /* CoreLocation.framework */; };
 		F39F9D081C950AC3001B8D69 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D071C950AC3001B8D69 /* QuartzCore.framework */; };
 		F39F9D0A1C950ACD001B8D69 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D091C950ACD001B8D69 /* OpenGLES.framework */; };
 		F39F9D0C1C950AD8001B8D69 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F39F9D0B1C950AD8001B8D69 /* libsqlite3.0.tbd */; };
+		F3DA65461CA373CE00E26AE4 /* VIAppointmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DA65451CA373CE00E26AE4 /* VIAppointmentModel.m */; };
+		F3E447E41CB12608006B62E1 /* UUDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E447E11CB12608006B62E1 /* UUDatePicker.m */; };
+		F3E447E51CB12608006B62E1 /* UUDatePicker_DateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E447E31CB12608006B62E1 /* UUDatePicker_DateModel.m */; };
+		F3E447EA1CB16BA6006B62E1 /* VIAppointmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E447E81CB16BA6006B62E1 /* VIAppointmentCell.m */; };
+		F3E447EB1CB16BA6006B62E1 /* VIAppointmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3E447E91CB16BA6006B62E1 /* VIAppointmentCell.xib */; };
+		F3E447EE1CB20F8C006B62E1 /* VIEwmController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E447ED1CB20F8C006B62E1 /* VIEwmController.m */; };
+		F3E447F51CB21F46006B62E1 /* UIImage+QRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E447F41CB21F46006B62E1 /* UIImage+QRCode.m */; };
+		F3E447F71CB21F93006B62E1 /* 海绵宝宝.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F3E447F61CB21F93006B62E1 /* 海绵宝宝.jpeg */; };
+		F3E447FA1CB222E2006B62E1 /* VIEwmScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E447F91CB222E2006B62E1 /* VIEwmScanController.m */; };
+		F3E447FE1CB22357006B62E1 /* SHBQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E447FD1CB22357006B62E1 /* SHBQRView.m */; };
+		F3E448031CB224F6006B62E1 /* noticeMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3E447FF1CB224F6006B62E1 /* noticeMusic.wav */; };
+		F3E448041CB224F6006B62E1 /* scanLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3E448001CB224F6006B62E1 /* scanLine@2x.png */; };
+		F3E448051CB224F6006B62E1 /* scanLine@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3E448011CB224F6006B62E1 /* scanLine@3x.png */; };
+		F3E448061CB224F6006B62E1 /* scanscanBg.png in Resources */ = {isa = PBXBuildFile; fileRef = F3E448021CB224F6006B62E1 /* scanscanBg.png */; };
+		F3E4480D1CB29321006B62E1 /* JMLogInController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E448081CB29321006B62E1 /* JMLogInController.m */; };
+		F3E4480E1CB29321006B62E1 /* JMLogInController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3E448091CB29321006B62E1 /* JMLogInController.xib */; };
+		F3E4480F1CB29321006B62E1 /* JMRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E4480B1CB29321006B62E1 /* JMRegisterController.m */; };
+		F3E448101CB29321006B62E1 /* JMRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3E4480C1CB29321006B62E1 /* JMRegisterController.xib */; };
+		F3E448131CB29387006B62E1 /* VIUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E448121CB29387006B62E1 /* VIUserModel.m */; };
 		F3F0B2B31C95099F00989506 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F0B2B21C95099F00989506 /* main.m */; };
 		F3F0B2B61C95099F00989506 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = F3F0B2B51C95099F00989506 /* AppDelegate.mm */; };
 		F3F0B2BC1C95099F00989506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F0B2BA1C95099F00989506 /* Main.storyboard */; };
@@ -162,10 +183,44 @@
 		F32FD9321C9C108100804053 /* VIMapPoiSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMapPoiSearch.m; sourceTree = "<group>"; };
 		F32FD9341C9C1E3C00804053 /* VISearchSiteTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISearchSiteTextField.h; sourceTree = "<group>"; };
 		F32FD9351C9C1E3C00804053 /* VISearchSiteTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISearchSiteTextField.m; sourceTree = "<group>"; };
+		F3859E7A1CA58A8B0054D309 /* VIAppointmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIAppointmentController.h; path = VehicleInternet/Classes/Appointment/Model/VIAppointmentController.h; sourceTree = SOURCE_ROOT; };
+		F3859E7B1CA58A8B0054D309 /* VIAppointmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIAppointmentController.m; path = VehicleInternet/Classes/Appointment/Model/VIAppointmentController.m; sourceTree = SOURCE_ROOT; };
+		F3859E7D1CA58E140054D309 /* VIAppointmentComposeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIAppointmentComposeController.h; path = VehicleInternet/Classes/Appointment/Model/VIAppointmentComposeController.h; sourceTree = SOURCE_ROOT; };
+		F3859E7E1CA58E140054D309 /* VIAppointmentComposeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIAppointmentComposeController.m; path = VehicleInternet/Classes/Appointment/Model/VIAppointmentComposeController.m; sourceTree = SOURCE_ROOT; };
 		F39F9D051C950AB7001B8D69 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F39F9D071C950AC3001B8D69 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F39F9D091C950ACD001B8D69 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		F39F9D0B1C950AD8001B8D69 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		F3DA65441CA373CE00E26AE4 /* VIAppointmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIAppointmentModel.h; sourceTree = "<group>"; };
+		F3DA65451CA373CE00E26AE4 /* VIAppointmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIAppointmentModel.m; sourceTree = "<group>"; };
+		F3E447E01CB12608006B62E1 /* UUDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUDatePicker.h; sourceTree = "<group>"; };
+		F3E447E11CB12608006B62E1 /* UUDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUDatePicker.m; sourceTree = "<group>"; };
+		F3E447E21CB12608006B62E1 /* UUDatePicker_DateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUDatePicker_DateModel.h; sourceTree = "<group>"; };
+		F3E447E31CB12608006B62E1 /* UUDatePicker_DateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUDatePicker_DateModel.m; sourceTree = "<group>"; };
+		F3E447E71CB16BA6006B62E1 /* VIAppointmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIAppointmentCell.h; sourceTree = "<group>"; };
+		F3E447E81CB16BA6006B62E1 /* VIAppointmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIAppointmentCell.m; sourceTree = "<group>"; };
+		F3E447E91CB16BA6006B62E1 /* VIAppointmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIAppointmentCell.xib; sourceTree = "<group>"; };
+		F3E447EC1CB20F8C006B62E1 /* VIEwmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIEwmController.h; sourceTree = "<group>"; };
+		F3E447ED1CB20F8C006B62E1 /* VIEwmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIEwmController.m; sourceTree = "<group>"; };
+		F3E447F31CB21F46006B62E1 /* UIImage+QRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QRCode.h"; sourceTree = "<group>"; };
+		F3E447F41CB21F46006B62E1 /* UIImage+QRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QRCode.m"; sourceTree = "<group>"; };
+		F3E447F61CB21F93006B62E1 /* 海绵宝宝.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "海绵宝宝.jpeg"; sourceTree = "<group>"; };
+		F3E447F81CB222E2006B62E1 /* VIEwmScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIEwmScanController.h; sourceTree = "<group>"; };
+		F3E447F91CB222E2006B62E1 /* VIEwmScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIEwmScanController.m; sourceTree = "<group>"; };
+		F3E447FC1CB22357006B62E1 /* SHBQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHBQRView.h; sourceTree = "<group>"; };
+		F3E447FD1CB22357006B62E1 /* SHBQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHBQRView.m; sourceTree = "<group>"; };
+		F3E447FF1CB224F6006B62E1 /* noticeMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noticeMusic.wav; sourceTree = "<group>"; };
+		F3E448001CB224F6006B62E1 /* scanLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scanLine@2x.png"; sourceTree = "<group>"; };
+		F3E448011CB224F6006B62E1 /* scanLine@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scanLine@3x.png"; sourceTree = "<group>"; };
+		F3E448021CB224F6006B62E1 /* scanscanBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanscanBg.png; sourceTree = "<group>"; };
+		F3E448071CB29321006B62E1 /* JMLogInController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMLogInController.h; sourceTree = "<group>"; };
+		F3E448081CB29321006B62E1 /* JMLogInController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLogInController.m; sourceTree = "<group>"; };
+		F3E448091CB29321006B62E1 /* JMLogInController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JMLogInController.xib; sourceTree = "<group>"; };
+		F3E4480A1CB29321006B62E1 /* JMRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMRegisterController.h; sourceTree = "<group>"; };
+		F3E4480B1CB29321006B62E1 /* JMRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMRegisterController.m; sourceTree = "<group>"; };
+		F3E4480C1CB29321006B62E1 /* JMRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JMRegisterController.xib; sourceTree = "<group>"; };
+		F3E448111CB29387006B62E1 /* VIUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIUserModel.h; sourceTree = "<group>"; };
+		F3E448121CB29387006B62E1 /* VIUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIUserModel.m; sourceTree = "<group>"; };
 		F3F0B2AE1C95099F00989506 /* VehicleInternet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleInternet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F0B2B21C95099F00989506 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3F0B2B41C95099F00989506 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -268,6 +323,8 @@
 		94CE0D711C985EC00065D966 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F3E448111CB29387006B62E1 /* VIUserModel.h */,
+				F3E448121CB29387006B62E1 /* VIUserModel.m */,
 			);
 			name = Model;
 			path = Other;
@@ -310,9 +367,9 @@
 		F32FD8FC1C97CA0000804053 /* Appointment */ = {
 			isa = PBXGroup;
 			children = (
+				F3E447E61CB16B94006B62E1 /* View */,
 				F32FD8FD1C97CA0000804053 /* Controller */,
 				F32FD8FE1C97CA0000804053 /* Model */,
-				F32FD8FF1C97CA0000804053 /* View */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -320,6 +377,10 @@
 		F32FD8FD1C97CA0000804053 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F3859E7A1CA58A8B0054D309 /* VIAppointmentController.h */,
+				F3859E7B1CA58A8B0054D309 /* VIAppointmentController.m */,
+				F3859E7D1CA58E140054D309 /* VIAppointmentComposeController.h */,
+				F3859E7E1CA58E140054D309 /* VIAppointmentComposeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -327,20 +388,17 @@
 		F32FD8FE1C97CA0000804053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F3DA65441CA373CE00E26AE4 /* VIAppointmentModel.h */,
+				F3DA65451CA373CE00E26AE4 /* VIAppointmentModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		F32FD8FF1C97CA0000804053 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F32FD9011C97CA0000804053 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				F3E447FB1CB2234E006B62E1 /* Ewm */,
+				F3E447DF1CB12608006B62E1 /* UUDatePicker_Block */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -451,6 +509,8 @@
 				F32FD9111C97CA2300804053 /* UIView+JMPosition.m */,
 				F32FD9121C97CA2300804053 /* UIView+JMTool.h */,
 				F32FD9131C97CA2300804053 /* UIView+JMTool.m */,
+				F3E447F31CB21F46006B62E1 /* UIImage+QRCode.h */,
+				F3E447F41CB21F46006B62E1 /* UIImage+QRCode.m */,
 			);
 			path = JMTool;
 			sourceTree = "<group>";
@@ -481,6 +541,12 @@
 		F32FD9191C97CA7E00804053 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F3E448071CB29321006B62E1 /* JMLogInController.h */,
+				F3E448081CB29321006B62E1 /* JMLogInController.m */,
+				F3E448091CB29321006B62E1 /* JMLogInController.xib */,
+				F3E4480A1CB29321006B62E1 /* JMRegisterController.h */,
+				F3E4480B1CB29321006B62E1 /* JMRegisterController.m */,
+				F3E4480C1CB29321006B62E1 /* JMRegisterController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -513,6 +579,10 @@
 		F32FD91D1C97CAC600804053 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F3E447EC1CB20F8C006B62E1 /* VIEwmController.h */,
+				F3E447ED1CB20F8C006B62E1 /* VIEwmController.m */,
+				F3E447F81CB222E2006B62E1 /* VIEwmScanController.h */,
+				F3E447F91CB222E2006B62E1 /* VIEwmScanController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -530,6 +600,36 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F3E447DF1CB12608006B62E1 /* UUDatePicker_Block */ = {
+			isa = PBXGroup;
+			children = (
+				F3E447E01CB12608006B62E1 /* UUDatePicker.h */,
+				F3E447E11CB12608006B62E1 /* UUDatePicker.m */,
+				F3E447E21CB12608006B62E1 /* UUDatePicker_DateModel.h */,
+				F3E447E31CB12608006B62E1 /* UUDatePicker_DateModel.m */,
+			);
+			path = UUDatePicker_Block;
+			sourceTree = "<group>";
+		};
+		F3E447E61CB16B94006B62E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F3E447E71CB16BA6006B62E1 /* VIAppointmentCell.h */,
+				F3E447E81CB16BA6006B62E1 /* VIAppointmentCell.m */,
+				F3E447E91CB16BA6006B62E1 /* VIAppointmentCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3E447FB1CB2234E006B62E1 /* Ewm */ = {
+			isa = PBXGroup;
+			children = (
+				F3E447FC1CB22357006B62E1 /* SHBQRView.h */,
+				F3E447FD1CB22357006B62E1 /* SHBQRView.m */,
+			);
+			path = Ewm;
 			sourceTree = "<group>";
 		};
 		F3F0B2A51C95099F00989506 = {
@@ -569,6 +669,11 @@
 				F3F0B2E41C9509D300989506 /* Framework */,
 				F3F0B2B41C95099F00989506 /* AppDelegate.h */,
 				F3F0B2B51C95099F00989506 /* AppDelegate.mm */,
+				F3E447F61CB21F93006B62E1 /* 海绵宝宝.jpeg */,
+				F3E447FF1CB224F6006B62E1 /* noticeMusic.wav */,
+				F3E448001CB224F6006B62E1 /* scanLine@2x.png */,
+				F3E448011CB224F6006B62E1 /* scanLine@3x.png */,
+				F3E448021CB224F6006B62E1 /* scanscanBg.png */,
 				F3F0B2BA1C95099F00989506 /* Main.storyboard */,
 				F3F0B2BD1C95099F00989506 /* Assets.xcassets */,
 				F3F0B2B11C95099F00989506 /* Supporting Files */,
@@ -696,7 +801,7 @@
 				TargetAttributes = {
 					F3F0B2AD1C95099F00989506 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 63FKDZ5Q3M;
+						DevelopmentTeam = HR25JTF3LT;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -747,24 +852,32 @@
 				949013331C9F7F5700253715 /* playing_btn_pause_h@2x.png in Resources */,
 				F32FD9291C9A895000804053 /* HomeNavBarCityItem.xib in Resources */,
 				F3F0B2C11C95099F00989506 /* LaunchScreen.storyboard in Resources */,
+				F3E448051CB224F6006B62E1 /* scanLine@3x.png in Resources */,
 				949013351C9F7F5700253715 /* playing_btn_play_h@2x.png in Resources */,
+				F3E4480E1CB29321006B62E1 /* JMLogInController.xib in Resources */,
 				949013361C9F7F5700253715 /* playing_btn_play_n@2x.png in Resources */,
+				F3E448031CB224F6006B62E1 /* noticeMusic.wav in Resources */,
 				9490133D1C9F7F5700253715 /* playing_slider_thumb@2x.png in Resources */,
 				F30F7E931C950C8D0081A41E /* mapapi.bundle in Resources */,
+				F3E447F71CB21F93006B62E1 /* 海绵宝宝.jpeg in Resources */,
 				9490133B1C9F7F5700253715 /* playing_slider_play_left@2x.png in Resources */,
 				F3F0B2BE1C95099F00989506 /* Assets.xcassets in Resources */,
 				949013371C9F7F5700253715 /* playing_btn_pre_h@2x.png in Resources */,
 				949013341C9F7F5700253715 /* playing_btn_pause_n@2x.png in Resources */,
 				949013411C9F7F5700253715 /* joy.jpg in Resources */,
 				949013311C9F7F5700253715 /* playing_btn_next_h@2x.png in Resources */,
+				F3E448061CB224F6006B62E1 /* scanscanBg.png in Resources */,
 				949013441C9F7F5700253715 /* 你给我听好.mp3 in Resources */,
+				F3E448101CB29321006B62E1 /* JMRegisterController.xib in Resources */,
 				94CE0D7E1C985EDA0065D966 /* CarInfo.plist in Resources */,
 				949013451C9F7F5700253715 /* 安静.mp3 in Resources */,
 				949013321C9F7F5700253715 /* playing_btn_next_n@2x.png in Resources */,
+				F3E448041CB224F6006B62E1 /* scanLine@2x.png in Resources */,
 				949013381C9F7F5700253715 /* playing_btn_pre_n@2x.png in Resources */,
 				949013401C9F7F5700253715 /* yanzi.jpg in Resources */,
 				F3F0B2BC1C95099F00989506 /* Main.storyboard in Resources */,
 				949013231C9F7F5700253715 /* chenyixun.jpg in Resources */,
+				F3E447EB1CB16BA6006B62E1 /* VIAppointmentCell.xib in Resources */,
 				949013461C9F7F5700253715 /* 遇见.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -806,19 +919,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3E447EA1CB16BA6006B62E1 /* VIAppointmentCell.m in Sources */,
+				F3E4480F1CB29321006B62E1 /* JMRegisterController.m in Sources */,
 				F32FD9141C97CA2300804053 /* UIImage+ImageEffects.m in Sources */,
+				F3E447E51CB12608006B62E1 /* UUDatePicker_DateModel.m in Sources */,
 				94CE0D781C985ED40065D966 /* VIMyCarsController.m in Sources */,
 				948C87E41C9FD791006EB17A /* VIMusicListController.m in Sources */,
 				F32FD9281C9A895000804053 /* HomeNavBarCityItem.m in Sources */,
 				94EF6E1F1CA3918700082474 /* VIHomeMapController.mm in Sources */,
 				F32FD9331C9C108100804053 /* VIMapPoiSearch.m in Sources */,
+				F3E447EE1CB20F8C006B62E1 /* VIEwmController.m in Sources */,
 				94CE0D7A1C985ED40065D966 /* VIPersonalController.m in Sources */,
 				F32FD9361C9C1E3C00804053 /* VISearchSiteTextField.m in Sources */,
 				94CE0D7F1C985EDA0065D966 /* VICarInfoModel.m in Sources */,
+				F3DA65461CA373CE00E26AE4 /* VIAppointmentModel.m in Sources */,
+				F3E447FA1CB222E2006B62E1 /* VIEwmScanController.m in Sources */,
 				948C87E11C9FD1D5006EB17A /* VIMusicModel.m in Sources */,
 				F32FD9161C97CA2300804053 /* UIView+JMTool.m in Sources */,
 				949012211C9F7C0200253715 /* VIMusicPlayerController.m in Sources */,
+				F3E447FE1CB22357006B62E1 /* SHBQRView.m in Sources */,
+				F3E448131CB29387006B62E1 /* VIUserModel.m in Sources */,
+				F3859E7C1CA58A8B0054D309 /* VIAppointmentController.m in Sources */,
+				F3859E7F1CA58E140054D309 /* VIAppointmentComposeController.m in Sources */,
+				F3E447E41CB12608006B62E1 /* UUDatePicker.m in Sources */,
 				F3F0B2B61C95099F00989506 /* AppDelegate.mm in Sources */,
+				F3E4480D1CB29321006B62E1 /* JMLogInController.m in Sources */,
+				F3E447F51CB21F46006B62E1 /* UIImage+QRCode.m in Sources */,
 				F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */,
 				F32FD9241C97F70900804053 /* LQXSwitch.m in Sources */,
 				94CE0D791C985ED40065D966 /* VIPeccancyInfotmation.m in Sources */,
@@ -975,7 +1101,7 @@
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJ;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -997,7 +1123,7 @@
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJ;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
