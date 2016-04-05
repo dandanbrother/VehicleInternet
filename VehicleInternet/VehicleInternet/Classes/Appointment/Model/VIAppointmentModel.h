@@ -10,18 +10,23 @@
 
 @interface VIAppointmentModel : AVObject <AVSubclassing>
 
+
+@property (nonatomic,copy) NSString *carName;
+
+@property (nonatomic,copy) NSString *plateNum;
+
 @property (nonatomic,copy) NSString *carOwnerName;
 
-@property (nonatomic)  NSData *time;
+@property (nonatomic,copy)  NSString *time;
 
-@property (nonatomic,copy) NSString * carOwnerID;
+/** 标识符 */
+@property (nonatomic,copy) NSString * ownerID;
 
 @property (nonatomic,copy) NSString *petrolStation;
 
 @property (nonatomic,copy) NSString *petrolType;
 
 @property (nonatomic,copy) NSString *petrolAmount;
-
 
 
 

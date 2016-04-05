@@ -7,12 +7,27 @@
 //
 
 #import "VIPersonalController.h"
+#import "VIUserModel.h"
+#import "JMLogInController.h"
 
 @interface VIPersonalController ()
 
 @end
 
 @implementation VIPersonalController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    VIUserModel *user = [VIUserModel currentUser];
+    NSLog(@"当前用户---%@",user.username);
+    if (user == nil)
+    {
+        JMLogInController *logVC = [[JMLogInController alloc] init];
+        logVC.title = @"登录";
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:logVC];
+        [self presentViewController:nav animated:YES completion:nil];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
