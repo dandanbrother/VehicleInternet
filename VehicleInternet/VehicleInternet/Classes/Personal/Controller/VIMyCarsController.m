@@ -8,6 +8,7 @@
 
 #import "VIMyCarsController.h"
 #import "VICarInfoModel.h"
+#import "VIModifyCarController.h"
 
 @interface VIMyCarsController ()
 @property (nonatomic, strong) NSMutableArray *carList;
@@ -23,29 +24,28 @@
     return _carList;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"11");
+    if ([segue.destinationViewController isKindOfClass:[VIModifyCarController class]]) {
+        VIModifyCarController *vc = segue.destinationViewController;
+        
+        NSIndexPath *selectedIndex = [self.tableView indexPathForSelectedRow];
+        
+        vc.car = self.carList[selectedIndex.row];
+        
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSDictionary *carDict1 = [[NSDictionary alloc] initWithObjectsAndKeys:@"大众1",@"carBrand",@"苏A123",@"licenseNum",@"1112",@"engineNum", nil];
-    NSDictionary *carDict2 = [[NSDictionary alloc] initWithObjectsAndKeys:@"大众2",@"carBrand",@"苏A123",@"licenseNum",@"1112",@"engineNum", nil];
-    NSDictionary *carDict3 = [[NSDictionary alloc] initWithObjectsAndKeys:@"大众3",@"carBrand",@"苏A123",@"licenseNum",@"1112",@"engineNum", nil];
-//    VICarInfoModel *car1 = [VICarInfoModel carInfoWithDict:carDict];
-    NSArray *array = [NSArray arrayWithObjects:carDict1,carDict2,carDict3];
     
-    for (NSDictionary *dict in array) {
-        [self.carList addObject:[VICarInfoModel carInfoWithDict:dict]   ];
-    }
+    [self getDataFromLeanCloud];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -55,20 +55,35 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    NSLog(@"1");
     static NSString *ID = @"carinfo";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
+        
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
         cell.textLabel.text = [self.carList[indexPath.row] valueForKey:@"carBrand"];
     }
-    
     return cell;
 }
 
-- (IBAction)addCar:(id)sender {
-    NSDictionary *carDict1 = [[NSDictionary alloc] initWithObjectsAndKeys:@"大众1",@"carBrand",@"苏A123",@"licenseNum",@"1112",@"engineNum", nil];
-    [self.carList addObject:[VICarInfoModel carInfoWithDict:carDict1]];
-    [self.tableView reloadData];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"modify" sender:self];
 }
+
+- (void)getDataFromLeanCloud {
+    AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
+    [query includeKey:@"carBrand"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        for (NSDictionary *dict in objects) {
+            NSMutableDictionary *loc = [dict valueForKey:@"localData"];
+            
+            loc[@"objectId"] = [dict valueForKey:@"objectId"];
+            [self.carList addObject:[VICarInfoModel carInfoWithDict:loc]];
+//            NSLog(@"%@",[self.carList[0] objectForKey:@"objectId"]);
+        }
+        [self.tableView reloadData];
+    }];
+}
+
 
 @end
