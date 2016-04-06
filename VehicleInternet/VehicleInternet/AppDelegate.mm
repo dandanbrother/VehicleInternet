@@ -10,7 +10,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "VIAppointmentModel.h"
 #import "VIUserModel.h"
-
+#import "VICarInfoModel.h"
 
 
 @interface AppDelegate ()
@@ -69,7 +69,7 @@
     /** 子类注册 */
     [VIAppointmentModel registerSubclass];
     [VIUserModel registerSubclass];
-
+    [VICarInfoModel registerSubclass];
 
     
 }

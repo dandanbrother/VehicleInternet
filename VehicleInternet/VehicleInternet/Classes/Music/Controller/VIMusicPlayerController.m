@@ -69,15 +69,7 @@ static int time2 = 0;
     [self BottomView];
     
     self.currentPage = page;
-    NSLog(@"didload");
-    
-    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        self.currentTime = [user objectForKey:@"time"];
-        [self.player setCurrentTime:[self.currentTime floatValue]];
-    });
-    
+
     [self reloadData];
     
 }
@@ -108,12 +100,6 @@ static int time2 = 0;
     
     //设置当前的时间
     self.player.currentTime = 0;
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        self.player.currentTime = [self.currentTime floatValue];
-
-    });
     
     
     //设置代理
