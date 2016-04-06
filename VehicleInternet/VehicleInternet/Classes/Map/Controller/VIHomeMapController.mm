@@ -23,7 +23,7 @@
 #import "VISearchSiteTextField.h"
 #import "VIMusicPlayerController.h"
 
-@interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UITabBarControllerDelegate>
+@interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
 @property (nonatomic,strong) BMKMapView *mapView;
 
@@ -53,7 +53,6 @@
 
 @property (nonatomic,strong) UITableView *poiMatchTableView;
 
-@property (nonatomic, strong) AVAudioPlayer *player;
 
 
 - (IBAction)queryPathBtnClicked:(id)sender;
@@ -132,25 +131,8 @@
     {
         NSLog(@"反geo检索发送失败");
     }
-   
-    UITabBarController *vc = self.tabBarController;
-    vc.delegate = self;
-    [self setupMusicPlayer];
-    
 
 }
-
-#pragma mark - UITabBarControllerDelegate
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    if (tabBarController.selectedIndex == 2) {
-        float currentTime = self.player.currentTime;
-        NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-        [user setObject:[NSNumber numberWithFloat:currentTime] forKey:@"time"];
-        [self.player stop];
-
-    }
-}
-
 
 #pragma mark - 初始化
 /**
@@ -617,24 +599,6 @@
     
     
 
-    
-}
-
-- (void)setupMusicPlayer {
-    //后台播放
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setActive:YES error:nil];
-    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
-    
-    //创建播放器
-    NSString *path = [NSString stringWithFormat:@"%@/安静.mp3", [[NSBundle mainBundle] resourcePath]];
-    NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-    [self.player prepareToPlay];
-    self.player.volume = 0.5;
-    self.player.currentTime = 0;
-    self.player.numberOfLoops = -1;
-    [self.player play];
     
 }
 

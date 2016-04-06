@@ -10,6 +10,8 @@
 
 @implementation VICarInfoModel
 
+@dynamic carBrand,symbol,model,licenseNum,engineNum,doorsNum,seatsNum,mileage,petrol,isEngineGood,isTransmissionGood,isLightGood;
+
 - (instancetype)initWithDict:(NSDictionary *)dictionary {
     if (self = [super init]) {
 
@@ -23,5 +25,8 @@
     return [[self alloc] initWithDict:dict];
 }
 
++ (NSString *)parseClassName {
+    return @"VICarInfoModel";
+}
 
 @end

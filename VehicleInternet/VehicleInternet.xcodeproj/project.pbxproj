@@ -30,10 +30,11 @@
 		949013441C9F7F5700253715 /* 你给我听好.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 949013201C9F7F5700253715 /* 你给我听好.mp3 */; };
 		949013451C9F7F5700253715 /* 安静.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 949013211C9F7F5700253715 /* 安静.mp3 */; };
 		949013461C9F7F5700253715 /* 遇见.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 949013221C9F7F5700253715 /* 遇见.mp3 */; };
+		949B0F691CB3E4F1007E3592 /* VIAddCarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949B0F681CB3E4F1007E3592 /* VIAddCarController.m */; };
+		949C45FC1CB5033F00DD8C97 /* VIModifyCarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949C45FB1CB5033F00DD8C97 /* VIModifyCarController.m */; };
 		94CE0D781C985ED40065D966 /* VIMyCarsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D731C985ED40065D966 /* VIMyCarsController.m */; };
 		94CE0D791C985ED40065D966 /* VIPeccancyInfotmation.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D751C985ED40065D966 /* VIPeccancyInfotmation.m */; };
 		94CE0D7A1C985ED40065D966 /* VIPersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D771C985ED40065D966 /* VIPersonalController.m */; };
-		94CE0D7E1C985EDA0065D966 /* CarInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94CE0D7B1C985EDA0065D966 /* CarInfo.plist */; };
 		94CE0D7F1C985EDA0065D966 /* VICarInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D7D1C985EDA0065D966 /* VICarInfoModel.m */; };
 		94EF6E1F1CA3918700082474 /* VIHomeMapController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94EF6E1E1CA3918700082474 /* VIHomeMapController.mm */; };
 		F30F7E931C950C8D0081A41E /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F30F7E921C950C8D0081A41E /* mapapi.bundle */; };
@@ -149,13 +150,16 @@
 		949013201C9F7F5700253715 /* 你给我听好.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "你给我听好.mp3"; sourceTree = "<group>"; };
 		949013211C9F7F5700253715 /* 安静.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "安静.mp3"; sourceTree = "<group>"; };
 		949013221C9F7F5700253715 /* 遇见.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "遇见.mp3"; sourceTree = "<group>"; };
+		949B0F671CB3E4F1007E3592 /* VIAddCarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIAddCarController.h; sourceTree = "<group>"; };
+		949B0F681CB3E4F1007E3592 /* VIAddCarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIAddCarController.m; sourceTree = "<group>"; };
+		949C45FA1CB5033F00DD8C97 /* VIModifyCarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIModifyCarController.h; sourceTree = "<group>"; };
+		949C45FB1CB5033F00DD8C97 /* VIModifyCarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIModifyCarController.m; sourceTree = "<group>"; };
 		94CE0D721C985ED40065D966 /* VIMyCarsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMyCarsController.h; sourceTree = "<group>"; };
 		94CE0D731C985ED40065D966 /* VIMyCarsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMyCarsController.m; sourceTree = "<group>"; };
 		94CE0D741C985ED40065D966 /* VIPeccancyInfotmation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPeccancyInfotmation.h; sourceTree = "<group>"; };
 		94CE0D751C985ED40065D966 /* VIPeccancyInfotmation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPeccancyInfotmation.m; sourceTree = "<group>"; };
 		94CE0D761C985ED40065D966 /* VIPersonalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPersonalController.h; sourceTree = "<group>"; };
 		94CE0D771C985ED40065D966 /* VIPersonalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPersonalController.m; sourceTree = "<group>"; };
-		94CE0D7B1C985EDA0065D966 /* CarInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CarInfo.plist; sourceTree = "<group>"; };
 		94CE0D7C1C985EDA0065D966 /* VICarInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICarInfoModel.h; sourceTree = "<group>"; };
 		94CE0D7D1C985EDA0065D966 /* VICarInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICarInfoModel.m; sourceTree = "<group>"; };
 		94EF6E1E1CA3918700082474 /* VIHomeMapController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VIHomeMapController.mm; sourceTree = "<group>"; };
@@ -464,12 +468,16 @@
 		F32FD9081C97CA0000804053 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				94CE0D721C985ED40065D966 /* VIMyCarsController.h */,
-				94CE0D731C985ED40065D966 /* VIMyCarsController.m */,
-				94CE0D741C985ED40065D966 /* VIPeccancyInfotmation.h */,
-				94CE0D751C985ED40065D966 /* VIPeccancyInfotmation.m */,
 				94CE0D761C985ED40065D966 /* VIPersonalController.h */,
 				94CE0D771C985ED40065D966 /* VIPersonalController.m */,
+				94CE0D721C985ED40065D966 /* VIMyCarsController.h */,
+				94CE0D731C985ED40065D966 /* VIMyCarsController.m */,
+				949B0F671CB3E4F1007E3592 /* VIAddCarController.h */,
+				949B0F681CB3E4F1007E3592 /* VIAddCarController.m */,
+				949C45FA1CB5033F00DD8C97 /* VIModifyCarController.h */,
+				949C45FB1CB5033F00DD8C97 /* VIModifyCarController.m */,
+				94CE0D741C985ED40065D966 /* VIPeccancyInfotmation.h */,
+				94CE0D751C985ED40065D966 /* VIPeccancyInfotmation.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -477,7 +485,6 @@
 		F32FD9091C97CA0000804053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				94CE0D7B1C985EDA0065D966 /* CarInfo.plist */,
 				94CE0D7C1C985EDA0065D966 /* VICarInfoModel.h */,
 				94CE0D7D1C985EDA0065D966 /* VICarInfoModel.m */,
 			);
@@ -869,7 +876,6 @@
 				F3E448061CB224F6006B62E1 /* scanscanBg.png in Resources */,
 				949013441C9F7F5700253715 /* 你给我听好.mp3 in Resources */,
 				F3E448101CB29321006B62E1 /* JMRegisterController.xib in Resources */,
-				94CE0D7E1C985EDA0065D966 /* CarInfo.plist in Resources */,
 				949013451C9F7F5700253715 /* 安静.mp3 in Resources */,
 				949013321C9F7F5700253715 /* playing_btn_next_n@2x.png in Resources */,
 				F3E448041CB224F6006B62E1 /* scanLine@2x.png in Resources */,
@@ -930,6 +936,7 @@
 				F32FD9331C9C108100804053 /* VIMapPoiSearch.m in Sources */,
 				F3E447EE1CB20F8C006B62E1 /* VIEwmController.m in Sources */,
 				94CE0D7A1C985ED40065D966 /* VIPersonalController.m in Sources */,
+				949B0F691CB3E4F1007E3592 /* VIAddCarController.m in Sources */,
 				F32FD9361C9C1E3C00804053 /* VISearchSiteTextField.m in Sources */,
 				94CE0D7F1C985EDA0065D966 /* VICarInfoModel.m in Sources */,
 				F3DA65461CA373CE00E26AE4 /* VIAppointmentModel.m in Sources */,
@@ -937,6 +944,7 @@
 				948C87E11C9FD1D5006EB17A /* VIMusicModel.m in Sources */,
 				F32FD9161C97CA2300804053 /* UIView+JMTool.m in Sources */,
 				949012211C9F7C0200253715 /* VIMusicPlayerController.m in Sources */,
+				949C45FC1CB5033F00DD8C97 /* VIModifyCarController.m in Sources */,
 				F3E447FE1CB22357006B62E1 /* SHBQRView.m in Sources */,
 				F3E448131CB29387006B62E1 /* VIUserModel.m in Sources */,
 				F3859E7C1CA58A8B0054D309 /* VIAppointmentController.m in Sources */,
