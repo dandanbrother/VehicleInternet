@@ -36,6 +36,10 @@
 		94CE0D791C985ED40065D966 /* VIPeccancyInfotmation.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D751C985ED40065D966 /* VIPeccancyInfotmation.m */; };
 		94CE0D7A1C985ED40065D966 /* VIPersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D771C985ED40065D966 /* VIPersonalController.m */; };
 		94CE0D7F1C985EDA0065D966 /* VICarInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D7D1C985EDA0065D966 /* VICarInfoModel.m */; };
+		94E005FA1CB627D100684362 /* VIMyCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E005F91CB627D100684362 /* VIMyCarCell.m */; };
+		94E005FC1CB627EB00684362 /* VIMyCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E005FB1CB627EB00684362 /* VIMyCarCell.xib */; };
+		94E006001CB630E600684362 /* VISettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E005FE1CB630E600684362 /* VISettingController.m */; };
+		94E006011CB630E600684362 /* VISettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E005FF1CB630E600684362 /* VISettingController.xib */; };
 		94EF6E1F1CA3918700082474 /* VIHomeMapController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94EF6E1E1CA3918700082474 /* VIHomeMapController.mm */; };
 		F30F7E931C950C8D0081A41E /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F30F7E921C950C8D0081A41E /* mapapi.bundle */; };
 		F30F7F001C97A8B20081A41E /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -166,6 +170,12 @@
 		94CE0D771C985ED40065D966 /* VIPersonalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPersonalController.m; sourceTree = "<group>"; };
 		94CE0D7C1C985EDA0065D966 /* VICarInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICarInfoModel.h; sourceTree = "<group>"; };
 		94CE0D7D1C985EDA0065D966 /* VICarInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICarInfoModel.m; sourceTree = "<group>"; };
+		94E005F81CB627D100684362 /* VIMyCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMyCarCell.h; sourceTree = "<group>"; };
+		94E005F91CB627D100684362 /* VIMyCarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMyCarCell.m; sourceTree = "<group>"; };
+		94E005FB1CB627EB00684362 /* VIMyCarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIMyCarCell.xib; sourceTree = "<group>"; };
+		94E005FD1CB630E600684362 /* VISettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISettingController.h; sourceTree = "<group>"; };
+		94E005FE1CB630E600684362 /* VISettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISettingController.m; sourceTree = "<group>"; };
+		94E005FF1CB630E600684362 /* VISettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VISettingController.xib; sourceTree = "<group>"; };
 		94EF6E1E1CA3918700082474 /* VIHomeMapController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VIHomeMapController.mm; sourceTree = "<group>"; };
 		F30F7E921C950C8D0081A41E /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = VehicleInternet/Framework/BaiduMap/BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		F30F7EA81C9538BF0081A41E /* VIHomeMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIHomeMapController.h; sourceTree = "<group>"; };
@@ -534,6 +544,9 @@
 		F32FD90A1C97CA0000804053 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				94E005F81CB627D100684362 /* VIMyCarCell.h */,
+				94E005F91CB627D100684362 /* VIMyCarCell.m */,
+				94E005FB1CB627EB00684362 /* VIMyCarCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -594,6 +607,9 @@
 				F3E4480A1CB29321006B62E1 /* JMRegisterController.h */,
 				F3E4480B1CB29321006B62E1 /* JMRegisterController.m */,
 				F3E4480C1CB29321006B62E1 /* JMRegisterController.xib */,
+				94E005FD1CB630E600684362 /* VISettingController.h */,
+				94E005FE1CB630E600684362 /* VISettingController.m */,
+				94E005FF1CB630E600684362 /* VISettingController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -908,9 +924,11 @@
 				F3F0B2BE1C95099F00989506 /* Assets.xcassets in Resources */,
 				949013371C9F7F5700253715 /* playing_btn_pre_h@2x.png in Resources */,
 				949013341C9F7F5700253715 /* playing_btn_pause_n@2x.png in Resources */,
+				94E005FC1CB627EB00684362 /* VIMyCarCell.xib in Resources */,
 				949013411C9F7F5700253715 /* joy.jpg in Resources */,
 				949013311C9F7F5700253715 /* playing_btn_next_h@2x.png in Resources */,
 				949013441C9F7F5700253715 /* 你给我听好.mp3 in Resources */,
+				94E006011CB630E600684362 /* VISettingController.xib in Resources */,
 				F3E448101CB29321006B62E1 /* JMRegisterController.xib in Resources */,
 				F317A3461CB620CB00394F65 /* scanLine@2x.png in Resources */,
 				949013451C9F7F5700253715 /* 安静.mp3 in Resources */,
@@ -989,10 +1007,12 @@
 				F3E448131CB29387006B62E1 /* VIUserModel.m in Sources */,
 				F3859E7C1CA58A8B0054D309 /* VIAppointmentController.m in Sources */,
 				F3859E7F1CA58E140054D309 /* VIAppointmentComposeController.m in Sources */,
+				94E005FA1CB627D100684362 /* VIMyCarCell.m in Sources */,
 				F3E447E41CB12608006B62E1 /* UUDatePicker.m in Sources */,
 				F3F0B2B61C95099F00989506 /* AppDelegate.mm in Sources */,
 				F3E4480D1CB29321006B62E1 /* JMLogInController.m in Sources */,
 				F3E447F51CB21F46006B62E1 /* UIImage+QRCode.m in Sources */,
+				94E006001CB630E600684362 /* VISettingController.m in Sources */,
 				F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */,
 				F32FD9241C97F70900804053 /* LQXSwitch.m in Sources */,
 				94CE0D791C985ED40065D966 /* VIPeccancyInfotmation.m in Sources */,

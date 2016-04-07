@@ -82,7 +82,7 @@ static int time2 = 0;
 
 //改变数值的方法 刷新数据
 -(void)reloadData{
-    startAndStopBtn.selected = NO;
+    startAndStopBtn.selected = YES;
     self.currentPage = page;
     
     
@@ -106,16 +106,16 @@ static int time2 = 0;
     self.player.delegate = self;
         
     //
-    BOOL isPlay = [self.player prepareToPlay];
-        
-    if (isPlay) {
-        [self.player play];
-        NSLog(@"播放");
-    }else{
-            
-        NSLog(@"播放失败");
-    }
-        
+//    BOOL isPlay = [self.player prepareToPlay];
+//        
+//    if (isPlay) {
+//        [self.player play];
+//        NSLog(@"播放");
+//    }else{
+//            
+//        NSLog(@"播放失败");
+//    }
+    
     //
     CADisplayLink *display = [CADisplayLink displayLinkWithTarget:self selector:@selector(display)];
     
