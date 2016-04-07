@@ -26,8 +26,10 @@
 }
 
 - (IBAction)save:(id)sender {
+    AVUser *user = [AVUser currentUser];
+    
     if ((self.carBrand.text.length != 0 ) && (self.symbol.text.length != 0 ) && (self.model.text.length != 0 ) && (self.licenseNum.text.length != 0 ) && (self.mileage.text.length != 0 ) && (self.petrol.text.length != 0 )) {
-        NSLog(@"1");
+        
         VICarInfoModel *model = [VICarInfoModel object];
         model.carBrand = self.carBrand.text;
         model.symbol = self.symbol.text;
@@ -35,6 +37,8 @@
         model.licenseNum = self.licenseNum.text;
         model.mileage = self.mileage.text;
         model.petrol = self.petrol.text;
+        model.ownerID = user.objectId;
+        NSLog(@"save %@",model.ownerID);
         [model saveInBackground];
         
         [self.navigationController popToRootViewControllerAnimated:YES];

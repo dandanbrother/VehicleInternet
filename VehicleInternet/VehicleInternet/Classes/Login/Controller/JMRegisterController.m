@@ -9,6 +9,7 @@
 #import "JMRegisterController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "VIUserModel.h"
+#import "VISettingController.h"
 
 @interface JMRegisterController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;
@@ -73,12 +74,25 @@
     VIUserModel *userModel = [VIUserModel user];// 新建 AVUser 对象实例
                 userModel.username = self.userNameTF.text;// 设置用户名
                 userModel.password =  self.passwordTF.text;// 设置密码
-//                userModel.email = self.emailTF.text;// 设置邮箱
     
                 [userModel signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (succeeded)// 注册成功
                     {
                         NSLog(@"注册成功");
+                        
+                        [VIUserModel logInWithUsernameInBackground:self.userNameTF.text password:self.passwordTF.text block:^(AVUser *user, NSError *error) {
+                            NSLog(@"%@",user);
+                            if (user) {
+                                NSLog(@"登陆成功");
+                                
+                                VISettingController *vc = [[VISettingController alloc] init];
+                                [self.navigationController pushViewController:vc animated:YES];
+                            } else {
+                                NSLog(@"登陆失败");
+                            }
+                            
+                        }];
+                        
                     } else { //注册失败
                         NSLog(@"注册失败");
                     }

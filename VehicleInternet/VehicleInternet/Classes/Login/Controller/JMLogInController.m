@@ -10,6 +10,7 @@
 #import "JMRegisterController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "VIUserModel.h"
+#import "VISettingController.h"
 
 @interface JMLogInController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;
@@ -53,7 +54,9 @@
         if (user != nil) //登录成功
         {
             NSLog(@"登录成功---%@",user);
-            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+//            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+            VISettingController *vc = [[VISettingController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
             
         } else //登录失败
         {

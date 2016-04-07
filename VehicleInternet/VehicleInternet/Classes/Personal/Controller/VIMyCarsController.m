@@ -8,6 +8,7 @@
 
 #import "VIMyCarsController.h"
 #import "VICarInfoModel.h"
+#import "VIMyCarCell.h"
 #import "VIModifyCarController.h"
 
 @interface VIMyCarsController ()
@@ -41,6 +42,7 @@
     
     [self getDataFromLeanCloud];
     
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,15 +57,13 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSLog(@"1");
-    static NSString *ID = @"carinfo";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell) {
-        
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-        cell.textLabel.text = [self.carList[indexPath.row] valueForKey:@"carBrand"];
-    }
+    VIMyCarCell *cell = [VIMyCarCell carInfoCellWithTableView:tableView];
+    cell.carInfo = self.carList[indexPath.row];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 92;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -71,15 +71,17 @@
 }
 
 - (void)getDataFromLeanCloud {
+    AVUser *user = [AVUser currentUser];
+    NSLog(@"user %@",user.objectId);
     AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
-    [query includeKey:@"carBrand"];
+    [query whereKey:@"ownerID" equalTo:user.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         for (NSDictionary *dict in objects) {
             NSMutableDictionary *loc = [dict valueForKey:@"localData"];
             
             loc[@"objectId"] = [dict valueForKey:@"objectId"];
             [self.carList addObject:[VICarInfoModel carInfoWithDict:loc]];
-//            NSLog(@"%@",[self.carList[0] objectForKey:@"objectId"]);
+            NSLog(@"user block%@",[self.carList[0] objectForKey:@"ownerID"]);
         }
         [self.tableView reloadData];
     }];
