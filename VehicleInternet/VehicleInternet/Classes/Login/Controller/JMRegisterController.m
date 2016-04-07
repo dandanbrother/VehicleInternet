@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumTF;
 
 @property (weak, nonatomic) IBOutlet UITextField *idenCodeTF;
-@property (weak, nonatomic) IBOutlet UITextField *emailTF;
+
 
 
 - (IBAction)registerBtnClicked;
