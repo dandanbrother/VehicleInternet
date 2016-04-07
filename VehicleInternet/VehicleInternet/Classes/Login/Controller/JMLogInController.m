@@ -54,9 +54,8 @@
         if (user != nil) //登录成功
         {
             NSLog(@"登录成功---%@",user);
-//            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-            VISettingController *vc = [[VISettingController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+
             
         } else //登录失败
         {
