@@ -10,6 +10,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "VIUserModel.h"
 #import "VISettingController.h"
+#import "LCCoolHUD.h"
 
 @interface JMRegisterController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;
@@ -79,7 +80,7 @@
                     if (succeeded)// 注册成功
                     {
                         NSLog(@"注册成功");
-                        
+                        [LCCoolHUD showSuccess:@"注册成功" zoom:YES shadow:YES];
                         [VIUserModel logInWithUsernameInBackground:self.userNameTF.text password:self.passwordTF.text block:^(AVUser *user, NSError *error) {
                             NSLog(@"%@",user);
                             if (user) {
@@ -94,6 +95,8 @@
                         }];
                         
                     } else { //注册失败
+                        [LCCoolHUD showFailure:@"注册失败" zoom:YES shadow:YES];
+
                         NSLog(@"注册失败");
                     }
                 }];
