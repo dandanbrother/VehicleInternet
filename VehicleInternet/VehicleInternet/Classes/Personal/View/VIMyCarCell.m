@@ -10,7 +10,6 @@
 
 @interface VIMyCarCell ()
 @property (weak, nonatomic) IBOutlet UILabel *carBrand;
-@property (weak, nonatomic) IBOutlet UILabel *model;
 @property (weak, nonatomic) IBOutlet UILabel *licenseNum;
 @property (weak, nonatomic) IBOutlet UILabel *mileage;
 @property (weak, nonatomic) IBOutlet UILabel *petrol;
@@ -22,7 +21,6 @@
 - (void)setCarInfo:(VICarInfoModel *)carInfo {
     _carInfo = carInfo;
     self.carBrand.text = carInfo.carBrand;
-    self.model.text = carInfo.model;
     self.licenseNum.text = carInfo.licenseNum;
     self.mileage.text = carInfo.mileage;
     self.petrol.text = carInfo.petrol;

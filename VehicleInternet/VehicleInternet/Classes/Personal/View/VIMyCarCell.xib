@@ -27,26 +27,8 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSj-4b-mh2">
-                        <rect key="frame" x="48" y="37" width="91" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpl-Za-UAy">
-                        <rect key="frame" x="48" y="66" width="91" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiR-zv-1Tp">
-                        <rect key="frame" x="207" y="40" width="91" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGO-Yv-BCk">
-                        <rect key="frame" x="207" y="66" width="91" height="21"/>
+                        <rect key="frame" x="56" y="66" width="91" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -54,25 +36,33 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fa-automobile.png" translatesAutoresizingMaskIntoConstraints="NO" id="y46-YB-rgr">
                         <rect key="frame" x="12" y="4" width="27" height="25"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fa-group (alias).png" translatesAutoresizingMaskIntoConstraints="NO" id="7Uq-RE-aO1">
-                        <rect key="frame" x="12" y="39" width="27" height="22"/>
-                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fa-dashboard (alias).png" translatesAutoresizingMaskIntoConstraints="NO" id="7ve-3O-UtR">
                         <rect key="frame" x="12" y="65" width="27" height="22"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fa-flickr.png" translatesAutoresizingMaskIntoConstraints="NO" id="EzO-8o-SYR">
-                        <rect key="frame" x="169" y="40" width="27" height="22"/>
+                        <rect key="frame" x="12" y="39" width="27" height="22"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Group.png" translatesAutoresizingMaskIntoConstraints="NO" id="0wS-Oy-Mwo">
-                        <rect key="frame" x="169" y="65" width="27" height="22"/>
+                        <rect key="frame" x="161" y="39" width="27" height="22"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGO-Yv-BCk">
+                        <rect key="frame" x="205" y="40" width="91" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpl-Za-UAy">
+                        <rect key="frame" x="56" y="40" width="91" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="carBrand" destination="ZUi-cY-wq6" id="AzQ-AO-OfC"/>
                 <outlet property="licenseNum" destination="dpl-Za-UAy" id="Blw-ml-FST"/>
                 <outlet property="mileage" destination="fiR-zv-1Tp" id="7an-sq-BvF"/>
-                <outlet property="model" destination="cSj-4b-mh2" id="mbt-KU-Glp"/>
                 <outlet property="petrol" destination="dGO-Yv-BCk" id="n3D-P2-rAF"/>
             </connections>
             <point key="canvasLocation" x="324" y="140"/>
@@ -83,6 +73,5 @@
         <image name="fa-automobile.png" width="26" height="21"/>
         <image name="fa-dashboard (alias).png" width="23" height="18"/>
         <image name="fa-flickr.png" width="21" height="21"/>
-        <image name="fa-group (alias).png" width="25" height="23"/>
     </resources>
 </document>

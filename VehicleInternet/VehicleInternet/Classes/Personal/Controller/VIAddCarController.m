@@ -11,8 +11,6 @@
 
 @interface VIAddCarController ()
 @property (weak, nonatomic) IBOutlet UITextField *carBrand;
-@property (weak, nonatomic) IBOutlet UITextField *symbol;
-@property (weak, nonatomic) IBOutlet UITextField *model;
 @property (weak, nonatomic) IBOutlet UITextField *licenseNum;
 @property (weak, nonatomic) IBOutlet UITextField *mileage;
 @property (weak, nonatomic) IBOutlet UITextField *petrol;
@@ -28,12 +26,10 @@
 - (IBAction)save:(id)sender {
     AVUser *user = [AVUser currentUser];
     
-    if ((self.carBrand.text.length != 0 ) && (self.symbol.text.length != 0 ) && (self.model.text.length != 0 ) && (self.licenseNum.text.length != 0 ) && (self.mileage.text.length != 0 ) && (self.petrol.text.length != 0 )) {
+    if ((self.carBrand.text.length != 0 ) && (self.licenseNum.text.length != 0 ) && (self.mileage.text.length != 0 ) && (self.petrol.text.length != 0 )) {
         
         VICarInfoModel *model = [VICarInfoModel object];
         model.carBrand = self.carBrand.text;
-        model.symbol = self.symbol.text;
-        model.model = self.model.text;
         model.licenseNum = self.licenseNum.text;
         model.mileage = self.mileage.text;
         model.petrol = self.petrol.text;
