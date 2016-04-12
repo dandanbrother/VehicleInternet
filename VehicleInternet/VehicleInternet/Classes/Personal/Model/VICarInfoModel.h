@@ -21,15 +21,6 @@
 */
 @property (nonatomic,copy) NSString *carBrand;
 
-/**
- *  标志
- */
-@property (nonatomic,copy) NSString *symbol;
-
-/**
- *  型号
- */
-@property (nonatomic,copy) NSString *model;
 
 /**
  *  车牌号

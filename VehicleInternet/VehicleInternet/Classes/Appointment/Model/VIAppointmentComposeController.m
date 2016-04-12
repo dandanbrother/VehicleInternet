@@ -26,6 +26,7 @@
 
 
 #define PTypeTag 1001
+#define CInfoTag 1002
 
 @interface VIAppointmentComposeController () <UITextFieldDelegate,ZJAlertListViewDelegate,ZJAlertListViewDatasource>
 @property (weak, nonatomic) IBOutlet UITextField *timeTF;
@@ -70,6 +71,8 @@
     // Do any additional setup after loading the view.
   
     
+    
+    
     [self setupCustomView];
 }
 
@@ -108,6 +111,7 @@
                 NSIndexPath *selectedIndexPath = self.selectedIndexPath;
                 textField.text = self.petrolTypes[selectedIndexPath.row];
                 [alertList dismiss];
+                self.selectedIndexPath = nil;
                 
             }];
         }
@@ -125,6 +129,24 @@
 #pragma mark - 其他方法
 - (IBAction)carInfoBtnClicked
 {
+    
+    
+    ZJAlertListView *alertList = [[ZJAlertListView alloc] initWithFrame:CGRectMake(0, 0, 250, 300)];
+    alertList.tag = CInfoTag;
+    alertList.titleLabel.text = @"加油类型";
+    alertList.datasource = self;
+    alertList.delegate = self;
+    [alertList show];
+    //点击确定的时候，调用它去做点事情
+    [alertList setDoneButtonWithBlock:^{
+        
+        NSIndexPath *selectedIndexPath = self.selectedIndexPath;
+        
+        [alertList dismiss];
+        
+    }];
+
+    
     AVUser *user = [AVUser currentUser];
     AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
     [query whereKey:@"ownerID" equalTo:user.objectId];
@@ -182,6 +204,9 @@
 {
     if (tableView.tag == PTypeTag) {
         return self.petrolTypes.count;
+    }else if (tableView.tag == CInfoTag)
+    {
+        return 10;
     }else
     {
         return 0;
@@ -190,24 +215,54 @@
 
 - (UITableViewCell *)alertListTableView:(ZJAlertListView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"identifier";
-    UITableViewCell *cell = [tableView dequeueReusableAlertListCellWithIdentifier:identifier];
-    if (nil == cell)
+    
+    if (tableView.tag == PTypeTag) {
+        static NSString *identifier = @"identifier";
+        UITableViewCell *cell = [tableView dequeueReusableAlertListCellWithIdentifier:identifier];
+        if (nil == cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        if ( self.selectedIndexPath && NSOrderedSame == [self.selectedIndexPath compare:indexPath])
+        {
+            cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_red_on.jpg"];
+        }
+        else
+        {
+            cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_off"];
+        }
+        
+        cell.textLabel.text = self.petrolTypes[indexPath.row];
+        
+        return cell;
+        
+    }else if (tableView.tag == CInfoTag)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
-    if ( self.selectedIndexPath && NSOrderedSame == [self.selectedIndexPath compare:indexPath])
+        static NSString *identifier1 = @"identifier1";
+        UITableViewCell *cell = [tableView dequeueReusableAlertListCellWithIdentifier:identifier1];
+        if (nil == cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier1];
+        }
+        if ( self.selectedIndexPath && NSOrderedSame == [self.selectedIndexPath compare:indexPath])
+        {
+            cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_red_on.jpg"];
+        }
+        else
+        {
+            cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_off"];
+        }
+        
+        cell.textLabel.text = @"sss";
+        cell.detailTextLabel.text = @"aaa";
+        
+        
+        return cell;
+    }else
     {
-        cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_red_on.jpg"];
-    }
-    else
-    {
-        cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_off"];
+        return nil;
     }
     
-    cell.textLabel.text = self.petrolTypes[indexPath.row];
-    
-    return cell;
 }
 
 - (void)alertListTableView:(ZJAlertListView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
