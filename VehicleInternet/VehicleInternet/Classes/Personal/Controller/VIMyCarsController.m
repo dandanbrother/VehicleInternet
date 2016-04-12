@@ -21,7 +21,7 @@
 #pragma mark - 懒加载
 - (NSMutableArray *)carList{
     if (!_carList) {
-        self.carList = [NSMutableArray array];
+        _carList = [NSMutableArray array];
     }
     return _carList;
 }
