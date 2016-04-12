@@ -33,7 +33,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *pretrolTypeTF;
 @property (weak, nonatomic) IBOutlet UITextField *petrolAmountTF;
+@property (weak, nonatomic) IBOutlet UILabel *carBrandLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *carNumLabel;
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 
 @property (nonatomic, strong) NSArray *petrolTypes;
@@ -69,8 +72,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  
     
+    //添加导航栏左面按钮
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"退出" style:UIBarButtonItemStyleDone target:self action:@selector(backBtnClicked)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    
+  
+    [self loadCarInfo];
     
     
     [self setupCustomView];
@@ -79,6 +88,10 @@
 #pragma mark - 初始化
 - (void)setupCustomView
 {
+    //设置用户名
+    VIUserModel *user = [VIUserModel currentUser];
+    self.userNameLabel.text = user.nickName;
+    
     UUDatePicker *datePicker
     = [[UUDatePicker alloc]initWithframe:CGRectMake(0, 0, KDeviceWidth, 200)
                              PickerStyle:0
@@ -127,13 +140,17 @@
 }
 
 #pragma mark - 其他方法
+- (void)backBtnClicked
+{
+    [self.navigationController  dismissViewControllerAnimated:YES completion:nil];
+}
 - (IBAction)carInfoBtnClicked
 {
     
     
     ZJAlertListView *alertList = [[ZJAlertListView alloc] initWithFrame:CGRectMake(0, 0, 250, 300)];
     alertList.tag = CInfoTag;
-    alertList.titleLabel.text = @"加油类型";
+    alertList.titleLabel.text = @"选择车辆";
     alertList.datasource = self;
     alertList.delegate = self;
     [alertList show];
@@ -141,31 +158,15 @@
     [alertList setDoneButtonWithBlock:^{
         
         NSIndexPath *selectedIndexPath = self.selectedIndexPath;
-        
+        VICarInfoModel *model = self.carInfoArr[selectedIndexPath.row];
+        self.carBrandLabel.text = model.carBrand;
+        self.carNumLabel.text = model.licenseNum;
         [alertList dismiss];
         
     }];
 
     
-    AVUser *user = [AVUser currentUser];
-    AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
-    [query whereKey:@"ownerID" equalTo:user.objectId];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (objects.count == 0) {
-            
-        }
-        else
-        {
-        for (NSDictionary *dict in objects) {
-            NSMutableDictionary *loc = [dict valueForKey:@"localData"];
-            
-            loc[@"objectId"] = [dict valueForKey:@"objectId"];
-            [self.carInfoArr addObject:[VICarInfoModel carInfoWithDict:loc]];
-        }
-        
-        }
-    }];
-
+    
 }
 
 - (IBAction)submitBtnClicked {
@@ -199,6 +200,7 @@
 }
 
 
+
 #pragma mark - ZJAlertListViewDatasource
 - (NSInteger)alertListTableView:(ZJAlertListView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -206,7 +208,7 @@
         return self.petrolTypes.count;
     }else if (tableView.tag == CInfoTag)
     {
-        return 10;
+        return self.carInfoArr.count;
     }else
     {
         return 0;
@@ -253,8 +255,10 @@
             cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_off"];
         }
         
-        cell.textLabel.text = @"sss";
-        cell.detailTextLabel.text = @"aaa";
+        VICarInfoModel *model = self.carInfoArr[indexPath.row];
+        
+        cell.textLabel.text = model.carBrand;
+        cell.detailTextLabel.text = model.licenseNum;
         
         
         return cell;
@@ -280,4 +284,19 @@
     NSLog(@"didSelectRowAtIndexPath:%ld", (long)indexPath.row);
 }
 
+
+#pragma mark - 加载数据
+- (void)loadCarInfo
+{
+    AVUser *user = [AVUser currentUser];
+    AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
+    [query whereKey:@"ownerID" equalTo:user.objectId];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+
+            for (VICarInfoModel *model in objects) {
+                [self.carInfoArr addObject:model];
+        }
+    }];
+
+}
 @end

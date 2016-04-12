@@ -15,7 +15,7 @@
 #import "JMLogInController.h"
 #import "VIAppointmentComposeController.h"
 #import "LCCoolHUD.h"
-
+#import "VICarInfoModel.h"
 @interface VIAppointmentController ()<UITableViewDataSource,AppointmentCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
@@ -41,9 +41,26 @@
         [self presentViewController:nav animated:YES completion:nil];
     }else
     {
-        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        VIAppointmentComposeController *composeVC = (VIAppointmentComposeController*)[storyboard instantiateViewControllerWithIdentifier:@"VIAppointmentComposeController"];
-        [self.navigationController pushViewController:composeVC animated:YES];
+        //查询是否有绑定车辆
+        AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
+        [query whereKey:@"ownerID" equalTo:user.objectId];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (objects.count == 0) {
+                [LCCoolHUD showSuccess:@"请先绑定车辆!" zoom:YES shadow:YES];
+            }else
+            {
+                
+                UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                
+                VIAppointmentComposeController *composeVC = (VIAppointmentComposeController*)[storyboard instantiateViewControllerWithIdentifier:@"VIAppointmentComposeController"];
+                UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:composeVC];
+                [self.navigationController presentViewController:nav animated:YES completion:nil];
+            }
+
+        }];
+
+        
+
         
     }
 }
@@ -70,15 +87,20 @@
     AVQuery *query = [AVQuery queryWithClassName:@"VIAppointmentModel"];
     [query whereKey:@"ownerID" equalTo:user.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        
-        [self.appointments removeAllObjects];
-        
-        if (objects.count !=0 && objects !=nil) {
+
+        // 服务器有新数据
+        if (objects.count !=0 && objects !=nil &&objects.count != self.appointments.count)
+        {
+            
+            [self.appointments removeAllObjects];
             [LCCoolHUD hideInView:self.view];
             for (VIAppointmentModel *appointment in objects) {
                 [self.appointments addObject:appointment];
             }
             [self.myTableView reloadData];
+        }else //没有数据
+        {
+            [LCCoolHUD hideInView:self.view];
         }
     }];
 }
@@ -124,7 +146,8 @@
 {
 
     VIEwmController *ewmVC = [VIEwmController ewmShownWithAppointment:appointment];
-    [self.navigationController pushViewController:ewmVC animated:YES];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ewmVC];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

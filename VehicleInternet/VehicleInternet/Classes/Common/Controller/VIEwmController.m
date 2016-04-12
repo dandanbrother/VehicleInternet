@@ -34,6 +34,11 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    //添加导航栏左面按钮
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"退出" style:UIBarButtonItemStyleDone target:self action:@selector(backBtnClicked)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    
     
     NSDictionary *dict = @{
                            @"carName" : self.appointment.carName,
@@ -78,7 +83,10 @@
     
 }
 
-
+- (void)backBtnClicked
+{
+    [self.navigationController  dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 @end
