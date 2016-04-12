@@ -661,6 +661,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="PI5-nh-iba" id="4ls-TD-OGE"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="里程数" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6a-PK-49l">
                                 <rect key="frame" x="0.0" y="148" width="375" height="30"/>
@@ -715,7 +718,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2e-lG-tLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2150.5" y="2136.5"/>
+            <point key="canvasLocation" x="2255.5" y="2125.5"/>
         </scene>
         <!--编辑车辆-->
         <scene sceneID="Rjl-cX-PGN">
@@ -738,6 +741,9 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2Dd-oP-hNV" id="4nN-Zu-8iT"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="里程数" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crc-fS-ii7">
                                 <rect key="frame" x="0.0" y="148" width="375" height="30"/>

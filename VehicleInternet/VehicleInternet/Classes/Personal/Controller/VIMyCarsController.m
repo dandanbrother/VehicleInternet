@@ -136,7 +136,6 @@
         }
         [self.tableView reloadData];
     }];
-    NSLog(@"%@",self.carList);
 }
 
 
