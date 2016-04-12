@@ -54,6 +54,7 @@
 		94E005FC1CB627EB00684362 /* VIMyCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E005FB1CB627EB00684362 /* VIMyCarCell.xib */; };
 		94E006001CB630E600684362 /* VISettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E005FE1CB630E600684362 /* VISettingController.m */; };
 		94E006011CB630E600684362 /* VISettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E005FF1CB630E600684362 /* VISettingController.xib */; };
+		94E8AA301CBCF041003A371F /* VIModifyPersonalInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E8AA2F1CBCF041003A371F /* VIModifyPersonalInfoController.m */; };
 		94EF6E1F1CA3918700082474 /* VIHomeMapController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94EF6E1E1CA3918700082474 /* VIHomeMapController.mm */; };
 		F307251E1CBCC59B004502AB /* ZJAlertListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F307251D1CBCC59B004502AB /* ZJAlertListView.m */; };
 		F30725201CBCC896004502AB /* dx_checkbox_gray_on.png in Resources */ = {isa = PBXBuildFile; fileRef = F307251F1CBCC896004502AB /* dx_checkbox_gray_on.png */; };
@@ -225,6 +226,8 @@
 		94E005FD1CB630E600684362 /* VISettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISettingController.h; sourceTree = "<group>"; };
 		94E005FE1CB630E600684362 /* VISettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISettingController.m; sourceTree = "<group>"; };
 		94E005FF1CB630E600684362 /* VISettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VISettingController.xib; sourceTree = "<group>"; };
+		94E8AA2E1CBCF041003A371F /* VIModifyPersonalInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIModifyPersonalInfoController.h; sourceTree = "<group>"; };
+		94E8AA2F1CBCF041003A371F /* VIModifyPersonalInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIModifyPersonalInfoController.m; sourceTree = "<group>"; };
 		94EF6E1E1CA3918700082474 /* VIHomeMapController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VIHomeMapController.mm; sourceTree = "<group>"; };
 		F307251C1CBCC59B004502AB /* ZJAlertListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJAlertListView.h; sourceTree = "<group>"; };
 		F307251D1CBCC59B004502AB /* ZJAlertListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJAlertListView.m; sourceTree = "<group>"; };
@@ -636,6 +639,8 @@
 			children = (
 				94CE0D761C985ED40065D966 /* VIPersonalController.h */,
 				94CE0D771C985ED40065D966 /* VIPersonalController.m */,
+				94E8AA2E1CBCF041003A371F /* VIModifyPersonalInfoController.h */,
+				94E8AA2F1CBCF041003A371F /* VIModifyPersonalInfoController.m */,
 				94CE0D721C985ED40065D966 /* VIMyCarsController.h */,
 				94CE0D731C985ED40065D966 /* VIMyCarsController.m */,
 				949B0F671CB3E4F1007E3592 /* VIAddCarController.h */,
@@ -1204,6 +1209,7 @@
 				F3E4480D1CB29321006B62E1 /* JMLogInController.m in Sources */,
 				F3E447F51CB21F46006B62E1 /* UIImage+QRCode.m in Sources */,
 				94E006001CB630E600684362 /* VISettingController.m in Sources */,
+				94E8AA301CBCF041003A371F /* VIModifyPersonalInfoController.m in Sources */,
 				F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */,
 				F37221AA1CB64A18005F124C /* JGProgressHUDRingIndicatorView.m in Sources */,
 				F32FD9241C97F70900804053 /* LQXSwitch.m in Sources */,
