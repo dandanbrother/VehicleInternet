@@ -26,6 +26,7 @@
     self.licenseNum.text = carInfo.licenseNum;
     self.mileage.text = carInfo.mileage;
     self.petrol.text = carInfo.petrol;
+    
 }
 
 + (instancetype)carInfoCellWithTableView:(UITableView *)tableView {

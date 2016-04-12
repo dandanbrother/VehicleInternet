@@ -27,7 +27,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:253/255.0 green:130/255.0 blue:36/255.0 alpha:1]];
+    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
     
+    //导航栏白色字体
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+
     //初始化leancloud
     [self leancloudSetupWithLaunchOptions:launchOptions];
     //初始化百度地图

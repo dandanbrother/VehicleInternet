@@ -54,6 +54,7 @@
 @property (nonatomic,strong) UITableView *poiMatchTableView;
 
 
+@property (weak, nonatomic) IBOutlet UIButton *queryPathBtn;
 
 - (IBAction)queryPathBtnClicked:(id)sender;
 
@@ -142,7 +143,7 @@
 {
     //初始化地图
     self.mapView = [[BMKMapView alloc] init];
-    self.mapView.frame = CGRectMake(0, self.destinationTF.bottom + 5, KDeviceWidth, KDeviceHeight - 49 - 5 - self.destinationTF.bottom);
+    self.mapView.frame = CGRectMake(0, 64, KDeviceWidth, KDeviceHeight - 64);
 
     self.mapView.zoomEnabled = YES;//允许Zoom
     self.mapView.zoomLevel = 14;
@@ -150,7 +151,7 @@
     self.mapView.userTrackingMode = BMKUserTrackingModeFollow;
     self.mapView.showsUserLocation = YES;
     self.mapView.mapType = BMKMapTypeStandard;//地图类型为标准
-    [self.view addSubview:self.mapView];
+    [self.view insertSubview:self.mapView belowSubview:self.destinationTF];
     //定位图层自定义样式参数
     BMKLocationViewDisplayParam *displayParam = [[BMKLocationViewDisplayParam alloc]init];
     displayParam.isRotateAngleValid = NO;//跟随态旋转角度是否生效
@@ -184,6 +185,10 @@
     switchLabel.font = [UIFont systemFontOfSize:12];
     switchLabel.text = @"显示加油站";
     switchLabel.textColor = [UIColor redColor];
+    
+    //设置查询按钮
+    self.queryPathBtn.layer.cornerRadius = 8;
+    self.queryPathBtn.alpha = 0.7;
 
 }
 /**

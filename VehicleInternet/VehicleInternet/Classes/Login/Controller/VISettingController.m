@@ -8,6 +8,7 @@
 
 #import "VISettingController.h"
 #import "VIUserModel.h"
+#import "LCCoolHUD.h"
 
 @interface VISettingController ()
 @property (weak, nonatomic) IBOutlet UITextField *nickName;
@@ -28,13 +29,13 @@
 
 - (IBAction)finish:(id)sender {
     if (!self.nickName.text.length) {
-        NSLog(@"昵称不能为空");
+        [LCCoolHUD showFailure:@"昵称不能为空" zoom:YES shadow:YES];
     } else {
-        NSLog(@"成功");
         VIUserModel *user = [VIUserModel currentUser];
         user.nickName = self.nickName.text;
         [user saveInBackground];
         NSLog(@"user %@",user.nickName);
+        [LCCoolHUD showSuccess:@"设置成功" zoom:YES shadow:YES];
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
         
     }
