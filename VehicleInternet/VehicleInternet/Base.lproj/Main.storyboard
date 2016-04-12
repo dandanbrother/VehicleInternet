@@ -427,9 +427,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="创建预约" id="1DA-Fi-Qyn"/>
                     <connections>
+                        <outlet property="carBrandLabel" destination="F93-CU-F6M" id="c2m-db-mdg"/>
+                        <outlet property="carNumLabel" destination="5Oo-ZD-H5U" id="QT5-x2-dPU"/>
                         <outlet property="petrolAmountTF" destination="wmK-ch-dmS" id="Cxl-yv-F6H"/>
                         <outlet property="pretrolTypeTF" destination="2Ue-ub-H9o" id="eYK-Vt-rCo"/>
                         <outlet property="timeTF" destination="TMh-dX-yrZ" id="sS7-Ay-cTh"/>
+                        <outlet property="userNameLabel" destination="E5i-Mw-pvr" id="SJJ-de-lbp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xw9-M8-yi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
