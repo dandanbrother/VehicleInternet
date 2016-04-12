@@ -11,9 +11,20 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "UUDatePicker.h"
 #import "VIUserModel.h"
+#import "ZJAlertListView.h"
 
-@interface VIAppointmentComposeController () <UITextFieldDelegate>
+
+#define PTypeTag 1001
+
+@interface VIAppointmentComposeController () <UITextFieldDelegate,ZJAlertListViewDelegate,ZJAlertListViewDatasource>
 @property (weak, nonatomic) IBOutlet UITextField *timeTF;
+
+@property (weak, nonatomic) IBOutlet UITextField *pretrolTypeTF;
+@property (weak, nonatomic) IBOutlet UITextField *petrolAmountTF;
+
+@property (nonatomic, strong) NSIndexPath *selectedIndexPath;
+
+@property (nonatomic, strong) NSArray *petrolTypes;
 
 
 - (IBAction)submitBtnClicked;
@@ -21,6 +32,16 @@
 @end
 
 @implementation VIAppointmentComposeController
+
+
+#pragma mark - 懒加载
+- (NSArray *)petrolTypes
+{
+    if (_petrolTypes == nil) {
+        _petrolTypes = @[@"90号",@"93号",@"91号"];
+    }
+    return _petrolTypes;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,7 +55,7 @@
 - (void)setupCustomView
 {
     UUDatePicker *datePicker
-    = [[UUDatePicker alloc]initWithframe:CGRectMake(0, 0, 320, 200)
+    = [[UUDatePicker alloc]initWithframe:CGRectMake(0, 0, KDeviceWidth, 200)
                              PickerStyle:0
                              didSelected:^(NSString *year,
                                            NSString *month,
@@ -50,7 +71,28 @@
 #pragma mark - UItextfieldDelegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    
+    switch (textField.tag) {
+        case 10: //加油类型
+        {
+            ZJAlertListView *alertList = [[ZJAlertListView alloc] initWithFrame:CGRectMake(0, 0, 250, 300)];
+            alertList.tag = PTypeTag;
+            alertList.titleLabel.text = @"弹框";
+            alertList.datasource = self;
+            alertList.delegate = self;
+            [alertList show];
+            //点击确定的时候，调用它去做点事情
+            [alertList setDoneButtonWithBlock:^{
+                
+                NSIndexPath *selectedIndexPath = self.selectedIndexPath;
+                textField.text = self.petrolTypes[selectedIndexPath.row];
+                [alertList dismiss];
+                
+            }];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 
@@ -83,4 +125,54 @@
 {
     [self.view endEditing:YES];
 }
+
+
+#pragma mark - ZJAlertListViewDatasource
+- (NSInteger)alertListTableView:(ZJAlertListView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (tableView.tag == PTypeTag) {
+        return self.petrolTypes.count;
+    }else
+    {
+        return 0;
+    }
+}
+
+- (UITableViewCell *)alertListTableView:(ZJAlertListView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"identifier";
+    UITableViewCell *cell = [tableView dequeueReusableAlertListCellWithIdentifier:identifier];
+    if (nil == cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    if ( self.selectedIndexPath && NSOrderedSame == [self.selectedIndexPath compare:indexPath])
+    {
+        cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_red_on.jpg"];
+    }
+    else
+    {
+        cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_off"];
+    }
+    
+    cell.textLabel.text = self.petrolTypes[indexPath.row];
+    
+    return cell;
+}
+
+- (void)alertListTableView:(ZJAlertListView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView alertListCellForRowAtIndexPath:indexPath];
+    cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_off"];
+    NSLog(@"didDeselectRowAtIndexPath:%ld", (long)indexPath.row);
+}
+
+- (void)alertListTableView:(ZJAlertListView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedIndexPath = indexPath;
+    UITableViewCell *cell = [tableView alertListCellForRowAtIndexPath:indexPath];
+    cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_red_on.jpg"];
+    NSLog(@"didSelectRowAtIndexPath:%ld", (long)indexPath.row);
+}
+
 @end
