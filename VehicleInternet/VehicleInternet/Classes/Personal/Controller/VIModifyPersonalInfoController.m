@@ -53,7 +53,7 @@
 }
 
 - (IBAction)save:(id)sender {
-    if (!self.nameText.text) {
+    if (!self.nameText.text.length) {
         [LCCoolHUD showFailure:@"昵称不能为空" zoom:YES shadow:YES];
     } else {
         _user.nickName = self.nameText.text;
