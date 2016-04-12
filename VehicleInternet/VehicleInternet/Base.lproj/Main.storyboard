@@ -376,10 +376,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ue-ub-H9o">
+                            <textField opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ue-ub-H9o">
                                 <rect key="frame" x="130" y="243" width="165" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bDi-jK-H3n" id="1xz-Ny-7vB"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wmK-ch-dmS">
                                 <rect key="frame" x="130" y="281" width="165" height="30"/>
@@ -403,6 +406,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="创建预约" id="1DA-Fi-Qyn"/>
                     <connections>
+                        <outlet property="petrolAmountTF" destination="wmK-ch-dmS" id="Cxl-yv-F6H"/>
+                        <outlet property="pretrolTypeTF" destination="2Ue-ub-H9o" id="eYK-Vt-rCo"/>
                         <outlet property="timeTF" destination="TMh-dX-yrZ" id="sS7-Ay-cTh"/>
                     </connections>
                 </viewController>
