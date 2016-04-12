@@ -12,6 +12,17 @@
 #import "UUDatePicker.h"
 #import "VIUserModel.h"
 #import "ZJAlertListView.h"
+#import "VICarInfoModel.h"
+//#import <BaiduMapAPI_Map/BMKMapView.h>
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>
+//#import <BaiduMapAPI_Map/BMKPointAnnotation.h>
+//#import <BaiduMapAPI_Map/BMKPinAnnotationView.h>
+#import <BaiduMapAPI_Search/BMKSearchBase.h>
+#import <BaiduMapAPI_Base/BMKUserLocation.h>
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>
+#import <BaiduMapAPI_Map/BMKAnnotation.h>
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
 
 
 #define PTypeTag 1001
@@ -25,6 +36,10 @@
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 
 @property (nonatomic, strong) NSArray *petrolTypes;
+
+
+@property (nonatomic,strong) NSMutableArray *carInfoArr;
+- (IBAction)carInfoBtnClicked;
 
 
 - (IBAction)submitBtnClicked;
@@ -41,6 +56,13 @@
         _petrolTypes = @[@"90号",@"93号",@"91号"];
     }
     return _petrolTypes;
+}
+- (NSMutableArray *)carInfoArr
+{
+    if (_carInfoArr == nil) {
+        _carInfoArr = [NSMutableArray array];
+    }
+    return _carInfoArr;
 }
 
 - (void)viewDidLoad {
@@ -76,7 +98,7 @@
         {
             ZJAlertListView *alertList = [[ZJAlertListView alloc] initWithFrame:CGRectMake(0, 0, 250, 300)];
             alertList.tag = PTypeTag;
-            alertList.titleLabel.text = @"弹框";
+            alertList.titleLabel.text = @"加油类型";
             alertList.datasource = self;
             alertList.delegate = self;
             [alertList show];
@@ -90,11 +112,39 @@
             }];
         }
             break;
+        case 11: //选择加油站
+        {
+            NSLog(@"选择加油站");
+        }
+            break;
         default:
             break;
     }
 }
 
+#pragma mark - 其他方法
+- (IBAction)carInfoBtnClicked
+{
+    AVUser *user = [AVUser currentUser];
+    AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
+    [query whereKey:@"ownerID" equalTo:user.objectId];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (objects.count == 0) {
+            
+        }
+        else
+        {
+        for (NSDictionary *dict in objects) {
+            NSMutableDictionary *loc = [dict valueForKey:@"localData"];
+            
+            loc[@"objectId"] = [dict valueForKey:@"objectId"];
+            [self.carInfoArr addObject:[VICarInfoModel carInfoWithDict:loc]];
+        }
+        
+        }
+    }];
+
+}
 
 - (IBAction)submitBtnClicked {
     VIUserModel *user = [VIUserModel currentUser];

@@ -14,6 +14,7 @@
 #import "VIUserModel.h"
 #import "JMLogInController.h"
 #import "VIAppointmentComposeController.h"
+#import "LCCoolHUD.h"
 
 @interface VIAppointmentController ()<UITableViewDataSource,AppointmentCellDelegate>
 
@@ -43,6 +44,7 @@
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         VIAppointmentComposeController *composeVC = (VIAppointmentComposeController*)[storyboard instantiateViewControllerWithIdentifier:@"VIAppointmentComposeController"];
         [self.navigationController pushViewController:composeVC animated:YES];
+        
     }
 }
 
@@ -57,7 +59,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     
-
+   [LCCoolHUD showLoading:@"加载数据中" inView:self.view];
     
     VIUserModel *user = [VIUserModel currentUser];
     if (user == nil) {
@@ -72,6 +74,7 @@
         [self.appointments removeAllObjects];
         
         if (objects.count !=0 && objects !=nil) {
+            [LCCoolHUD hideInView:self.view];
             for (VIAppointmentModel *appointment in objects) {
                 [self.appointments addObject:appointment];
             }
@@ -106,6 +109,7 @@
     cell.delegate = self;
     VIAppointmentModel *appointment = self.appointments[indexPath.row];
     cell.appointmentInfo = appointment;
+
     return cell;
     
 }
@@ -123,4 +127,24 @@
     [self.navigationController pushViewController:ewmVC animated:YES];
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"删除");
+        VIAppointmentModel *appointment = self.appointments[indexPath.row];
+        [appointment deleteInBackground];
+        [self.appointments removeObjectAtIndex:indexPath.row];
+        // Delete the row from the data source.
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
 @end
