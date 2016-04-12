@@ -32,19 +32,19 @@
         
         NSIndexPath *selectedIndex = [self.tableView indexPathForSelectedRow];
         
-        vc.car = self.carList[selectedIndex.row];
+        vc.car = self.carList[selectedIndex.row/2];
         
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self getDataFromLeanCloud];
+
     [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self getDataFromLeanCloud];
     
     //覆盖多余空白cell
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -59,7 +59,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return self.carList.count * 2;
 }
 
@@ -85,7 +84,6 @@
     
 }
 
-
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([cell.reuseIdentifier  isEqual: @"SOME_STUPID_ID2"]) {
         cell.alpha = 0;
@@ -108,11 +106,24 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSIndexPath *blank = [NSIndexPath indexPathForItem:indexPath.row-1 inSection:0];
+        [self.carList[indexPath.row/2] deleteInBackground];
+        [self.carList removeObjectAtIndex:indexPath.row/2];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,blank, nil] withRowAnimation:UITableViewRowAnimationLeft];
+       
+        [self.tableView reloadData];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"modify" sender:self];
+
 }
 
 - (void)getDataFromLeanCloud {
+    [self.carList removeAllObjects];
     AVUser *user = [AVUser currentUser];
     AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
     [query whereKey:@"ownerID" equalTo:user.objectId];
@@ -125,6 +136,7 @@
         }
         [self.tableView reloadData];
     }];
+    NSLog(@"%@",self.carList);
 }
 
 
