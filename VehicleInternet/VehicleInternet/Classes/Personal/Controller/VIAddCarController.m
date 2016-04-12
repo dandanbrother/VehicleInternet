@@ -38,10 +38,9 @@
         model.mileage = self.mileage.text;
         model.petrol = self.petrol.text;
         model.ownerID = user.objectId;
-        NSLog(@"save %@",model.ownerID);
         [model saveInBackground];
         
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
 
     } else {
         NSLog(@"信息不全");
