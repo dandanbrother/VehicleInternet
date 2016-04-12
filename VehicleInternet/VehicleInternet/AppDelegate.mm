@@ -30,6 +30,8 @@
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:253/255.0 green:130/255.0 blue:36/255.0 alpha:1]];
     [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
     
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:83/255.0 green:125/255.0 blue:221/255.0 alpha:1.0]];
+    
     //导航栏白色字体
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
