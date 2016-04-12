@@ -54,11 +54,14 @@
 		94E005FC1CB627EB00684362 /* VIMyCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E005FB1CB627EB00684362 /* VIMyCarCell.xib */; };
 		94E006001CB630E600684362 /* VISettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E005FE1CB630E600684362 /* VISettingController.m */; };
 		94E006011CB630E600684362 /* VISettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E005FF1CB630E600684362 /* VISettingController.xib */; };
+		94E8AA301CBCF041003A371F /* VIModifyPersonalInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E8AA2F1CBCF041003A371F /* VIModifyPersonalInfoController.m */; };
 		94EF6E1F1CA3918700082474 /* VIHomeMapController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94EF6E1E1CA3918700082474 /* VIHomeMapController.mm */; };
 		F307251E1CBCC59B004502AB /* ZJAlertListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F307251D1CBCC59B004502AB /* ZJAlertListView.m */; };
 		F30725201CBCC896004502AB /* dx_checkbox_gray_on.png in Resources */ = {isa = PBXBuildFile; fileRef = F307251F1CBCC896004502AB /* dx_checkbox_gray_on.png */; };
 		F30725221CBCC89E004502AB /* dx_checkbox_off.png in Resources */ = {isa = PBXBuildFile; fileRef = F30725211CBCC89E004502AB /* dx_checkbox_off.png */; };
 		F30725241CBCC8A7004502AB /* dx_checkbox_red_on.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F30725231CBCC8A7004502AB /* dx_checkbox_red_on.jpg */; };
+		F30725261CBCDEFA004502AB /* 头像.png in Resources */ = {isa = PBXBuildFile; fileRef = F30725251CBCDEFA004502AB /* 头像.png */; };
+		F30725281CBCE37B004502AB /* 按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = F30725271CBCE37B004502AB /* 按钮.png */; };
 		F30F7E931C950C8D0081A41E /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F30F7E921C950C8D0081A41E /* mapapi.bundle */; };
 		F30F7F001C97A8B20081A41E /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F317A3461CB620CB00394F65 /* scanLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F317A3401CB620CB00394F65 /* scanLine@2x.png */; };
@@ -223,12 +226,16 @@
 		94E005FD1CB630E600684362 /* VISettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISettingController.h; sourceTree = "<group>"; };
 		94E005FE1CB630E600684362 /* VISettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISettingController.m; sourceTree = "<group>"; };
 		94E005FF1CB630E600684362 /* VISettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VISettingController.xib; sourceTree = "<group>"; };
+		94E8AA2E1CBCF041003A371F /* VIModifyPersonalInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIModifyPersonalInfoController.h; sourceTree = "<group>"; };
+		94E8AA2F1CBCF041003A371F /* VIModifyPersonalInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIModifyPersonalInfoController.m; sourceTree = "<group>"; };
 		94EF6E1E1CA3918700082474 /* VIHomeMapController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VIHomeMapController.mm; sourceTree = "<group>"; };
 		F307251C1CBCC59B004502AB /* ZJAlertListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJAlertListView.h; sourceTree = "<group>"; };
 		F307251D1CBCC59B004502AB /* ZJAlertListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJAlertListView.m; sourceTree = "<group>"; };
 		F307251F1CBCC896004502AB /* dx_checkbox_gray_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dx_checkbox_gray_on.png; sourceTree = "<group>"; };
 		F30725211CBCC89E004502AB /* dx_checkbox_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dx_checkbox_off.png; sourceTree = "<group>"; };
 		F30725231CBCC8A7004502AB /* dx_checkbox_red_on.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dx_checkbox_red_on.jpg; sourceTree = "<group>"; };
+		F30725251CBCDEFA004502AB /* 头像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像.png"; sourceTree = "<group>"; };
+		F30725271CBCE37B004502AB /* 按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮.png"; sourceTree = "<group>"; };
 		F30F7E921C950C8D0081A41E /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = VehicleInternet/Framework/BaiduMap/BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		F30F7EA81C9538BF0081A41E /* VIHomeMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIHomeMapController.h; sourceTree = "<group>"; };
 		F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = VehicleInternet/AVOSCloud.framework; sourceTree = "<group>"; };
@@ -489,6 +496,8 @@
 		F317A33F1CB620CB00394F65 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F30725271CBCE37B004502AB /* 按钮.png */,
+				F30725251CBCDEFA004502AB /* 头像.png */,
 				F30725231CBCC8A7004502AB /* dx_checkbox_red_on.jpg */,
 				F30725211CBCC89E004502AB /* dx_checkbox_off.png */,
 				F307251F1CBCC896004502AB /* dx_checkbox_gray_on.png */,
@@ -630,6 +639,8 @@
 			children = (
 				94CE0D761C985ED40065D966 /* VIPersonalController.h */,
 				94CE0D771C985ED40065D966 /* VIPersonalController.m */,
+				94E8AA2E1CBCF041003A371F /* VIModifyPersonalInfoController.h */,
+				94E8AA2F1CBCF041003A371F /* VIModifyPersonalInfoController.m */,
 				94CE0D721C985ED40065D966 /* VIMyCarsController.h */,
 				94CE0D731C985ED40065D966 /* VIMyCarsController.m */,
 				949B0F671CB3E4F1007E3592 /* VIAddCarController.h */,
@@ -1067,6 +1078,7 @@
 				F317A3491CB620CB00394F65 /* 海绵宝宝.jpeg in Resources */,
 				94A740C91CBA465900688160 /* BG.png in Resources */,
 				949013421C9F7F5700253715 /* music.plist in Resources */,
+				F30725261CBCDEFA004502AB /* 头像.png in Resources */,
 				94A740BC1CBA409B00688160 /* fa-automobile@2x.png in Resources */,
 				949013331C9F7F5700253715 /* playing_btn_pause_h@2x.png in Resources */,
 				F32FD9291C9A895000804053 /* HomeNavBarCityItem.xib in Resources */,
@@ -1114,6 +1126,7 @@
 				F317A3501CB6253600394F65 /* iconfont-geren@2x.png in Resources */,
 				949013231C9F7F5700253715 /* chenyixun.jpg in Resources */,
 				F3E447EB1CB16BA6006B62E1 /* VIAppointmentCell.xib in Resources */,
+				F30725281CBCE37B004502AB /* 按钮.png in Resources */,
 				949013461C9F7F5700253715 /* 遇见.mp3 in Resources */,
 				94A740BD1CBA409B00688160 /* fa-dashboard (alias).png in Resources */,
 			);
@@ -1196,6 +1209,7 @@
 				F3E4480D1CB29321006B62E1 /* JMLogInController.m in Sources */,
 				F3E447F51CB21F46006B62E1 /* UIImage+QRCode.m in Sources */,
 				94E006001CB630E600684362 /* VISettingController.m in Sources */,
+				94E8AA301CBCF041003A371F /* VIModifyPersonalInfoController.m in Sources */,
 				F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */,
 				F37221AA1CB64A18005F124C /* JGProgressHUDRingIndicatorView.m in Sources */,
 				F32FD9241C97F70900804053 /* LQXSwitch.m in Sources */,

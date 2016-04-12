@@ -128,11 +128,8 @@
     AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
     [query whereKey:@"ownerID" equalTo:user.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        for (NSDictionary *dict in objects) {
-            NSMutableDictionary *loc = [dict valueForKey:@"localData"];
-            
-            loc[@"objectId"] = [dict valueForKey:@"objectId"];
-            [self.carList addObject:[VICarInfoModel carInfoWithDict:loc]];
+        for (VICarInfoModel *model in objects) {
+            [self.carList addObject:model];
         }
         [self.tableView reloadData];
     }];
