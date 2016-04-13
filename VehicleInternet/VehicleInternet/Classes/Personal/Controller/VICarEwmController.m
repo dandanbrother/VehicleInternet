@@ -1,49 +1,54 @@
 //
-//  VIEwmController.m
+//  VICarEwmController.m
 //  VehicleInternet
 //
-//  Created by joker on 16/4/4.
+//  Created by joker on 16/4/13.
 //  Copyright © 2016年 TomorJM. All rights reserved.
 //
 
-#import "VIEwmController.h"
-#import "VIAppointmentModel.h"
+#import "VICarEwmController.h"
+#import "VICarInfoModel.h"
 
 #import "UIImage+QRCode.h"
 
-@interface VIEwmController ()
-
-@property (nonatomic,strong) VIAppointmentModel *appointment;
-
-
+@interface VICarEwmController ()
+@property (nonatomic,strong) VICarInfoModel *carInfo;
 @end
 
-@implementation VIEwmController
+@implementation VICarEwmController
 
-+ (instancetype)ewmShownWithAppointment:(VIAppointmentModel *)appointment
++ (instancetype)ewmShownWithCarInfo:(VICarInfoModel *)carInfo
 {
-    VIEwmController *ewmVC = [[self alloc] init];
+    VICarEwmController *ewmVC = [[self alloc] init];
     if (ewmVC) {
-        ewmVC.appointment = appointment;
+        ewmVC.carInfo = carInfo;
     }
     return ewmVC;
 }
 
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"预约二维码";
+    self.title = @"车辆信息";
     //添加导航栏左面按钮
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"退出" style:UIBarButtonItemStyleDone target:self action:@selector(backBtnClicked)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     
     NSDictionary *dict = @{
-                           @"ownerID" : self.appointment.ownerID,
-                           @"objectId" : self.appointment.objectId
+                           @"carBrand" : self.carInfo.carBrand,
+                           @"mileage" : self.carInfo.mileage,
+                           @"licenseNum" : self.carInfo.licenseNum,
+                           @"petrol" : self.carInfo.petrol
                            };
-    
+//    NSDictionary *dict = @{
+//                           @"carBrand" : @"222",
+//                           @"mileage" : @"222",
+//                           @"licenseNum" : @"222",
+//                           @"petrol" : @"222"
+//                           };
     
     NSString *str = [self dictionaryToJson:dict];
     
@@ -60,8 +65,13 @@
     
     
     imgView.image = [UIImage qrImageWithContent:str logo:[UIImage imageNamed:@"海绵宝宝.jpeg"] size:width red:20 green:100 blue:100];
-
     
+
+}
+
+- (void)backBtnClicked
+{
+    [self.navigationController  dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (NSString*)dictionaryToJson:(NSDictionary *)dic
@@ -75,11 +85,4 @@
     return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
 }
-
-- (void)backBtnClicked
-{
-    [self.navigationController  dismissViewControllerAnimated:YES completion:nil];
-}
-
-
 @end

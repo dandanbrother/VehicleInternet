@@ -7,12 +7,15 @@
 //
 
 #import "VIMyCarCell.h"
+#import "VICarInfoModel.h"
 
 @interface VIMyCarCell ()
 @property (weak, nonatomic) IBOutlet UILabel *carBrand;
 @property (weak, nonatomic) IBOutlet UILabel *licenseNum;
 @property (weak, nonatomic) IBOutlet UILabel *mileage;
 @property (weak, nonatomic) IBOutlet UILabel *petrol;
+- (IBAction)ewmBtnClicked:(id)sender;
+
 
 @end
 
@@ -38,4 +41,11 @@
 }
 
 
+
+- (IBAction)ewmBtnClicked:(id)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(clickToShowEwm:carInfo:)])
+    {
+        [self.delegate clickToShowEwm:(UIButton *)sender carInfo:_carInfo];
+    }
+}
 @end

@@ -62,6 +62,12 @@
 		F30725241CBCC8A7004502AB /* dx_checkbox_red_on.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F30725231CBCC8A7004502AB /* dx_checkbox_red_on.jpg */; };
 		F30725261CBCDEFA004502AB /* 头像.png in Resources */ = {isa = PBXBuildFile; fileRef = F30725251CBCDEFA004502AB /* 头像.png */; };
 		F30725281CBCE37B004502AB /* 按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = F30725271CBCE37B004502AB /* 按钮.png */; };
+		F30725311CBD49A6004502AB /* VIScanResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = F307252F1CBD49A6004502AB /* VIScanResultController.m */; };
+		F30725321CBD49A6004502AB /* VIScanResultController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30725301CBD49A6004502AB /* VIScanResultController.xib */; };
+		F30725361CBE22DD004502AB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F30725351CBE22DD004502AB /* MBProgressHUD.m */; };
+		F307253C1CBE93FD004502AB /* VICarEwmScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = F307253B1CBE93FD004502AB /* VICarEwmScanController.m */; };
+		F307253E1CBE9E0B004502AB /* 二维码.png in Resources */ = {isa = PBXBuildFile; fileRef = F307253D1CBE9E0B004502AB /* 二维码.png */; };
+		F30725411CBEA02F004502AB /* VICarEwmController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30725401CBEA02F004502AB /* VICarEwmController.m */; };
 		F30F7E931C950C8D0081A41E /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F30F7E921C950C8D0081A41E /* mapapi.bundle */; };
 		F30F7F001C97A8B20081A41E /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F317A3461CB620CB00394F65 /* scanLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F317A3401CB620CB00394F65 /* scanLine@2x.png */; };
@@ -236,6 +242,16 @@
 		F30725231CBCC8A7004502AB /* dx_checkbox_red_on.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dx_checkbox_red_on.jpg; sourceTree = "<group>"; };
 		F30725251CBCDEFA004502AB /* 头像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像.png"; sourceTree = "<group>"; };
 		F30725271CBCE37B004502AB /* 按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮.png"; sourceTree = "<group>"; };
+		F307252E1CBD49A6004502AB /* VIScanResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIScanResultController.h; sourceTree = "<group>"; };
+		F307252F1CBD49A6004502AB /* VIScanResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIScanResultController.m; sourceTree = "<group>"; };
+		F30725301CBD49A6004502AB /* VIScanResultController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIScanResultController.xib; sourceTree = "<group>"; };
+		F30725341CBE22DD004502AB /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		F30725351CBE22DD004502AB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		F307253A1CBE93FD004502AB /* VICarEwmScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICarEwmScanController.h; sourceTree = "<group>"; };
+		F307253B1CBE93FD004502AB /* VICarEwmScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICarEwmScanController.m; sourceTree = "<group>"; };
+		F307253D1CBE9E0B004502AB /* 二维码.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "二维码.png"; sourceTree = "<group>"; };
+		F307253F1CBEA02E004502AB /* VICarEwmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICarEwmController.h; sourceTree = "<group>"; };
+		F30725401CBEA02F004502AB /* VICarEwmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICarEwmController.m; sourceTree = "<group>"; };
 		F30F7E921C950C8D0081A41E /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = VehicleInternet/Framework/BaiduMap/BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		F30F7EA81C9538BF0081A41E /* VIHomeMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIHomeMapController.h; sourceTree = "<group>"; };
 		F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = VehicleInternet/AVOSCloud.framework; sourceTree = "<group>"; };
@@ -450,6 +466,15 @@
 			path = ZJAlertListView;
 			sourceTree = "<group>";
 		};
+		F30725331CBE22DD004502AB /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				F30725341CBE22DD004502AB /* MBProgressHUD.h */,
+				F30725351CBE22DD004502AB /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		F30F7E941C950CE60081A41E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,6 +521,7 @@
 		F317A33F1CB620CB00394F65 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F307253D1CBE9E0B004502AB /* 二维码.png */,
 				F30725271CBCE37B004502AB /* 按钮.png */,
 				F30725251CBCDEFA004502AB /* 头像.png */,
 				F30725231CBCC8A7004502AB /* dx_checkbox_red_on.jpg */,
@@ -568,6 +594,7 @@
 		F32FD9011C97CA0000804053 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				F30725331CBE22DD004502AB /* MBProgressHUD */,
 				F307251B1CBCC59B004502AB /* ZJAlertListView */,
 				F372217F1CB64A18005F124C /* LCCoolHUD */,
 				F3E447FB1CB2234E006B62E1 /* Ewm */,
@@ -649,6 +676,10 @@
 				949C45FB1CB5033F00DD8C97 /* VIModifyCarController.m */,
 				94CE0D741C985ED40065D966 /* VIPeccancyInfotmation.h */,
 				94CE0D751C985ED40065D966 /* VIPeccancyInfotmation.m */,
+				F307253A1CBE93FD004502AB /* VICarEwmScanController.h */,
+				F307253B1CBE93FD004502AB /* VICarEwmScanController.m */,
+				F307253F1CBEA02E004502AB /* VICarEwmController.h */,
+				F30725401CBEA02F004502AB /* VICarEwmController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -767,6 +798,9 @@
 				F3E447ED1CB20F8C006B62E1 /* VIEwmController.m */,
 				F3E447F81CB222E2006B62E1 /* VIEwmScanController.h */,
 				F3E447F91CB222E2006B62E1 /* VIEwmScanController.m */,
+				F307252E1CBD49A6004502AB /* VIScanResultController.h */,
+				F307252F1CBD49A6004502AB /* VIScanResultController.m */,
+				F30725301CBD49A6004502AB /* VIScanResultController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1084,6 +1118,7 @@
 				F32FD9291C9A895000804053 /* HomeNavBarCityItem.xib in Resources */,
 				94A740BF1CBA409B00688160 /* fa-flickr.png in Resources */,
 				F3F0B2C11C95099F00989506 /* LaunchScreen.storyboard in Resources */,
+				F307253E1CBE9E0B004502AB /* 二维码.png in Resources */,
 				949013351C9F7F5700253715 /* playing_btn_play_h@2x.png in Resources */,
 				94A740C01CBA409B00688160 /* fa-flickr@2x.png in Resources */,
 				F3E4480E1CB29321006B62E1 /* JMLogInController.xib in Resources */,
@@ -1096,6 +1131,7 @@
 				F317A34C1CB6219C00394F65 /* iconfont-ditu@2x.png in Resources */,
 				F317A3511CB6253600394F65 /* iconfont-iconfontbiaozhunmoban01@2x.png in Resources */,
 				94A740C61CBA416C00688160 /* Group@2x.png in Resources */,
+				F30725321CBD49A6004502AB /* VIScanResultController.xib in Resources */,
 				F37221A01CB64A18005F124C /* JGProgressHUD Resources.bundle in Resources */,
 				F317A34A1CB620CB00394F65 /* noticeMusic.wav in Resources */,
 				F3F0B2BE1C95099F00989506 /* Assets.xcassets in Resources */,
@@ -1176,6 +1212,7 @@
 				F32FD9141C97CA2300804053 /* UIImage+ImageEffects.m in Sources */,
 				F3E447E51CB12608006B62E1 /* UUDatePicker_DateModel.m in Sources */,
 				94CE0D781C985ED40065D966 /* VIMyCarsController.m in Sources */,
+				F30725411CBEA02F004502AB /* VICarEwmController.m in Sources */,
 				F37221AD1CB64A18005F124C /* LCLoadingHUD.m in Sources */,
 				948C87E41C9FD791006EB17A /* VIMusicListController.m in Sources */,
 				F372219F1CB64A18005F124C /* CLProgressHUD.m in Sources */,
@@ -1187,6 +1224,7 @@
 				949B0F691CB3E4F1007E3592 /* VIAddCarController.m in Sources */,
 				F37221AC1CB64A18005F124C /* LCCoolHUD.m in Sources */,
 				F32FD9361C9C1E3C00804053 /* VISearchSiteTextField.m in Sources */,
+				F307253C1CBE93FD004502AB /* VICarEwmScanController.m in Sources */,
 				94CE0D7F1C985EDA0065D966 /* VICarInfoModel.m in Sources */,
 				F3DA65461CA373CE00E26AE4 /* VIAppointmentModel.m in Sources */,
 				F3E447FA1CB222E2006B62E1 /* VIEwmScanController.m in Sources */,
@@ -1204,10 +1242,12 @@
 				F37221A31CB64A18005F124C /* JGProgressHUDErrorIndicatorView.m in Sources */,
 				F3859E7F1CA58E140054D309 /* VIAppointmentComposeController.m in Sources */,
 				94E005FA1CB627D100684362 /* VIMyCarCell.m in Sources */,
+				F30725361CBE22DD004502AB /* MBProgressHUD.m in Sources */,
 				F3E447E41CB12608006B62E1 /* UUDatePicker.m in Sources */,
 				F3F0B2B61C95099F00989506 /* AppDelegate.mm in Sources */,
 				F3E4480D1CB29321006B62E1 /* JMLogInController.m in Sources */,
 				F3E447F51CB21F46006B62E1 /* UIImage+QRCode.m in Sources */,
+				F30725311CBD49A6004502AB /* VIScanResultController.m in Sources */,
 				94E006001CB630E600684362 /* VISettingController.m in Sources */,
 				94E8AA301CBCF041003A371F /* VIModifyPersonalInfoController.m in Sources */,
 				F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */,

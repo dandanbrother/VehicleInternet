@@ -9,12 +9,16 @@
 #import "VIAddCarController.h"
 #import "VICarInfoModel.h"
 #import "ZJAlertListView.h"
+#import "VICarEwmScanController.h"
 
 @interface VIAddCarController () <UITextFieldDelegate,ZJAlertListViewDelegate,ZJAlertListViewDatasource>
 @property (weak, nonatomic) IBOutlet UITextField *carBrand;
 @property (weak, nonatomic) IBOutlet UITextField *licenseNum;
 @property (weak, nonatomic) IBOutlet UITextField *mileage;
 @property (weak, nonatomic) IBOutlet UITextField *petrol;
+- (IBAction)carBrandBtnClicked;
+- (IBAction)saveBtnClicked;
+
 
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 
@@ -23,6 +27,7 @@
 @end
 
 @implementation VIAddCarController
+
 
 #pragma mark - 懒加载
 - (NSArray *)carBrandTypes{
@@ -37,43 +42,34 @@
 }
 
 - (IBAction)save:(id)sender {
-    AVUser *user = [AVUser currentUser];
     
-    if ((self.carBrand.text.length != 0 ) && (self.licenseNum.text.length != 0 ) && (self.mileage.text.length != 0 ) && (self.petrol.text.length != 0 )) {
-        
-        VICarInfoModel *model = [VICarInfoModel object];
-        model.carBrand = self.carBrand.text;
-        model.licenseNum = self.licenseNum.text;
-        model.mileage = self.mileage.text;
-        model.petrol = self.petrol.text;
-        model.ownerID = user.objectId;
-        [model saveInBackground];
-        
-        [self.navigationController popViewControllerAnimated:YES];
+    
+    VICarEwmScanController *carScan = [[VICarEwmScanController alloc] init];
+    carScan.modalPresentationStyle = UIModalPresentationPageSheet;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:carScan];
+//    NSDictionary *dict = @{
+//                           @"carBrand" : self.carInfo.carBrand,
+//                           @"mileage" : self.carInfo.mileage,
+//                           @"licenseNum" : self.carInfo.licenseNum,
+//                           @"petrol" : self.carInfo.petrol
+//                           };
+    
+    __weak typeof(self) weakSelf = self;
 
-    } else {
-        NSLog(@"信息不全");
-        
-    }
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
+    [carScan returnBlock:^(NSString *result) {
+        NSDictionary *dict = [self dictionaryWithJsonString:result];
+        weakSelf.mileage.text = dict[@"mileage"];
+        weakSelf.licenseNum.text = dict[@"licenseNum"];
+        weakSelf.petrol.text = dict[@"petrol"];
+        weakSelf.carBrand.text = dict[@"carBrand"];
+    }];
+    
 }
 
 #pragma mark - UITextFieldDelegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     NSLog(@"1");
-    ZJAlertListView *alertList = [[ZJAlertListView alloc] initWithFrame:CGRectMake(0, 0, 250, 300)];
-    alertList.titleLabel.text = @"弹框";
-    alertList.datasource = self;
-    alertList.delegate = self;
-    [alertList show];
-    //点击确定的时候，调用它去做点事情
-    [alertList setDoneButtonWithBlock:^{
-        
-        NSIndexPath *selectedIndexPath = self.selectedIndexPath;
-        textField.text = self.carBrandTypes[selectedIndexPath.row];
-        [alertList dismiss];
-        
-    }];
-
 }
 
 #pragma mark - ZJAlertListViewDatasource
@@ -121,4 +117,76 @@
     NSLog(@"didSelectRowAtIndexPath:%ld", (long)indexPath.row);
 }
 
+- (IBAction)carBrandBtnClicked {
+    ZJAlertListView *alertList = [[ZJAlertListView alloc] initWithFrame:CGRectMake(0, 0, 250, 300)];
+    alertList.titleLabel.text = @"弹框";
+    alertList.datasource = self;
+    alertList.delegate = self;
+    [alertList show];
+    //点击确定的时候，调用它去做点事情
+    [alertList setDoneButtonWithBlock:^{
+        
+        NSIndexPath *selectedIndexPath = self.selectedIndexPath;
+        self.carBrand.text = self.carBrandTypes[selectedIndexPath.row];
+        [alertList dismiss];
+        
+    }];
+}
+
+- (IBAction)saveBtnClicked {
+    AVUser *user = [AVUser currentUser];
+    
+    if ((self.carBrand.text.length != 0 ) && (self.licenseNum.text.length != 0 ) && (self.mileage.text.length != 0 ) && (self.petrol.text.length != 0 )) {
+        
+        VICarInfoModel *model = [VICarInfoModel object];
+        model.carBrand = self.carBrand.text;
+        model.licenseNum = self.licenseNum.text;
+        model.mileage = self.mileage.text;
+        model.petrol = self.petrol.text;
+        model.ownerID = user.objectId;
+        [model saveInBackground];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    } else {
+        NSLog(@"信息不全");
+        
+    }
+
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    
+    if (jsonString == nil) {
+        
+        return nil;
+        
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSError *err;
+    
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                         
+                                                        options:NSJSONReadingMutableContainers
+                         
+                                                          error:&err];
+    
+    if(err) {
+        
+        NSLog(@"json解析失败：%@",err);
+        
+        return nil;
+        
+    }
+    
+    return dic;
+    
+}
 @end
