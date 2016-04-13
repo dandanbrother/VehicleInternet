@@ -22,6 +22,7 @@
 #import "VIMapPoiSearch.h"
 #import "VISearchSiteTextField.h"
 #import "VIMusicPlayerController.h"
+#import "MBProgressHUD.h"
 
 @interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
@@ -143,7 +144,7 @@
 {
     //初始化地图
     self.mapView = [[BMKMapView alloc] init];
-    self.mapView.frame = CGRectMake(0, 64, KDeviceWidth, KDeviceHeight - 64);
+    self.mapView.frame = CGRectMake(0, 64, KDeviceWidth, KDeviceHeight - 64 - 50);
 
     self.mapView.zoomEnabled = YES;//允许Zoom
     self.mapView.zoomLevel = 14;
@@ -160,14 +161,14 @@
     displayParam.locationViewOffsetY = 0;//定位偏移量（纬度）
     [self.mapView updateLocationViewWithParam:displayParam];
     
-    //地图中心小图标
-    UIImageView *imageView = [[UIImageView alloc] init];
-    imageView.image = [UIImage imageNamed:@"iconfont-yuandianbiaozhu"];
-    imageView.width = 10;
-    imageView.height = 10;
-    imageView.centerX = self.mapView.centerX;
-    imageView.centerY = self.mapView.height * 0.5;
-    [self.mapView addSubview:imageView];
+//    //地图中心小图标
+//    UIImageView *imageView = [[UIImageView alloc] init];
+//    imageView.image = [UIImage imageNamed:@"iconfont-yuandianbiaozhu"];
+//    imageView.width = 10;
+//    imageView.height = 10;
+//    imageView.centerX = self.mapView.centerX;
+//    imageView.centerY = self.mapView.height * 0.5;
+//    [self.mapView addSubview:imageView];
     
     
     //显示加油站开关
@@ -268,23 +269,11 @@
 
 #pragma mark - BMKMapViewDelegate
 
-//- (void)mapView:(BMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
-//{
-//    NSLog(@"regionWillChangeAnimated---%f---%f",mapView.centerCoordinate.latitude,mapView.centerCoordinate.longitude);
-//    
-//    CLLocationCoordinate2D pt = (CLLocationCoordinate2D){mapView.centerCoordinate.latitude, mapView.centerCoordinate.longitude};
-//    BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
-//    reverseGeocodeSearchOption.reverseGeoPoint = pt;
-//    BOOL flag = [self.geoCodeSearch reverseGeoCode:reverseGeocodeSearchOption];
-//    if(flag)
-//    {
-//        NSLog(@"反geo检索发送成功");
-//    }
-//    else
-//    {
-//        NSLog(@"反geo检索发送失败");
-//    }
-//}
+- (void)mapView:(BMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    [self.startTF resignFirstResponder];
+    [self.destinationTF resignFirstResponder];
+}
 
 /**
  *  根据overlay生成对应的View
@@ -316,6 +305,10 @@
     NSLog(@"didUpdateBMKUserLocation---%f----%f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
     [self.mapView updateLocationData:userLocation];
     _mapView.centerCoordinate = userLocation.location.coordinate;
+    
+    
+    
+    //
     CLLocationCoordinate2D pt = (CLLocationCoordinate2D){self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude};
     BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
     reverseGeocodeSearchOption.reverseGeoPoint = pt;
@@ -446,15 +439,18 @@
 }
 
 
-#pragma mark - BMKGeoCodeSearchDelegate
+#pragma mark - BMKGeoCodeSearchDelegate -设置城市名称
 
 - (void) onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
 {
-    
 
     NSString *cityName = result.addressDetail.city;
     NSString *subStr = [cityName substringWithRange:NSMakeRange(0, cityName.length - 1)];
     self.cityItem.title = subStr;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = [NSString stringWithFormat:@"当前定位城市:%@",subStr];
+    [hud hideAnimated:YES afterDelay:1.5f];
 }
 #pragma mark - 其他方法
 /**

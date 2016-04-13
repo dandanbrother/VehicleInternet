@@ -85,6 +85,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJo-9D-Ya7">
                     <rect key="frame" x="270" y="111" width="97" height="23"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" title="获取验证码">
                         <color key="titleColor" red="0.90196079019999997" green="0.8908707307" blue="0.87935703050000003" alpha="1" colorSpace="calibratedRGB"/>
                     </state>

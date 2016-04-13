@@ -23,30 +23,47 @@
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 #import <BaiduMapAPI_Map/BMKAnnotation.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
-
+#import "LCCoolHUD.h"
 
 #define PTypeTag 1001
 #define CInfoTag 1002
+#define LCornerR 5
 
 @interface VIAppointmentComposeController () <UITextFieldDelegate,ZJAlertListViewDelegate,ZJAlertListViewDatasource>
 @property (weak, nonatomic) IBOutlet UITextField *timeTF;
+@property (weak, nonatomic) IBOutlet UITextField *licenseNumTF;
 
 @property (weak, nonatomic) IBOutlet UITextField *pretrolTypeTF;
 @property (weak, nonatomic) IBOutlet UITextField *petrolAmountTF;
-@property (weak, nonatomic) IBOutlet UILabel *carBrandLabel;
+@property (weak, nonatomic) IBOutlet UITextField *petrolStationTF;
+@property (weak, nonatomic) IBOutlet UITextField *carBrandTF;
+
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *carNumLabel;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 
 @property (nonatomic, strong) NSArray *petrolTypes;
 
 
 @property (nonatomic,strong) NSMutableArray *carInfoArr;
+
+
+/**
+ *  设置圆角用
+ */
+@property (weak, nonatomic) IBOutlet UILabel *l1;
+@property (weak, nonatomic) IBOutlet UILabel *l2;
+@property (weak, nonatomic) IBOutlet UILabel *l3;
+@property (weak, nonatomic) IBOutlet UILabel *l4;
+@property (weak, nonatomic) IBOutlet UILabel *l5;
+@property (weak, nonatomic) IBOutlet UILabel *l6;
+@property (weak, nonatomic) IBOutlet UILabel *l7;
+
 - (IBAction)carInfoBtnClicked;
-
-
 - (IBAction)submitBtnClicked;
+- (IBAction)petrolTypeBtnClicked;
 
 @end
 
@@ -71,10 +88,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //设置圆角
+    self.l1.layer.cornerRadius = LCornerR;
+    self.l2.layer.cornerRadius = LCornerR;
+    self.l3.layer.cornerRadius = LCornerR;
+    self.l4.layer.cornerRadius = LCornerR;
+    self.l5.layer.cornerRadius = LCornerR;
+    self.l6.layer.cornerRadius = LCornerR;
+    self.submitBtn.layer.cornerRadius = LCornerR + 2;
+    self.l1.layer.masksToBounds = YES;
+    self.l2.layer.masksToBounds = YES;
+    self.l3.layer.masksToBounds = YES;
+    self.l4.layer.masksToBounds = YES;
+    self.l5.layer.masksToBounds = YES;
+    self.l6.layer.masksToBounds = YES;
+    self.submitBtn.layer.masksToBounds = YES;
     
     //添加导航栏左面按钮
-    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"退出" style:UIBarButtonItemStyleDone target:self action:@selector(backBtnClicked)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     
@@ -107,28 +137,10 @@
     self.timeTF.inputView = datePicker;
 }
 #pragma mark - UItextfieldDelegate
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     switch (textField.tag) {
-        case 10: //加油类型
-        {
-            ZJAlertListView *alertList = [[ZJAlertListView alloc] initWithFrame:CGRectMake(0, 0, 250, 300)];
-            alertList.tag = PTypeTag;
-            alertList.titleLabel.text = @"加油类型";
-            alertList.datasource = self;
-            alertList.delegate = self;
-            [alertList show];
-            //点击确定的时候，调用它去做点事情
-            [alertList setDoneButtonWithBlock:^{
-                
-                NSIndexPath *selectedIndexPath = self.selectedIndexPath;
-                textField.text = self.petrolTypes[selectedIndexPath.row];
-                [alertList dismiss];
-                self.selectedIndexPath = nil;
-                
-            }];
-        }
-            break;
         case 11: //选择加油站
         {
             NSLog(@"选择加油站");
@@ -159,8 +171,8 @@
         
         NSIndexPath *selectedIndexPath = self.selectedIndexPath;
         VICarInfoModel *model = self.carInfoArr[selectedIndexPath.row];
-        self.carBrandLabel.text = model.carBrand;
-        self.carNumLabel.text = model.licenseNum;
+        self.carBrandTF.text = model.carBrand;
+        self.licenseNumTF.text = model.licenseNum;
         [alertList dismiss];
         
     }];
@@ -170,16 +182,45 @@
 }
 
 - (IBAction)submitBtnClicked {
+    
+    
+    
+    if (self.carBrandTF.text == nil || self.carBrandTF.text.length == 0) {
+        [LCCoolHUD showFailure:@"请填写车辆信息!" zoom:YES shadow:YES];
+        return;
+    }else if (self.carBrandTF.text == nil || self.carBrandTF.text.length == 0)
+    {
+        [LCCoolHUD showFailure:@"请填写车辆信息!" zoom:YES shadow:YES];
+        return;
+    }else if (self.timeTF.text == nil || self.timeTF.text.length == 0)
+    {
+        [LCCoolHUD showFailure:@"请填写预约时间!" zoom:YES shadow:YES];
+        return;
+    }else if (self.petrolStationTF.text == nil || self.petrolStationTF.text.length == 0)
+    {
+        [LCCoolHUD showFailure:@"请填写预约加油站!" zoom:YES shadow:YES];
+        return;
+    }else if (self.pretrolTypeTF.text == nil || self.pretrolTypeTF.text.length == 0)
+    {
+        [LCCoolHUD showFailure:@"请填写预约加油类型!" zoom:YES shadow:YES];
+        return;
+    }else if (self.petrolAmountTF.text == nil || self.petrolAmountTF.text.length == 0)
+    {
+        [LCCoolHUD showFailure:@"请填写预约加油量!" zoom:YES shadow:YES];
+        return;
+    }
+    
+    
     VIUserModel *user = [VIUserModel currentUser];
     VIAppointmentModel *appointment = [[VIAppointmentModel alloc] init];
-    appointment.carOwnerName = @"张建明"; //user.nickName;
-    appointment.carName = @"奔驰";
+    appointment.carOwnerName = self.userNameLabel.text;//user.nickName;
+    appointment.carName = self.carBrandTF.text;
     appointment.ownerID = user.objectId;
-    appointment.petrolType = @"32号";
-    appointment.petrolStation = @"南邮加油站";
-    appointment.petrolAmount = @"100升";
+    appointment.petrolType = self.pretrolTypeTF.text;
+    appointment.petrolStation = self.petrolStationTF.text;
+    appointment.petrolAmount = [NSString stringWithFormat:@"%@升",self.petrolAmountTF.text];
     appointment.time = self.timeTF.text;
-    appointment.plateNum = @"鲁K88888";
+    appointment.plateNum = self.licenseNumTF.text;
 
     
     [appointment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -187,10 +228,31 @@
             if (succeeded)
             {
                 NSLog(@"保存一条预约成功");
+                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
             }
         }
     }];
     
+}
+
+- (IBAction)petrolTypeBtnClicked
+{
+    ZJAlertListView *alertList = [[ZJAlertListView alloc] initWithFrame:CGRectMake(0, 0, 250, 300)];
+    alertList.tag = PTypeTag;
+    alertList.titleLabel.text = @"加油类型";
+    alertList.datasource = self;
+    alertList.delegate = self;
+    [alertList show];
+    //点击确定的时候，调用它去做点事情
+    [alertList setDoneButtonWithBlock:^{
+        
+        NSIndexPath *selectedIndexPath = self.selectedIndexPath;
+        self.pretrolTypeTF.text = self.petrolTypes[selectedIndexPath.row];
+        [alertList dismiss];
+        self.selectedIndexPath = nil;
+        
+    }];
+  
 }
 
 

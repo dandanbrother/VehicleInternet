@@ -8,6 +8,7 @@
 
 #import "VIEwmScanController.h"
 #import "SHBQRView.h"
+#import "VIScanResultController.h"
 
 @interface VIEwmScanController ()<SHBQRViewDelegate>
 - (IBAction)dismissBtnClicked:(id)sender;
@@ -26,28 +27,24 @@
 - (void)qrView:(SHBQRView *)view ScanResult:(NSString *)result {
     [view stopScan];
     /*
-    NSDictionary *dict = @{
-                           @"carName" : self.appointment.carName,
-                           @"plateNum" : self.appointment.plateNum,
-                           @"carOwnerName" : self.appointment.carOwnerName,
-                           @"time" : self.appointment.time,
-                           @"petrolStation" : self.appointment.petrolStation,
-                           @"petrolType" : self.appointment.petrolType,
-                           @"petrolAmount" : self.appointment.petrolAmount
-                           
-                           
-                           };
+     NSDictionary *dict = @{
+     @"ownerID" : self.appointment.ownerID,
+     @"objectId" : self.appointment.objectId
+     };
      */
     
     NSDictionary *dict = [self dictionaryWithJsonString:result];
     
+    VIScanResultController *resultVC = [VIScanResultController ewmResultWithAppointment:dict];
+    [self.navigationController pushViewController:resultVC animated:YES];
+    
+//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:@"扫描结果：%@", result] preferredStyle:UIAlertControllerStyleAlert];
+//    [alert addAction:[UIAlertAction actionWithTitle:@"Sure" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//        [view startScan];
+//    }]];
+//    [self presentViewController:alert animated:true completion:nil];
     
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:@"扫描结果：%@", result] preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Sure" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        [view startScan];
-    }]];
-    [self presentViewController:alert animated:true completion:nil];
 }
 - (IBAction)dismissBtnClicked:(id)sender {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
