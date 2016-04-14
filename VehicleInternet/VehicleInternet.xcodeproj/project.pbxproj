@@ -49,6 +49,7 @@
 		94B99F781CBFA63300B1C072 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 94B99F751CBFA63300B1C072 /* Icon.png */; };
 		94B99F791CBFA63300B1C072 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94B99F761CBFA63300B1C072 /* Icon@2x.png */; };
 		94B99F7A1CBFA63300B1C072 /* Icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94B99F771CBFA63300B1C072 /* Icon@3x.png */; };
+		94B99F821CBFBFC900B1C072 /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = 94B99F811CBFBFC900B1C072 /* 111.png */; };
 		94CE0D781C985ED40065D966 /* VIMyCarsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D731C985ED40065D966 /* VIMyCarsController.m */; };
 		94CE0D791C985ED40065D966 /* VIPeccancyInfotmation.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D751C985ED40065D966 /* VIPeccancyInfotmation.m */; };
 		94CE0D7A1C985ED40065D966 /* VIPersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D771C985ED40065D966 /* VIPersonalController.m */; };
@@ -231,6 +232,7 @@
 		94B99F751CBFA63300B1C072 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../../../Sources/Images/Icon.png; sourceTree = "<group>"; };
 		94B99F761CBFA63300B1C072 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../../../Sources/Images/Icon@2x.png"; sourceTree = "<group>"; };
 		94B99F771CBFA63300B1C072 /* Icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@3x.png"; path = "../../../../Sources/Images/Icon@3x.png"; sourceTree = "<group>"; };
+		94B99F811CBFBFC900B1C072 /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
 		94CE0D721C985ED40065D966 /* VIMyCarsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMyCarsController.h; sourceTree = "<group>"; };
 		94CE0D731C985ED40065D966 /* VIMyCarsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMyCarsController.m; sourceTree = "<group>"; };
 		94CE0D741C985ED40065D966 /* VIPeccancyInfotmation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPeccancyInfotmation.h; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 		F317A33F1CB620CB00394F65 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				94B99F811CBFBFC900B1C072 /* 111.png */,
 				F307254E1CBFAF7B004502AB /* 里程.png */,
 				F307254C1CBFAA30004502AB /* 时间.png */,
 				F30725481CBFAA15004502AB /* 加油站.png */,
@@ -1179,6 +1182,7 @@
 				94A740BE1CBA409B00688160 /* fa-dashboard (alias)@2x.png in Resources */,
 				949013441C9F7F5700253715 /* 你给我听好.mp3 in Resources */,
 				F30725241CBCC8A7004502AB /* dx_checkbox_red_on.jpg in Resources */,
+				94B99F821CBFBFC900B1C072 /* 111.png in Resources */,
 				F30725461CBFAA01004502AB /* 车牌.png in Resources */,
 				94E006011CB630E600684362 /* VISettingController.xib in Resources */,
 				F307254A1CBFAA15004502AB /* 加油站.png in Resources */,

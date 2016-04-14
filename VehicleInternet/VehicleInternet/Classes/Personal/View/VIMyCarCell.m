@@ -25,8 +25,8 @@
     _carInfo = carInfo;
     self.carBrand.text = carInfo.carBrand;
     self.licenseNum.text = carInfo.licenseNum;
-    self.mileage.text = carInfo.mileage;
-    self.petrol.text = carInfo.petrol;
+    self.mileage.text = [carInfo.mileage stringByAppendingString:@" 公里"];
+    self.petrol.text = [carInfo.petrol stringByAppendingString:@" 升"];
     
 }
 

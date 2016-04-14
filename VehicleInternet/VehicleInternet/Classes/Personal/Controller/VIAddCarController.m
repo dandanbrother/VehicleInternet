@@ -33,7 +33,7 @@
 #pragma mark - 懒加载
 - (NSArray *)carBrandTypes{
     if (!_carBrandTypes) {
-        self.carBrandTypes = [NSArray arrayWithObjects:@"奔驰",@"宝马",@"大众",@"丰田",nil];
+        self.carBrandTypes = [NSArray arrayWithObjects:@"奔驰",@"宝马",@"大众",@"丰田",@"保时捷",@"巴博斯",@"MINI",@"本田",@"铃木",@"雷克萨斯",@"朗世",@"马自达",@"别克",@"福特",@"宾利",@"捷豹",@"路虎",nil];
     }
     return _carBrandTypes;
 }

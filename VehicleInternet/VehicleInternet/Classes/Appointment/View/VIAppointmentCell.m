@@ -31,7 +31,7 @@
     self.timeLabel.text = appointmentInfo.time;
     self.petrolStationLabel.text = appointmentInfo.petrolStation;
     self.petrolTypeLabel.text = appointmentInfo.petrolType;
-    self.petrolAmountLabel.text = [NSString stringWithFormat:@"%@升",appointmentInfo.petrolAmount];
+    self.petrolAmountLabel.text = [NSString stringWithFormat:@"%@",appointmentInfo.petrolAmount];
 }
 
 
