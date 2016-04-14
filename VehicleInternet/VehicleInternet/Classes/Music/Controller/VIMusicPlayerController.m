@@ -22,6 +22,7 @@
     UIImageView *_backView;//背景视图
     UIView *_bottomView;//底部视图
     UIButton *startAndStopBtn;//播放、暂停
+    UIButton *lastButton;//上一曲
     UIButton *nextButton;//下一曲的实现
     UISlider *slider;//滑块 时间进度条
     UILabel *totalLable;//显示总时间的lable
@@ -31,7 +32,7 @@
 @property (nonatomic, strong) NSArray *musicArr;
 @property (nonatomic, assign) NSInteger currentPage;
 @property (nonatomic, assign) NSNumber *currentTime;
-@property (nonatomic, assign) BOOL isPush;
+@property (nonatomic, assign) BOOL hasChangedSong;
 
 @end
 
@@ -69,7 +70,6 @@ static int time2 = 0;
     [self BottomView];
     
     self.currentPage = page;
-
     [self reloadData];
     
 }
@@ -104,19 +104,15 @@ static int time2 = 0;
     
     //设置代理
     self.player.delegate = self;
-        
-    //
-//    BOOL isPlay = [self.player prepareToPlay];
-//        
-//    if (isPlay) {
-//        [self.player play];
-//        NSLog(@"播放");
-//    }else{
-//            
-//        NSLog(@"播放失败");
-//    }
     
-    //
+    if (self.hasChangedSong) {
+        if ([self.player prepareToPlay]) {
+            [self.player play];
+            startAndStopBtn.selected = NO;
+            self.hasChangedSong = NO;
+        }
+    }
+    
     CADisplayLink *display = [CADisplayLink displayLinkWithTarget:self selector:@selector(display)];
     
     //添加到NSRunLoop上
@@ -171,10 +167,9 @@ static int time2 = 0;
 
 //上一曲lastButton的点击响应事件
 -(void)lastButtonAct{
+    self.hasChangedSong = YES;
     if(page > 0){
-        
         page--;
-        
         [self reloadData];
     }else{
         
@@ -185,6 +180,7 @@ static int time2 = 0;
 
 //下一曲nextButton的点击响应事件
 -(void)nextButtonAct{
+    self.hasChangedSong = YES;
     len = [_musicArr count];
     if(page < len-1){
         page++;
@@ -240,9 +236,10 @@ static int time2 = 0;
     [startAndStopBtn addTarget:self action:@selector(startAndStopBtnAct) forControlEvents:UIControlEventTouchUpInside];
     
     //创建上一曲的 button
-    UIButton *lastButton = [[UIButton alloc]initWithFrame:CGRectMake((kScreenW-60)/2-50-15, (100-50)/2, 50, 50)];
+    lastButton = [[UIButton alloc]initWithFrame:CGRectMake((kScreenW-60)/2-50-15, (100-50)/2, 50, 50)];
     [lastButton setImage:[UIImage imageNamed:@"playing_btn_pre_n@2x"] forState:UIControlStateNormal];
     [lastButton setImage:[UIImage imageNamed:@"playing_btn_pre_h@2x"] forState:UIControlStateHighlighted];
+    
     [_bottomView addSubview:lastButton];
 
     //添加点击响应事件

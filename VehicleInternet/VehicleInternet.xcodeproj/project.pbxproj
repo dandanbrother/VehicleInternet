@@ -46,6 +46,9 @@
 		94A740CA1CBA465900688160 /* BG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A740C81CBA465900688160 /* BG@2x.png */; };
 		94A740D11CBA487600688160 /* CarCell.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A740CF1CBA487600688160 /* CarCell.png */; };
 		94A740D21CBA487600688160 /* CarCell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A740D01CBA487600688160 /* CarCell@2x.png */; };
+		94B99F781CBFA63300B1C072 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 94B99F751CBFA63300B1C072 /* Icon.png */; };
+		94B99F791CBFA63300B1C072 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94B99F761CBFA63300B1C072 /* Icon@2x.png */; };
+		94B99F7A1CBFA63300B1C072 /* Icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94B99F771CBFA63300B1C072 /* Icon@3x.png */; };
 		94CE0D781C985ED40065D966 /* VIMyCarsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D731C985ED40065D966 /* VIMyCarsController.m */; };
 		94CE0D791C985ED40065D966 /* VIPeccancyInfotmation.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D751C985ED40065D966 /* VIPeccancyInfotmation.m */; };
 		94CE0D7A1C985ED40065D966 /* VIPersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D771C985ED40065D966 /* VIPersonalController.m */; };
@@ -225,6 +228,9 @@
 		94A740C81CBA465900688160 /* BG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG@2x.png"; sourceTree = "<group>"; };
 		94A740CF1CBA487600688160 /* CarCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CarCell.png; sourceTree = "<group>"; };
 		94A740D01CBA487600688160 /* CarCell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CarCell@2x.png"; sourceTree = "<group>"; };
+		94B99F751CBFA63300B1C072 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../../../Sources/Images/Icon.png; sourceTree = "<group>"; };
+		94B99F761CBFA63300B1C072 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../../../Sources/Images/Icon@2x.png"; sourceTree = "<group>"; };
+		94B99F771CBFA63300B1C072 /* Icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@3x.png"; path = "../../../../Sources/Images/Icon@3x.png"; sourceTree = "<group>"; };
 		94CE0D721C985ED40065D966 /* VIMyCarsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMyCarsController.h; sourceTree = "<group>"; };
 		94CE0D731C985ED40065D966 /* VIMyCarsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMyCarsController.m; sourceTree = "<group>"; };
 		94CE0D741C985ED40065D966 /* VIPeccancyInfotmation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPeccancyInfotmation.h; sourceTree = "<group>"; };
@@ -443,6 +449,9 @@
 		949012FE1C9F7F5700253715 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				94B99F751CBFA63300B1C072 /* Icon.png */,
+				94B99F761CBFA63300B1C072 /* Icon@2x.png */,
+				94B99F771CBFA63300B1C072 /* Icon@3x.png */,
 				949012FF1C9F7F5700253715 /* chenyixun.jpg */,
 				9490130D1C9F7F5700253715 /* playing_btn_next_h@2x.png */,
 				9490130E1C9F7F5700253715 /* playing_btn_next_n@2x.png */,
@@ -1081,7 +1090,7 @@
 				TargetAttributes = {
 					F3F0B2AD1C95099F00989506 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = HR25JTF3LT;
+						DevelopmentTeam = 63FKDZ5Q3M;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1136,8 +1145,10 @@
 				F30725261CBCDEFA004502AB /* 头像.png in Resources */,
 				F307254D1CBFAA30004502AB /* 时间.png in Resources */,
 				94A740BC1CBA409B00688160 /* fa-automobile@2x.png in Resources */,
+				94B99F791CBFA63300B1C072 /* Icon@2x.png in Resources */,
 				949013331C9F7F5700253715 /* playing_btn_pause_h@2x.png in Resources */,
 				F32FD9291C9A895000804053 /* HomeNavBarCityItem.xib in Resources */,
+				94B99F781CBFA63300B1C072 /* Icon.png in Resources */,
 				94A740BF1CBA409B00688160 /* fa-flickr.png in Resources */,
 				F3F0B2C11C95099F00989506 /* LaunchScreen.storyboard in Resources */,
 				F307253E1CBE9E0B004502AB /* 二维码.png in Resources */,
@@ -1181,6 +1192,7 @@
 				949013381C9F7F5700253715 /* playing_btn_pre_n@2x.png in Resources */,
 				949013401C9F7F5700253715 /* yanzi.jpg in Resources */,
 				F317A3481CB620CB00394F65 /* scanscanBg.png in Resources */,
+				94B99F7A1CBFA63300B1C072 /* Icon@3x.png in Resources */,
 				F3F0B2BC1C95099F00989506 /* Main.storyboard in Resources */,
 				F30725201CBCC896004502AB /* dx_checkbox_gray_on.png in Resources */,
 				F317A3521CB6253600394F65 /* iconfont-yuyue@2x.png in Resources */,
@@ -1439,7 +1451,7 @@
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJM;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1461,7 +1473,7 @@
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJM;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
