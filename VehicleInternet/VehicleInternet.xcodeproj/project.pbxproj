@@ -79,6 +79,14 @@
 		F307254B1CBFAA15004502AB /* 类型.png in Resources */ = {isa = PBXBuildFile; fileRef = F30725491CBFAA15004502AB /* 类型.png */; };
 		F307254D1CBFAA30004502AB /* 时间.png in Resources */ = {isa = PBXBuildFile; fileRef = F307254C1CBFAA30004502AB /* 时间.png */; };
 		F307254F1CBFAF7B004502AB /* 里程.png in Resources */ = {isa = PBXBuildFile; fileRef = F307254E1CBFAF7B004502AB /* 里程.png */; };
+		F30725621CBFB8FD004502AB /* SCLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F30725521CBFB8FD004502AB /* SCLAlertView.m */; };
+		F30725631CBFB8FD004502AB /* SCLAlertViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = F30725541CBFB8FD004502AB /* SCLAlertViewResponder.m */; };
+		F30725641CBFB8FD004502AB /* SCLAlertViewStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F30725561CBFB8FD004502AB /* SCLAlertViewStyleKit.m */; };
+		F30725651CBFB8FD004502AB /* SCLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F30725581CBFB8FD004502AB /* SCLButton.m */; };
+		F30725661CBFB8FD004502AB /* SCLSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F307255B1CBFB8FD004502AB /* SCLSwitchView.m */; };
+		F30725671CBFB8FD004502AB /* SCLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F307255D1CBFB8FD004502AB /* SCLTextView.m */; };
+		F30725681CBFB8FD004502AB /* SCLTimerDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = F307255F1CBFB8FD004502AB /* SCLTimerDisplay.m */; };
+		F30725691CBFB8FD004502AB /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F30725611CBFB8FD004502AB /* UIImage+ImageEffects.m */; };
 		F30F7E931C950C8D0081A41E /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F30F7E921C950C8D0081A41E /* mapapi.bundle */; };
 		F30F7F001C97A8B20081A41E /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F317A3461CB620CB00394F65 /* scanLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F317A3401CB620CB00394F65 /* scanLine@2x.png */; };
@@ -274,6 +282,23 @@
 		F30725491CBFAA15004502AB /* 类型.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "类型.png"; sourceTree = "<group>"; };
 		F307254C1CBFAA30004502AB /* 时间.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "时间.png"; sourceTree = "<group>"; };
 		F307254E1CBFAF7B004502AB /* 里程.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "里程.png"; sourceTree = "<group>"; };
+		F30725511CBFB8FD004502AB /* SCLAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertView.h; sourceTree = "<group>"; };
+		F30725521CBFB8FD004502AB /* SCLAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertView.m; sourceTree = "<group>"; };
+		F30725531CBFB8FD004502AB /* SCLAlertViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewResponder.h; sourceTree = "<group>"; };
+		F30725541CBFB8FD004502AB /* SCLAlertViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertViewResponder.m; sourceTree = "<group>"; };
+		F30725551CBFB8FD004502AB /* SCLAlertViewStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewStyleKit.h; sourceTree = "<group>"; };
+		F30725561CBFB8FD004502AB /* SCLAlertViewStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertViewStyleKit.m; sourceTree = "<group>"; };
+		F30725571CBFB8FD004502AB /* SCLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLButton.h; sourceTree = "<group>"; };
+		F30725581CBFB8FD004502AB /* SCLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLButton.m; sourceTree = "<group>"; };
+		F30725591CBFB8FD004502AB /* SCLMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLMacros.h; sourceTree = "<group>"; };
+		F307255A1CBFB8FD004502AB /* SCLSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLSwitchView.h; sourceTree = "<group>"; };
+		F307255B1CBFB8FD004502AB /* SCLSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLSwitchView.m; sourceTree = "<group>"; };
+		F307255C1CBFB8FD004502AB /* SCLTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLTextView.h; sourceTree = "<group>"; };
+		F307255D1CBFB8FD004502AB /* SCLTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLTextView.m; sourceTree = "<group>"; };
+		F307255E1CBFB8FD004502AB /* SCLTimerDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLTimerDisplay.h; sourceTree = "<group>"; };
+		F307255F1CBFB8FD004502AB /* SCLTimerDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLTimerDisplay.m; sourceTree = "<group>"; };
+		F30725601CBFB8FD004502AB /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		F30725611CBFB8FD004502AB /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		F30F7E921C950C8D0081A41E /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = VehicleInternet/Framework/BaiduMap/BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		F30F7EA81C9538BF0081A41E /* VIHomeMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIHomeMapController.h; sourceTree = "<group>"; };
 		F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = VehicleInternet/AVOSCloud.framework; sourceTree = "<group>"; };
@@ -500,6 +525,30 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		F30725501CBFB8FD004502AB /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				F30725511CBFB8FD004502AB /* SCLAlertView.h */,
+				F30725521CBFB8FD004502AB /* SCLAlertView.m */,
+				F30725531CBFB8FD004502AB /* SCLAlertViewResponder.h */,
+				F30725541CBFB8FD004502AB /* SCLAlertViewResponder.m */,
+				F30725551CBFB8FD004502AB /* SCLAlertViewStyleKit.h */,
+				F30725561CBFB8FD004502AB /* SCLAlertViewStyleKit.m */,
+				F30725571CBFB8FD004502AB /* SCLButton.h */,
+				F30725581CBFB8FD004502AB /* SCLButton.m */,
+				F30725591CBFB8FD004502AB /* SCLMacros.h */,
+				F307255A1CBFB8FD004502AB /* SCLSwitchView.h */,
+				F307255B1CBFB8FD004502AB /* SCLSwitchView.m */,
+				F307255C1CBFB8FD004502AB /* SCLTextView.h */,
+				F307255D1CBFB8FD004502AB /* SCLTextView.m */,
+				F307255E1CBFB8FD004502AB /* SCLTimerDisplay.h */,
+				F307255F1CBFB8FD004502AB /* SCLTimerDisplay.m */,
+				F30725601CBFB8FD004502AB /* UIImage+ImageEffects.h */,
+				F30725611CBFB8FD004502AB /* UIImage+ImageEffects.m */,
+			);
+			path = SCLAlertView;
+			sourceTree = "<group>";
+		};
 		F30F7E941C950CE60081A41E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,6 +676,7 @@
 		F32FD9011C97CA0000804053 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				F30725501CBFB8FD004502AB /* SCLAlertView */,
 				F30725331CBE22DD004502AB /* MBProgressHUD */,
 				F307251B1CBCC59B004502AB /* ZJAlertListView */,
 				F372217F1CB64A18005F124C /* LCCoolHUD */,
@@ -1093,7 +1143,7 @@
 				TargetAttributes = {
 					F3F0B2AD1C95099F00989506 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 63FKDZ5Q3M;
+						DevelopmentTeam = HR25JTF3LT;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1249,15 +1299,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30725661CBFB8FD004502AB /* SCLSwitchView.m in Sources */,
+				F30725621CBFB8FD004502AB /* SCLAlertView.m in Sources */,
+				F30725631CBFB8FD004502AB /* SCLAlertViewResponder.m in Sources */,
 				F3E447EA1CB16BA6006B62E1 /* VIAppointmentCell.m in Sources */,
 				F3E4480F1CB29321006B62E1 /* JMRegisterController.m in Sources */,
 				F37221AB1CB64A18005F124C /* JGProgressHUDSuccessIndicatorView.m in Sources */,
+				F30725641CBFB8FD004502AB /* SCLAlertViewStyleKit.m in Sources */,
 				F37221A41CB64A18005F124C /* JGProgressHUDFadeAnimation.m in Sources */,
 				F32FD9141C97CA2300804053 /* UIImage+ImageEffects.m in Sources */,
 				F3E447E51CB12608006B62E1 /* UUDatePicker_DateModel.m in Sources */,
 				94CE0D781C985ED40065D966 /* VIMyCarsController.m in Sources */,
 				F30725411CBEA02F004502AB /* VICarEwmController.m in Sources */,
 				F37221AD1CB64A18005F124C /* LCLoadingHUD.m in Sources */,
+				F30725651CBFB8FD004502AB /* SCLButton.m in Sources */,
+				F30725671CBFB8FD004502AB /* SCLTextView.m in Sources */,
 				948C87E41C9FD791006EB17A /* VIMusicListController.m in Sources */,
 				F372219F1CB64A18005F124C /* CLProgressHUD.m in Sources */,
 				F32FD9281C9A895000804053 /* HomeNavBarCityItem.m in Sources */,
@@ -1292,6 +1348,7 @@
 				F3E4480D1CB29321006B62E1 /* JMLogInController.m in Sources */,
 				F3E447F51CB21F46006B62E1 /* UIImage+QRCode.m in Sources */,
 				F30725311CBD49A6004502AB /* VIScanResultController.m in Sources */,
+				F30725681CBFB8FD004502AB /* SCLTimerDisplay.m in Sources */,
 				94E006001CB630E600684362 /* VISettingController.m in Sources */,
 				94E8AA301CBCF041003A371F /* VIModifyPersonalInfoController.m in Sources */,
 				F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */,
@@ -1300,6 +1357,7 @@
 				94CE0D791C985ED40065D966 /* VIPeccancyInfotmation.m in Sources */,
 				F37221A81CB64A18005F124C /* JGProgressHUDIndicatorView.m in Sources */,
 				F3F0B2B31C95099F00989506 /* main.m in Sources */,
+				F30725691CBFB8FD004502AB /* UIImage+ImageEffects.m in Sources */,
 				F37221A51CB64A18005F124C /* JGProgressHUDFadeZoomAnimation.m in Sources */,
 				F37221A21CB64A18005F124C /* JGProgressHUDAnimation.m in Sources */,
 				F37221A61CB64A18005F124C /* JGProgressHUDImageIndicatorView.m in Sources */,
@@ -1455,7 +1513,7 @@
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1477,7 +1535,7 @@
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

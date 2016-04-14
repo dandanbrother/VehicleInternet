@@ -75,7 +75,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
+
    [LCCoolHUD showLoading:@"加载数据中" inView:self.view];
     
     VIUserModel *user = [VIUserModel currentUser];

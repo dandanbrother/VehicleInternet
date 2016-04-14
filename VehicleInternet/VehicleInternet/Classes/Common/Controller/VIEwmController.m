@@ -58,8 +58,9 @@
     imgView.layer.shadowOpacity = 0.5;
     [self.view addSubview:imgView];
     
+    imgView.centerY = KDeviceHeight * 0.5;
     
-    imgView.image = [UIImage qrImageWithContent:str logo:[UIImage imageNamed:@"海绵宝宝.jpeg"] size:width red:20 green:100 blue:100];
+    imgView.image = [UIImage qrImageWithContent:str logo:[UIImage imageNamed:@"111"] size:width red:20 green:100 blue:100];
 
     
 }

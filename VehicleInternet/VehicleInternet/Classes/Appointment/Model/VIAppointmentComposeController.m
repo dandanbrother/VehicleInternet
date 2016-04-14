@@ -24,6 +24,7 @@
 #import <BaiduMapAPI_Map/BMKAnnotation.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import "LCCoolHUD.h"
+#import "SCLAlertView.h"
 
 #define PTypeTag 1001
 #define CInfoTag 1002
