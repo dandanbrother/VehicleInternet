@@ -10,8 +10,9 @@
 #import "VICarInfoModel.h"
 #import "VIMyCarCell.h"
 #import "VIModifyCarController.h"
+#import "VICarEwmController.h"
 
-@interface VIMyCarsController ()
+@interface VIMyCarsController () <VIMyCarCellDelegate>
 @property (nonatomic, strong) NSMutableArray *carList;
 @property (nonatomic, assign) NSInteger sectionNum;
 @end
@@ -38,9 +39,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
     [self getDataFromLeanCloud];
 
-    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -50,6 +51,7 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     //取消cell分割线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BG.png"]];
 }
 
@@ -68,6 +70,7 @@
         
         VIMyCarCell *cell = [VIMyCarCell carInfoCellWithTableView:tableView];
         cell.carInfo = self.carList[indexPath.row/2];
+        cell.delegate = self;
         return cell;
     } else {
         static NSString *CELL_ID2 = @"SOME_STUPID_ID2";
@@ -92,7 +95,6 @@
         UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(cell.x, cell.y, cell.width, cell.height)];
         backGround.image = [UIImage imageNamed:@"CarCell.png"];
         cell.backgroundView = backGround;
-        cell.alpha = 0.6;
     }
 }
 
@@ -101,7 +103,7 @@
         
         return 12;
     } else {
-        return 92;
+        return 150;
     }
 }
 
@@ -135,5 +137,11 @@
     }];
 }
 
-
+#pragma mark - VIMyCarCellDelegate
+- (void)clickToShowEwm:(UIButton *)btn carInfo:(VICarInfoModel *)carInfo
+{
+    VICarEwmController *ewmVC = [VICarEwmController ewmShownWithCarInfo:carInfo];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ewmVC];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
+}
 @end

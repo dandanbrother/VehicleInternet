@@ -46,7 +46,7 @@
         [query whereKey:@"ownerID" equalTo:user.objectId];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (objects.count == 0) {
-                [LCCoolHUD showSuccess:@"请先绑定车辆!" zoom:YES shadow:YES];
+                [LCCoolHUD showFailure:@"请先绑定车辆!" zoom:YES shadow:YES];
             }else
             {
                 
