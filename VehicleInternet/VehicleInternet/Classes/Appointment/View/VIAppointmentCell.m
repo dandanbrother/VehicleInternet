@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *petrolStationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *petrolTypeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *petrolAmountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *licenseNumLabel;
 - (IBAction)showEwmBtnClicked:(id)sender;
 
 @end
@@ -25,11 +26,12 @@
 - (void)setAppointmentInfo:(VIAppointmentModel *)appointmentInfo
 {
     _appointmentInfo = appointmentInfo;
-    self.carInfoLabel.text = [NSString stringWithFormat:@"%@ : %@",appointmentInfo.carName,appointmentInfo.plateNum];
+    self.carInfoLabel.text = appointmentInfo.carName;
+    self.licenseNumLabel.text = appointmentInfo.plateNum;
     self.timeLabel.text = appointmentInfo.time;
     self.petrolStationLabel.text = appointmentInfo.petrolStation;
     self.petrolTypeLabel.text = appointmentInfo.petrolType;
-    self.petrolAmountLabel.text = appointmentInfo.petrolAmount;
+    self.petrolAmountLabel.text = [NSString stringWithFormat:@"%@升",appointmentInfo.petrolAmount];
 }
 
 

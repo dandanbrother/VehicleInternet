@@ -95,6 +95,8 @@
     self.l4.layer.cornerRadius = LCornerR;
     self.l5.layer.cornerRadius = LCornerR;
     self.l6.layer.cornerRadius = LCornerR;
+    self.l7.layer.cornerRadius = LCornerR;
+    
     self.submitBtn.layer.cornerRadius = LCornerR + 2;
     self.l1.layer.masksToBounds = YES;
     self.l2.layer.masksToBounds = YES;
@@ -102,6 +104,7 @@
     self.l4.layer.masksToBounds = YES;
     self.l5.layer.masksToBounds = YES;
     self.l6.layer.masksToBounds = YES;
+    self.l7.layer.masksToBounds = YES;
     self.submitBtn.layer.masksToBounds = YES;
     
     //添加导航栏左面按钮

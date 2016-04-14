@@ -138,7 +138,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 185;
+    return 220;
 }
 
 #pragma mark - AppointmentCellDelegate
