@@ -8,6 +8,7 @@
 
 #import "VIEwmScanController.h"
 #import "SHBQRView.h"
+#import "LCCoolHUD.h"
 #import "VIScanResultController.h"
 
 @interface VIEwmScanController ()<SHBQRViewDelegate>
@@ -32,6 +33,7 @@
      @"objectId" : self.appointment.objectId
      };
      */
+    [LCCoolHUD showSuccess:@"扫描成功" zoom:YES shadow:YES];
     
     NSDictionary *dict = [self dictionaryWithJsonString:result];
     

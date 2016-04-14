@@ -96,7 +96,7 @@
      *  tomorrow.VehicleInternet       CpVALBsZIouu5TAt485fEBRX
      *
      */
-    BOOL ret = [_mapManager start:@"CpVALBsZIouu5TAt485fEBRX"  generalDelegate:self];
+    BOOL ret = [_mapManager start:@"o3DCdN1FZZKaT3gK0B8f3TkT"  generalDelegate:self];
     
     if (!ret) {
         NSLog(@"baiduMap failed");

@@ -39,8 +39,21 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:YES];
-    [self getDataFromLeanCloud];
+    
+    AVUser *user = [AVUser currentUser];
+    AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
+    [query whereKey:@"ownerID" equalTo:user.objectId];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (objects.count !=0 && objects !=nil &&objects.count != self.carList.count)
+        {
+            [self.carList removeAllObjects];
+            for (VICarInfoModel *model in objects) {
+                [self.carList addObject:model];
+            }
+            [self.tableView reloadData];
+        }
+        
+    }];
 
 }
 
@@ -49,6 +62,7 @@
     
     //覆盖多余空白cell
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.showsVerticalScrollIndicator = NO;
     //取消cell分割线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
@@ -66,6 +80,8 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
     if (indexPath.row % 2 != 0) {
         
         VIMyCarCell *cell = [VIMyCarCell carInfoCellWithTableView:tableView];
@@ -107,6 +123,10 @@
     }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
+
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -124,18 +144,7 @@
 
 }
 
-- (void)getDataFromLeanCloud {
-    [self.carList removeAllObjects];
-    AVUser *user = [AVUser currentUser];
-    AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
-    [query whereKey:@"ownerID" equalTo:user.objectId];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        for (VICarInfoModel *model in objects) {
-            [self.carList addObject:model];
-        }
-        [self.tableView reloadData];
-    }];
-}
+
 
 #pragma mark - VIMyCarCellDelegate
 - (void)clickToShowEwm:(UIButton *)btn carInfo:(VICarInfoModel *)carInfo
