@@ -51,6 +51,7 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     //取消cell分割线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BG.png"]];
 }
 
@@ -94,7 +95,6 @@
         UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(cell.x, cell.y, cell.width, cell.height)];
         backGround.image = [UIImage imageNamed:@"CarCell.png"];
         cell.backgroundView = backGround;
-        cell.alpha = 0.6;
     }
 }
 

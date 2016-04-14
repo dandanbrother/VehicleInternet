@@ -10,6 +10,7 @@
 #import "VICarInfoModel.h"
 #import "ZJAlertListView.h"
 #import "VICarEwmScanController.h"
+#import "LCCoolHUD.h"
 
 @interface VIAddCarController () <UITextFieldDelegate,ZJAlertListViewDelegate,ZJAlertListViewDatasource>
 @property (weak, nonatomic) IBOutlet UITextField *carBrand;
@@ -65,11 +66,6 @@
         weakSelf.carBrand.text = dict[@"carBrand"];
     }];
     
-}
-
-#pragma mark - UITextFieldDelegate
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    NSLog(@"1");
 }
 
 #pragma mark - ZJAlertListViewDatasource
@@ -146,11 +142,12 @@
         model.ownerID = user.objectId;
         [model saveInBackground];
         
+        [LCCoolHUD showSuccess:@"添加成功" zoom:YES shadow:YES];
+        
         [self.navigationController popViewControllerAnimated:YES];
         
     } else {
-        NSLog(@"信息不全");
-        
+        [LCCoolHUD showFailure:@"信息不全" zoom:YES shadow:YES];
     }
 
 }
