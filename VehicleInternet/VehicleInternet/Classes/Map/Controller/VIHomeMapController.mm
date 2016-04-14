@@ -121,18 +121,18 @@
     self.currentLocation = [[BMKUserLocation alloc] init];
     self.routeSearch = [[BMKRouteSearch alloc] init];
     
-    CLLocationCoordinate2D pt = (CLLocationCoordinate2D){32.1215900000,118.9374060000};
-    BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
-    reverseGeocodeSearchOption.reverseGeoPoint = pt;
-    BOOL flag = [self.geoCodeSearch reverseGeoCode:reverseGeocodeSearchOption];
-    if(flag)
-    {
-        NSLog(@"反geo检索发送成功");
-    }
-    else
-    {
-        NSLog(@"反geo检索发送失败");
-    }
+//    CLLocationCoordinate2D pt = (CLLocationCoordinate2D){32.1215900000,118.9374060000};
+//    BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
+//    reverseGeocodeSearchOption.reverseGeoPoint = pt;
+//    BOOL flag = [self.geoCodeSearch reverseGeoCode:reverseGeocodeSearchOption];
+//    if(flag)
+//    {
+//        NSLog(@"反geo检索发送成功");
+//    }
+//    else
+//    {
+//        NSLog(@"反geo检索发送失败");
+//    }
 
 }
 
