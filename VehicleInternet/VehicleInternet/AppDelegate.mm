@@ -6,9 +6,11 @@
 //  Copyright © 2016年 TomorJM. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "AppDelegate.h" 
 #import <AVOSCloud/AVOSCloud.h>
-
+#import "VIAppointmentModel.h"
+#import "VIUserModel.h"
+#import "VICarInfoModel.h"
 
 
 @interface AppDelegate ()
@@ -16,6 +18,8 @@
     BMKMapManager* _mapManager;
     BOOL isUpdata;
 }
+
+
 @end
 
 @implementation AppDelegate
@@ -23,12 +27,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+//    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:253/255.0 green:130/255.0 blue:36/255.0 alpha:1]];
+    [[UITabBar appearance] setTintColor:[UIColor blueColor]];
+    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
     
+    
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:83/255.0 green:125/255.0 blue:221/255.0 alpha:1.0]];
+    
+    //导航栏白色字体
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+
     //初始化leancloud
     [self leancloudSetupWithLaunchOptions:launchOptions];
     //初始化百度地图
     [self baiduMapSetup];
-    
     
     return YES;
 }
@@ -62,7 +75,11 @@
     [AVOSCloud setApplicationId:@"qkuNzgIaUA246v24WYFByeNd-gzGzoHsz"
                       clientKey:@"TJVs6qapLKD7yLPOfmBVevlX"];
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-
+    
+    /** 子类注册 */
+    [VIAppointmentModel registerSubclass];
+    [VIUserModel registerSubclass];
+    [VICarInfoModel registerSubclass];
 
     
 }
@@ -88,5 +105,6 @@
         NSLog(@"baiduMap successed");
     }
 }
+
 
 @end

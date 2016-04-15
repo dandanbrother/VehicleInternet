@@ -21,6 +21,8 @@
 #import "HomeNavBarCityItem.h"
 #import "VIMapPoiSearch.h"
 #import "VISearchSiteTextField.h"
+#import "VIMusicPlayerController.h"
+#import "MBProgressHUD.h"
 
 @interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
@@ -53,6 +55,7 @@
 @property (nonatomic,strong) UITableView *poiMatchTableView;
 
 
+@property (weak, nonatomic) IBOutlet UIButton *queryPathBtn;
 
 - (IBAction)queryPathBtnClicked:(id)sender;
 
@@ -86,9 +89,7 @@
     self.poiSearch.delegate = self;
     self.routeSearch.delegate = self;
     //开始定位
-    [self startLocation];
-    
-    
+    [self startLocation];    
 }
 - (void)viewDidDisappear:(BOOL)animated
 {
@@ -99,6 +100,7 @@
     self.routeSearch.delegate = nil;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.startTF addTarget:self action:@selector(textFieldValueChanged:) forControlEvents:UIControlEventEditingChanged];
@@ -106,7 +108,6 @@
     
     /** 初始化自定义视图 */
     [self setupCustomView];
-    NSLog(@"111");
     /** 初始化地图 */
     [self setupMap];
     /** 初始化定位服务 */
@@ -120,19 +121,18 @@
     self.currentLocation = [[BMKUserLocation alloc] init];
     self.routeSearch = [[BMKRouteSearch alloc] init];
     
-    CLLocationCoordinate2D pt = (CLLocationCoordinate2D){32.1215900000,118.9374060000};
-    BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
-    reverseGeocodeSearchOption.reverseGeoPoint = pt;
-    BOOL flag = [self.geoCodeSearch reverseGeoCode:reverseGeocodeSearchOption];
-    if(flag)
-    {
-        NSLog(@"反geo检索发送成功");
-    }
-    else
-    {
-        NSLog(@"反geo检索发送失败");
-    }
-
+//    CLLocationCoordinate2D pt = (CLLocationCoordinate2D){32.1215900000,118.9374060000};
+//    BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
+//    reverseGeocodeSearchOption.reverseGeoPoint = pt;
+//    BOOL flag = [self.geoCodeSearch reverseGeoCode:reverseGeocodeSearchOption];
+//    if(flag)
+//    {
+//        NSLog(@"反geo检索发送成功");
+//    }
+//    else
+//    {
+//        NSLog(@"反geo检索发送失败");
+//    }
 
 }
 
@@ -144,7 +144,7 @@
 {
     //初始化地图
     self.mapView = [[BMKMapView alloc] init];
-    self.mapView.frame = CGRectMake(0, self.destinationTF.bottom + 5, KDeviceWidth, KDeviceHeight - 49 - 5 - self.destinationTF.bottom);
+    self.mapView.frame = CGRectMake(0, 64, KDeviceWidth, KDeviceHeight - 64 - 50);
 
     self.mapView.zoomEnabled = YES;//允许Zoom
     self.mapView.zoomLevel = 14;
@@ -152,7 +152,7 @@
     self.mapView.userTrackingMode = BMKUserTrackingModeFollow;
     self.mapView.showsUserLocation = YES;
     self.mapView.mapType = BMKMapTypeStandard;//地图类型为标准
-    [self.view addSubview:self.mapView];
+    [self.view insertSubview:self.mapView belowSubview:self.destinationTF];
     //定位图层自定义样式参数
     BMKLocationViewDisplayParam *displayParam = [[BMKLocationViewDisplayParam alloc]init];
     displayParam.isRotateAngleValid = NO;//跟随态旋转角度是否生效
@@ -161,14 +161,14 @@
     displayParam.locationViewOffsetY = 0;//定位偏移量（纬度）
     [self.mapView updateLocationViewWithParam:displayParam];
     
-    //地图中心小图标
-    UIImageView *imageView = [[UIImageView alloc] init];
-    imageView.image = [UIImage imageNamed:@"iconfont-yuandianbiaozhu"];
-    imageView.width = 10;
-    imageView.height = 10;
-    imageView.centerX = self.mapView.centerX;
-    imageView.centerY = self.mapView.height * 0.5;
-    [self.mapView addSubview:imageView];
+//    //地图中心小图标
+//    UIImageView *imageView = [[UIImageView alloc] init];
+//    imageView.image = [UIImage imageNamed:@"iconfont-yuandianbiaozhu"];
+//    imageView.width = 10;
+//    imageView.height = 10;
+//    imageView.centerX = self.mapView.centerX;
+//    imageView.centerY = self.mapView.height * 0.5;
+//    [self.mapView addSubview:imageView];
     
     
     //显示加油站开关
@@ -186,6 +186,10 @@
     switchLabel.font = [UIFont systemFontOfSize:12];
     switchLabel.text = @"显示加油站";
     switchLabel.textColor = [UIColor redColor];
+    
+    //设置查询按钮
+    self.queryPathBtn.layer.cornerRadius = 8;
+    self.queryPathBtn.alpha = 0.7;
 
 }
 /**
@@ -265,23 +269,11 @@
 
 #pragma mark - BMKMapViewDelegate
 
-//- (void)mapView:(BMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
-//{
-//    NSLog(@"regionWillChangeAnimated---%f---%f",mapView.centerCoordinate.latitude,mapView.centerCoordinate.longitude);
-//    
-//    CLLocationCoordinate2D pt = (CLLocationCoordinate2D){mapView.centerCoordinate.latitude, mapView.centerCoordinate.longitude};
-//    BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
-//    reverseGeocodeSearchOption.reverseGeoPoint = pt;
-//    BOOL flag = [self.geoCodeSearch reverseGeoCode:reverseGeocodeSearchOption];
-//    if(flag)
-//    {
-//        NSLog(@"反geo检索发送成功");
-//    }
-//    else
-//    {
-//        NSLog(@"反geo检索发送失败");
-//    }
-//}
+- (void)mapView:(BMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    [self.startTF resignFirstResponder];
+    [self.destinationTF resignFirstResponder];
+}
 
 /**
  *  根据overlay生成对应的View
@@ -313,6 +305,10 @@
     NSLog(@"didUpdateBMKUserLocation---%f----%f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
     [self.mapView updateLocationData:userLocation];
     _mapView.centerCoordinate = userLocation.location.coordinate;
+    
+    
+    
+    //
     CLLocationCoordinate2D pt = (CLLocationCoordinate2D){self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude};
     BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
     reverseGeocodeSearchOption.reverseGeoPoint = pt;
@@ -443,15 +439,18 @@
 }
 
 
-#pragma mark - BMKGeoCodeSearchDelegate
+#pragma mark - BMKGeoCodeSearchDelegate -设置城市名称
 
 - (void) onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
 {
-    
 
     NSString *cityName = result.addressDetail.city;
     NSString *subStr = [cityName substringWithRange:NSMakeRange(0, cityName.length - 1)];
     self.cityItem.title = subStr;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = [NSString stringWithFormat:@"当前定位城市:%@",subStr];
+    [hud hideAnimated:YES afterDelay:1.5f];
 }
 #pragma mark - 其他方法
 /**
@@ -603,4 +602,5 @@
 
     
 }
+
 @end

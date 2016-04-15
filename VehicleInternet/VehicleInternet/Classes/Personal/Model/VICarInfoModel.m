@@ -10,11 +10,11 @@
 
 @implementation VICarInfoModel
 
+@dynamic ownerID,carBrand,licenseNum,engineNum,doorsNum,seatsNum,mileage,petrol,isEngineGood,isTransmissionGood,isLightGood;
+
 - (instancetype)initWithDict:(NSDictionary *)dictionary {
     if (self = [super init]) {
-//        self.carBrand = dictionary[@"carBrand"];
-//        self.licenseNum = dictionary[@"licenseNum"];
-//        self.engineNum = dictionary[@"engineNum"];
+
         [self setValuesForKeysWithDictionary:dictionary];
     
     }
@@ -25,5 +25,8 @@
     return [[self alloc] initWithDict:dict];
 }
 
++ (NSString *)parseClassName {
+    return @"VICarInfoModel";
+}
 
 @end
