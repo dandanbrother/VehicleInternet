@@ -30,6 +30,7 @@
 		949013441C9F7F5700253715 /* 你给我听好.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 949013201C9F7F5700253715 /* 你给我听好.mp3 */; };
 		949013451C9F7F5700253715 /* 安静.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 949013211C9F7F5700253715 /* 安静.mp3 */; };
 		949013461C9F7F5700253715 /* 遇见.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 949013221C9F7F5700253715 /* 遇见.mp3 */; };
+		9497DC841CC24FA400EAA0B3 /* ICEBTPayPassWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497DC831CC24FA400EAA0B3 /* ICEBTPayPassWordView.m */; };
 		949B0F691CB3E4F1007E3592 /* VIAddCarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949B0F681CB3E4F1007E3592 /* VIAddCarController.m */; };
 		949C45FC1CB5033F00DD8C97 /* VIModifyCarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949C45FB1CB5033F00DD8C97 /* VIModifyCarController.m */; };
 		94A740BB1CBA409B00688160 /* fa-automobile.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A740B31CBA409B00688160 /* fa-automobile.png */; };
@@ -60,6 +61,12 @@
 		94E006011CB630E600684362 /* VISettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E005FF1CB630E600684362 /* VISettingController.xib */; };
 		94E8AA301CBCF041003A371F /* VIModifyPersonalInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E8AA2F1CBCF041003A371F /* VIModifyPersonalInfoController.m */; };
 		94EF6E1F1CA3918700082474 /* VIHomeMapController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94EF6E1E1CA3918700082474 /* VIHomeMapController.mm */; };
+		94F2AA501CC120CF007D94EB /* VIProtectCarInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F2AA4F1CC120CF007D94EB /* VIProtectCarInfoController.m */; };
+		94F2AA541CC126F9007D94EB /* VIProtectCarInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F2AA521CC126F9007D94EB /* VIProtectCarInfoCell.m */; };
+		94F2AA551CC126F9007D94EB /* VIProtectCarInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94F2AA531CC126F9007D94EB /* VIProtectCarInfoCell.xib */; };
+		94F2AA591CC12885007D94EB /* 变速箱.png in Resources */ = {isa = PBXBuildFile; fileRef = 94F2AA561CC12885007D94EB /* 变速箱.png */; };
+		94F2AA5A1CC12885007D94EB /* 车灯.png in Resources */ = {isa = PBXBuildFile; fileRef = 94F2AA571CC12885007D94EB /* 车灯.png */; };
+		94F2AA5B1CC12885007D94EB /* 发动机.png in Resources */ = {isa = PBXBuildFile; fileRef = 94F2AA581CC12885007D94EB /* 发动机.png */; };
 		F307251E1CBCC59B004502AB /* ZJAlertListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F307251D1CBCC59B004502AB /* ZJAlertListView.m */; };
 		F30725201CBCC896004502AB /* dx_checkbox_gray_on.png in Resources */ = {isa = PBXBuildFile; fileRef = F307251F1CBCC896004502AB /* dx_checkbox_gray_on.png */; };
 		F30725221CBCC89E004502AB /* dx_checkbox_off.png in Resources */ = {isa = PBXBuildFile; fileRef = F30725211CBCC89E004502AB /* dx_checkbox_off.png */; };
@@ -219,6 +226,8 @@
 		949013201C9F7F5700253715 /* 你给我听好.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "你给我听好.mp3"; sourceTree = "<group>"; };
 		949013211C9F7F5700253715 /* 安静.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "安静.mp3"; sourceTree = "<group>"; };
 		949013221C9F7F5700253715 /* 遇见.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "遇见.mp3"; sourceTree = "<group>"; };
+		9497DC821CC24FA400EAA0B3 /* ICEBTPayPassWordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEBTPayPassWordView.h; sourceTree = "<group>"; };
+		9497DC831CC24FA400EAA0B3 /* ICEBTPayPassWordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEBTPayPassWordView.m; sourceTree = "<group>"; };
 		949B0F671CB3E4F1007E3592 /* VIAddCarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIAddCarController.h; sourceTree = "<group>"; };
 		949B0F681CB3E4F1007E3592 /* VIAddCarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIAddCarController.m; sourceTree = "<group>"; };
 		949C45FA1CB5033F00DD8C97 /* VIModifyCarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIModifyCarController.h; sourceTree = "<group>"; };
@@ -258,6 +267,14 @@
 		94E8AA2E1CBCF041003A371F /* VIModifyPersonalInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIModifyPersonalInfoController.h; sourceTree = "<group>"; };
 		94E8AA2F1CBCF041003A371F /* VIModifyPersonalInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIModifyPersonalInfoController.m; sourceTree = "<group>"; };
 		94EF6E1E1CA3918700082474 /* VIHomeMapController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VIHomeMapController.mm; sourceTree = "<group>"; };
+		94F2AA4E1CC120CF007D94EB /* VIProtectCarInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProtectCarInfoController.h; sourceTree = "<group>"; };
+		94F2AA4F1CC120CF007D94EB /* VIProtectCarInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProtectCarInfoController.m; sourceTree = "<group>"; };
+		94F2AA511CC126F9007D94EB /* VIProtectCarInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProtectCarInfoCell.h; sourceTree = "<group>"; };
+		94F2AA521CC126F9007D94EB /* VIProtectCarInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProtectCarInfoCell.m; sourceTree = "<group>"; };
+		94F2AA531CC126F9007D94EB /* VIProtectCarInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIProtectCarInfoCell.xib; sourceTree = "<group>"; };
+		94F2AA561CC12885007D94EB /* 变速箱.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "变速箱.png"; sourceTree = "<group>"; };
+		94F2AA571CC12885007D94EB /* 车灯.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "车灯.png"; sourceTree = "<group>"; };
+		94F2AA581CC12885007D94EB /* 发动机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发动机.png"; sourceTree = "<group>"; };
 		F307251C1CBCC59B004502AB /* ZJAlertListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJAlertListView.h; sourceTree = "<group>"; };
 		F307251D1CBCC59B004502AB /* ZJAlertListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJAlertListView.m; sourceTree = "<group>"; };
 		F307251F1CBCC896004502AB /* dx_checkbox_gray_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dx_checkbox_gray_on.png; sourceTree = "<group>"; };
@@ -497,6 +514,15 @@
 			path = image;
 			sourceTree = "<group>";
 		};
+		9497DC761CC2440100EAA0B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9497DC821CC24FA400EAA0B3 /* ICEBTPayPassWordView.h */,
+				9497DC831CC24FA400EAA0B3 /* ICEBTPayPassWordView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		94CE0D711C985EC00065D966 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,6 +621,9 @@
 		F317A33F1CB620CB00394F65 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				94F2AA561CC12885007D94EB /* 变速箱.png */,
+				94F2AA571CC12885007D94EB /* 车灯.png */,
+				94F2AA581CC12885007D94EB /* 发动机.png */,
 				94B99F811CBFBFC900B1C072 /* 111.png */,
 				F307254E1CBFAF7B004502AB /* 里程.png */,
 				F307254C1CBFAA30004502AB /* 时间.png */,
@@ -763,6 +792,8 @@
 				F307253B1CBE93FD004502AB /* VICarEwmScanController.m */,
 				F307253F1CBEA02E004502AB /* VICarEwmController.h */,
 				F30725401CBEA02F004502AB /* VICarEwmController.m */,
+				94F2AA4E1CC120CF007D94EB /* VIProtectCarInfoController.h */,
+				94F2AA4F1CC120CF007D94EB /* VIProtectCarInfoController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -782,6 +813,9 @@
 				94E005F81CB627D100684362 /* VIMyCarCell.h */,
 				94E005F91CB627D100684362 /* VIMyCarCell.m */,
 				94E005FB1CB627EB00684362 /* VIMyCarCell.xib */,
+				94F2AA511CC126F9007D94EB /* VIProtectCarInfoCell.h */,
+				94F2AA521CC126F9007D94EB /* VIProtectCarInfoCell.m */,
+				94F2AA531CC126F9007D94EB /* VIProtectCarInfoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -868,8 +902,8 @@
 			children = (
 				F32FD91D1C97CAC600804053 /* Controller */,
 				94CE0D711C985EC00065D966 /* Model */,
+				9497DC761CC2440100EAA0B3 /* View */,
 				F32FD91F1C97CAC600804053 /* Other */,
-				F32FD9201C97CAC600804053 /* View */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -894,13 +928,6 @@
 				F32FD9211C97CB0700804053 /* VehicleInternet.pch */,
 			);
 			path = Other;
-			sourceTree = "<group>";
-		};
-		F32FD9201C97CAC600804053 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F372217F1CB64A18005F124C /* LCCoolHUD */ = {
@@ -1143,7 +1170,7 @@
 				TargetAttributes = {
 					F3F0B2AD1C95099F00989506 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = HR25JTF3LT;
+						DevelopmentTeam = 63FKDZ5Q3M;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1217,6 +1244,7 @@
 				F30725471CBFAA01004502AB /* 车油.png in Resources */,
 				F317A34C1CB6219C00394F65 /* iconfont-ditu@2x.png in Resources */,
 				F317A3511CB6253600394F65 /* iconfont-iconfontbiaozhunmoban01@2x.png in Resources */,
+				94F2AA5A1CC12885007D94EB /* 车灯.png in Resources */,
 				94A740C61CBA416C00688160 /* Group@2x.png in Resources */,
 				F30725321CBD49A6004502AB /* VIScanResultController.xib in Resources */,
 				F37221A01CB64A18005F124C /* JGProgressHUD Resources.bundle in Resources */,
@@ -1232,8 +1260,10 @@
 				94A740BE1CBA409B00688160 /* fa-dashboard (alias)@2x.png in Resources */,
 				949013441C9F7F5700253715 /* 你给我听好.mp3 in Resources */,
 				F30725241CBCC8A7004502AB /* dx_checkbox_red_on.jpg in Resources */,
+				94F2AA551CC126F9007D94EB /* VIProtectCarInfoCell.xib in Resources */,
 				94B99F821CBFBFC900B1C072 /* 111.png in Resources */,
 				F30725461CBFAA01004502AB /* 车牌.png in Resources */,
+				94F2AA5B1CC12885007D94EB /* 发动机.png in Resources */,
 				94E006011CB630E600684362 /* VISettingController.xib in Resources */,
 				F307254A1CBFAA15004502AB /* 加油站.png in Resources */,
 				94A740D21CBA487600688160 /* CarCell@2x.png in Resources */,
@@ -1256,6 +1286,7 @@
 				949013231C9F7F5700253715 /* chenyixun.jpg in Resources */,
 				F3E447EB1CB16BA6006B62E1 /* VIAppointmentCell.xib in Resources */,
 				F30725281CBCE37B004502AB /* 按钮.png in Resources */,
+				94F2AA591CC12885007D94EB /* 变速箱.png in Resources */,
 				949013461C9F7F5700253715 /* 遇见.mp3 in Resources */,
 				94A740BD1CBA409B00688160 /* fa-dashboard (alias).png in Resources */,
 				F30725451CBFAA01004502AB /* 车辆3.png in Resources */,
@@ -1300,9 +1331,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F30725661CBFB8FD004502AB /* SCLSwitchView.m in Sources */,
+				9497DC841CC24FA400EAA0B3 /* ICEBTPayPassWordView.m in Sources */,
 				F30725621CBFB8FD004502AB /* SCLAlertView.m in Sources */,
 				F30725631CBFB8FD004502AB /* SCLAlertViewResponder.m in Sources */,
 				F3E447EA1CB16BA6006B62E1 /* VIAppointmentCell.m in Sources */,
+				94F2AA501CC120CF007D94EB /* VIProtectCarInfoController.m in Sources */,
 				F3E4480F1CB29321006B62E1 /* JMRegisterController.m in Sources */,
 				F37221AB1CB64A18005F124C /* JGProgressHUDSuccessIndicatorView.m in Sources */,
 				F30725641CBFB8FD004502AB /* SCLAlertViewStyleKit.m in Sources */,
@@ -1317,6 +1350,7 @@
 				948C87E41C9FD791006EB17A /* VIMusicListController.m in Sources */,
 				F372219F1CB64A18005F124C /* CLProgressHUD.m in Sources */,
 				F32FD9281C9A895000804053 /* HomeNavBarCityItem.m in Sources */,
+				94F2AA541CC126F9007D94EB /* VIProtectCarInfoCell.m in Sources */,
 				94EF6E1F1CA3918700082474 /* VIHomeMapController.mm in Sources */,
 				F32FD9331C9C108100804053 /* VIMapPoiSearch.m in Sources */,
 				F3E447EE1CB20F8C006B62E1 /* VIEwmController.m in Sources */,
@@ -1513,7 +1547,7 @@
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJM;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1535,7 +1569,7 @@
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJM;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

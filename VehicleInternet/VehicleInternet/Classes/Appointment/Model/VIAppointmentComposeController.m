@@ -25,12 +25,14 @@
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import "LCCoolHUD.h"
 #import "SCLAlertView.h"
+#import "ICEBTPayPassWordView.h"
 
 #define PTypeTag 1001
 #define CInfoTag 1002
+#define PUnitTag 1003
 #define LCornerR 5
 
-@interface VIAppointmentComposeController () <UITextFieldDelegate,ZJAlertListViewDelegate,ZJAlertListViewDatasource>
+@interface VIAppointmentComposeController () <UITextFieldDelegate,UIAlertViewDelegate,ZJAlertListViewDelegate,ZJAlertListViewDatasource>
 @property (weak, nonatomic) IBOutlet UITextField *timeTF;
 @property (weak, nonatomic) IBOutlet UITextField *licenseNumTF;
 
@@ -43,10 +45,13 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 
+@property (weak, nonatomic) IBOutlet UITextField *petrolUnitTF;
+
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 
 @property (nonatomic, strong) NSArray *petrolTypes;
 
+@property (nonatomic, strong) NSArray *petrolUnit;
 
 @property (nonatomic,strong) NSMutableArray *carInfoArr;
 
@@ -79,6 +84,15 @@
     }
     return _petrolTypes;
 }
+
+#pragma mark - 懒加载
+- (NSArray *)petrolUnit{
+    if (!_petrolUnit) {
+        self.petrolUnit = @[@"升",@"元"];
+    }
+    return _petrolUnit;
+}
+
 - (NSMutableArray *)carInfoArr
 {
     if (_carInfoArr == nil) {
@@ -184,6 +198,26 @@
     
     
 }
+- (IBAction)petrolUnitBtnClicked:(id)sender {
+    ZJAlertListView *alertList = [[ZJAlertListView alloc] initWithFrame:CGRectMake(0, 0, 250, 300)];
+    alertList.tag = PUnitTag;
+    alertList.titleLabel.text = @"结算类型";
+    alertList.datasource = self;
+    alertList.delegate = self;
+    [alertList show];
+    //点击确定的时候，调用它去做点事情
+    [alertList setDoneButtonWithBlock:^{
+        
+        NSIndexPath *selectedIndexPath = self.selectedIndexPath;
+        self.petrolUnitTF.text = self.petrolUnit[selectedIndexPath.row];
+        [alertList dismiss];
+        self.selectedIndexPath = nil;
+        
+    }];
+    
+
+    
+}
 
 - (IBAction)submitBtnClicked {
     
@@ -214,7 +248,16 @@
         return;
     }
     
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"是否现在去付款" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    alert.delegate = self;
+    [alert show];
     
+    
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     VIUserModel *user = [VIUserModel currentUser];
     VIAppointmentModel *appointment = [[VIAppointmentModel alloc] init];
     appointment.carOwnerName = self.userNameLabel.text;//user.nickName;
@@ -222,20 +265,49 @@
     appointment.ownerID = user.objectId;
     appointment.petrolType = self.pretrolTypeTF.text;
     appointment.petrolStation = self.petrolStationTF.text;
-    appointment.petrolAmount = [NSString stringWithFormat:@"%@升",self.petrolAmountTF.text];
+    appointment.petrolAmount = [NSString stringWithFormat:@"%@%@",self.petrolAmountTF.text,self.petrolUnitTF.text];
     appointment.time = self.timeTF.text;
     appointment.plateNum = self.licenseNumTF.text;
-
     
-    [appointment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        {
-            if (succeeded)
+    if (buttonIndex == 1) {
+        [ICEBTPayPassWordView showPassWordViewInView:^(NSString *password) {
+            NSDictionary *dic = @{
+                                  @"validateResult":@(YES)
+                                  };
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:KNotification_ValidatePassWord object:nil userInfo:dic];
+            appointment.isPayed = @"已付款";
+
+            [appointment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                {
+                    if (succeeded)
+                    {
+                        appointment.isPayed = @"已付款";
+
+                        NSLog(@"保存一条预约成功");
+                        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                    }
+                }
+            }];
+        }];
+    } else {
+        appointment.isPayed = @"未付款";
+
+        [appointment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             {
-                NSLog(@"保存一条预约成功");
-                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                if (succeeded)
+                {
+                    appointment.isPayed = @"未付款";
+                    NSLog(@"保存一条预约成功");
+                    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                }
             }
-        }
-    }];
+        }];
+    }
+    
+    
+    
+    
     
 }
 
@@ -275,8 +347,10 @@
     }else if (tableView.tag == CInfoTag)
     {
         return self.carInfoArr.count;
-    }else
+    }else if (tableView.tag == PUnitTag)
     {
+        return self.petrolUnit.count;
+    } else {
         return 0;
     }
 }
@@ -328,7 +402,29 @@
         
         
         return cell;
-    }else
+    } else if (tableView.tag == PUnitTag) {
+        static NSString *identifier = @"identifier2";
+        UITableViewCell *cell = [tableView dequeueReusableAlertListCellWithIdentifier:identifier];
+        if (nil == cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        if ( self.selectedIndexPath && NSOrderedSame == [self.selectedIndexPath compare:indexPath])
+        {
+            cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_red_on.jpg"];
+        }
+        else
+        {
+            cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_off"];
+        }
+        
+        cell.textLabel.text = self.petrolUnit[indexPath.row];
+        
+        return cell;
+        
+    }
+    
+    else
     {
         return nil;
     }

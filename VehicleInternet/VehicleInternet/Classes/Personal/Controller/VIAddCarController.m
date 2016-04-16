@@ -64,6 +64,7 @@
         weakSelf.licenseNum.text = dict[@"licenseNum"];
         weakSelf.petrol.text = dict[@"petrol"];
         weakSelf.carBrand.text = dict[@"carBrand"];
+        
     }];
     
 }
@@ -139,6 +140,9 @@
         model.licenseNum = self.licenseNum.text;
         model.mileage = self.mileage.text;
         model.petrol = self.petrol.text;
+        model.isLightGood = @"1";
+        model.isEngineGood = @"1";
+        model.isTransmissionGood = @"1";
         model.ownerID = user.objectId;
         [model saveInBackground];
         

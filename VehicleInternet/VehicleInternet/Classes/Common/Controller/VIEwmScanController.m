@@ -18,6 +18,8 @@
 
 @implementation VIEwmScanController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     SHBQRView *qrView = [[SHBQRView alloc] initWithFrame:self.view.bounds];
@@ -36,6 +38,8 @@
     [LCCoolHUD showSuccess:@"扫描成功" zoom:YES shadow:YES];
     
     NSDictionary *dict = [self dictionaryWithJsonString:result];
+    
+    
     
     VIScanResultController *resultVC = [VIScanResultController ewmResultWithAppointment:dict];
     [self.navigationController pushViewController:resultVC animated:YES];
