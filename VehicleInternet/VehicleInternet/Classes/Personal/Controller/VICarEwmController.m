@@ -38,10 +38,11 @@
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     
     NSDictionary *dict = @{
+                           @"objectID" : self.carInfo.objectId,
                            @"carBrand" : self.carInfo.carBrand,
                            @"mileage" : self.carInfo.mileage,
                            @"licenseNum" : self.carInfo.licenseNum,
-                           @"petrol" : self.carInfo.petrol
+                           @"petrol" : self.carInfo.petrol,
                            };
 //    NSDictionary *dict = @{
 //                           @"carBrand" : @"222",
@@ -64,7 +65,7 @@
     [self.view addSubview:imgView];
     
     
-    imgView.image = [UIImage qrImageWithContent:str logo:[UIImage imageNamed:@"海绵宝宝.jpeg"] size:width red:20 green:100 blue:100];
+    imgView.image = [UIImage qrImageWithContent:str logo:[UIImage imageNamed:@"111.png"] size:width red:20 green:100 blue:100];
     
 
 }

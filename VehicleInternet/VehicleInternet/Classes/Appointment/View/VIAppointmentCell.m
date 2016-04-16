@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *petrolTypeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *petrolAmountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *licenseNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *isPayed;
+
 - (IBAction)showEwmBtnClicked:(id)sender;
 
 @end
@@ -32,6 +34,8 @@
     self.petrolStationLabel.text = appointmentInfo.petrolStation;
     self.petrolTypeLabel.text = appointmentInfo.petrolType;
     self.petrolAmountLabel.text = [NSString stringWithFormat:@"%@",appointmentInfo.petrolAmount];
+    self.isPayed.text = appointmentInfo.isPayed;
+    NSLog(@"self.isPayed.text %@",self.isPayed.text);
 }
 
 

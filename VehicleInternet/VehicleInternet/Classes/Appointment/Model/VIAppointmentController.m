@@ -110,6 +110,9 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     //覆盖多余空白cell
     self.myTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+
+    self.myTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BG.png"]];
+
 }
 
 - (void)didReceiveMemoryWarning {

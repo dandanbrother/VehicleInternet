@@ -58,6 +58,8 @@
     } else {
         _user.nickName = self.nameText.text;
         [_user saveInBackground];
+        [LCCoolHUD showSuccess:@"修改成功" zoom:YES shadow:YES];
+
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

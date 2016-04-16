@@ -51,17 +51,17 @@
 /**
  *  发动机性能（好、异常）
  */
-@property (nonatomic, assign) BOOL isEngineGood;
+@property (nonatomic, copy) NSString *isEngineGood;
 
 /**
  *  变速器性能（好、异常）
  */
-@property (nonatomic, assign) BOOL isTransmissionGood;
+@property (nonatomic, copy) NSString *isTransmissionGood;
 
 /**
  *  车灯好坏
  */
-@property (nonatomic, assign) BOOL isLightGood;
+@property (nonatomic, copy) NSString *isLightGood;
 
 + (instancetype)carInfoWithDict:(NSDictionary *)dict;
 @end

@@ -180,8 +180,15 @@
             
         } else //登录失败
         {
-            [LCCoolHUD showFailure:@"登录失败" zoom:YES shadow:YES];
-            NSLog(@"登录失败---%@",error);
+            if (!self.userNameTF.text.length) {
+                [LCCoolHUD showFailure:@"用户名不能为空" zoom:YES shadow:YES];
+            } else if (!self.passwordTF.text.length) {
+                [LCCoolHUD showFailure:@"密码不能为空" zoom:YES shadow:YES];
+            } else if (self.userNameTF.text.length && error.code == 211) {
+                [LCCoolHUD showFailure:@"用户未注册" zoom:YES shadow:YES];
+            } else if (error.code == 210) {
+                [LCCoolHUD showFailure:@"密码错误" zoom:YES shadow:YES];
+            }
         }
     }];
 }
