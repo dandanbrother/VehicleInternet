@@ -10,7 +10,7 @@
 
 @implementation VIAppointmentModel
 
-@dynamic carName,carOwnerName,time,ownerID,petrolStation,petrolType,petrolAmount,plateNum;
+@dynamic carName,carOwnerName,time,ownerID,petrolStation,petrolType,petrolAmount,plateNum,isPayed;
 
 + (NSString *)parseClassName
 {
