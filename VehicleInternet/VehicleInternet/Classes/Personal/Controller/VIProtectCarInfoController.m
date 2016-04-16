@@ -110,6 +110,7 @@
         AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
         [query getObjectInBackgroundWithId:dict[@"objectID"] block:^(AVObject *object, NSError *error) {
             [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                //生成的二维码 默认全部损坏
                 [object setValue:@"0" forKey:@"isEngineGood"];
                 [object setValue:@"0" forKey:@"isLightGood"];
                 [object setValue:@"0" forKey:@"isTransmissionGood"];
