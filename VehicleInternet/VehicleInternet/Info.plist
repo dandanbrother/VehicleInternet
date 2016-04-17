@@ -30,12 +30,13 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<true/>
+	<string>只有开启定位功能才能正常使用百度导航</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
+		<string>location</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -53,5 +54,12 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UISupportedInterfaceOrientations - 2</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
 </dict>
 </plist>
