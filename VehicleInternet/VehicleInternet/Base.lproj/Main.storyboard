@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Sps-5v-B4G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Sps-5v-B4G">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -67,18 +67,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="目的地" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eSU-Qt-6bJ" customClass="VISearchSiteTextField">
-                                <rect key="frame" x="20" y="104" width="246" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="246" id="r0L-o5-iH2"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="目的地" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="eSU-Qt-6bJ" customClass="VISearchSiteTextField">
+                                <rect key="frame" x="33" y="104" width="233" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="08b-IO-78k" id="Ktv-fO-rmC"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="va9-st-5I3">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="va9-st-5I3">
                                 <rect key="frame" x="274" y="72" width="42" height="62"/>
                                 <color key="backgroundColor" red="0.34901960780000002" green="0.5450980392" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="查询">
@@ -88,27 +85,23 @@
                                     <action selector="queryPathBtnClicked:" destination="08b-IO-78k" eventType="touchUpInside" id="yua-jC-5z0"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="起始点" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="paR-De-sWi" customClass="VISearchSiteTextField">
-                                <rect key="frame" x="20" y="72" width="246" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="起始点" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="paR-De-sWi" customClass="VISearchSiteTextField">
+                                <rect key="frame" x="33" y="72" width="233" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="08b-IO-78k" id="aFe-pf-Mri"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDY-S4-k8W">
+                                <rect key="frame" x="5" y="90" width="25" height="25"/>
+                                <state key="normal" title="Button" image="交换.png"/>
+                                <connections>
+                                    <action selector="switchAddressBtnClicked" destination="08b-IO-78k" eventType="touchUpInside" id="hfk-sc-Mr0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="eSU-Qt-6bJ" firstAttribute="leading" secondItem="wiz-mx-rqo" secondAttribute="leadingMargin" constant="4" id="1Fn-pb-01M"/>
-                            <constraint firstItem="eSU-Qt-6bJ" firstAttribute="bottom" secondItem="va9-st-5I3" secondAttribute="bottom" id="5rb-Lm-DmP"/>
-                            <constraint firstItem="va9-st-5I3" firstAttribute="leading" secondItem="eSU-Qt-6bJ" secondAttribute="trailing" constant="8" symbolic="YES" id="F82-vO-Pew"/>
-                            <constraint firstItem="paR-De-sWi" firstAttribute="top" secondItem="YeQ-DG-6WR" secondAttribute="bottom" constant="8" symbolic="YES" id="PNx-s0-Scu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="va9-st-5I3" secondAttribute="trailing" constant="-12" id="Qzq-QS-rpp"/>
-                            <constraint firstItem="eSU-Qt-6bJ" firstAttribute="leading" secondItem="paR-De-sWi" secondAttribute="leading" id="Wgz-pU-jqB"/>
-                            <constraint firstItem="eSU-Qt-6bJ" firstAttribute="trailing" secondItem="paR-De-sWi" secondAttribute="trailing" id="cTc-8f-Fuy"/>
-                            <constraint firstItem="va9-st-5I3" firstAttribute="top" secondItem="paR-De-sWi" secondAttribute="top" id="ce1-Qr-jQk"/>
-                            <constraint firstItem="eSU-Qt-6bJ" firstAttribute="top" secondItem="paR-De-sWi" secondAttribute="bottom" constant="2" id="zS5-9m-d62"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="地图" id="dx7-nt-2YS"/>
                     <connections>
@@ -119,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyC-XL-Wep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-289" y="1335"/>
+            <point key="canvasLocation" x="-352" y="1354"/>
         </scene>
         <!--音乐-->
         <scene sceneID="tne-QT-ifu">
@@ -179,7 +172,7 @@
                                         <rect key="frame" x="0.0" y="99" width="375" height="163"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xZc-gm-lih" id="rua-BM-lTh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="162.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="kMc-xH-zYM">
@@ -205,7 +198,7 @@
                                         <rect key="frame" x="0.0" y="298" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l95-GX-hWN" id="zXT-HQ-vvo">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="拥有车辆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOv-yq-xOb">
@@ -228,7 +221,7 @@
                                         <rect key="frame" x="0.0" y="378" width="375" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RyK-uJ-gPR" id="6Dy-A9-Me4">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="违章查询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3m-Ga-Gu9">
@@ -251,7 +244,7 @@
                                         <rect key="frame" x="0.0" y="459" width="375" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dS6-bK-AhO" id="Vyc-DE-F2B">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="维护车辆信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfT-uB-ow5">
@@ -300,7 +293,7 @@
                                         <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zTi-pc-Xno" id="vUe-ec-Ax5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qzw-tj-jNj">
@@ -338,7 +331,7 @@
         <!--扫一扫-->
         <scene sceneID="TUv-AX-PQq">
             <objects>
-                <viewController id="bf3-rV-aIF" sceneMemberID="viewController">
+                <viewController id="bf3-rV-aIF" customClass="VIEwmScanController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YU5-Ma-sYv"/>
                         <viewControllerLayoutGuide type="bottom" id="8tl-jy-noL"/>
@@ -546,7 +539,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bck-ae-G8a" id="EWL-e1-9AV">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -610,7 +603,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Unl-Nh-9qS" id="jBk-nv-V2h">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -645,7 +638,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LBb-fA-Ot9" id="saF-aF-Lan">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -1063,6 +1056,7 @@
         <image name="yuyue" width="25" height="25"/>
         <image name="个人" width="25" height="25"/>
         <image name="个人1" width="25" height="25"/>
+        <image name="交换.png" width="51" height="50"/>
         <image name="地图" width="26" height="25"/>
         <image name="头像.png" width="200" height="200"/>
         <image name="按钮.png" width="50" height="50"/>

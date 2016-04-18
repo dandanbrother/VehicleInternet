@@ -23,17 +23,21 @@
 #import "VISearchSiteTextField.h"
 #import "VIMusicPlayerController.h"
 #import "MBProgressHUD.h"
+#import "LCCoolHUD.h"
+#import "BNCoreServices.h"
 
-@interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+
+@interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,BNNaviUIManagerDelegate,BNNaviRoutePlanDelegate,UIAlertViewDelegate>
 
 @property (nonatomic,strong) BMKMapView *mapView;
 
 @property (nonatomic,strong) BMKLocationService *locationService;
+- (IBAction)switchAddressBtnClicked;
 
 @property (nonatomic,strong) VIMapPoiSearch *poiSearch;
 
 @property (nonatomic,strong) BMKGeoCodeSearch *geoCodeSearch;
-
+/** 当前位置 */
 @property (nonatomic,strong) BMKUserLocation *currentLocation;
 
 @property (nonatomic,strong) BMKRouteSearch *routeSearch;
@@ -46,6 +50,8 @@
 @property (weak, nonatomic) IBOutlet VISearchSiteTextField *startTF;
 
 @property (weak, nonatomic) IBOutlet VISearchSiteTextField *destinationTF;
+
+@property (nonatomic,strong) BMKPoiInfo *currentSiteInfo;
 
 @property (nonatomic,strong) LQXSwitch *switchControl;
 
@@ -271,8 +277,11 @@
 
 - (void)mapView:(BMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
+    
+    
     [self.startTF resignFirstResponder];
     [self.destinationTF resignFirstResponder];
+    self.poiMatchTableView.hidden = YES;
 }
 
 /**
@@ -293,6 +302,103 @@
     }
     return nil;
 }
+/**
+ *当选中一个annotation views时，调用此接口
+ *@param mapView 地图View
+ *@param views 选中的annotation views
+ */
+- (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view
+{
+
+    NSLog(@"didSelectAnnotationView");
+    
+}
+
+/**
+ *当取消选中一个annotation views时，调用此接口
+ *@param mapView 地图View
+ *@param views 取消选中的annotation views
+ */
+- (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view
+{
+    NSLog(@"didDeselectAnnotationView");
+}
+/**
+ *当点击annotation view弹出的泡泡时，调用此接口
+ *@param mapView 地图View
+ *@param view 泡泡所属的annotation view
+ */
+- (void)mapView:(BMKMapView *)mapView annotationViewForBubble:(BMKAnnotationView *)view
+{
+    //当前位置
+    BMKUserLocation *current = self.currentLocation;
+    CLLocationCoordinate2D startL = current.location.coordinate;
+    //目的地
+    BMKPointAnnotation *annotation = (BMKPointAnnotation *)view.annotation;
+    CLLocationCoordinate2D destinationL = annotation.coordinate;
+    //路径点数组
+    NSMutableArray *nodesArray = [[NSMutableArray alloc]initWithCapacity:2];
+    BNRoutePlanNode *startNode = [[BNRoutePlanNode alloc] init];
+    startNode.pos = [[BNPosition alloc] init];
+    startNode.pos.x = startL.longitude;
+    startNode.pos.y = startL.latitude;
+    startNode.pos.eType = BNCoordinate_BaiduMapSDK;
+    [nodesArray addObject:startNode];
+    //终点
+    BNRoutePlanNode *endNode = [[BNRoutePlanNode alloc] init];
+    endNode.pos = [[BNPosition alloc] init];
+    endNode.pos.x = destinationL.longitude;
+    endNode.pos.y = destinationL.latitude;
+    endNode.pos.eType = BNCoordinate_BaiduMapSDK;
+    [nodesArray addObject:endNode];
+    
+    [BNCoreServices_RoutePlan startNaviRoutePlan:BNRoutePlanMode_Highway naviNodes:nodesArray time:nil delegete:self userInfo:nil];
+
+    
+}
+
+#pragma mark - BNNaviRoutePlanDelegate
+//算路成功回调
+-(void)routePlanDidFinished:(NSDictionary *)userInfo
+{
+    NSLog(@"算路成功");
+    //路径规划成功，开始导航
+    [BNCoreServices_UI showNaviUI:BN_NaviTypeReal delegete:self isNeedLandscape:YES];
+    
+}
+
+//算路失败回调
+- (void)routePlanDidFailedWithError:(NSError *)error andUserInfo:(NSDictionary *)userInfo
+{
+    NSLog(@"算路失败");
+    if ([error code] == BNRoutePlanError_LocationFailed) {
+        NSLog(@"获取地理位置失败");
+    }
+    else if ([error code] == BNRoutePlanError_LocationServiceClosed)
+    {
+        NSLog(@"定位服务未开启");
+    }
+}
+
+//算路取消回调
+-(void)routePlanDidUserCanceled:(NSDictionary*)userInfo {
+    NSLog(@"算路取消");
+}
+
+#pragma mark - BNNaviUIManagerDelegate
+
+//退出导航回调
+-(void)onExitNaviUI:(NSDictionary*)extraInfo
+{
+    NSLog(@"退出导航");
+}
+
+//退出导航声明页面回调
+- (void)onExitDeclarationUI:(NSDictionary*)extraInfo
+{
+    NSLog(@"退出导航声明页面");
+}
+
 
 #pragma mark - BMKLocationServiceDelegate
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
@@ -301,14 +407,11 @@
     if (userLocation == nil || userLocation == NULL) {
         return;
     }
+
     self.currentLocation = userLocation;
     NSLog(@"didUpdateBMKUserLocation---%f----%f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
     [self.mapView updateLocationData:userLocation];
     _mapView.centerCoordinate = userLocation.location.coordinate;
-    
-    
-    
-    //
     CLLocationCoordinate2D pt = (CLLocationCoordinate2D){self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude};
     BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
     reverseGeocodeSearchOption.reverseGeoPoint = pt;
@@ -340,7 +443,9 @@
 //            NSLog(@"VIMapPoiSearchTypeCity");
             if (error == BMK_SEARCH_NO_ERROR) {
                 
-                [self.poiMatchArray removeAllObjects];
+//                [self.poiMatchArray removeAllObjects];
+
+                [self.poiMatchArray removeObjectsInRange:NSMakeRange(1, self.poiMatchArray.count - 1)];
                 NSArray *tempArray = result.poiInfoList;
                 NSLog(@"地点模糊匹配数量---%d",tempArray.count);
                 
@@ -425,6 +530,8 @@
         }
         NSLog(@"点的个数:(%d)",k);
         BMKPolyline *polyLine = [BMKPolyline polylineWithPoints:points count:pointCount];
+        NSArray *arr = [NSArray arrayWithArray:self.mapView.overlays];
+        [self.mapView removeOverlays:arr];
         [_mapView addOverlay:polyLine];
         
         
@@ -443,7 +550,18 @@
 
 - (void) onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
 {
-
+    //设置bubble的title 并 给poiMatchArr 添加第一个元素
+    BMKPoiInfo *firstInfo = result.poiList[0];
+    self.currentLocation.title = firstInfo.name;
+    
+//    CLLocationCoordinate2D pt1 = CLLocationCoordinate2DMake(userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude);
+//    currentInfo.pt = pt1;
+    BMKPoiInfo *info = [[BMKPoiInfo alloc] init];
+    info.name = @"当前位置";
+    info.pt = firstInfo.pt;
+    [self.poiMatchArray insertObject:info atIndex:0];
+    
+    //设置城市名称
     NSString *cityName = result.addressDetail.city;
     NSString *subStr = [cityName substringWithRange:NSMakeRange(0, cityName.length - 1)];
     self.cityItem.title = subStr;
@@ -500,30 +618,26 @@
  */
 - (IBAction)queryPathBtnClicked:(id)sender
 {
+    if (self.startTF.text == nil || self.startTF.text.length == 0)
+    {
+        [LCCoolHUD showFailure:@"请输入出发地" zoom:YES shadow:NO];
+        return;
+    }
+    if (self.destinationTF.text == nil || self.destinationTF.text.length == 0)
+    {
+        [LCCoolHUD showFailure:@"请输入目的地" zoom:YES shadow:NO];
+        return;
+    }
     [self.startTF resignFirstResponder];
     [self.destinationTF resignFirstResponder];
     
-    BMKPoiInfo *startSiteInfo = self.startTF.siteInfo;
-    BMKPoiInfo *destinationSiteInfo = self.destinationTF.siteInfo;
-    
-    
-    BMKPlanNode *startNode = [[BMKPlanNode alloc] init];
-    startNode.pt = startSiteInfo.pt;
-    BMKPlanNode *endNode = [[BMKPlanNode alloc] init];
-    endNode.pt = destinationSiteInfo.pt;
-    BMKDrivingRoutePlanOption *transitRouteSearchOption =         [[BMKDrivingRoutePlanOption alloc]init];
-    transitRouteSearchOption.drivingPolicy = BMK_DRIVING_DIS_FIRST;
-    transitRouteSearchOption.from = startNode;
-    transitRouteSearchOption.to = endNode;
-    BOOL flag = [self.routeSearch drivingSearch:transitRouteSearchOption];
-    if(flag)
-    {
-        NSLog(@"驾车路径规划检索发送成功:起始点---%@---目的地---%@",startNode.name,endNode.name);
-    }
-    else
-    {
-        NSLog(@"驾车路径规划检索发送失败");
-    }
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                        message:@"请选择路径规划方式"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"显示路径"
+                                              otherButtonTitles:@"使用导航",nil];
+    alertView.delegate = self;
+    [alertView show];
 
 }
 
@@ -549,7 +663,8 @@
         //添加标注点
         BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc] init];
         annotation.coordinate = info.pt;
-        annotation.title = info.name;
+        annotation.title = @"点击导航";
+        annotation.subtitle = info.name;
         [self.mapView addAnnotation:annotation];
     }
 }
@@ -603,4 +718,79 @@
     
 }
 
+- (IBAction)switchAddressBtnClicked
+{
+    if (self.startTF.text == nil || self.startTF.text.length == 0)
+    {
+        [LCCoolHUD showFailure:@"请输入出发地" zoom:YES shadow:NO];
+        return;
+    }
+    if (self.destinationTF.text == nil || self.destinationTF.text.length == 0)
+    {
+        [LCCoolHUD showFailure:@"请输入目的地" zoom:YES shadow:NO];
+        return;
+    }
+    
+    
+    
+    NSString *str = self.startTF.text;
+    self.startTF.text = self.destinationTF.text;
+    self.destinationTF.text = str;
+    BMKPoiInfo *info = self.startTF.siteInfo;
+    self.startTF.siteInfo = self.destinationTF.siteInfo;
+    self.destinationTF.siteInfo = info;
+
+    
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        NSLog(@"显示路线");
+        BMKPoiInfo *startSiteInfo = self.startTF.siteInfo;
+        BMKPoiInfo *destinationSiteInfo = self.destinationTF.siteInfo;
+        BMKPlanNode *startNode = [[BMKPlanNode alloc] init];
+        startNode.pt = startSiteInfo.pt;
+        BMKPlanNode *endNode = [[BMKPlanNode alloc] init];
+        endNode.pt = destinationSiteInfo.pt;
+        BMKDrivingRoutePlanOption *transitRouteSearchOption =         [[BMKDrivingRoutePlanOption alloc]init];
+        transitRouteSearchOption.drivingPolicy = BMK_DRIVING_DIS_FIRST;
+        transitRouteSearchOption.from = startNode;
+        transitRouteSearchOption.to = endNode;
+        BOOL flag = [self.routeSearch drivingSearch:transitRouteSearchOption];
+        if(flag)
+        {
+            NSLog(@"驾车路径规划检索发送成功:起始点---%@---目的地---%@",startNode.name,endNode.name);
+        }
+        else
+        {
+            NSLog(@"驾车路径规划检索发送失败");
+        }
+    }else
+    {
+        NSLog(@"使用导航");
+
+
+        //路径点数组
+        NSMutableArray *nodesArray = [[NSMutableArray alloc]initWithCapacity:2];
+        //起点
+        BNRoutePlanNode *startNode = [[BNRoutePlanNode alloc] init];
+        startNode.pos = [[BNPosition alloc] init];
+        startNode.pos.x = self.startTF.siteInfo.pt.longitude;
+        startNode.pos.y = self.startTF.siteInfo.pt.latitude;
+        startNode.pos.eType = BNCoordinate_BaiduMapSDK;
+        [nodesArray addObject:startNode];
+        //终点
+        BNRoutePlanNode *endNode = [[BNRoutePlanNode alloc] init];
+        endNode.pos = [[BNPosition alloc] init];
+        endNode.pos.x = self.destinationTF.siteInfo.pt.longitude;
+        endNode.pos.y = self.destinationTF.siteInfo.pt.latitude;
+        endNode.pos.eType = BNCoordinate_BaiduMapSDK;
+        [nodesArray addObject:endNode];
+        
+        [BNCoreServices_RoutePlan startNaviRoutePlan:BNRoutePlanMode_Highway naviNodes:nodesArray time:nil delegete:self userInfo:nil];
+    }
+}
 @end
