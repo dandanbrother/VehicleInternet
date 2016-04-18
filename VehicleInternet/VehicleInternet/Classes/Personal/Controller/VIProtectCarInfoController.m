@@ -10,7 +10,7 @@
 #import "VICarInfoModel.h"
 #import "VIProtectCarInfoCell.h"
 #import "VICarEwmController.h"
-#import "VICarEwmScanController.h"
+#import "VIProtectCarEwmScanController.h"
 
 @interface VIProtectCarInfoController () <VIProtectCarInfoCellDelegate>
 @property (nonatomic, strong) NSMutableArray *carList;
@@ -33,7 +33,7 @@
     AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
     [query whereKey:@"ownerID" equalTo:user.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (objects.count !=0 && objects !=nil &&objects.count != self.carList.count)
+        if (objects.count !=0 && objects !=nil)
         {
             [self.carList removeAllObjects];
             for (VICarInfoModel *model in objects) {
@@ -91,35 +91,13 @@
 }
 
 - (IBAction)updateWithEwm:(id)sender {
-    VICarEwmScanController *carScan = [[VICarEwmScanController alloc] init];
+    VIProtectCarEwmScanController *carScan = [[VIProtectCarEwmScanController alloc] init];
     carScan.modalPresentationStyle = UIModalPresentationPageSheet;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:carScan];
     
-//    {
-//        carBrand = "\U4fdd\U65f6\U6377";
-//        licenseNum = Su123213;
-//        mileage = 1212;
-//        petrol = 200;
-//    }
-//
     
     [self.navigationController presentViewController:nav animated:YES completion:nil];
-    [carScan returnBlock:^(NSString *result) {
-        NSDictionary *dict = [self dictionaryWithJsonString:result];
-        NSLog(@"%@",dict);
-        AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
-        [query getObjectInBackgroundWithId:dict[@"objectID"] block:^(AVObject *object, NSError *error) {
-            [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                //生成的二维码 默认全部损坏
-                [object setValue:@"0" forKey:@"isEngineGood"];
-                [object setValue:@"0" forKey:@"isLightGood"];
-                [object setValue:@"0" forKey:@"isTransmissionGood"];
-                [object saveInBackground];
-                [self.tableView reloadData];
-            }];
-        }];
-        
-    }];
+    
 
 }
 

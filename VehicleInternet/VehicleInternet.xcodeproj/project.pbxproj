@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		945089591CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */; };
 		948C87E11C9FD1D5006EB17A /* VIMusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 948C87E01C9FD1D5006EB17A /* VIMusicModel.m */; };
 		948C87E41C9FD791006EB17A /* VIMusicListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948C87E31C9FD791006EB17A /* VIMusicListController.m */; };
 		949012211C9F7C0200253715 /* VIMusicPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949012201C9F7C0200253715 /* VIMusicPlayerController.m */; };
@@ -223,6 +224,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		945089571CC4D56E0037DEE2 /* VIProtectCarEwmScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProtectCarEwmScanController.h; sourceTree = "<group>"; };
+		945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProtectCarEwmScanController.m; sourceTree = "<group>"; };
 		948C87DF1C9FD1D5006EB17A /* VIMusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMusicModel.h; sourceTree = "<group>"; };
 		948C87E01C9FD1D5006EB17A /* VIMusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMusicModel.m; sourceTree = "<group>"; };
 		948C87E21C9FD791006EB17A /* VIMusicListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMusicListController.h; sourceTree = "<group>"; };
@@ -873,6 +876,8 @@
 				F30725401CBEA02F004502AB /* VICarEwmController.m */,
 				94F2AA4E1CC120CF007D94EB /* VIProtectCarInfoController.h */,
 				94F2AA4F1CC120CF007D94EB /* VIProtectCarInfoController.m */,
+				945089571CC4D56E0037DEE2 /* VIProtectCarEwmScanController.h */,
+				945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1353,7 +1358,7 @@
 				TargetAttributes = {
 					F3F0B2AD1C95099F00989506 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = HR25JTF3LT;
+						DevelopmentTeam = 63FKDZ5Q3M;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1557,6 +1562,7 @@
 				948C87E11C9FD1D5006EB17A /* VIMusicModel.m in Sources */,
 				F32FD9161C97CA2300804053 /* UIView+JMTool.m in Sources */,
 				F362F24F1CC3DF160008608A /* NSDictionary_JSONExtensions.m in Sources */,
+				945089591CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m in Sources */,
 				949012211C9F7C0200253715 /* VIMusicPlayerController.m in Sources */,
 				949C45FC1CB5033F00DD8C97 /* VIModifyCarController.m in Sources */,
 				F37221A11CB64A18005F124C /* JGProgressHUD.m in Sources */,
@@ -1754,7 +1760,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJM;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1783,7 +1789,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJM;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
