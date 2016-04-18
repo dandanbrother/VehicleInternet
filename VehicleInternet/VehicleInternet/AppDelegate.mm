@@ -11,6 +11,7 @@
 #import "VIAppointmentModel.h"
 #import "VIUserModel.h"
 #import "VICarInfoModel.h"
+#import "BNCoreServices.h"
 
 
 @interface AppDelegate ()
@@ -42,6 +43,7 @@
     [self leancloudSetupWithLaunchOptions:launchOptions];
     //初始化百度地图
     [self baiduMapSetup];
+    
     
     return YES;
 }
@@ -104,6 +106,10 @@
     {
         NSLog(@"baiduMap successed");
     }
+    
+    //初始化导航SDK
+    [BNCoreServices_Instance initServices:@"o3DCdN1FZZKaT3gK0B8f3TkT"];
+    [BNCoreServices_Instance startServicesAsyn:nil fail:nil];
 }
 
 
