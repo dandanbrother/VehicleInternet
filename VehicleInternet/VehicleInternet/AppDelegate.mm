@@ -44,7 +44,9 @@
     //初始化百度地图
     [self baiduMapSetup];
     
-    
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+   
     return YES;
 }
 
@@ -98,7 +100,7 @@
      *  tomorrow.VehicleInternet       CpVALBsZIouu5TAt485fEBRX
      *
      */
-    BOOL ret = [_mapManager start:@"o3DCdN1FZZKaT3gK0B8f3TkT"  generalDelegate:self];
+    BOOL ret = [_mapManager start:@"CpVALBsZIouu5TAt485fEBRX"  generalDelegate:self];
     
     if (!ret) {
         NSLog(@"baiduMap failed");
@@ -108,7 +110,7 @@
     }
     
     //初始化导航SDK
-    [BNCoreServices_Instance initServices:@"o3DCdN1FZZKaT3gK0B8f3TkT"];
+    [BNCoreServices_Instance initServices:@"CpVALBsZIouu5TAt485fEBRX"];
     [BNCoreServices_Instance startServicesAsyn:nil fail:nil];
 }
 
