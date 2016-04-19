@@ -445,7 +445,9 @@
                 
 //                [self.poiMatchArray removeAllObjects];
 
-                [self.poiMatchArray removeObjectsInRange:NSMakeRange(1, self.poiMatchArray.count - 1)];
+                if (self.poiMatchArray.count >= 1) {
+                    [self.poiMatchArray removeObjectsInRange:NSMakeRange(1, self.poiMatchArray.count - 1)];
+                }
                 NSArray *tempArray = result.poiInfoList;
                 NSLog(@"地点模糊匹配数量---%d",tempArray.count);
                 
