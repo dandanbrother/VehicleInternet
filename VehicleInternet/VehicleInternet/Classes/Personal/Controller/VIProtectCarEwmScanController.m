@@ -88,7 +88,36 @@
     }];
     [LCCoolHUD showSuccess:@"扫描成功" zoom:YES shadow:YES]; 
     
-    
+
+    //本地推送
+    UILocalNotification *petrolNotice = [UILocalNotification new];
+    UILocalNotification *mileageNotice = [UILocalNotification new];
+    UILocalNotification *protectNotice = [UILocalNotification new];
+
+    if (petrolNotice!=nil) {
+        
+        petrolNotice.soundName = UILocalNotificationDefaultSoundName;
+//        if (dict[@"petrol"]) {
+        petrolNotice.alertBody = @"油量低于20%";
+        mileageNotice.alertBody = @"里程数过10000公里啦";
+        protectNotice.alertBody = @"车子坏啦";
+//        }
+//        if (dict[@"mileage"]) {
+//            localNotifi.alertBody = @"里程数过1000啦";
+//        }
+//        if ([dict[@"isTransmissionGood"] isEqualToString:@"0"]) {
+//            localNotifi.alertBody = @"车子坏啦";
+//        }
+       
+    }
+    petrolNotice.fireDate = [NSDate dateWithTimeIntervalSinceNow:2];
+    mileageNotice.fireDate = [NSDate dateWithTimeIntervalSinceNow:4];
+    protectNotice.fireDate = [NSDate dateWithTimeIntervalSinceNow:6];
+
+    [[UIApplication sharedApplication] scheduleLocalNotification:petrolNotice];
+    [[UIApplication sharedApplication] scheduleLocalNotification:mileageNotice];
+    [[UIApplication sharedApplication] scheduleLocalNotification:protectNotice];
+
     
 
 }
