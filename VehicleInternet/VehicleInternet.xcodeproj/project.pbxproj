@@ -1358,7 +1358,7 @@
 				TargetAttributes = {
 					F3F0B2AD1C95099F00989506 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 63FKDZ5Q3M;
+						DevelopmentTeam = HR25JTF3LT;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1760,7 +1760,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1789,7 +1789,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

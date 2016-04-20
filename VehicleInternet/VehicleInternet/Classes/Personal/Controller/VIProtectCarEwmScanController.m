@@ -72,7 +72,7 @@
         petrolNotice.soundName = UILocalNotificationDefaultSoundName;
 //        if (dict[@"petrol"]) {
         petrolNotice.alertBody = @"油量低于20%";
-        mileageNotice.alertBody = @"里程数过1000啦";
+        mileageNotice.alertBody = @"里程数过10000公里啦";
         protectNotice.alertBody = @"车子坏啦";
 //        }
 //        if (dict[@"mileage"]) {
