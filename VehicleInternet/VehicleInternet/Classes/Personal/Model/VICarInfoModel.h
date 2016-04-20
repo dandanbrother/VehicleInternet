@@ -44,9 +44,14 @@
 @property (nonatomic, copy) NSString *mileage;
 
 /**
- *  油量
+ *  最大油量
  */
 @property (nonatomic, copy) NSString *petrol;
+
+/**
+ *  当前油量
+ */
+@property (nonatomic,copy) NSString *crtPetrol;
 
 /**
  *  发动机性能（好、异常）
@@ -56,7 +61,7 @@
 /**
  *  变速器性能（好、异常）
  */
-@property (nonatomic, copy) NSString *isTransmissionGood;
+@property (nonatomic, copy) NSString *isTransGood;
 
 /**
  *  车灯好坏

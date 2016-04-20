@@ -142,7 +142,7 @@
         model.petrol = self.petrol.text;
         model.isLightGood = @"1";
         model.isEngineGood = @"1";
-        model.isTransmissionGood = @"1";
+        model.isTransGood = @"1";
         model.ownerID = user.objectId;
         [model saveInBackground];
         

@@ -10,6 +10,7 @@
 #import "VICarInfoModel.h"
 #import "VIProtectCarInfoCell.h"
 #import "VICarEwmController.h"
+#import "VIProtectCarInfoEwmController.h"
 #import "VIProtectCarEwmScanController.h"
 
 @interface VIProtectCarInfoController () <VIProtectCarInfoCellDelegate>
@@ -85,7 +86,7 @@
 #pragma mark - VIMyCarCellDelegate
 - (void)clickToShowEwm:(UIButton *)btn carInfo:(VICarInfoModel *)carInfo
 {
-    VICarEwmController *ewmVC = [VICarEwmController ewmShownWithCarInfo:carInfo];
+    VIProtectCarInfoEwmController *ewmVC = [VIProtectCarInfoEwmController ewmShownWithCarInfo:carInfo];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ewmVC];
     [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
@@ -113,11 +114,7 @@
     
     NSError *err;
     
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
-                         
-                                                        options:NSJSONReadingMutableContainers
-                         
-                                                          error:&err];
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
     
     if(err) {
         

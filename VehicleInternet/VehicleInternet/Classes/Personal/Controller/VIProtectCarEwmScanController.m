@@ -40,28 +40,55 @@
     [view stopScan];
     
     NSMutableDictionary *dict = [self dictionaryWithJsonString:result];
-    NSLog(@"%@",dict);
+    
     AVQuery *query = [AVQuery queryWithClassName:@"VICarInfoModel"];
     [query getObjectInBackgroundWithId:dict[@"objectID"] block:^(AVObject *object, NSError *error) {
         [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            //生成的二维码 默认全部损坏
-            [object setValue:@"0" forKey:@"isEngineGood"];
-            [object setValue:@"0" forKey:@"isLightGood"];
-            [object setValue:@"0" forKey:@"isTransmissionGood"];
-            dict[@"isEngineGood"] = @"0";
-            dict[@"isLightGood"] = @"0";
-            dict[@"isTransmissionGood"] = @"0";
+            //保存二维码数据，传给服务器
+            [object setValue:dict[@"isEngineGood"] forKey:@"isEngineGood"];
+            [object setValue:dict[@"isLightGood"] forKey:@"isLightGood"];
+            [object setValue:dict[@"isTransGood"] forKey:@"isTransGood"];
+            [object setValue:dict[@"mileage"] forKey:@"mileage"];
+            [object setValue:dict[@"crtPetrol"] forKey:@"crtPetrol"];
             
-            [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (succeeded) {
-                                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+            NSLog(@"%@",dict);
+ 
+            if (succeeded) {
+                    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                    //本地推送
+                    UILocalNotification *petrolNotice = [UILocalNotification new];
+                    UILocalNotification *mileageNotice = [UILocalNotification new];
+                    UILocalNotification *protectNotice = [UILocalNotification new];
+                    
+                    if (petrolNotice!=nil) {
+                        
+                        petrolNotice.soundName = UILocalNotificationDefaultSoundName;
+                        if ([dict[@"crtPetrol"] floatValue] <= [[object valueForKey:@"petrol"] floatValue] * 0.2) {
+                            petrolNotice.alertBody = @"油量低于20%";
+                            
+                        }
+                        if ([dict[@"mileage"] floatValue] >= 1000.0) {
+                            mileageNotice.alertBody = @"里程数过1000啦";
+                        }
+                        if ([dict[@"isLightGood"] isEqualToString:@"0"] || [dict[@"isEngineGood"] isEqualToString:@"0"] || [dict[@"isTransGood"] isEqualToString:@"0"]) {
+                            protectNotice.alertBody = @"车子坏啦";
+                        }
+                        
+                    }
+                    petrolNotice.fireDate = [NSDate dateWithTimeIntervalSinceNow:2];
+                    mileageNotice.fireDate = [NSDate dateWithTimeIntervalSinceNow:4];
+                    protectNotice.fireDate = [NSDate dateWithTimeIntervalSinceNow:6];
+                    
+                    [[UIApplication sharedApplication] scheduleLocalNotification:petrolNotice];
+                    [[UIApplication sharedApplication] scheduleLocalNotification:mileageNotice];
+                    [[UIApplication sharedApplication] scheduleLocalNotification:protectNotice];
                 }
             }];
 
-        }];
     }];
     [LCCoolHUD showSuccess:@"扫描成功" zoom:YES shadow:YES]; 
     
+
     //本地推送
     UILocalNotification *petrolNotice = [UILocalNotification new];
     UILocalNotification *mileageNotice = [UILocalNotification new];
@@ -90,6 +117,7 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:petrolNotice];
     [[UIApplication sharedApplication] scheduleLocalNotification:mileageNotice];
     [[UIApplication sharedApplication] scheduleLocalNotification:protectNotice];
+
     
 
 }
