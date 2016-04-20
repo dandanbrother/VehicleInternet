@@ -11,7 +11,7 @@
 
 @interface VIProtectCarInfoCell ()
 @property (weak, nonatomic) IBOutlet UILabel *isEngineGood;
-@property (weak, nonatomic) IBOutlet UILabel *isTransmissionGood;
+@property (weak, nonatomic) IBOutlet UILabel *isTransGood;
 @property (weak, nonatomic) IBOutlet UILabel *isLightGood;
 @property (weak, nonatomic) IBOutlet UILabel *carBrand;
 @property (weak, nonatomic) IBOutlet UILabel *licenseNum;
@@ -24,7 +24,7 @@
     _carInfo = carInfo;
     
     self.isLightGood.text = [carInfo.isLightGood isEqualToString:@"1"]?@"车灯完好":@"车灯有损坏";
-    self.isTransmissionGood.text = [carInfo.isTransmissionGood isEqualToString:@"1"]?@"变速器完好":@"变速器有损坏";
+    self.isTransGood.text = [carInfo.isTransGood isEqualToString:@"1"]?@"变速器完好":@"变速器有损坏";
     self.isEngineGood.text = [carInfo.isEngineGood isEqualToString:@"1"]?@"发动机完好":@"发动机有损坏";
     self.carBrand.text = carInfo.carBrand;
     self.licenseNum.text = carInfo.licenseNum;

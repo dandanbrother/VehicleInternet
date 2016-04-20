@@ -10,7 +10,7 @@
 
 @implementation VICarInfoModel
 
-@dynamic ownerID,carBrand,licenseNum,engineNum,doorsNum,seatsNum,mileage,petrol,isEngineGood,isTransmissionGood,isLightGood;
+@dynamic ownerID,carBrand,licenseNum,engineNum,doorsNum,seatsNum,mileage,petrol,crtPetrol,isEngineGood,isTransGood,isLightGood;
 
 - (instancetype)initWithDict:(NSDictionary *)dictionary {
     if (self = [super init]) {
