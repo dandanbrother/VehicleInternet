@@ -56,6 +56,7 @@
 		94CE0D791C985ED40065D966 /* VIPeccancyInfotmation.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D751C985ED40065D966 /* VIPeccancyInfotmation.m */; };
 		94CE0D7A1C985ED40065D966 /* VIPersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D771C985ED40065D966 /* VIPersonalController.m */; };
 		94CE0D7F1C985EDA0065D966 /* VICarInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D7D1C985EDA0065D966 /* VICarInfoModel.m */; };
+		94D56BEF1CC6736800BC3332 /* VIProtectCarInfoEwmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D56BEE1CC6736800BC3332 /* VIProtectCarInfoEwmController.m */; };
 		94E005FA1CB627D100684362 /* VIMyCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E005F91CB627D100684362 /* VIMyCarCell.m */; };
 		94E005FC1CB627EB00684362 /* VIMyCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E005FB1CB627EB00684362 /* VIMyCarCell.xib */; };
 		94E006001CB630E600684362 /* VISettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E005FE1CB630E600684362 /* VISettingController.m */; };
@@ -284,6 +285,8 @@
 		94CE0D771C985ED40065D966 /* VIPersonalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPersonalController.m; sourceTree = "<group>"; };
 		94CE0D7C1C985EDA0065D966 /* VICarInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICarInfoModel.h; sourceTree = "<group>"; };
 		94CE0D7D1C985EDA0065D966 /* VICarInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICarInfoModel.m; sourceTree = "<group>"; };
+		94D56BED1CC6736800BC3332 /* VIProtectCarInfoEwmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProtectCarInfoEwmController.h; sourceTree = "<group>"; };
+		94D56BEE1CC6736800BC3332 /* VIProtectCarInfoEwmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProtectCarInfoEwmController.m; sourceTree = "<group>"; };
 		94E005F81CB627D100684362 /* VIMyCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMyCarCell.h; sourceTree = "<group>"; };
 		94E005F91CB627D100684362 /* VIMyCarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMyCarCell.m; sourceTree = "<group>"; };
 		94E005FB1CB627EB00684362 /* VIMyCarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIMyCarCell.xib; sourceTree = "<group>"; };
@@ -876,6 +879,8 @@
 				F30725401CBEA02F004502AB /* VICarEwmController.m */,
 				94F2AA4E1CC120CF007D94EB /* VIProtectCarInfoController.h */,
 				94F2AA4F1CC120CF007D94EB /* VIProtectCarInfoController.m */,
+				94D56BED1CC6736800BC3332 /* VIProtectCarInfoEwmController.h */,
+				94D56BEE1CC6736800BC3332 /* VIProtectCarInfoEwmController.m */,
 				945089571CC4D56E0037DEE2 /* VIProtectCarEwmScanController.h */,
 				945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */,
 			);
@@ -1586,6 +1591,7 @@
 				F30725681CBFB8FD004502AB /* SCLTimerDisplay.m in Sources */,
 				94E006001CB630E600684362 /* VISettingController.m in Sources */,
 				94E8AA301CBCF041003A371F /* VIModifyPersonalInfoController.m in Sources */,
+				94D56BEF1CC6736800BC3332 /* VIProtectCarInfoEwmController.m in Sources */,
 				F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */,
 				F362F2551CC3DF160008608A /* CSerializedJSONData.m in Sources */,
 				F37221AA1CB64A18005F124C /* JGProgressHUDRingIndicatorView.m in Sources */,

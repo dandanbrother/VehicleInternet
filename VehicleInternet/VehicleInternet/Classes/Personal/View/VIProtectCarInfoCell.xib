@@ -72,7 +72,7 @@
                 <outlet property="carBrand" destination="HCK-4w-aGb" id="y9Z-pS-Zmc"/>
                 <outlet property="isEngineGood" destination="75Z-2m-7PI" id="ZT0-gq-POw"/>
                 <outlet property="isLightGood" destination="uZG-wU-YOK" id="5Nm-TV-8bC"/>
-                <outlet property="isTransmissionGood" destination="OyM-MU-AX7" id="CmN-Nb-VtJ"/>
+                <outlet property="isTransGood" destination="OyM-MU-AX7" id="wzd-xN-sIN"/>
                 <outlet property="licenseNum" destination="NjZ-WH-z8w" id="fgG-JZ-w1V"/>
             </connections>
             <point key="canvasLocation" x="391" y="319.5"/>
