@@ -58,13 +58,26 @@
     if (self.phoneNumTF.text.length == 0 || self.phoneNumTF.text == nil) {
         [LCCoolHUD showFailure:@"手机不能为空" zoom:YES shadow:YES];
         return;
-    } else if (self.idenCodeTF.text.length == 0 || self.idenCodeTF.text == nil) {
+    }
+    if (self.phoneNumTF.text.length != 11) {
+        [LCCoolHUD showFailure:@"请输入11位手机号码" zoom:YES shadow:YES];
+        return;
+    }
+    if (![self isMobileNumber:self.phoneNumTF.text])
+    {
+        [LCCoolHUD showFailure:@"请输入正确的手机号码" zoom:YES shadow:YES];
+        return;
+    }
+
+    if (self.idenCodeTF.text.length == 0 || self.idenCodeTF.text == nil) {
             [LCCoolHUD showFailure:@"验证码不能为空" zoom:YES shadow:YES];
         return;
-    } else if (self.userNameTF.text.length == 0 || self.userNameTF.text == nil) {
+    }
+    if (self.userNameTF.text.length == 0 || self.userNameTF.text == nil) {
         [LCCoolHUD showFailure:@"用户名不能为空" zoom:YES shadow:YES];
         return;
-    } else if (self.passwordTF.text.length == 0 || self.passwordTF.text == nil) {
+    }
+    if (self.passwordTF.text.length == 0 || self.passwordTF.text == nil) {
         [LCCoolHUD showFailure:@"密码不能为空" zoom:YES shadow:YES];
         return;
     }
@@ -132,6 +145,24 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
+}
+
+- (BOOL)isMobileNumber:(NSString *)mobileNum {
+    
+    //    电信号段:133/153/180/181/189/177
+    
+    //    联通号段:130/131/132/155/156/185/186/145/176
+    
+    //    移动号段:134/135/136/137/138/139/150/151/152/157/158/159/182/183/184/187/188/147/178
+    
+    //    虚拟运营商:170
+    
+    NSString *MOBILE = @"^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[06-8])\\d{8}$";
+    
+    NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
+    
+    return [regextestmobile evaluateWithObject:mobileNum];
+    
 }
 
 
