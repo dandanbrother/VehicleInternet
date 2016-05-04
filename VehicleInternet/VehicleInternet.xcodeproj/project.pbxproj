@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		941B3B8E1CD9C0B3004217D0 /* 单曲循环.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B3B8B1CD9C0B3004217D0 /* 单曲循环.png */; };
+		941B3B8F1CD9C0B3004217D0 /* 随机.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B3B8C1CD9C0B3004217D0 /* 随机.png */; };
+		941B3B901CD9C0B3004217D0 /* 循环.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B3B8D1CD9C0B3004217D0 /* 循环.png */; };
 		945089591CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */; };
 		948C87E11C9FD1D5006EB17A /* VIMusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 948C87E01C9FD1D5006EB17A /* VIMusicModel.m */; };
 		948C87E41C9FD791006EB17A /* VIMusicListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948C87E31C9FD791006EB17A /* VIMusicListController.m */; };
@@ -225,6 +228,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		941B3B8B1CD9C0B3004217D0 /* 单曲循环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "单曲循环.png"; sourceTree = "<group>"; };
+		941B3B8C1CD9C0B3004217D0 /* 随机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "随机.png"; sourceTree = "<group>"; };
+		941B3B8D1CD9C0B3004217D0 /* 循环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "循环.png"; sourceTree = "<group>"; };
 		945089571CC4D56E0037DEE2 /* VIProtectCarEwmScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProtectCarEwmScanController.h; sourceTree = "<group>"; };
 		945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProtectCarEwmScanController.m; sourceTree = "<group>"; };
 		948C87DF1C9FD1D5006EB17A /* VIMusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMusicModel.h; sourceTree = "<group>"; };
@@ -745,6 +751,9 @@
 				F317A3411CB620CB00394F65 /* scanLine@3x.png */,
 				F317A3421CB620CB00394F65 /* scanscanBg.png */,
 				F317A3431CB620CB00394F65 /* 海绵宝宝.jpeg */,
+				941B3B8B1CD9C0B3004217D0 /* 单曲循环.png */,
+				941B3B8C1CD9C0B3004217D0 /* 随机.png */,
+				941B3B8D1CD9C0B3004217D0 /* 循环.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1363,7 +1372,7 @@
 				TargetAttributes = {
 					F3F0B2AD1C95099F00989506 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = HR25JTF3LT;
+						DevelopmentTeam = 63FKDZ5Q3M;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1408,6 +1417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				949013431C9F7F5700253715 /* 你不知道的事.mp3 in Resources */,
+				941B3B8E1CD9C0B3004217D0 /* 单曲循环.png in Resources */,
 				9490133C1C9F7F5700253715 /* playing_slider_play_right@2x.png in Resources */,
 				F362F2461CC3DF160008608A /* baiduNaviSDK.bundle in Resources */,
 				94A740C11CBA409B00688160 /* fa-group (alias).png in Resources */,
@@ -1430,6 +1440,7 @@
 				F307253E1CBE9E0B004502AB /* 二维码.png in Resources */,
 				949013351C9F7F5700253715 /* playing_btn_play_h@2x.png in Resources */,
 				94A740C01CBA409B00688160 /* fa-flickr@2x.png in Resources */,
+				941B3B901CD9C0B3004217D0 /* 循环.png in Resources */,
 				F3E4480E1CB29321006B62E1 /* JMLogInController.xib in Resources */,
 				949013361C9F7F5700253715 /* playing_btn_play_n@2x.png in Resources */,
 				94A740C21CBA409B00688160 /* fa-group (alias)@2x.png in Resources */,
@@ -1475,6 +1486,7 @@
 				94B99F7A1CBFA63300B1C072 /* Icon@3x.png in Resources */,
 				F3F0B2BC1C95099F00989506 /* Main.storyboard in Resources */,
 				F30725201CBCC896004502AB /* dx_checkbox_gray_on.png in Resources */,
+				941B3B8F1CD9C0B3004217D0 /* 随机.png in Resources */,
 				F317A3521CB6253600394F65 /* iconfont-yuyue@2x.png in Resources */,
 				F317A3471CB620CB00394F65 /* scanLine@3x.png in Resources */,
 				94A740BB1CBA409B00688160 /* fa-automobile.png in Resources */,
@@ -1766,7 +1778,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJM;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1795,7 +1807,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetJM;
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
