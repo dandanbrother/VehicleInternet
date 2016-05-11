@@ -20,17 +20,6 @@ static const NSString *app_id = @"1518";
 static const NSString *app_key = @"16e7d03e38018a30cf8db2e125225c26";
 static const NSString *requestUrl = @"http://www.cheshouye.com/api/weizhang/query_task?";
 //32位小写加密 f979744b136c980b90ecffb94676a50d
-
-//http://light.weiche.me/front/do-index.php
-//c	baidu_light
-//car_province	苏
-//license_plate_num	MA903V
-//province	江苏
-//pinyin	nanjing
-//mobile_num
-//engine_num	C96560
-//vcode_num
-
 @interface VIPeccancyInfotmation ()
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -43,17 +32,16 @@ static const NSString *requestUrl = @"http://www.cheshouye.com/api/weizhang/quer
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSURL *URL=[NSURL URLWithString:@"http://192.168.1.53:8080/MJServer/login"];//不需要传递参数
+    NSURL *URL=[NSURL URLWithString:@"http://api.jisuapi.com/illegal/carorg"];
     
     //    2.创建请求对象
-        NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:URL];//默认为get请求
-        request.timeoutInterval=5.0;//设置请求超时为5秒
-        request.HTTPMethod=@"POST";//设置请求方法
-    
-        //设置请求体
-         NSString *param=[NSString stringWithFormat:@""];
-         //把拼接后的字符串转换为data，设置请求体
-         request.HTTPBody=[param dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:URL];
+
+    NSURLSession *session = [NSURLSession sharedSession];
+    [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        NSLog(@"%@",dict);
+    }];
     
     [self.webView loadHTMLString:HTML baseURL:nil];
 }

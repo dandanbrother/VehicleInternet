@@ -10,7 +10,9 @@
 		941B3B8E1CD9C0B3004217D0 /* 单曲循环.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B3B8B1CD9C0B3004217D0 /* 单曲循环.png */; };
 		941B3B8F1CD9C0B3004217D0 /* 随机.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B3B8C1CD9C0B3004217D0 /* 随机.png */; };
 		941B3B901CD9C0B3004217D0 /* 循环.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B3B8D1CD9C0B3004217D0 /* 循环.png */; };
+		943270831CE08B5800696A20 /* VIRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 943270821CE08B5800696A20 /* VIRequestManager.m */; };
 		945089591CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */; };
+		947BD38A1CE2C23300FAC0B6 /* VICheckIllegalInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 947BD3891CE2C23300FAC0B6 /* VICheckIllegalInformation.m */; };
 		948C87E11C9FD1D5006EB17A /* VIMusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 948C87E01C9FD1D5006EB17A /* VIMusicModel.m */; };
 		948C87E41C9FD791006EB17A /* VIMusicListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948C87E31C9FD791006EB17A /* VIMusicListController.m */; };
 		949012211C9F7C0200253715 /* VIMusicPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949012201C9F7C0200253715 /* VIMusicPlayerController.m */; };
@@ -113,7 +115,6 @@
 		F32FD8F31C97AA9800804053 /* AVOSCloud.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F32FD8F51C97B3F800804053 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F41C97B3F800804053 /* libstdc++.6.0.9.tbd */; };
 		F32FD8F71C97B40500804053 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F61C97B40500804053 /* CoreTelephony.framework */; };
-		F32FD8F91C97B41A00804053 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F81C97B41A00804053 /* Security.framework */; };
 		F32FD8FB1C97B42800804053 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8FA1C97B42800804053 /* SystemConfiguration.framework */; };
 		F32FD9141C97CA2300804053 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD90F1C97CA2300804053 /* UIImage+ImageEffects.m */; };
 		F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9111C97CA2300804053 /* UIView+JMPosition.m */; };
@@ -231,8 +232,12 @@
 		941B3B8B1CD9C0B3004217D0 /* 单曲循环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "单曲循环.png"; sourceTree = "<group>"; };
 		941B3B8C1CD9C0B3004217D0 /* 随机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "随机.png"; sourceTree = "<group>"; };
 		941B3B8D1CD9C0B3004217D0 /* 循环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "循环.png"; sourceTree = "<group>"; };
+		943270811CE08B5800696A20 /* VIRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRequestManager.h; sourceTree = "<group>"; };
+		943270821CE08B5800696A20 /* VIRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRequestManager.m; sourceTree = "<group>"; };
 		945089571CC4D56E0037DEE2 /* VIProtectCarEwmScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProtectCarEwmScanController.h; sourceTree = "<group>"; };
 		945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProtectCarEwmScanController.m; sourceTree = "<group>"; };
+		947BD3881CE2C23300FAC0B6 /* VICheckIllegalInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICheckIllegalInformation.h; sourceTree = "<group>"; };
+		947BD3891CE2C23300FAC0B6 /* VICheckIllegalInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICheckIllegalInformation.m; sourceTree = "<group>"; };
 		948C87DF1C9FD1D5006EB17A /* VIMusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMusicModel.h; sourceTree = "<group>"; };
 		948C87E01C9FD1D5006EB17A /* VIMusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMusicModel.m; sourceTree = "<group>"; };
 		948C87E21C9FD791006EB17A /* VIMusicListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMusicListController.h; sourceTree = "<group>"; };
@@ -529,7 +534,6 @@
 				F362F25B1CC3E9BE0008608A /* ImageIO.framework in Frameworks */,
 				F362F2591CC3E9B40008608A /* AudioToolbox.framework in Frameworks */,
 				F32FD8FB1C97B42800804053 /* SystemConfiguration.framework in Frameworks */,
-				F32FD8F91C97B41A00804053 /* Security.framework in Frameworks */,
 				F32FD8F71C97B40500804053 /* CoreTelephony.framework in Frameworks */,
 				F32FD8F51C97B3F800804053 /* libstdc++.6.0.9.tbd in Frameworks */,
 				F362F2561CC3DF160008608A /* libbaiduNaviSDK.a in Frameworks */,
@@ -892,6 +896,8 @@
 				94D56BEE1CC6736800BC3332 /* VIProtectCarInfoEwmController.m */,
 				945089571CC4D56E0037DEE2 /* VIProtectCarEwmScanController.h */,
 				945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */,
+				947BD3881CE2C23300FAC0B6 /* VICheckIllegalInformation.h */,
+				947BD3891CE2C23300FAC0B6 /* VICheckIllegalInformation.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -921,6 +927,8 @@
 		F32FD90B1C97CA1200804053 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				943270811CE08B5800696A20 /* VIRequestManager.h */,
+				943270821CE08B5800696A20 /* VIRequestManager.m */,
 				F32FD90C1C97CA2300804053 /* JMTool */,
 			);
 			path = Tool;
@@ -1590,6 +1598,7 @@
 				F37221A91CB64A18005F124C /* JGProgressHUDPieIndicatorView.m in Sources */,
 				F362F24D1CC3DF160008608A /* CDataScanner_Extensions.m in Sources */,
 				F37221A31CB64A18005F124C /* JGProgressHUDErrorIndicatorView.m in Sources */,
+				943270831CE08B5800696A20 /* VIRequestManager.m in Sources */,
 				F3859E7F1CA58E140054D309 /* VIAppointmentComposeController.m in Sources */,
 				94E005FA1CB627D100684362 /* VIMyCarCell.m in Sources */,
 				F30725361CBE22DD004502AB /* MBProgressHUD.m in Sources */,
@@ -1601,6 +1610,7 @@
 				F30725311CBD49A6004502AB /* VIScanResultController.m in Sources */,
 				F362F24B1CC3DF160008608A /* CJSONSerialization.m in Sources */,
 				F30725681CBFB8FD004502AB /* SCLTimerDisplay.m in Sources */,
+				947BD38A1CE2C23300FAC0B6 /* VICheckIllegalInformation.m in Sources */,
 				94E006001CB630E600684362 /* VISettingController.m in Sources */,
 				94E8AA301CBCF041003A371F /* VIModifyPersonalInfoController.m in Sources */,
 				94D56BEF1CC6736800BC3332 /* VIProtectCarInfoEwmController.m in Sources */,

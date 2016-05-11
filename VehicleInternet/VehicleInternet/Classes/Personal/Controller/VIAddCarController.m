@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *carBrand;
 @property (weak, nonatomic) IBOutlet UITextField *licenseNum;
 @property (weak, nonatomic) IBOutlet UITextField *mileage;
+@property (weak, nonatomic) IBOutlet UITextField *engineNum;
+@property (weak, nonatomic) IBOutlet UITextField *frameNum;
 @property (weak, nonatomic) IBOutlet UITextField *petrol;
 - (IBAction)carBrandBtnClicked;
 - (IBAction)saveBtnClicked;
@@ -140,6 +142,8 @@
         model.licenseNum = self.licenseNum.text;
         model.mileage = self.mileage.text;
         model.petrol = self.petrol.text;
+        model.frameNum = self.frameNum.text;
+        model.engineNum = self.engineNum.text;
         model.isLightGood = @"1";
         model.isEngineGood = @"1";
         model.isTransGood = @"1";
