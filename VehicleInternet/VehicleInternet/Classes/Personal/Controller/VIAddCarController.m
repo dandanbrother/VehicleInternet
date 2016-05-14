@@ -148,7 +148,8 @@
         params[@"licenseNum"] = self.licenseNum.text;
         params[@"mileage"] = self.mileage.text;
         params[@"petrol"] = self.petrol.text;
-        params[@"engineNum"] = @"车架号未知";
+        params[@"engineNum"] = self.engineNum.text;
+        params[@"frameNum"] = self.frameNum.text;
         params[@"isLightGood"] = @"1";
         params[@"isEngineGood"] = @"1";
         params[@"isTransGood"] = @"1";
