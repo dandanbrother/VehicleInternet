@@ -11,6 +11,8 @@
 #import "VIUserModel.h"
 #import "VISettingController.h"
 #import "LCCoolHUD.h"
+#import "VIWebUser.h"
+#import "AFNetworking.h"
 
 @interface JMRegisterController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;
@@ -85,36 +87,38 @@
     [AVOSCloud verifySmsCode:self.idenCodeTF.text mobilePhoneNumber:self.phoneNumTF.text callback:^(BOOL succeeded, NSError *error) {
         if(succeeded){            //验证码正确
             NSLog(@"验证成功");
-            VIUserModel *userModel = [VIUserModel user];// 新建 AVUser 对象实例
-            userModel.username = self.userNameTF.text;// 设置用户名
-            userModel.password =  self.passwordTF.text;// 设置密码
-            
-            
-            //开始注册
-            [userModel signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (succeeded)// 注册成功
-                {
-                    [LCCoolHUD showSuccess:@"注册成功" zoom:YES shadow:YES];
-                    [VIUserModel logInWithUsernameInBackground:self.userNameTF.text password:self.passwordTF.text block:^(AVUser *user, NSError *error) {
-                        if (user) {
-                            VISettingController *vc = [[VISettingController alloc] init];
-                            [self.navigationController pushViewController:vc animated:YES];
-                        }
-                    }];
-                } else { //注册失败
-                    switch (error.code) {
-                        case 202:
-                            [LCCoolHUD showFailure:@"用户名已被注册" zoom:YES shadow:YES];
-                            break;
-                        case 127:
-                            [LCCoolHUD showFailure:@"无效手机号" zoom:YES shadow:YES];
-                            break;
-                            
+            //web注册
+            AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+            NSMutableDictionary *params = [NSMutableDictionary dictionary];
+            params[@"username"] = self.userNameTF.text;
+            params[@"password"] = self.passwordTF.text;
+            params[@"phone_number"] = self.phoneNumTF.text;
+            [session POST:URLSTR(@"register") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                    if ([responseObject[@"status"] isEqualToString:@"1"])
+                    {
+                        NSString *user_id = responseObject[@"user_id"];
+                        NSString *phone_number = responseObject[@"phone_number"];
+                        //本地存储
+                        NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+                        [user setObject:user_id forKey:@"user_id"];
+                        [user setObject:phone_number forKey:@"phone_number"];
+                        //leancloud注册
+                        [self leancloudRegister];
+                    }else
+                    {
+                        NSLog(@"web注册失败");
                     }
-                    
-                    NSLog(@"%@",error);
                 }
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                
             }];
+
+            
+
             
         } else //验证码错误
         {
@@ -122,6 +126,9 @@
 
         }
     }];
+    
+
+
 
     
     
@@ -131,14 +138,20 @@
 - (IBAction)getIdenCodeBtnClicked
 {
     NSString *str = self.phoneNumTF.text;
-    [AVOSCloud requestSmsCodeWithPhoneNumber:str callback:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"发送验证码成功");
-        }else
-        {
-            NSLog(@"发送验证码失败---%@",error);
-        }
-    }];
+    if ([self isMobileNumber:str]) {
+        [AVOSCloud requestSmsCodeWithPhoneNumber:str callback:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"发送验证码成功");
+            }else
+            {
+                NSLog(@"发送验证码失败---%@",error);
+            }
+        }];
+    }else
+    {
+        [LCCoolHUD showFailure:@"请输入正确的手机号码" zoom:YES shadow:YES];
+    }
+
 }
 
 
@@ -163,6 +176,39 @@
     
     return [regextestmobile evaluateWithObject:mobileNum];
     
+}
+
+- (void)leancloudRegister
+{
+    
+    //leancloud注册
+    VIUserModel *userModel = [VIUserModel user];// 新建 AVUser 对象实例
+    userModel.username = self.userNameTF.text;// 设置用户名
+    userModel.password =  self.passwordTF.text;// 设置密码
+    [userModel signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded)// 注册成功
+        {
+            [LCCoolHUD showSuccess:@"注册成功" zoom:YES shadow:YES];
+            [VIUserModel logInWithUsernameInBackground:self.userNameTF.text password:self.passwordTF.text block:^(AVUser *user, NSError *error) {
+                if (user) {
+                    VISettingController *vc = [[VISettingController alloc] init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+            }];
+        } else { //注册失败
+            switch (error.code) {
+                case 202:
+                    [LCCoolHUD showFailure:@"用户名已被注册" zoom:YES shadow:YES];
+                    break;
+                case 127:
+                    [LCCoolHUD showFailure:@"无效手机号" zoom:YES shadow:YES];
+                    break;
+                    
+            }
+            
+            NSLog(@"%@",error);
+        }
+    }];
 }
 
 

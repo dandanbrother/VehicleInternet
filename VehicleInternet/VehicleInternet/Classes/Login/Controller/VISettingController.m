@@ -9,6 +9,8 @@
 #import "VISettingController.h"
 #import "VIUserModel.h"
 #import "LCCoolHUD.h"
+#import "VIWebUser.h"
+#import "AFNetworking.h"
 
 @interface VISettingController ()
 @property (weak, nonatomic) IBOutlet UITextField *nickName;
@@ -31,12 +33,42 @@
     if (!self.nickName.text.length) {
         [LCCoolHUD showFailure:@"昵称不能为空" zoom:YES shadow:YES];
     } else {
-        VIUserModel *user = [VIUserModel currentUser];
-        user.nickName = self.nickName.text;
-        [user saveInBackground];
-        NSLog(@"user %@",user.nickName);
-        [LCCoolHUD showSuccess:@"设置成功" zoom:YES shadow:YES];
-        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+        NSString *user_id = [user objectForKey:@"user_id"];
+        //web修改昵称
+        AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        params[@"nickName"] = self.nickName.text;
+        params[@"user_id"] = [NSNumber numberWithInt:user_id.intValue];
+
+        [session POST:URLSTR(@"set_nickName") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                if ([responseObject[@"status"] isEqualToString:@"1"])
+                {
+                    //本地存储
+                    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+                    [user setObject:self.nickName.text forKey:@"nickName"];
+                    //leancloud修改
+                    VIUserModel *user1 = [VIUserModel currentUser];
+                    user1.nickName = self.nickName.text;
+                    [user1 saveInBackground];
+                    [LCCoolHUD showSuccess:@"设置成功" zoom:YES shadow:YES];
+                    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                }else
+                {
+                    NSLog(@"web修改失败");
+                }
+            }
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+        }];
+        
+        
+        
+
         
     }
     

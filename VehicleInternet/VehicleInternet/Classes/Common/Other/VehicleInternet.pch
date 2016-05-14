@@ -33,4 +33,6 @@
 // 随机色
 #define KRandomColor JMColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
+#define URLSTR(route_url) [NSString stringWithFormat:@"http://127.0.0.1:5000/%@",(route_url)]
+
 #endif /* VehicleInternet_pch */
