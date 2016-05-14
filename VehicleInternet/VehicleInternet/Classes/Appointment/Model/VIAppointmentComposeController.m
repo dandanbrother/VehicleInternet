@@ -26,13 +26,14 @@
 #import "LCCoolHUD.h"
 #import "SCLAlertView.h"
 #import "ICEBTPayPassWordView.h"
+#import <BmobPay/BmobPay.h>
 
 #define PTypeTag 1001
 #define CInfoTag 1002
 #define PUnitTag 1003
 #define LCornerR 5
 
-@interface VIAppointmentComposeController () <UITextFieldDelegate,UIAlertViewDelegate,ZJAlertListViewDelegate,ZJAlertListViewDatasource>
+@interface VIAppointmentComposeController () <UITextFieldDelegate,UIAlertViewDelegate,ZJAlertListViewDelegate,ZJAlertListViewDatasource,BmobPayDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *timeTF;
 @property (weak, nonatomic) IBOutlet UITextField *licenseNumTF;
 
@@ -270,25 +271,24 @@
     appointment.plateNum = self.licenseNumTF.text;
     
     if (buttonIndex == 1) {
-        [ICEBTPayPassWordView showPassWordViewInView:^(NSString *password) {
-            NSDictionary *dic = @{
-                                  @"validateResult":@(YES)
-                                  };
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:KNotification_ValidatePassWord object:nil userInfo:dic];
-            appointment.isPayed = @"已付款";
 
-            [appointment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                {
-                    if (succeeded)
-                    {
-                        appointment.isPayed = @"已付款";
+        BmobPay* bPay = [[BmobPay alloc] init];
+        //设置代理
+        bPay.delegate = self;
+        //设置商品价格、商品名、商品描述
+        [bPay setPrice:@1.2];
+        [bPay setProductName:@"油钱"];
+        [bPay setBody:@"预付油钱"];
+        //appScheme为创建项目第4步中在URL Schemes中添加的标识
+        [bPay setAppScheme:@"bmobSDK"];
+        //调用支付宝支付
+        [bPay payInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
+            if (isSuccessful) {
+                NSLog(@"跳转支付宝");
 
-                        NSLog(@"保存一条预约成功");
-                        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-                    }
-                }
-            }];
+            } else{
+                NSLog(@"%@",[error description]);
+            }
         }];
     } else {
         appointment.isPayed = @"未付款";
@@ -446,6 +446,58 @@
     NSLog(@"didSelectRowAtIndexPath:%ld", (long)indexPath.row);
 }
 
+
+#pragma mark - AliPayDelegate
+-(void)paySuccess{
+    UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"支付结果" message:@"支付成功" delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil];
+    [alter show];
+    VIUserModel *user = [VIUserModel currentUser];
+    VIAppointmentModel *appointment = [[VIAppointmentModel alloc] init];
+    appointment.carOwnerName = self.userNameLabel.text;//user.nickName;
+    appointment.carName = self.carBrandTF.text;
+    appointment.ownerID = user.objectId;
+    appointment.petrolType = self.pretrolTypeTF.text;
+    appointment.petrolStation = self.petrolStationTF.text;
+    appointment.petrolAmount = [NSString stringWithFormat:@"%@%@",self.petrolAmountTF.text,self.petrolUnitTF.text];
+    appointment.time = self.timeTF.text;
+    appointment.plateNum = self.licenseNumTF.text;
+    appointment.isPayed = @"已付款";
+    
+    [appointment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        {
+            if (succeeded)
+            {
+                NSLog(@"保存一条预约成功");
+                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+            }
+        }
+    }];
+
+}
+
+-(void)payFailWithErrorCode:(int) errorCode{
+    switch(errorCode){
+            
+        case 6001:{
+            UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"支付结果" message:@"用户中途取消" delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil];
+            [alter show];
+        }
+            break;
+            
+        case 6002:{
+            UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"支付结果" message:@"网络连接出错" delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil];
+            [alter show];
+        }
+            break;
+            
+        case 4000:{
+            
+            UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"支付结果" message:@"订单支付失败" delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil];
+            [alter show];
+        }
+            break;
+    }
+}
 
 #pragma mark - 加载数据
 - (void)loadCarInfo

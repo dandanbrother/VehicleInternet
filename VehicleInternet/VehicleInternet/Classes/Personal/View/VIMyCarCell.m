@@ -8,6 +8,7 @@
 
 #import "VIMyCarCell.h"
 #import "VICarInfoModel.h"
+#import "VICheckIllegalInformation.h"
 
 @interface VIMyCarCell ()
 @property (weak, nonatomic) IBOutlet UILabel *carBrand;
@@ -41,6 +42,12 @@
 }
 
 
+- (IBAction)checkIllegal:(id)sender {
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(clickToShowIllegalInfo:carInfo:)]) {
+        [self.delegate clickToShowIllegalInfo:(UIButton *)sender carInfo:_carInfo];
+    }
+}
 
 - (IBAction)ewmBtnClicked:(id)sender {
     if (self.delegate && [self.delegate respondsToSelector:@selector(clickToShowEwm:carInfo:)])

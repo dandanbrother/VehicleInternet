@@ -7,7 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		941B3B8E1CD9C0B3004217D0 /* 单曲循环.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B3B8B1CD9C0B3004217D0 /* 单曲循环.png */; };
+		941B3B8F1CD9C0B3004217D0 /* 随机.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B3B8C1CD9C0B3004217D0 /* 随机.png */; };
+		941B3B901CD9C0B3004217D0 /* 循环.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B3B8D1CD9C0B3004217D0 /* 循环.png */; };
+		943270831CE08B5800696A20 /* VIRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 943270821CE08B5800696A20 /* VIRequestManager.m */; };
+		94437AE51CE6CD100022F012 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 94437AE21CE6CD100022F012 /* AlipaySDK.bundle */; };
+		94437AE61CE6CD100022F012 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94437AE31CE6CD100022F012 /* AlipaySDK.framework */; };
+		94437AE71CE6CD100022F012 /* BmobPay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94437AE41CE6CD100022F012 /* BmobPay.framework */; };
+		94437AE91CE6CD560022F012 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94437AE81CE6CD560022F012 /* libz.tbd */; };
+		94437AEB1CE6CD600022F012 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94437AEA1CE6CD600022F012 /* libc++.tbd */; };
 		945089591CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */; };
+		947BD38A1CE2C23300FAC0B6 /* VICheckIllegalInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 947BD3891CE2C23300FAC0B6 /* VICheckIllegalInformation.m */; };
 		948C87E11C9FD1D5006EB17A /* VIMusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 948C87E01C9FD1D5006EB17A /* VIMusicModel.m */; };
 		948C87E41C9FD791006EB17A /* VIMusicListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948C87E31C9FD791006EB17A /* VIMusicListController.m */; };
 		949012211C9F7C0200253715 /* VIMusicPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949012201C9F7C0200253715 /* VIMusicPlayerController.m */; };
@@ -110,7 +120,6 @@
 		F32FD8F31C97AA9800804053 /* AVOSCloud.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F32FD8F51C97B3F800804053 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F41C97B3F800804053 /* libstdc++.6.0.9.tbd */; };
 		F32FD8F71C97B40500804053 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F61C97B40500804053 /* CoreTelephony.framework */; };
-		F32FD8F91C97B41A00804053 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F81C97B41A00804053 /* Security.framework */; };
 		F32FD8FB1C97B42800804053 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8FA1C97B42800804053 /* SystemConfiguration.framework */; };
 		F32FD9141C97CA2300804053 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD90F1C97CA2300804053 /* UIImage+ImageEffects.m */; };
 		F32FD9151C97CA2300804053 /* UIView+JMPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F32FD9111C97CA2300804053 /* UIView+JMPosition.m */; };
@@ -232,8 +241,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		941B3B8B1CD9C0B3004217D0 /* 单曲循环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "单曲循环.png"; sourceTree = "<group>"; };
+		941B3B8C1CD9C0B3004217D0 /* 随机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "随机.png"; sourceTree = "<group>"; };
+		941B3B8D1CD9C0B3004217D0 /* 循环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "循环.png"; sourceTree = "<group>"; };
+		943270811CE08B5800696A20 /* VIRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRequestManager.h; sourceTree = "<group>"; };
+		943270821CE08B5800696A20 /* VIRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRequestManager.m; sourceTree = "<group>"; };
+		94437AE21CE6CD100022F012 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		94437AE31CE6CD100022F012 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		94437AE41CE6CD100022F012 /* BmobPay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobPay.framework; sourceTree = "<group>"; };
+		94437AE81CE6CD560022F012 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		94437AEA1CE6CD600022F012 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		945089571CC4D56E0037DEE2 /* VIProtectCarEwmScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProtectCarEwmScanController.h; sourceTree = "<group>"; };
 		945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProtectCarEwmScanController.m; sourceTree = "<group>"; };
+		947BD3881CE2C23300FAC0B6 /* VICheckIllegalInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICheckIllegalInformation.h; sourceTree = "<group>"; };
+		947BD3891CE2C23300FAC0B6 /* VICheckIllegalInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICheckIllegalInformation.m; sourceTree = "<group>"; };
 		948C87DF1C9FD1D5006EB17A /* VIMusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMusicModel.h; sourceTree = "<group>"; };
 		948C87E01C9FD1D5006EB17A /* VIMusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMusicModel.m; sourceTree = "<group>"; };
 		948C87E21C9FD791006EB17A /* VIMusicListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMusicListController.h; sourceTree = "<group>"; };
@@ -540,14 +561,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94437AEB1CE6CD600022F012 /* libc++.tbd in Frameworks */,
+				94437AE91CE6CD560022F012 /* libz.tbd in Frameworks */,
 				F362F25F1CC3E9EA0008608A /* MediaPlayer.framework in Frameworks */,
 				F362F25D1CC3E9CD0008608A /* CoreMotion.framework in Frameworks */,
 				F362F25B1CC3E9BE0008608A /* ImageIO.framework in Frameworks */,
 				F362F2591CC3E9B40008608A /* AudioToolbox.framework in Frameworks */,
 				F32FD8FB1C97B42800804053 /* SystemConfiguration.framework in Frameworks */,
-				F32FD8F91C97B41A00804053 /* Security.framework in Frameworks */,
 				F32FD8F71C97B40500804053 /* CoreTelephony.framework in Frameworks */,
 				F32FD8F51C97B3F800804053 /* libstdc++.6.0.9.tbd in Frameworks */,
+				94437AE71CE6CD100022F012 /* BmobPay.framework in Frameworks */,
 				F362F2561CC3DF160008608A /* libbaiduNaviSDK.a in Frameworks */,
 				F39F9D0C1C950AD8001B8D69 /* libsqlite3.0.tbd in Frameworks */,
 				F39F9D0A1C950ACD001B8D69 /* OpenGLES.framework in Frameworks */,
@@ -558,6 +581,7 @@
 				F3F0B2F41C9509ED00989506 /* BaiduMapAPI_Radar.framework in Frameworks */,
 				F3F0B2F01C9509ED00989506 /* BaiduMapAPI_Base.framework in Frameworks */,
 				F3F0B2F11C9509ED00989506 /* BaiduMapAPI_Cloud.framework in Frameworks */,
+				94437AE61CE6CD100022F012 /* AlipaySDK.framework in Frameworks */,
 				F3F0B2F61C9509ED00989506 /* BaiduMapAPI_Utils.framework in Frameworks */,
 				F3F0B2F31C9509ED00989506 /* BaiduMapAPI_Map.framework in Frameworks */,
 				F3F0B2F21C9509ED00989506 /* BaiduMapAPI_Location.framework in Frameworks */,
@@ -769,6 +793,9 @@
 				F317A3411CB620CB00394F65 /* scanLine@3x.png */,
 				F317A3421CB620CB00394F65 /* scanscanBg.png */,
 				F317A3431CB620CB00394F65 /* 海绵宝宝.jpeg */,
+				941B3B8B1CD9C0B3004217D0 /* 单曲循环.png */,
+				941B3B8C1CD9C0B3004217D0 /* 随机.png */,
+				941B3B8D1CD9C0B3004217D0 /* 循环.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -908,6 +935,8 @@
 				94D56BEE1CC6736800BC3332 /* VIProtectCarInfoEwmController.m */,
 				945089571CC4D56E0037DEE2 /* VIProtectCarEwmScanController.h */,
 				945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */,
+				947BD3881CE2C23300FAC0B6 /* VICheckIllegalInformation.h */,
+				947BD3891CE2C23300FAC0B6 /* VICheckIllegalInformation.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -937,6 +966,8 @@
 		F32FD90B1C97CA1200804053 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				943270811CE08B5800696A20 /* VIRequestManager.h */,
+				943270821CE08B5800696A20 /* VIRequestManager.m */,
 				F32FD90C1C97CA2300804053 /* JMTool */,
 			);
 			path = Tool;
@@ -1241,6 +1272,11 @@
 		F3F0B2A51C95099F00989506 = {
 			isa = PBXGroup;
 			children = (
+				94437AEA1CE6CD600022F012 /* libc++.tbd */,
+				94437AE81CE6CD560022F012 /* libz.tbd */,
+				94437AE21CE6CD100022F012 /* AlipaySDK.bundle */,
+				94437AE31CE6CD100022F012 /* AlipaySDK.framework */,
+				94437AE41CE6CD100022F012 /* BmobPay.framework */,
 				F362F25E1CC3E9EA0008608A /* MediaPlayer.framework */,
 				F362F25C1CC3E9CD0008608A /* CoreMotion.framework */,
 				F362F25A1CC3E9BE0008608A /* ImageIO.framework */,
@@ -1408,7 +1444,9 @@
 				TargetAttributes = {
 					F3F0B2AD1C95099F00989506 = {
 						CreatedOnToolsVersion = 7.2.1;
+
 						DevelopmentTeam = C3VNYUV952;
+
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1453,6 +1491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				949013431C9F7F5700253715 /* 你不知道的事.mp3 in Resources */,
+				941B3B8E1CD9C0B3004217D0 /* 单曲循环.png in Resources */,
 				9490133C1C9F7F5700253715 /* playing_slider_play_right@2x.png in Resources */,
 				F362F2461CC3DF160008608A /* baiduNaviSDK.bundle in Resources */,
 				94A740C11CBA409B00688160 /* fa-group (alias).png in Resources */,
@@ -1475,6 +1514,7 @@
 				F307253E1CBE9E0B004502AB /* 二维码.png in Resources */,
 				949013351C9F7F5700253715 /* playing_btn_play_h@2x.png in Resources */,
 				94A740C01CBA409B00688160 /* fa-flickr@2x.png in Resources */,
+				941B3B901CD9C0B3004217D0 /* 循环.png in Resources */,
 				F3E4480E1CB29321006B62E1 /* JMLogInController.xib in Resources */,
 				949013361C9F7F5700253715 /* playing_btn_play_n@2x.png in Resources */,
 				94A740C21CBA409B00688160 /* fa-group (alias)@2x.png in Resources */,
@@ -1487,6 +1527,7 @@
 				F317A3511CB6253600394F65 /* iconfont-iconfontbiaozhunmoban01@2x.png in Resources */,
 				94F2AA5A1CC12885007D94EB /* 车灯.png in Resources */,
 				94A740C61CBA416C00688160 /* Group@2x.png in Resources */,
+				94437AE51CE6CD100022F012 /* AlipaySDK.bundle in Resources */,
 				F30725321CBD49A6004502AB /* VIScanResultController.xib in Resources */,
 				F37221A01CB64A18005F124C /* JGProgressHUD Resources.bundle in Resources */,
 				F317A34A1CB620CB00394F65 /* noticeMusic.wav in Resources */,
@@ -1520,6 +1561,7 @@
 				94B99F7A1CBFA63300B1C072 /* Icon@3x.png in Resources */,
 				F3F0B2BC1C95099F00989506 /* Main.storyboard in Resources */,
 				F30725201CBCC896004502AB /* dx_checkbox_gray_on.png in Resources */,
+				941B3B8F1CD9C0B3004217D0 /* 随机.png in Resources */,
 				F317A3521CB6253600394F65 /* iconfont-yuyue@2x.png in Resources */,
 				F317A3471CB620CB00394F65 /* scanLine@3x.png in Resources */,
 				94A740BB1CBA409B00688160 /* fa-automobile.png in Resources */,
@@ -1627,6 +1669,7 @@
 				F37221A91CB64A18005F124C /* JGProgressHUDPieIndicatorView.m in Sources */,
 				F362F24D1CC3DF160008608A /* CDataScanner_Extensions.m in Sources */,
 				F37221A31CB64A18005F124C /* JGProgressHUDErrorIndicatorView.m in Sources */,
+				943270831CE08B5800696A20 /* VIRequestManager.m in Sources */,
 				F3859E7F1CA58E140054D309 /* VIAppointmentComposeController.m in Sources */,
 				94E005FA1CB627D100684362 /* VIMyCarCell.m in Sources */,
 				F30725361CBE22DD004502AB /* MBProgressHUD.m in Sources */,
@@ -1638,6 +1681,7 @@
 				F30725311CBD49A6004502AB /* VIScanResultController.m in Sources */,
 				F362F24B1CC3DF160008608A /* CJSONSerialization.m in Sources */,
 				F30725681CBFB8FD004502AB /* SCLTimerDisplay.m in Sources */,
+				947BD38A1CE2C23300FAC0B6 /* VICheckIllegalInformation.m in Sources */,
 				94E006001CB630E600684362 /* VISettingController.m in Sources */,
 				F3CC8BA91CE7054100B8C285 /* AFURLRequestSerialization.m in Sources */,
 				94E8AA301CBCF041003A371F /* VIModifyPersonalInfoController.m in Sources */,
@@ -1807,6 +1851,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/AVOSCloud",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap",
 					"$(PROJECT_DIR)/VehicleInternet",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/VehicleInternet/Classes/Common/Other/VehicleInternet.pch";
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
@@ -1818,7 +1863,9 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+
 				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInterneJM;
+
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1836,6 +1883,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/AVOSCloud",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap",
 					"$(PROJECT_DIR)/VehicleInternet",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/VehicleInternet/Classes/Common/Other/VehicleInternet.pch";
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
@@ -1847,7 +1895,9 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+
 				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInterneJM;
+
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

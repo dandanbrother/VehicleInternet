@@ -27,6 +27,7 @@
 #import "BNCoreServices.h"
 
 
+
 @interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,BNNaviUIManagerDelegate,BNNaviRoutePlanDelegate,UIAlertViewDelegate>
 
 @property (nonatomic,strong) BMKMapView *mapView;
