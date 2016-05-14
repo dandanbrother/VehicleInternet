@@ -11,6 +11,7 @@
 #import "ZJAlertListView.h"
 #import "VICarEwmScanController.h"
 #import "LCCoolHUD.h"
+#import "AFNetworking.h"
 
 @interface VIAddCarController () <UITextFieldDelegate,ZJAlertListViewDelegate,ZJAlertListViewDatasource>
 @property (weak, nonatomic) IBOutlet UITextField *carBrand;
@@ -131,24 +132,49 @@
 }
 
 - (IBAction)saveBtnClicked {
-    AVUser *user = [AVUser currentUser];
     
     if ((self.carBrand.text.length != 0 ) && (self.licenseNum.text.length != 0 ) && (self.mileage.text.length != 0 ) && (self.petrol.text.length != 0 )) {
         
-        VICarInfoModel *model = [VICarInfoModel object];
-        model.carBrand = self.carBrand.text;
-        model.licenseNum = self.licenseNum.text;
-        model.mileage = self.mileage.text;
-        model.petrol = self.petrol.text;
-        model.isLightGood = @"1";
-        model.isEngineGood = @"1";
-        model.isTransGood = @"1";
-        model.ownerID = user.objectId;
-        [model saveInBackground];
+        //Web保存
+        NSUserDefaults *user1 = [NSUserDefaults standardUserDefaults];
+        NSString *user_id = [user1 objectForKey:@"user_id"];
+        AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        params[@"user_id"] = [NSNumber numberWithInt:user_id.intValue];
+        params[@"carBrand"] = self.carBrand.text;
+        params[@"licenseNum"] = self.licenseNum.text;
+        params[@"mileage"] = self.mileage.text;
+        params[@"petrol"] = self.petrol.text;
+        params[@"engineNum"] = @"车架号未知";
+        params[@"isLightGood"] = @"1";
+        params[@"isEngineGood"] = @"1";
+        params[@"isTransGood"] = @"1";
         
-        [LCCoolHUD showSuccess:@"添加成功" zoom:YES shadow:YES];
         
-        [self.navigationController popViewControllerAnimated:YES];
+        
+        [session POST:URLSTR(@"bindCar") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                if ([responseObject[@"status"] isEqualToString:@"1"])
+                {
+                    NSLog(@"%@,%@,%@",responseObject[@"status"],responseObject[@"msg"],responseObject[@"car_id"]);
+                    //leancloud修改
+                    [self leancloudsaveWithCar_id:responseObject[@"car_id"]];
+                    
+                    [LCCoolHUD showSuccess:@"添加成功" zoom:YES shadow:YES];
+                    
+                    [self.navigationController popViewControllerAnimated:YES];
+                }else
+                {
+                    NSLog(@"web添加车辆失败");
+                }
+            }
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+        }];
+
         
     } else {
         [LCCoolHUD showFailure:@"信息不全" zoom:YES shadow:YES];
@@ -189,5 +215,21 @@
     
     return dic;
     
+}
+
+- (void)leancloudsaveWithCar_id:(NSString *)car_id
+{
+    AVUser *user = [AVUser currentUser];
+    VICarInfoModel *model = [VICarInfoModel object];
+    model.carBrand = self.carBrand.text;
+    model.licenseNum = self.licenseNum.text;
+    model.mileage = self.mileage.text;
+    model.petrol = self.petrol.text;
+    model.isLightGood = @"1";
+    model.isEngineGood = @"1";
+    model.isTransGood = @"1";
+    model.ownerID = user.objectId;
+    model.car_id = car_id;
+    [model saveInBackground];
 }
 @end

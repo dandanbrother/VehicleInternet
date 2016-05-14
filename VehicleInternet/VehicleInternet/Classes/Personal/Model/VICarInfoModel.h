@@ -68,5 +68,8 @@
  */
 @property (nonatomic, copy) NSString *isLightGood;
 
+
+@property(nonatomic,copy) NSString* car_id;
+
 + (instancetype)carInfoWithDict:(NSDictionary *)dict;
 @end

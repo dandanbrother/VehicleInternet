@@ -8,7 +8,8 @@
 
 #import "VIModifyCarController.h"
 #import "ZJAlertListView.h"
-
+#import "AFNetworking.h"
+#import "LCCoolHUD.h"
 @interface VIModifyCarController () <UITextFieldDelegate,ZJAlertListViewDelegate,ZJAlertListViewDatasource>
 @property (weak, nonatomic) IBOutlet UITextField *carBrand;
 @property (weak, nonatomic) IBOutlet UITextField *licenseNum;
@@ -25,7 +26,7 @@
 
 - (NSArray *)carBrandTypes{
     if (!_carBrandTypes) {
-        self.carBrandTypes = [NSArray arrayWithObjects:@"奔驰",@"宝马",@"大众",@"丰田",nil];
+        self.carBrandTypes = [NSArray arrayWithObjects:@"奔驰",@"宝马",@"大众",@"丰田",@"保时捷",@"巴博斯",@"MINI",@"本田",@"铃木",@"雷克萨斯",@"朗世",@"马自达",@"别克",@"福特",@"宾利",@"捷豹",@"路虎",nil];
     }
     return _carBrandTypes;
 }
@@ -44,15 +45,46 @@
 }
 
 - (IBAction)save:(id)sender {
-    [_car saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        [_car setObject:self.carBrand.text forKey:@"carBrand"];
-        [_car setObject:self.licenseNum.text forKey:@"licenseNum"];
-        [_car setObject:self.mileage.text forKey:@"mileage"];
-        [_car setObject:self.petrol.text forKey:@"petrol"];
+    //web修改
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"car_id"] = [NSNumber numberWithInt:_car.car_id.intValue];
+    params[@"carBrand"] = self.carBrand.text;
+    params[@"licenseNum"] = self.licenseNum.text;
+    params[@"mileage"] = self.mileage.text;
+    params[@"petrol"] = self.petrol.text;
+    params[@"engineNum"] = @"车架号未知";
+    params[@"isLightGood"] = @"1";
+    params[@"isEngineGood"] = @"1";
+    params[@"isTransGood"] = @"1";
+    
+    
+    
+    [session POST:URLSTR(@"modifyCar") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
         
-        [_car saveInBackground];
-        [self.navigationController popViewControllerAnimated:YES];
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            if ([responseObject[@"status"] isEqualToString:@"1"])
+            {
+                //leancloud修改
+                [self leancloud];
+
+                [LCCoolHUD showSuccess:@"修改成功" zoom:YES shadow:YES];
+                [self.navigationController popViewControllerAnimated:YES];
+            }else
+            {
+                NSLog(@"web修改失败");
+                [LCCoolHUD showSuccess:@"修改失败" zoom:YES shadow:YES];
+            }
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
     }];
+
+    
+    //leancloud修改
+
 }
 - (IBAction)revoke:(id)sender {
     [self initData];
@@ -123,6 +155,16 @@
     NSLog(@"didSelectRowAtIndexPath:%ld", (long)indexPath.row);
 }
 
-
+- (void)leancloud
+{
+    [_car saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [_car setObject:self.carBrand.text forKey:@"carBrand"];
+        [_car setObject:self.licenseNum.text forKey:@"licenseNum"];
+        [_car setObject:self.mileage.text forKey:@"mileage"];
+        [_car setObject:self.petrol.text forKey:@"petrol"];
+        
+        [_car saveInBackground];
+    }];
+}
 
 @end

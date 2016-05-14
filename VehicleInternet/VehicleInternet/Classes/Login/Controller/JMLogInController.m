@@ -12,6 +12,8 @@
 #import "VIUserModel.h"
 #import "VISettingController.h"
 #import "LCCoolHUD.h"
+#import "VIWebUser.h"
+#import "AFNetworking.h"
 
 @interface JMLogInController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;
@@ -170,13 +172,61 @@
 
 - (IBAction)loginBtnClicked
 {
+    //web修改昵称
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"username"] = self.userNameTF.text;
+    params[@"password"] = self.passwordTF.text;
+    
+    [session POST:URLSTR(@"login") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            if ([responseObject[@"status"] isEqualToString:@"1"])
+            {
+                NSLog(@"web登录成功");
+                //本地存储
+                NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+                [user setObject:responseObject[@"user_id"] forKey:@"user_id"];
+                [user setObject:responseObject[@"phone_number"] forKey:@"phone_number"];
+                //leancloud登录
+                [self leancloudlogin];
+ 
+            }else
+            {
+                NSLog(@"web登录失败");
+            }
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+
+}
+
+- (IBAction)registerBtnClicked
+{
+    JMRegisterController *registerVC = [[JMRegisterController alloc] init];
+    registerVC.title = @"注册";
+    [self.navigationController pushViewController:registerVC animated:YES];
+}
+
+- (void)cancel
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)leancloudlogin
+{
+    //leancloud登录
     [VIUserModel logInWithUsernameInBackground:self.userNameTF.text password:self.passwordTF.text block:^(AVUser *user, NSError *error) {
         if (user != nil) //登录成功
         {
             [LCCoolHUD showSuccess:@"登陆成功" zoom:YES shadow:YES];
             NSLog(@"登录成功---%@",user);
             [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-
+            
             
         } else //登录失败
         {
@@ -191,17 +241,5 @@
             }
         }
     }];
-}
-
-- (IBAction)registerBtnClicked
-{
-    JMRegisterController *registerVC = [[JMRegisterController alloc] init];
-    registerVC.title = @"注册";
-    [self.navigationController pushViewController:registerVC animated:YES];
-}
-
-- (void)cancel
-{
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 @end

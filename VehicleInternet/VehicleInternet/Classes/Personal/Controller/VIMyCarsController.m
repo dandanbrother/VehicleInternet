@@ -11,7 +11,8 @@
 #import "VIMyCarCell.h"
 #import "VIModifyCarController.h"
 #import "VICarEwmController.h"
-
+#import "VICarInfoModel.h"
+#import "AFNetworking.h"
 @interface VIMyCarsController () <VIMyCarCellDelegate>
 @property (nonatomic, strong) NSMutableArray *carList;
 @property (nonatomic, assign) NSInteger sectionNum;
@@ -129,13 +130,38 @@
 
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
         NSIndexPath *blank = [NSIndexPath indexPathForItem:indexPath.row-1 inSection:0];
-        [self.carList[indexPath.row/2] deleteInBackground];
-        [self.carList removeObjectAtIndex:indexPath.row/2];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,blank, nil] withRowAnimation:UITableViewRowAnimationLeft];
-       
-        [self.tableView reloadData];
+        VICarInfoModel *carInfo = self.carList[indexPath.row/2];
+        //web删除
+        AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        params[@"car_id"] = [NSNumber numberWithInt:carInfo.car_id.intValue];
+        
+        
+        [session POST:URLSTR(@"deleteCar") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                if ([responseObject[@"status"] isEqualToString:@"1"])
+                {
+                    //leancloud删除
+                    [carInfo deleteInBackground];
+                    [self.carList removeObjectAtIndex:indexPath.row/2];
+                    [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,blank, nil] withRowAnimation:UITableViewRowAnimationLeft];
+                    [self.tableView reloadData];
+                }else
+                {
+                    NSLog(@"web修改失败");
+                }
+            }
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+        }];
+        
+
     }
 }
 
