@@ -90,7 +90,7 @@
                   moduleName = "VehicleInternet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nidingfan/Desktop/%E6%AF%94%E8%B5%9B/VehicleInternet/VehicleInternet/VehicleInternet/Classes/Personal/Controller/VIPeccancyInfotmation.m"
-                  timestampString = "484633571.928363"
+                  timestampString = "484907206.205911"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "41"
@@ -105,12 +105,12 @@
                   moduleName = "VehicleInternet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nidingfan/Desktop/%E6%AF%94%E8%B5%9B/VehicleInternet/VehicleInternet/VehicleInternet/Classes/Personal/Controller/VIPeccancyInfotmation.m"
-                  timestampString = "484633571.928644"
+                  timestampString = "484907206.206717"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "128">
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "136">
                </Location>
             </Locations>
          </BreakpointContent>

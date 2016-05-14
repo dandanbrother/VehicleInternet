@@ -13,6 +13,8 @@
 #import "VICarInfoModel.h"
 #import "BNCoreServices.h"
 #import "VIMusicPlayerController.h"
+#import <BmobPay/BmobPay.h>
+#import <AlipaySDK/AlipaySDK.h>
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 {
@@ -28,22 +30,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-//    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:253/255.0 green:130/255.0 blue:36/255.0 alpha:1]];
-    [[UITabBar appearance] setTintColor:[UIColor blueColor]];
-    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
-    
-    
-    
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:83/255.0 green:125/255.0 blue:221/255.0 alpha:1.0]];
-    
-    //导航栏白色字体
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-
     //初始化leancloud
     [self leancloudSetupWithLaunchOptions:launchOptions];
     //初始化百度地图
     [self baiduMapSetup];
+    //初始化支付SDK
+    [BmobPaySDK registerWithAppKey:@"285549832d04465b3d5e3db77e1a2525"];
+    
+    
+    [[UITabBar appearance] setTintColor:[UIColor blueColor]];
+    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
+
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:83/255.0 green:125/255.0 blue:221/255.0 alpha:1.0]];
+    
+    //导航栏白色字体
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     UITabBarController *mainWindow = (UITabBarController *)self.window.rootViewController;
     mainWindow.delegate = self;
@@ -61,6 +62,15 @@
     [player play];
     
     
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([url.host isEqualToString:@"safepay"]) {
+        
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {}];
+    }
     return YES;
 }
 
