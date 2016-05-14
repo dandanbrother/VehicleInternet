@@ -12,12 +12,15 @@
 #import "VIUserModel.h"
 #import "VICarInfoModel.h"
 #import "BNCoreServices.h"
+#import "VIMusicPlayerController.h"
+#import <BmobPay/BmobPay.h>
+#import <AlipaySDK/AlipaySDK.h>
 
-
-@interface AppDelegate ()
+@interface AppDelegate () <UITabBarControllerDelegate>
 {
     BMKMapManager* _mapManager;
     BOOL isUpdata;
+    AVAudioPlayer *player;
 }
 
 
@@ -27,28 +30,61 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-//    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:253/255.0 green:130/255.0 blue:36/255.0 alpha:1]];
-    [[UITabBar appearance] setTintColor:[UIColor blueColor]];
-    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
-    
-    
-    
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:83/255.0 green:125/255.0 blue:221/255.0 alpha:1.0]];
-    
-    //导航栏白色字体
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-
     //初始化leancloud
     [self leancloudSetupWithLaunchOptions:launchOptions];
     //初始化百度地图
     [self baiduMapSetup];
+    //初始化支付SDK
+    [BmobPaySDK registerWithAppKey:@"285549832d04465b3d5e3db77e1a2525"];
     
+    
+    [[UITabBar appearance] setTintColor:[UIColor blueColor]];
+    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
+
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:83/255.0 green:125/255.0 blue:221/255.0 alpha:1.0]];
+    
+    //导航栏白色字体
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+    UITabBarController *mainWindow = (UITabBarController *)self.window.rootViewController;
+    mainWindow.delegate = self;
+
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
    
+    
+    //开始播放音乐
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"安静.mp3" ofType:nil];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    player.currentTime = 0;
+    player.volume = 0.5;
+    [player play];
+    
+    
     return YES;
 }
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([url.host isEqualToString:@"safepay"]) {
+        
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {}];
+    }
+    return YES;
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    if (tabBarController.selectedIndex == 2) {
+        NSUserDefaults *time = [NSUserDefaults standardUserDefaults];
+        NSNumber *musicTime = [NSNumber numberWithFloat:player.currentTime];
+        [time setValue:musicTime forKey:@"time"];
+        [player stop];
+        
+    }
+
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -100,7 +136,7 @@
      *  tomorrow.VehicleInternet       CpVALBsZIouu5TAt485fEBRX
      *
      */
-    BOOL ret = [_mapManager start:@"o3DCdN1FZZKaT3gK0B8f3TkT"  generalDelegate:self];
+    BOOL ret = [_mapManager start:@"CpVALBsZIouu5TAt485fEBRX"  generalDelegate:self];
     
     if (!ret) {
         NSLog(@"baiduMap failed");
@@ -110,7 +146,7 @@
     }
     
     //初始化导航SDK
-    [BNCoreServices_Instance initServices:@"o3DCdN1FZZKaT3gK0B8f3TkT"];
+    [BNCoreServices_Instance initServices:@"CpVALBsZIouu5TAt485fEBRX"];
     [BNCoreServices_Instance startServicesAsyn:nil fail:nil];
 }
 

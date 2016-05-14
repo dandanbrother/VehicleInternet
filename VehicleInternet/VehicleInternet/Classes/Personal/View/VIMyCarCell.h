@@ -14,7 +14,7 @@
 
 @optional
 - (void)clickToShowEwm:(UIButton *)btn carInfo:(VICarInfoModel*)carInfo;
-
+- (void)clickToShowIllegalInfo:(UIButton *)btn carInfo:(VICarInfoModel*)carInfo;
 @end
 
 @interface VIMyCarCell : UITableViewCell
@@ -22,6 +22,6 @@
 @property (nonatomic, strong) VICarInfoModel *carInfo;
 
 @property (nonatomic,weak) id<VIMyCarCellDelegate> delegate;
-
+- (void)setCarInfo:(VICarInfoModel *)carInfo;
 + (instancetype)carInfoCellWithTableView:(UITableView *)tableView;
 @end

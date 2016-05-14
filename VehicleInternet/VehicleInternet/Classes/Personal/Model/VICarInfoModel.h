@@ -33,10 +33,10 @@
 @property (nonatomic,copy) NSString *engineNum;
 
 /**
- *  车身级别，几门几座
+ *  车架号
  */
-@property (nonatomic, assign) NSInteger doorsNum;
-@property (nonatomic, assign) NSInteger seatsNum;
+@property (nonatomic,copy) NSString *frameNum;
+
 
 /**
  *  里程数

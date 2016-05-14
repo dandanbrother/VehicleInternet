@@ -11,8 +11,13 @@
 #import "VIMyCarCell.h"
 #import "VIModifyCarController.h"
 #import "VICarEwmController.h"
+
 #import "VICarInfoModel.h"
 #import "AFNetworking.h"
+
+#import "VICheckIllegalInformation.h"
+
+
 @interface VIMyCarsController () <VIMyCarCellDelegate>
 @property (nonatomic, strong) NSMutableArray *carList;
 @property (nonatomic, assign) NSInteger sectionNum;
@@ -179,4 +184,11 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ewmVC];
     [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
+
+- (void)clickToShowIllegalInfo:(UIButton *)btn carInfo:(VICarInfoModel *)carInfo {
+    VICheckIllegalInformation *infoVC = [[VICheckIllegalInformation alloc] init];
+    infoVC.model = carInfo;
+    [self.navigationController pushViewController:infoVC animated:YES];
+}
+
 @end

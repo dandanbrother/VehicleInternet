@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *carBrand;
 @property (weak, nonatomic) IBOutlet UITextField *licenseNum;
 @property (weak, nonatomic) IBOutlet UITextField *mileage;
+@property (weak, nonatomic) IBOutlet UITextField *engineNum;
+@property (weak, nonatomic) IBOutlet UITextField *frameNum;
 @property (weak, nonatomic) IBOutlet UITextField *petrol;
 - (IBAction)carBrandBtnClicked;
 - (IBAction)saveBtnClicked;
@@ -135,6 +137,7 @@
     
     if ((self.carBrand.text.length != 0 ) && (self.licenseNum.text.length != 0 ) && (self.mileage.text.length != 0 ) && (self.petrol.text.length != 0 )) {
         
+
         //Web保存
         NSUserDefaults *user1 = [NSUserDefaults standardUserDefaults];
         NSString *user_id = [user1 objectForKey:@"user_id"];
@@ -150,6 +153,7 @@
         params[@"isEngineGood"] = @"1";
         params[@"isTransGood"] = @"1";
         
+
         
         
         [session POST:URLSTR(@"bindCar") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
