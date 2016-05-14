@@ -14,7 +14,12 @@
 #import "VIHomeMapController.h"
 #import "VIMusicListController.h"
 
-#pragma mark
+typedef enum : NSUInteger {
+    MusicPLayModeRandomPlay,
+    MusicPLayModeOneSongPlay,
+    MusicPLayModeDefault,
+} MusicPLayMode;
+
 
 @interface VIMusicPlayerController () <AVAudioPlayerDelegate,VIMusicListDelegate>
 {
@@ -24,6 +29,7 @@
     UIButton *startAndStopBtn;//播放、暂停
     UIButton *lastButton;//上一曲
     UIButton *nextButton;//下一曲的实现
+    UIButton *musicPLayModeButton;
     UISlider *slider;//滑块 时间进度条
     UILabel *totalLable;//显示总时间的lable
     UILabel *startLable;//歌曲进度的lable
@@ -31,8 +37,9 @@
 }
 @property (nonatomic, strong) NSArray *musicArr;
 @property (nonatomic, assign) NSInteger currentPage;
-@property (nonatomic, assign) NSNumber *currentTime;
+@property (nonatomic, assign) NSNumber *musicTime;
 @property (nonatomic, assign) BOOL hasChangedSong;
+@property (nonatomic, assign) MusicPLayMode musicPlayMode;
 
 @end
 
@@ -62,15 +69,23 @@ static int time2 = 0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    NSUserDefaults *time = [NSUserDefaults standardUserDefaults];
+    self.musicTime = [time valueForKey:@"time"];
+    
+    //设置播放模式
+    self.musicPlayMode = MusicPLayModeDefault;
+    
     //调用BackView背景视图
     [self BackView];
-    
+   
     //调用BottomView 底部视图
     [self BottomView];
     
     self.currentPage = page;
     [self reloadData];
+
+    
     
 }
 
@@ -78,11 +93,12 @@ static int time2 = 0;
     if (self.currentPage != page) {
         [self reloadData];
     }
+    
 }
 
 //改变数值的方法 刷新数据
 -(void)reloadData{
-    startAndStopBtn.selected = YES;
+    startAndStopBtn.selected = !self.player.isPlaying;
     self.currentPage = page;
     
     
@@ -96,21 +112,26 @@ static int time2 = 0;
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     
     //设置开始的音量
-    self.player.volume = .5;
+    self.player.volume = 1;
     
     //设置当前的时间
-    self.player.currentTime = 0;
     
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSUserDefaults *time = [NSUserDefaults standardUserDefaults];
+        self.musicTime = [time valueForKey:@"time"];
+        self.player.currentTime = [self.musicTime floatValue];
+        [self.player play];
+    });
     
     //设置代理
     self.player.delegate = self;
     
-    if (self.hasChangedSong) {
-        if ([self.player prepareToPlay]) {
-            [self.player play];
-            startAndStopBtn.selected = NO;
-            self.hasChangedSong = NO;
-        }
+
+    if ([self.player prepareToPlay]) {
+        [self.player play];
+        startAndStopBtn.selected = self.player.isPlaying;
+        self.hasChangedSong = self.player.isPlaying;
     }
     
     CADisplayLink *display = [CADisplayLink displayLinkWithTarget:self selector:@selector(display)];
@@ -131,7 +152,18 @@ static int time2 = 0;
 
 //播放完成是调用--------AVAudioPlayerDelegate
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-    [self nextButtonAct];
+    if (self.musicPlayMode == MusicPLayModeRandomPlay) {
+        int nextPage = arc4random()%4;
+        while (page == nextPage) {
+            nextPage = arc4random()%4;
+        }
+        page = nextPage;
+        [self reloadData];
+    } else if (self.musicPlayMode == MusicPLayModeOneSongPlay){
+        [self reloadData];
+    } else {
+        [self nextButtonAct];
+    }
 }
 
 
@@ -155,19 +187,18 @@ static int time2 = 0;
         //暂停播放
         [_player pause];
         
-        startAndStopBtn.selected = YES;
+        startAndStopBtn.selected = self.player.isPlaying;
         
     }else{
         
         //继续播放
         [_player play];
-        startAndStopBtn.selected = NO;
+        startAndStopBtn.selected = self.player.isPlaying;
     }
 }
 
 //上一曲lastButton的点击响应事件
 -(void)lastButtonAct{
-    self.hasChangedSong = YES;
     if(page > 0){
         page--;
         [self reloadData];
@@ -180,18 +211,38 @@ static int time2 = 0;
 
 //下一曲nextButton的点击响应事件
 -(void)nextButtonAct{
-    self.hasChangedSong = YES;
     len = [_musicArr count];
-    if(page < len-1){
-        page++;
+    if (self.musicPlayMode == MusicPLayModeRandomPlay) {
+        int nextPage = arc4random()%4;
+        while (page == nextPage) {
+            nextPage = arc4random()%4;
+        }
+        page = nextPage;
         [self reloadData];
-    }else{
-        page = 0;
-        [self reloadData];
+    } else {
+        if(page < len-1){
+            page++;
+            [self reloadData];
+        }else{
+            page = 0;
+            [self reloadData];
+        }
     }
-    
 }
 
+//播放模式
+- (void)musicPlayModeChange {
+    if (self.musicPlayMode == MusicPLayModeDefault) {
+        [musicPLayModeButton setBackgroundImage:[UIImage imageNamed:@"单曲循环.png"] forState:UIControlStateNormal];
+        self.musicPlayMode = MusicPLayModeOneSongPlay;
+    } else if (self.musicPlayMode == MusicPLayModeOneSongPlay) {
+        [musicPLayModeButton setBackgroundImage:[UIImage imageNamed:@"随机.png"] forState:UIControlStateNormal];
+        self.musicPlayMode = MusicPLayModeRandomPlay;
+    } else if (self.musicPlayMode == MusicPLayModeRandomPlay) {
+        [musicPLayModeButton setBackgroundImage:[UIImage imageNamed:@"循环.png"] forState:UIControlStateNormal];
+        self.musicPlayMode = MusicPLayModeDefault;
+    }
+}
 
 //浮点型 -->str
 -(NSString*)floatToStr:(float)time{
@@ -226,9 +277,9 @@ static int time2 = 0;
 #pragma mark UIButton
     //创建一个播放与暂停的button
     startAndStopBtn = [[UIButton alloc]initWithFrame:CGRectMake((kScreenW-60)/2, (100-60)/2, 60, 60)];
-    [startAndStopBtn setImage:[UIImage imageNamed:@"playing_btn_play_n@2x"] forState:UIControlStateSelected];
+    [startAndStopBtn setImage:[UIImage imageNamed:@"playing_btn_play_n@2x"] forState:UIControlStateNormal];
     [startAndStopBtn setImage:[UIImage imageNamed:@"playing_btn_play_h@2x"] forState:UIControlStateHighlighted];
-    [startAndStopBtn setImage:[UIImage imageNamed:@"playing_btn_pause_n@2x"] forState:UIControlStateNormal];
+    [startAndStopBtn setImage:[UIImage imageNamed:@"playing_btn_pause_n@2x"] forState:UIControlStateSelected];
 
     [_bottomView addSubview:startAndStopBtn];
     
@@ -251,6 +302,12 @@ static int time2 = 0;
     [nextButton setImage:[UIImage imageNamed:@"playing_btn_next_h@2x"] forState:UIControlStateHighlighted];
     [_bottomView addSubview:nextButton];
 
+    //创建播放模式按钮
+    musicPLayModeButton = [[UIButton alloc] initWithFrame:CGRectMake((kScreenW-60)/2+50+25+55, (100-50)/2, 40, 40)];
+    [musicPLayModeButton setBackgroundImage:[UIImage imageNamed:@"循环.png"] forState:UIControlStateNormal];
+    [musicPLayModeButton addTarget:self action:@selector(musicPlayModeChange) forControlEvents:UIControlEventTouchDown];
+    [_bottomView addSubview:musicPLayModeButton];
+    
     //添加点击响应时间
     [nextButton addTarget:self action:@selector(nextButtonAct) forControlEvents:UIControlEventTouchUpInside];
     
@@ -301,9 +358,6 @@ static int time2 = 0;
     // Dispose of any resources that can be recreated.
 }
 
-/* if an error occurs while decoding it will be reported to the delegate. */
-- (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError * __nullable)error {
-    NSLog(@"%@",error);
-}
 
 @end
+
