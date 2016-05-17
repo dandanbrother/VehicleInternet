@@ -25,6 +25,8 @@
 #import "MBProgressHUD.h"
 #import "LCCoolHUD.h"
 #import "BNCoreServices.h"
+#import "AFNetworking.h"
+#import "NSString+extension.h"
 
 
 
@@ -66,6 +68,7 @@
 
 - (IBAction)queryPathBtnClicked:(id)sender;
 
+- (IBAction)getPetrolPriceClicked:(id)sender;
 
 @end
 
@@ -637,12 +640,13 @@
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
                                                         message:@"请选择路径规划方式"
                                                        delegate:nil
-                                              cancelButtonTitle:@"显示路径"
-                                              otherButtonTitles:@"使用导航",nil];
+                                              cancelButtonTitle:@"使用导航"
+                                              otherButtonTitles:@"显示路径(最少时间)",@"显示路径(最短距离)",nil];
     alertView.delegate = self;
     [alertView show];
 
 }
+
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
@@ -751,7 +755,52 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0) {
-        NSLog(@"显示路线");
+        NSLog(@"使用导航");
+        
+        
+        //路径点数组
+        NSMutableArray *nodesArray = [[NSMutableArray alloc]initWithCapacity:2];
+        //起点
+        BNRoutePlanNode *startNode = [[BNRoutePlanNode alloc] init];
+        startNode.pos = [[BNPosition alloc] init];
+        startNode.pos.x = self.startTF.siteInfo.pt.longitude;
+        startNode.pos.y = self.startTF.siteInfo.pt.latitude;
+        startNode.pos.eType = BNCoordinate_BaiduMapSDK;
+        [nodesArray addObject:startNode];
+        //终点
+        BNRoutePlanNode *endNode = [[BNRoutePlanNode alloc] init];
+        endNode.pos = [[BNPosition alloc] init];
+        endNode.pos.x = self.destinationTF.siteInfo.pt.longitude;
+        endNode.pos.y = self.destinationTF.siteInfo.pt.latitude;
+        endNode.pos.eType = BNCoordinate_BaiduMapSDK;
+        [nodesArray addObject:endNode];
+        
+        [BNCoreServices_RoutePlan startNaviRoutePlan:BNRoutePlanMode_Highway naviNodes:nodesArray time:nil delegete:self userInfo:nil];
+    }else if(buttonIndex == 1)
+    {
+        NSLog(@"显示路线,最少时间");
+        BMKPoiInfo *startSiteInfo = self.startTF.siteInfo;
+        BMKPoiInfo *destinationSiteInfo = self.destinationTF.siteInfo;
+        BMKPlanNode *startNode = [[BMKPlanNode alloc] init];
+        startNode.pt = startSiteInfo.pt;
+        BMKPlanNode *endNode = [[BMKPlanNode alloc] init];
+        endNode.pt = destinationSiteInfo.pt;
+        BMKDrivingRoutePlanOption *transitRouteSearchOption =         [[BMKDrivingRoutePlanOption alloc]init];
+        transitRouteSearchOption.drivingPolicy = BMK_DRIVING_TIME_FIRST;
+        transitRouteSearchOption.from = startNode;
+        transitRouteSearchOption.to = endNode;
+        BOOL flag = [self.routeSearch drivingSearch:transitRouteSearchOption];
+        if(flag)
+        {
+            NSLog(@"驾车路径规划检索发送成功:起始点---%@---目的地---%@",startNode.name,endNode.name);
+        }
+        else
+        {
+            NSLog(@"驾车路径规划检索发送失败");
+        }
+    }else
+    {
+        NSLog(@"显示路线,最短距离");
         BMKPoiInfo *startSiteInfo = self.startTF.siteInfo;
         BMKPoiInfo *destinationSiteInfo = self.destinationTF.siteInfo;
         BMKPlanNode *startNode = [[BMKPlanNode alloc] init];
@@ -771,29 +820,93 @@
         {
             NSLog(@"驾车路径规划检索发送失败");
         }
-    }else
-    {
-        NSLog(@"使用导航");
 
-
-        //路径点数组
-        NSMutableArray *nodesArray = [[NSMutableArray alloc]initWithCapacity:2];
-        //起点
-        BNRoutePlanNode *startNode = [[BNRoutePlanNode alloc] init];
-        startNode.pos = [[BNPosition alloc] init];
-        startNode.pos.x = self.startTF.siteInfo.pt.longitude;
-        startNode.pos.y = self.startTF.siteInfo.pt.latitude;
-        startNode.pos.eType = BNCoordinate_BaiduMapSDK;
-        [nodesArray addObject:startNode];
-        //终点
-        BNRoutePlanNode *endNode = [[BNRoutePlanNode alloc] init];
-        endNode.pos = [[BNPosition alloc] init];
-        endNode.pos.x = self.destinationTF.siteInfo.pt.longitude;
-        endNode.pos.y = self.destinationTF.siteInfo.pt.latitude;
-        endNode.pos.eType = BNCoordinate_BaiduMapSDK;
-        [nodesArray addObject:endNode];
-        
-        [BNCoreServices_RoutePlan startNaviRoutePlan:BNRoutePlanMode_Highway naviNodes:nodesArray time:nil delegete:self userInfo:nil];
     }
 }
+
+
+- (IBAction)getPetrolPriceClicked:(id)sender
+{
+    NSLog(@"getPetrolPriceClicked");
+//    if ([_cityItem.title isEqualToString:@"城市"])
+//    {
+//        [LCCoolHUD showFailure:@"未定位城市" zoom:YES shadow:YES];
+//        return;
+//    }
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    [user setObject:@"0" forKey:@"got"];
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"city"] = _cityItem.title;
+    
+    
+    NSString *httpUrl = @"http://apis.baidu.com/showapi_open_bus/oil_price/find";
+    NSString *httpArg = [NSString stringWithFormat:@"prov=%@",[@"江苏" urlencode]];
+    [self request: httpUrl withHttpArg: httpArg];
+    
+
+
+
+}
+-(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg  {
+    NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];
+    NSURL *url = [NSURL URLWithString: urlStr];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
+    [request setHTTPMethod: @"GET"];
+    [request addValue: @"9acc80d2aaf5081b3ce84559dc77f6dd" forHTTPHeaderField: @"apikey"];
+    [NSURLConnection sendAsynchronousRequest: request
+                                       queue: [NSOperationQueue mainQueue]
+                           completionHandler: ^(NSURLResponse *response, NSData *data, NSError *error){
+                               if (error) {
+                                   NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+                               } else {
+                                   NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
+                                   NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                   NSLog(@"HttpResponseCode:%ld", responseCode);
+                                   NSLog(@"HttpResponseBody %@",responseString);
+                                   NSDictionary *dict = [self dictionaryWithJsonString:responseString];
+                                   NSDictionary *dict1 = dict[@"showapi_res_body"];
+                                   NSArray *array = dict1[@"list"];
+                                   if (array.count != 0) {
+                                       NSDictionary *dict1 = array[0];
+                                       NSString * str90 = dict1[@"p90"];
+                                       NSString * str93 = dict1[@"p93"];
+                                       NSString * str97 = dict1[@"p97"];
+                                       NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+                                       [user setObject:@"1" forKey:@"got"];
+                                       [user setObject:str97 forKey:@"p97"];
+                                       [user setObject:str93 forKey:@"p93"];
+                                       [user setObject:str90 forKey:@"p90"];
+                                       
+                                   }
+                                   
+                               }
+                           }];
+}
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSError *err;
+    
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                         
+                                                        options:NSJSONReadingMutableContainers
+                         
+                                                          error:&err];
+    
+    if(err) {
+        
+        NSLog(@"JSON解析失败：%@",err);
+        
+        return nil;
+        
+    }
+    return dic;
+}
+
 @end

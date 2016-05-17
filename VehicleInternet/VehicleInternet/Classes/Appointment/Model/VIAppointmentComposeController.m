@@ -81,7 +81,7 @@
 - (NSArray *)petrolTypes
 {
     if (_petrolTypes == nil) {
-        _petrolTypes = @[@"90号",@"93号",@"91号"];
+        _petrolTypes = @[@"90号",@"93号",@"97号"];
     }
     return _petrolTypes;
 }
@@ -132,6 +132,8 @@
     
     
     [self setupCustomView];
+    
+
 }
 
 #pragma mark - 初始化
@@ -373,8 +375,29 @@
         {
             cell.imageView.image = [UIImage imageNamed:@"dx_checkbox_off"];
         }
-        
-        cell.textLabel.text = self.petrolTypes[indexPath.row];
+        NSMutableArray *arr = [NSMutableArray array];
+        NSString *str90 = @" ";
+        NSString *str93 = @" ";
+        NSString *str97 = @" ";
+        [arr addObject:str90];
+        [arr addObject:str93];
+        [arr addObject:str97];
+        NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+        if ([[user objectForKey:@"got"] isEqualToString:@"1"]) {
+            str90 = [user objectForKey:@"p90"];
+            arr[0] = str90;
+            str93 = [user objectForKey:@"p93"];
+            arr[1] = str93;
+            str97 = [user objectForKey:@"p97"];
+            arr[2] = str97;
+            cell.textLabel.text = [NSString stringWithFormat:@"%@,%@元/升",_petrolTypes[indexPath.row],arr[indexPath.row]];
+            
+        }else
+        {
+            cell.textLabel.text = self.petrolTypes[indexPath.row];
+        }
+
+
         
         return cell;
         

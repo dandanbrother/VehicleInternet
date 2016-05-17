@@ -180,6 +180,7 @@
 		F3CC8BA91CE7054100B8C285 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CC8BA11CE7054100B8C285 /* AFURLRequestSerialization.m */; };
 		F3CC8BAA1CE7054100B8C285 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CC8BA31CE7054100B8C285 /* AFURLResponseSerialization.m */; };
 		F3CC8BAB1CE7054100B8C285 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CC8BA51CE7054100B8C285 /* AFURLSessionManager.m */; };
+		F3CC8BB21CE8A47100B8C285 /* NSString+extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CC8BB11CE8A47100B8C285 /* NSString+extension.m */; };
 		F3DA65461CA373CE00E26AE4 /* VIAppointmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DA65451CA373CE00E26AE4 /* VIAppointmentModel.m */; };
 		F3E447E41CB12608006B62E1 /* UUDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E447E11CB12608006B62E1 /* UUDatePicker.m */; };
 		F3E447E51CB12608006B62E1 /* UUDatePicker_DateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E447E31CB12608006B62E1 /* UUDatePicker_DateModel.m */; };
@@ -508,6 +509,8 @@
 		F3CC8BA31CE7054100B8C285 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		F3CC8BA41CE7054100B8C285 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		F3CC8BA51CE7054100B8C285 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		F3CC8BB01CE8A47100B8C285 /* NSString+extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extension.h"; sourceTree = "<group>"; };
+		F3CC8BB11CE8A47100B8C285 /* NSString+extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extension.m"; sourceTree = "<group>"; };
 		F3DA65441CA373CE00E26AE4 /* VIAppointmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIAppointmentModel.h; sourceTree = "<group>"; };
 		F3DA65451CA373CE00E26AE4 /* VIAppointmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIAppointmentModel.m; sourceTree = "<group>"; };
 		F3E447E01CB12608006B62E1 /* UUDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUDatePicker.h; sourceTree = "<group>"; };
@@ -1071,6 +1074,8 @@
 			isa = PBXGroup;
 			children = (
 				F32FD9211C97CB0700804053 /* VehicleInternet.pch */,
+				F3CC8BB01CE8A47100B8C285 /* NSString+extension.h */,
+				F3CC8BB11CE8A47100B8C285 /* NSString+extension.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1444,9 +1449,7 @@
 				TargetAttributes = {
 					F3F0B2AD1C95099F00989506 = {
 						CreatedOnToolsVersion = 7.2.1;
-
 						DevelopmentTeam = C3VNYUV952;
-
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1620,6 +1623,7 @@
 				F3E447EA1CB16BA6006B62E1 /* VIAppointmentCell.m in Sources */,
 				94F2AA501CC120CF007D94EB /* VIProtectCarInfoController.m in Sources */,
 				F3E4480F1CB29321006B62E1 /* JMRegisterController.m in Sources */,
+				F3CC8BB21CE8A47100B8C285 /* NSString+extension.m in Sources */,
 				F37221AB1CB64A18005F124C /* JGProgressHUDSuccessIndicatorView.m in Sources */,
 				F30725641CBFB8FD004502AB /* SCLAlertViewStyleKit.m in Sources */,
 				F37221A41CB64A18005F124C /* JGProgressHUDFadeAnimation.m in Sources */,
@@ -1863,9 +1867,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInterneJM;
-
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1895,9 +1897,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInterneJM;
-
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
