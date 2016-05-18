@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *petrol;
 
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
+@property (weak, nonatomic) IBOutlet UITextField *frameNum;
+@property (weak, nonatomic) IBOutlet UITextField *engineNum;
 
 @property (nonatomic, strong) NSArray *carBrandTypes;
 
@@ -36,6 +38,8 @@
     self.licenseNum.text = _car.licenseNum;
     self.mileage.text = _car.mileage;
     self.petrol.text = _car.petrol;
+    self.frameNum.text = _car.frameNum;
+    self.engineNum.text = _car.engineNum;
 }
 
 - (void)viewDidLoad {
@@ -53,7 +57,8 @@
     params[@"licenseNum"] = self.licenseNum.text;
     params[@"mileage"] = self.mileage.text;
     params[@"petrol"] = self.petrol.text;
-    params[@"engineNum"] = @"车架号未知";
+    params[@"frameNum"] = self.frameNum.text;
+    params[@"engineNum"] = self.engineNum.text;
     params[@"isLightGood"] = @"1";
     params[@"isEngineGood"] = @"1";
     params[@"isTransGood"] = @"1";
@@ -162,7 +167,8 @@
         [_car setObject:self.licenseNum.text forKey:@"licenseNum"];
         [_car setObject:self.mileage.text forKey:@"mileage"];
         [_car setObject:self.petrol.text forKey:@"petrol"];
-        
+        [_car setObject:self.frameNum.text forKey:@"frameNum"];
+        [_car setObject:self.engineNum forKey:@"engineNum"];
         [_car saveInBackground];
     }];
 }

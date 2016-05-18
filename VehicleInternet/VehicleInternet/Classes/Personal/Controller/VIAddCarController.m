@@ -235,6 +235,8 @@
     model.isTransGood = @"1";
     model.ownerID = user.objectId;
     model.car_id = car_id;
+    model.engineNum = self.engineNum.text;
+    model.frameNum = self.frameNum.text;
     [model saveInBackground];
 }
 @end

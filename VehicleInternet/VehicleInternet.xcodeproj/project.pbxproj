@@ -180,6 +180,7 @@
 		F3CC8BA91CE7054100B8C285 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CC8BA11CE7054100B8C285 /* AFURLRequestSerialization.m */; };
 		F3CC8BAA1CE7054100B8C285 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CC8BA31CE7054100B8C285 /* AFURLResponseSerialization.m */; };
 		F3CC8BAB1CE7054100B8C285 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CC8BA51CE7054100B8C285 /* AFURLSessionManager.m */; };
+		F3CC8BB21CE8A47100B8C285 /* NSString+extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CC8BB11CE8A47100B8C285 /* NSString+extension.m */; };
 		F3DA65461CA373CE00E26AE4 /* VIAppointmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DA65451CA373CE00E26AE4 /* VIAppointmentModel.m */; };
 		F3E447E41CB12608006B62E1 /* UUDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E447E11CB12608006B62E1 /* UUDatePicker.m */; };
 		F3E447E51CB12608006B62E1 /* UUDatePicker_DateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E447E31CB12608006B62E1 /* UUDatePicker_DateModel.m */; };
@@ -211,6 +212,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F382BED51CEB7FF000D3DD62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3F0B2A61C95099F00989506 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F382BEBB1CEB7FEF00D3DD62;
+			remoteInfo = text1;
+		};
+		F382BEE01CEB7FF000D3DD62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3F0B2A61C95099F00989506 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F382BEBB1CEB7FEF00D3DD62;
+			remoteInfo = text1;
+		};
 		F3F0B2C81C9509A000989506 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F3F0B2A61C95099F00989506 /* Project object */;
@@ -485,6 +500,7 @@
 		F372219C1CB64A18005F124C /* LCCoolHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCoolHUD.m; sourceTree = "<group>"; };
 		F372219D1CB64A18005F124C /* LCLoadingHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLoadingHUD.h; sourceTree = "<group>"; };
 		F372219E1CB64A18005F124C /* LCLoadingHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLoadingHUD.m; sourceTree = "<group>"; };
+		F382BF2E1CEB819100D3DD62 /* VehicleInternet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleInternet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3859E7A1CA58A8B0054D309 /* VIAppointmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIAppointmentController.h; path = VehicleInternet/Classes/Appointment/Model/VIAppointmentController.h; sourceTree = SOURCE_ROOT; };
 		F3859E7B1CA58A8B0054D309 /* VIAppointmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIAppointmentController.m; path = VehicleInternet/Classes/Appointment/Model/VIAppointmentController.m; sourceTree = SOURCE_ROOT; };
 		F3859E7D1CA58E140054D309 /* VIAppointmentComposeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIAppointmentComposeController.h; path = VehicleInternet/Classes/Appointment/Model/VIAppointmentComposeController.h; sourceTree = SOURCE_ROOT; };
@@ -508,6 +524,13 @@
 		F3CC8BA31CE7054100B8C285 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		F3CC8BA41CE7054100B8C285 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		F3CC8BA51CE7054100B8C285 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		F3CC8BB01CE8A47100B8C285 /* NSString+extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extension.h"; sourceTree = "<group>"; };
+		F3CC8BB11CE8A47100B8C285 /* NSString+extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extension.m"; sourceTree = "<group>"; };
+		F3CE85611CEC3FF9005C7AED /* VehicleInternetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VehicleInternetTests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/VehicleInternetTests.xctest"; sourceTree = "<absolute>"; };
+		F3CE85621CEC3FF9005C7AED /* VehicleInternetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VehicleInternetUITests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/VehicleInternetUITests.xctest"; sourceTree = "<absolute>"; };
+		F3CE85631CEC3FF9005C7AED /* text1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = text1.app; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/text1.app"; sourceTree = "<absolute>"; };
+		F3CE85641CEC3FF9005C7AED /* text1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = text1Tests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/text1Tests.xctest"; sourceTree = "<absolute>"; };
+		F3CE85651CEC3FF9005C7AED /* text1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = text1UITests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/text1UITests.xctest"; sourceTree = "<absolute>"; };
 		F3DA65441CA373CE00E26AE4 /* VIAppointmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIAppointmentModel.h; sourceTree = "<group>"; };
 		F3DA65451CA373CE00E26AE4 /* VIAppointmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIAppointmentModel.m; sourceTree = "<group>"; };
 		F3E447E01CB12608006B62E1 /* UUDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUDatePicker.h; sourceTree = "<group>"; };
@@ -533,7 +556,6 @@
 		F3E4480C1CB29321006B62E1 /* JMRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JMRegisterController.xib; sourceTree = "<group>"; };
 		F3E448111CB29387006B62E1 /* VIUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIUserModel.h; sourceTree = "<group>"; };
 		F3E448121CB29387006B62E1 /* VIUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIUserModel.m; sourceTree = "<group>"; };
-		F3F0B2AE1C95099F00989506 /* VehicleInternet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleInternet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F0B2B21C95099F00989506 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3F0B2B41C95099F00989506 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F3F0B2B51C95099F00989506 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -541,10 +563,8 @@
 		F3F0B2BD1C95099F00989506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3F0B2C01C95099F00989506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3F0B2C21C95099F00989506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3F0B2C71C9509A000989506 /* VehicleInternetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleInternetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F0B2CB1C9509A000989506 /* VehicleInternetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VehicleInternetTests.m; sourceTree = "<group>"; };
 		F3F0B2CD1C9509A000989506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3F0B2D21C9509A000989506 /* VehicleInternetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleInternetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F0B2D61C9509A000989506 /* VehicleInternetUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VehicleInternetUITests.m; sourceTree = "<group>"; };
 		F3F0B2D81C9509A000989506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3F0B2E81C9509ED00989506 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
@@ -557,6 +577,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F382BEB91CEB7FEF00D3DD62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F382BED11CEB7FF000D3DD62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F382BEDC1CEB7FF000D3DD62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3F0B2AB1C95099F00989506 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1071,6 +1112,8 @@
 			isa = PBXGroup;
 			children = (
 				F32FD9211C97CB0700804053 /* VehicleInternet.pch */,
+				F3CC8BB01CE8A47100B8C285 /* NSString+extension.h */,
+				F3CC8BB11CE8A47100B8C285 /* NSString+extension.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1294,18 +1337,8 @@
 				F3F0B2B01C95099F00989506 /* VehicleInternet */,
 				F3F0B2CA1C9509A000989506 /* VehicleInternetTests */,
 				F3F0B2D51C9509A000989506 /* VehicleInternetUITests */,
-				F3F0B2AF1C95099F00989506 /* Products */,
+				F382BF2E1CEB819100D3DD62 /* VehicleInternet.app */,
 			);
-			sourceTree = "<group>";
-		};
-		F3F0B2AF1C95099F00989506 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F3F0B2AE1C95099F00989506 /* VehicleInternet.app */,
-				F3F0B2C71C9509A000989506 /* VehicleInternetTests.xctest */,
-				F3F0B2D21C9509A000989506 /* VehicleInternetUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		F3F0B2B01C95099F00989506 /* VehicleInternet */ = {
@@ -1377,6 +1410,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F382BEBB1CEB7FEF00D3DD62 /* text1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F382BEEC1CEB7FF000D3DD62 /* Build configuration list for PBXNativeTarget "text1" */;
+			buildPhases = (
+				F382BEB81CEB7FEF00D3DD62 /* Sources */,
+				F382BEB91CEB7FEF00D3DD62 /* Frameworks */,
+				F382BEBA1CEB7FEF00D3DD62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = text1;
+			productName = text1;
+			productReference = F3CE85631CEC3FF9005C7AED /* text1.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F382BED31CEB7FF000D3DD62 /* text1Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F382BEED1CEB7FF000D3DD62 /* Build configuration list for PBXNativeTarget "text1Tests" */;
+			buildPhases = (
+				F382BED01CEB7FF000D3DD62 /* Sources */,
+				F382BED11CEB7FF000D3DD62 /* Frameworks */,
+				F382BED21CEB7FF000D3DD62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F382BED61CEB7FF000D3DD62 /* PBXTargetDependency */,
+			);
+			name = text1Tests;
+			productName = text1Tests;
+			productReference = F3CE85641CEC3FF9005C7AED /* text1Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F382BEDE1CEB7FF000D3DD62 /* text1UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F382BEEE1CEB7FF000D3DD62 /* Build configuration list for PBXNativeTarget "text1UITests" */;
+			buildPhases = (
+				F382BEDB1CEB7FF000D3DD62 /* Sources */,
+				F382BEDC1CEB7FF000D3DD62 /* Frameworks */,
+				F382BEDD1CEB7FF000D3DD62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F382BEE11CEB7FF000D3DD62 /* PBXTargetDependency */,
+			);
+			name = text1UITests;
+			productName = text1UITests;
+			productReference = F3CE85651CEC3FF9005C7AED /* text1UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F3F0B2AD1C95099F00989506 /* VehicleInternet */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3F0B2DB1C9509A000989506 /* Build configuration list for PBXNativeTarget "VehicleInternet" */;
@@ -1393,7 +1479,7 @@
 			);
 			name = VehicleInternet;
 			productName = VehicleInternet;
-			productReference = F3F0B2AE1C95099F00989506 /* VehicleInternet.app */;
+			productReference = F382BF2E1CEB819100D3DD62 /* VehicleInternet.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F3F0B2C61C9509A000989506 /* VehicleInternetTests */ = {
@@ -1411,7 +1497,7 @@
 			);
 			name = VehicleInternetTests;
 			productName = VehicleInternetTests;
-			productReference = F3F0B2C71C9509A000989506 /* VehicleInternetTests.xctest */;
+			productReference = F3CE85611CEC3FF9005C7AED /* VehicleInternetTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		F3F0B2D11C9509A000989506 /* VehicleInternetUITests */ = {
@@ -1429,7 +1515,7 @@
 			);
 			name = VehicleInternetUITests;
 			productName = VehicleInternetUITests;
-			productReference = F3F0B2D21C9509A000989506 /* VehicleInternetUITests.xctest */;
+			productReference = F3CE85621CEC3FF9005C7AED /* VehicleInternetUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -1442,11 +1528,20 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = TomorJM;
 				TargetAttributes = {
+					F382BEBB1CEB7FEF00D3DD62 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					F382BED31CEB7FF000D3DD62 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = F382BEBB1CEB7FEF00D3DD62;
+					};
+					F382BEDE1CEB7FF000D3DD62 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = F382BEBB1CEB7FEF00D3DD62;
+					};
 					F3F0B2AD1C95099F00989506 = {
 						CreatedOnToolsVersion = 7.2.1;
-
 						DevelopmentTeam = C3VNYUV952;
-
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1474,18 +1569,42 @@
 				Base,
 			);
 			mainGroup = F3F0B2A51C95099F00989506;
-			productRefGroup = F3F0B2AF1C95099F00989506 /* Products */;
+			productRefGroup = F3F0B2A51C95099F00989506;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				F3F0B2AD1C95099F00989506 /* VehicleInternet */,
 				F3F0B2C61C9509A000989506 /* VehicleInternetTests */,
 				F3F0B2D11C9509A000989506 /* VehicleInternetUITests */,
+				F382BEBB1CEB7FEF00D3DD62 /* text1 */,
+				F382BED31CEB7FF000D3DD62 /* text1Tests */,
+				F382BEDE1CEB7FF000D3DD62 /* text1UITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F382BEBA1CEB7FEF00D3DD62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F382BED21CEB7FF000D3DD62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F382BEDD1CEB7FF000D3DD62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3F0B2AC1C95099F00989506 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1609,6 +1728,27 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F382BEB81CEB7FEF00D3DD62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F382BED01CEB7FF000D3DD62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F382BEDB1CEB7FF000D3DD62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3F0B2AA1C95099F00989506 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1620,6 +1760,7 @@
 				F3E447EA1CB16BA6006B62E1 /* VIAppointmentCell.m in Sources */,
 				94F2AA501CC120CF007D94EB /* VIProtectCarInfoController.m in Sources */,
 				F3E4480F1CB29321006B62E1 /* JMRegisterController.m in Sources */,
+				F3CC8BB21CE8A47100B8C285 /* NSString+extension.m in Sources */,
 				F37221AB1CB64A18005F124C /* JGProgressHUDSuccessIndicatorView.m in Sources */,
 				F30725641CBFB8FD004502AB /* SCLAlertViewStyleKit.m in Sources */,
 				F37221A41CB64A18005F124C /* JGProgressHUDFadeAnimation.m in Sources */,
@@ -1725,6 +1866,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F382BED61CEB7FF000D3DD62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F382BEBB1CEB7FEF00D3DD62 /* text1 */;
+			targetProxy = F382BED51CEB7FF000D3DD62 /* PBXContainerItemProxy */;
+		};
+		F382BEE11CEB7FF000D3DD62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F382BEBB1CEB7FEF00D3DD62 /* text1 */;
+			targetProxy = F382BEE01CEB7FF000D3DD62 /* PBXContainerItemProxy */;
+		};
 		F3F0B2C91C9509A000989506 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F3F0B2AD1C95099F00989506 /* VehicleInternet */;
@@ -1757,6 +1908,92 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F382BEE61CEB7FF000D3DD62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = text1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.text1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F382BEE71CEB7FF000D3DD62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = text1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.text1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F382BEE81CEB7FF000D3DD62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = text1Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.text1Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/text1.app/text1";
+			};
+			name = Debug;
+		};
+		F382BEE91CEB7FF000D3DD62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = text1Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.text1Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/text1.app/text1";
+			};
+			name = Release;
+		};
+		F382BEEA1CEB7FF000D3DD62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = text1UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.text1UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = text1;
+			};
+			name = Debug;
+		};
+		F382BEEB1CEB7FF000D3DD62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = text1UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.text1UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = text1;
+			};
+			name = Release;
+		};
 		F3F0B2D91C9509A000989506 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1855,7 +2092,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/VehicleInternet/Classes/Common/Other/VehicleInternet.pch";
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1863,9 +2100,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInterneJM;
-
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1887,7 +2122,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/VehicleInternet/Classes/Common/Other/VehicleInternet.pch";
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1895,9 +2130,7 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInterneJM;
-
+				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1954,6 +2187,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F382BEEC1CEB7FF000D3DD62 /* Build configuration list for PBXNativeTarget "text1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F382BEE61CEB7FF000D3DD62 /* Debug */,
+				F382BEE71CEB7FF000D3DD62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F382BEED1CEB7FF000D3DD62 /* Build configuration list for PBXNativeTarget "text1Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F382BEE81CEB7FF000D3DD62 /* Debug */,
+				F382BEE91CEB7FF000D3DD62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F382BEEE1CEB7FF000D3DD62 /* Build configuration list for PBXNativeTarget "text1UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F382BEEA1CEB7FF000D3DD62 /* Debug */,
+				F382BEEB1CEB7FF000D3DD62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F3F0B2A91C95099F00989506 /* Build configuration list for PBXProject "VehicleInternet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
