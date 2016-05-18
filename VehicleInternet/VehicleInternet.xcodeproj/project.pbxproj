@@ -501,11 +501,6 @@
 		F372219D1CB64A18005F124C /* LCLoadingHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLoadingHUD.h; sourceTree = "<group>"; };
 		F372219E1CB64A18005F124C /* LCLoadingHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLoadingHUD.m; sourceTree = "<group>"; };
 		F382BF2E1CEB819100D3DD62 /* VehicleInternet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleInternet.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F382BF2F1CEB819100D3DD62 /* VehicleInternetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VehicleInternetTests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/VehicleInternetTests.xctest"; sourceTree = "<absolute>"; };
-		F382BF301CEB819100D3DD62 /* VehicleInternetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VehicleInternetUITests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/VehicleInternetUITests.xctest"; sourceTree = "<absolute>"; };
-		F382BF311CEB819100D3DD62 /* text1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = text1.app; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/text1.app"; sourceTree = "<absolute>"; };
-		F382BF321CEB819100D3DD62 /* text1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = text1Tests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/text1Tests.xctest"; sourceTree = "<absolute>"; };
-		F382BF331CEB819100D3DD62 /* text1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = text1UITests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/text1UITests.xctest"; sourceTree = "<absolute>"; };
 		F3859E7A1CA58A8B0054D309 /* VIAppointmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIAppointmentController.h; path = VehicleInternet/Classes/Appointment/Model/VIAppointmentController.h; sourceTree = SOURCE_ROOT; };
 		F3859E7B1CA58A8B0054D309 /* VIAppointmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIAppointmentController.m; path = VehicleInternet/Classes/Appointment/Model/VIAppointmentController.m; sourceTree = SOURCE_ROOT; };
 		F3859E7D1CA58E140054D309 /* VIAppointmentComposeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIAppointmentComposeController.h; path = VehicleInternet/Classes/Appointment/Model/VIAppointmentComposeController.h; sourceTree = SOURCE_ROOT; };
@@ -531,6 +526,11 @@
 		F3CC8BA51CE7054100B8C285 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		F3CC8BB01CE8A47100B8C285 /* NSString+extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extension.h"; sourceTree = "<group>"; };
 		F3CC8BB11CE8A47100B8C285 /* NSString+extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extension.m"; sourceTree = "<group>"; };
+		F3CE85611CEC3FF9005C7AED /* VehicleInternetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VehicleInternetTests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/VehicleInternetTests.xctest"; sourceTree = "<absolute>"; };
+		F3CE85621CEC3FF9005C7AED /* VehicleInternetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VehicleInternetUITests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/VehicleInternetUITests.xctest"; sourceTree = "<absolute>"; };
+		F3CE85631CEC3FF9005C7AED /* text1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = text1.app; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/text1.app"; sourceTree = "<absolute>"; };
+		F3CE85641CEC3FF9005C7AED /* text1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = text1Tests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/text1Tests.xctest"; sourceTree = "<absolute>"; };
+		F3CE85651CEC3FF9005C7AED /* text1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = text1UITests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/text1UITests.xctest"; sourceTree = "<absolute>"; };
 		F3DA65441CA373CE00E26AE4 /* VIAppointmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIAppointmentModel.h; sourceTree = "<group>"; };
 		F3DA65451CA373CE00E26AE4 /* VIAppointmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIAppointmentModel.m; sourceTree = "<group>"; };
 		F3E447E01CB12608006B62E1 /* UUDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUDatePicker.h; sourceTree = "<group>"; };
@@ -1424,7 +1424,7 @@
 			);
 			name = text1;
 			productName = text1;
-			productReference = F382BF311CEB819100D3DD62 /* text1.app */;
+			productReference = F3CE85631CEC3FF9005C7AED /* text1.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F382BED31CEB7FF000D3DD62 /* text1Tests */ = {
@@ -1442,7 +1442,7 @@
 			);
 			name = text1Tests;
 			productName = text1Tests;
-			productReference = F382BF321CEB819100D3DD62 /* text1Tests.xctest */;
+			productReference = F3CE85641CEC3FF9005C7AED /* text1Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		F382BEDE1CEB7FF000D3DD62 /* text1UITests */ = {
@@ -1460,7 +1460,7 @@
 			);
 			name = text1UITests;
 			productName = text1UITests;
-			productReference = F382BF331CEB819100D3DD62 /* text1UITests.xctest */;
+			productReference = F3CE85651CEC3FF9005C7AED /* text1UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		F3F0B2AD1C95099F00989506 /* VehicleInternet */ = {
@@ -1497,7 +1497,7 @@
 			);
 			name = VehicleInternetTests;
 			productName = VehicleInternetTests;
-			productReference = F382BF2F1CEB819100D3DD62 /* VehicleInternetTests.xctest */;
+			productReference = F3CE85611CEC3FF9005C7AED /* VehicleInternetTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		F3F0B2D11C9509A000989506 /* VehicleInternetUITests */ = {
@@ -1515,7 +1515,7 @@
 			);
 			name = VehicleInternetUITests;
 			productName = VehicleInternetUITests;
-			productReference = F382BF301CEB819100D3DD62 /* VehicleInternetUITests.xctest */;
+			productReference = F3CE85621CEC3FF9005C7AED /* VehicleInternetUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
