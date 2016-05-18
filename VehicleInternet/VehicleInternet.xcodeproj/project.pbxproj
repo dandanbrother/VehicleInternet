@@ -17,6 +17,8 @@
 		94437AE91CE6CD560022F012 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94437AE81CE6CD560022F012 /* libz.tbd */; };
 		94437AEB1CE6CD600022F012 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94437AEA1CE6CD600022F012 /* libc++.tbd */; };
 		945089591CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */; };
+		9464648B1CEB3C8100BFD071 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 946464891CEB3C8100BFD071 /* AVOSCloud.framework */; };
+		9464648F1CEB3CAA00BFD071 /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9464648A1CEB3C8100BFD071 /* AVOSCloudIM.framework */; };
 		947BD38A1CE2C23300FAC0B6 /* VICheckIllegalInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 947BD3891CE2C23300FAC0B6 /* VICheckIllegalInformation.m */; };
 		948C87E11C9FD1D5006EB17A /* VIMusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 948C87E01C9FD1D5006EB17A /* VIMusicModel.m */; };
 		948C87E41C9FD791006EB17A /* VIMusicListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948C87E31C9FD791006EB17A /* VIMusicListController.m */; };
@@ -107,7 +109,6 @@
 		F30725681CBFB8FD004502AB /* SCLTimerDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = F307255F1CBFB8FD004502AB /* SCLTimerDisplay.m */; };
 		F30725691CBFB8FD004502AB /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F30725611CBFB8FD004502AB /* UIImage+ImageEffects.m */; };
 		F30F7E931C950C8D0081A41E /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F30F7E921C950C8D0081A41E /* mapapi.bundle */; };
-		F30F7F001C97A8B20081A41E /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F317A3461CB620CB00394F65 /* scanLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F317A3401CB620CB00394F65 /* scanLine@2x.png */; };
 		F317A3471CB620CB00394F65 /* scanLine@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F317A3411CB620CB00394F65 /* scanLine@3x.png */; };
 		F317A3481CB620CB00394F65 /* scanscanBg.png in Resources */ = {isa = PBXBuildFile; fileRef = F317A3421CB620CB00394F65 /* scanscanBg.png */; };
@@ -117,7 +118,6 @@
 		F317A3501CB6253600394F65 /* iconfont-geren@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F317A34D1CB6253600394F65 /* iconfont-geren@2x.png */; };
 		F317A3511CB6253600394F65 /* iconfont-iconfontbiaozhunmoban01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F317A34E1CB6253600394F65 /* iconfont-iconfontbiaozhunmoban01@2x.png */; };
 		F317A3521CB6253600394F65 /* iconfont-yuyue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F317A34F1CB6253600394F65 /* iconfont-yuyue@2x.png */; };
-		F32FD8F31C97AA9800804053 /* AVOSCloud.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F32FD8F51C97B3F800804053 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F41C97B3F800804053 /* libstdc++.6.0.9.tbd */; };
 		F32FD8F71C97B40500804053 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F61C97B40500804053 /* CoreTelephony.framework */; };
 		F32FD8FB1C97B42800804053 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8FA1C97B42800804053 /* SystemConfiguration.framework */; };
@@ -228,19 +228,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		F32FD8F21C97AA8400804053 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				F32FD8F31C97AA9800804053 /* AVOSCloud.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		941B3B8B1CD9C0B3004217D0 /* 单曲循环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "单曲循环.png"; sourceTree = "<group>"; };
 		941B3B8C1CD9C0B3004217D0 /* 随机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "随机.png"; sourceTree = "<group>"; };
@@ -254,6 +241,8 @@
 		94437AEA1CE6CD600022F012 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		945089571CC4D56E0037DEE2 /* VIProtectCarEwmScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProtectCarEwmScanController.h; sourceTree = "<group>"; };
 		945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProtectCarEwmScanController.m; sourceTree = "<group>"; };
+		946464891CEB3C8100BFD071 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
+		9464648A1CEB3C8100BFD071 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
 		947BD3881CE2C23300FAC0B6 /* VICheckIllegalInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICheckIllegalInformation.h; sourceTree = "<group>"; };
 		947BD3891CE2C23300FAC0B6 /* VICheckIllegalInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICheckIllegalInformation.m; sourceTree = "<group>"; };
 		948C87DF1C9FD1D5006EB17A /* VIMusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMusicModel.h; sourceTree = "<group>"; };
@@ -376,7 +365,6 @@
 		F30725611CBFB8FD004502AB /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		F30F7E921C950C8D0081A41E /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = VehicleInternet/Framework/BaiduMap/BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		F30F7EA81C9538BF0081A41E /* VIHomeMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIHomeMapController.h; sourceTree = "<group>"; };
-		F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = VehicleInternet/AVOSCloud.framework; sourceTree = "<group>"; };
 		F317A3401CB620CB00394F65 /* scanLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scanLine@2x.png"; sourceTree = "<group>"; };
 		F317A3411CB620CB00394F65 /* scanLine@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scanLine@3x.png"; sourceTree = "<group>"; };
 		F317A3421CB620CB00394F65 /* scanscanBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanscanBg.png; sourceTree = "<group>"; };
@@ -569,17 +557,18 @@
 				F362F25F1CC3E9EA0008608A /* MediaPlayer.framework in Frameworks */,
 				F362F25D1CC3E9CD0008608A /* CoreMotion.framework in Frameworks */,
 				F362F25B1CC3E9BE0008608A /* ImageIO.framework in Frameworks */,
+				9464648B1CEB3C8100BFD071 /* AVOSCloud.framework in Frameworks */,
 				F362F2591CC3E9B40008608A /* AudioToolbox.framework in Frameworks */,
 				F32FD8FB1C97B42800804053 /* SystemConfiguration.framework in Frameworks */,
 				F32FD8F71C97B40500804053 /* CoreTelephony.framework in Frameworks */,
 				F32FD8F51C97B3F800804053 /* libstdc++.6.0.9.tbd in Frameworks */,
 				94437AE71CE6CD100022F012 /* BmobPay.framework in Frameworks */,
+				9464648F1CEB3CAA00BFD071 /* AVOSCloudIM.framework in Frameworks */,
 				F362F2561CC3DF160008608A /* libbaiduNaviSDK.a in Frameworks */,
 				F39F9D0C1C950AD8001B8D69 /* libsqlite3.0.tbd in Frameworks */,
 				F39F9D0A1C950ACD001B8D69 /* OpenGLES.framework in Frameworks */,
 				F39F9D081C950AC3001B8D69 /* QuartzCore.framework in Frameworks */,
 				F39F9D061C950AB7001B8D69 /* CoreLocation.framework in Frameworks */,
-				F30F7F001C97A8B20081A41E /* AVOSCloud.framework in Frameworks */,
 				F362F2471CC3DF160008608A /* libBaiduMobStatForSDK.a in Frameworks */,
 				F3F0B2F41C9509ED00989506 /* BaiduMapAPI_Radar.framework in Frameworks */,
 				F3F0B2F01C9509ED00989506 /* BaiduMapAPI_Base.framework in Frameworks */,
@@ -609,6 +598,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		946464881CEB3C8100BFD071 /* AVOSCloud */ = {
+			isa = PBXGroup;
+			children = (
+				946464891CEB3C8100BFD071 /* AVOSCloud.framework */,
+				9464648A1CEB3C8100BFD071 /* AVOSCloudIM.framework */,
+			);
+			path = AVOSCloud;
+			sourceTree = "<group>";
+		};
 		949012FD1C9F7F5700253715 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1279,6 +1277,7 @@
 			children = (
 				94437AEA1CE6CD600022F012 /* libc++.tbd */,
 				94437AE81CE6CD560022F012 /* libz.tbd */,
+				946464881CEB3C8100BFD071 /* AVOSCloud */,
 				94437AE21CE6CD100022F012 /* AlipaySDK.bundle */,
 				94437AE31CE6CD100022F012 /* AlipaySDK.framework */,
 				94437AE41CE6CD100022F012 /* BmobPay.framework */,
@@ -1290,7 +1289,6 @@
 				F32FD8F81C97B41A00804053 /* Security.framework */,
 				F32FD8F61C97B40500804053 /* CoreTelephony.framework */,
 				F32FD8F41C97B3F800804053 /* libstdc++.6.0.9.tbd */,
-				F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */,
 				F30F7E921C950C8D0081A41E /* mapapi.bundle */,
 				F39F9D0B1C950AD8001B8D69 /* libsqlite3.0.tbd */,
 				F39F9D091C950ACD001B8D69 /* OpenGLES.framework */,
@@ -1390,7 +1388,6 @@
 				F3F0B2AB1C95099F00989506 /* Frameworks */,
 				F3F0B2AC1C95099F00989506 /* Resources */,
 				F30F7EFE1C97A5DF0081A41E /* ShellScript */,
-				F32FD8F21C97AA8400804053 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1449,9 +1446,12 @@
 				TargetAttributes = {
 					F3F0B2AD1C95099F00989506 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = C3VNYUV952;
+						DevelopmentTeam = 936BVCV3GX;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -1778,8 +1778,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 634406300@qq.com (35SE4HPS8N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 634406300@qq.com (35SE4HPS8N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1798,9 +1798,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "eb39fdc1-e0a1-4ee5-a246-f8238da847cb";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1822,8 +1823,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 634406300@qq.com (35SE4HPS8N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 634406300@qq.com (35SE4HPS8N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1836,8 +1837,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "eb39fdc1-e0a1-4ee5-a246-f8238da847cb";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1856,20 +1858,28 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap",
 					"$(PROJECT_DIR)/VehicleInternet",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AVOSCloud",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/VehicleInternet/Classes/Common/Other/VehicleInternet.pch";
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK/BaiduStatistics",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lsqlite3",
+					"-licucore",
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianming.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "eb39fdc1-e0a1-4ee5-a246-f8238da847cb";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1886,20 +1896,28 @@
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap",
 					"$(PROJECT_DIR)/VehicleInternet",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AVOSCloud",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/VehicleInternet/Classes/Common/Other/VehicleInternet.pch";
 				INFOPLIST_FILE = VehicleInternet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK/BaiduStatistics",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
 				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternet;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lsqlite3",
+					"-licucore",
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianming.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "eb39fdc1-e0a1-4ee5-a246-f8238da847cb";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1909,7 +1927,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = VehicleInternetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianming.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VehicleInternet.app/VehicleInternet";
 			};
@@ -1921,7 +1939,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = VehicleInternetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianming.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VehicleInternet.app/VehicleInternet";
 			};
@@ -1930,9 +1948,10 @@
 		F3F0B2E21C9509A000989506 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = VehicleInternetUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianming.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = VehicleInternet;
 				USES_XCTRUNNER = YES;
@@ -1942,9 +1961,10 @@
 		F3F0B2E31C9509A000989506 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = VehicleInternetUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.VehicleInternetUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianming.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = VehicleInternet;
 				USES_XCTRUNNER = YES;

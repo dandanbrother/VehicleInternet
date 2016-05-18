@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h" 
 #import <AVOSCloud/AVOSCloud.h>
+#import <AVOSCloudIM/AVOSCloudIM.h>
 #import "VIAppointmentModel.h"
 #import "VIUserModel.h"
 #import "VICarInfoModel.h"
@@ -36,6 +37,15 @@
     [self baiduMapSetup];
     //初始化支付SDK
     [BmobPaySDK registerWithAppKey:@"285549832d04465b3d5e3db77e1a2525"];
+    
+    //初始化消息推送
+    if (launchOptions) {
+        NSLog(@"%@",launchOptions[@"alert"]);
+        [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    }
+
+    [AVOSCloud registerForRemoteNotification];
+
     
     
     [[UITabBar appearance] setTintColor:[UIColor blueColor]];
@@ -85,6 +95,39 @@
 
 }
 
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+
+    AVInstallation *currentInstallation = [AVInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    NSLog(@"%@",currentInstallation);
+    [currentInstallation saveInBackground];
+    //    NSLog(@"%@",deviceToken);
+    
+    [AVOSCloud handleRemoteNotificationsWithDeviceToken:deviceToken constructingInstallationWithBlock:^(AVInstallation *currentInstallation) {
+        currentInstallation.deviceProfile = @"driver-push-certificate";
+
+    }];
+    
+    
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"error %@",error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    if (application.applicationState == UIApplicationStateActive) {
+        // 转换成一个本地通知，显示到通知栏，你也可以直接显示出一个 alertView，只是那样稍显 aggressive：）
+        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+        localNotification.userInfo = userInfo;
+        localNotification.soundName = UILocalNotificationDefaultSoundName;
+        localNotification.alertBody = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
+        localNotification.fireDate = [NSDate date];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    } else {
+        [AVAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -144,7 +187,7 @@
     {
         NSLog(@"baiduMap successed");
     }
-    
+
     //初始化导航SDK
     [BNCoreServices_Instance initServices:@"CpVALBsZIouu5TAt485fEBRX"];
     [BNCoreServices_Instance startServicesAsyn:nil fail:nil];

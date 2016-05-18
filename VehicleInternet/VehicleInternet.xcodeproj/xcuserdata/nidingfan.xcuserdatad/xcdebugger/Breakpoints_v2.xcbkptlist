@@ -90,7 +90,7 @@
                   moduleName = "VehicleInternet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nidingfan/Desktop/%E6%AF%94%E8%B5%9B/VehicleInternet/VehicleInternet/VehicleInternet/Classes/Personal/Controller/VIPeccancyInfotmation.m"
-                  timestampString = "484907206.205911"
+                  timestampString = "485245168.159001"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "41"
@@ -105,7 +105,7 @@
                   moduleName = "VehicleInternet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nidingfan/Desktop/%E6%AF%94%E8%B5%9B/VehicleInternet/VehicleInternet/VehicleInternet/Classes/Personal/Controller/VIPeccancyInfotmation.m"
-                  timestampString = "484907206.206717"
+                  timestampString = "485245168.159134"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "42"
@@ -113,6 +113,86 @@
                   offsetFromSymbolStart = "136">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VehicleInternet/Classes/Personal/Controller/VICheckIllegalInformation.m"
+            timestampString = "485174690.907311"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[VICheckIllegalInformation viewWillAppear:]"
+                  moduleName = "VehicleInternet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nidingfan/Desktop/%E6%AF%94%E8%B5%9B/VehicleInternet/VehicleInternet/VehicleInternet/Classes/Personal/Controller/VICheckIllegalInformation.m"
+                  timestampString = "485245168.159901"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44-[VICheckIllegalInformation viewWillAppear:]_block_invoke"
+                  moduleName = "VehicleInternet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nidingfan/Desktop/%E6%AF%94%E8%B5%9B/VehicleInternet/VehicleInternet/VehicleInternet/Classes/Personal/Controller/VICheckIllegalInformation.m"
+                  timestampString = "485245168.16004"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VehicleInternet/Classes/Personal/Controller/VICheckIllegalInformation.m"
+            timestampString = "485176683.717972"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VehicleInternet/AppDelegate.mm"
+            timestampString = "485245167.079762"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "-application:didRegisterForRemoteNotificationsWithDeviceToken:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

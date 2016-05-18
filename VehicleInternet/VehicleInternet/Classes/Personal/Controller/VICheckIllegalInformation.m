@@ -41,53 +41,65 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     VIRequestManager *manager = [[VIRequestManager alloc] init];
-    [manager requestIllegalQueryWithlisenceNo:_model.licenseNum frameNo:_model.frameNum engineNo:_model.engineNum callBackBlock:^(NSDictionary *data) {
-//        NSDictionary *result = data[@"result"];
-//        if ([result[@"list"] respondsToSelector:@selector(isEqualToString:)]) {
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 - 30, 80, 100, 10)];
-//                label.text = @"没有违章";
-//                [self.view addSubview:label];
-//                
-//            });
-//        } else {
-//            for (NSDictionary *dict in result[@"list"]) {
-//                [self.list addObject:dict];
-//            }
-//            [self.tableView reloadData];
-//        }
-        NSArray *array = @[
-                           @{
-                               @"time": @"2015-06-23 18:24:00.0",
-                               @"address": @"赵非公路鼓浪路北约20米",
-                               @"content": @"违反规定停放、临时停车且驾驶人不在现场或驾驶人虽在现场拒绝立即驶离，妨碍其他车辆、行人通行的",
-                               @"legalnum": @"",
-                               @"price": @"0",
-                               @"id": @"3500713",
-                               @"score": @"0"
-                               },
-                           @{
-                               @"time": @"2015-06-05 18:20:00.0",
-                               @"address": @"新松江路近人民北路东侧路段",
-                               @"content": @"违反规定停放、临时停车且驾驶人不在现场或驾驶人虽在现场拒绝立即驶离，妨碍其他车辆、行人通行的",
-                               @"legalnum": @"",
-                               @"price": @"0",
-                               @"id": @"3500714",
-                               @"score": @"0"
-                               },
-                           @{
-                               @"time": @"2015-06-08 18:22:00.0",
-                               @"address": @"鼓浪路近291弄路段",
-                               @"content": @"违反规定停放、临时停车且驾驶人不在现场或驾驶人虽在现场拒绝立即驶离，妨碍其他车辆、行人通行的",
-                               @"legalnum": @"",
-                               @"price": @"0",
-                               @"id": @"3500715",
-                               @"score": @"0"
-                               }
-                           ];
+    [manager requestIllegalQueryWithlisenceNo:_model.licenseNum frameNo:_model.frameNum engineNo:_model.engineNum callBackBlock:^(NSDictionary *data, NSError * _Nullable error){
+        if (![data[@"status"] isEqual:@0]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 - 30, 80, 100, 10)];
+                label.text = @"数据有错";
+                [self.view addSubview:label];
+                
+            });
+        } else {
+            
+            [self.list removeAllObjects];
+//            NSArray *array = @[
+//                               @{
+//                                   @"time": @"2015-06-23 18:24:00.0",
+//                                   @"address": @"赵非公路鼓浪路北约20米",
+//                                   @"content": @"违反规定停放、临时停车且驾驶人不在现场或驾驶人虽在现场拒绝立即驶离，妨碍其他车辆、行人通行的",
+//                                   @"legalnum": @"",
+//                                   @"price": @"0",
+//                                   @"id": @"3500713",
+//                                   @"score": @"0"
+//                                   },
+//                               @{
+//                                   @"time": @"2015-06-05 18:20:00.0",
+//                                   @"address": @"新松江路近人民北路东侧路段",
+//                                   @"content": @"违反规定停放、临时停车且驾驶人不在现场或驾驶人虽在现场拒绝立即驶离，妨碍其他车辆、行人通行的",
+//                                   @"legalnum": @"",
+//                                   @"price": @"0",
+//                                   @"id": @"3500714",
+//                                   @"score": @"0"
+//                                   },
+//                               @{
+//                                   @"time": @"2015-06-08 18:22:00.0",
+//                                   @"address": @"鼓浪路近291弄路段",
+//                                   @"content": @"违反规定停放、临时停车且驾驶人不在现场或驾驶人虽在现场拒绝立即驶离，妨碍其他车辆、行人通行的",
+//                                   @"legalnum": @"",
+//                                   @"price": @"0",
+//                                   @"id": @"3500715",
+//                                   @"score": @"0"
+//                                   }
+//                               ];
+//            self.list = [NSMutableArray arrayWithArray:array];
 
-        self.list = [NSMutableArray arrayWithArray:array];
-        [self.tableView reloadData];
+            NSDictionary *result = data[@"result"];
+            if ([result[@"list"] respondsToSelector:@selector(isEqualToString:)]) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 - 30, 80, 100, 10)];
+                    label.text = @"没有违章";
+                    [self.view addSubview:label];
+    
+                });
+            } else {
+                for (NSDictionary *dict in result[@"list"]) {
+                    [self.list addObject:dict];
+                }
+                [self.tableView reloadData];
+            }
+            
+            [self.tableView reloadData];
+        }
     }];
     
 

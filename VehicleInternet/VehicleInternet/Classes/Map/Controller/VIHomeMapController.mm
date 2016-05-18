@@ -27,7 +27,7 @@
 #import "BNCoreServices.h"
 #import "AFNetworking.h"
 #import "NSString+extension.h"
-
+#import <AVOSCloud/AVOSCloud.h>
 
 
 @interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,BNNaviUIManagerDelegate,BNNaviRoutePlanDelegate,UIAlertViewDelegate>

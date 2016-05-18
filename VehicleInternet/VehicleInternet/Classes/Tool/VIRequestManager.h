@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^CallBack)(NSDictionary *data);
+typedef void(^CallBack)(NSDictionary *data,NSError * _Nullable error);
 
 @interface VIRequestManager : NSObject
 

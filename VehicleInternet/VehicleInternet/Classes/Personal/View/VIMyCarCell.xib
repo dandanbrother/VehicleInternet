@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -11,7 +11,6 @@
         <view contentMode="scaleToFill" id="5jx-yI-93z">
             <rect key="frame" x="0.0" y="0.0" width="375" height="146"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="357" y="125"/>
@@ -25,47 +24,39 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUi-cY-wq6">
                         <rect key="frame" x="53" y="10" width="97" height="21"/>
-                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiR-zv-1Tp">
                         <rect key="frame" x="53" y="80" width="91" height="21"/>
-                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="车辆3.png" translatesAutoresizingMaskIntoConstraints="NO" id="y46-YB-rgr">
                         <rect key="frame" x="9" y="7" width="28" height="28"/>
-                        <animations/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="车牌.png" translatesAutoresizingMaskIntoConstraints="NO" id="EzO-8o-SYR">
                         <rect key="frame" x="11" y="41" width="25" height="25"/>
-                        <animations/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="加油站.png" translatesAutoresizingMaskIntoConstraints="NO" id="0wS-Oy-Mwo">
                         <rect key="frame" x="10" y="113" width="28" height="28"/>
-                        <animations/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGO-Yv-BCk">
                         <rect key="frame" x="53" y="117" width="91" height="21"/>
-                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpl-Za-UAy">
                         <rect key="frame" x="53" y="44" width="91" height="21"/>
-                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="So7-YD-63i">
                         <rect key="frame" x="263" y="106" width="40" height="35"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="Rdm-wL-jRA"/>
                             <constraint firstAttribute="width" constant="40" id="s8Z-Zc-xa7"/>
@@ -77,11 +68,9 @@
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="里程.png" translatesAutoresizingMaskIntoConstraints="NO" id="7ve-3O-UtR">
                         <rect key="frame" x="9" y="75" width="28" height="28"/>
-                        <animations/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxA-Lb-dfC">
                         <rect key="frame" x="243" y="10" width="60" height="30"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="UEJ-Kf-q1s"/>
                             <constraint firstAttribute="height" constant="30" id="tS1-BI-9l3"/>
@@ -92,7 +81,6 @@
                         </connections>
                     </button>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstItem="yxA-Lb-dfC" firstAttribute="top" secondItem="4e2-Cc-h6h" secondAttribute="topMargin" constant="2" id="EOg-3G-S9k"/>
                     <constraint firstAttribute="trailingMargin" secondItem="yxA-Lb-dfC" secondAttribute="trailing" constant="9" id="ERL-kP-vs6"/>
@@ -100,7 +88,6 @@
                     <constraint firstAttribute="trailing" secondItem="So7-YD-63i" secondAttribute="trailing" constant="17" id="dL4-Vb-GVl"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <connections>
                 <outlet property="carBrand" destination="ZUi-cY-wq6" id="AzQ-AO-OfC"/>
                 <outlet property="licenseNum" destination="dpl-Za-UAy" id="Blw-ml-FST"/>
