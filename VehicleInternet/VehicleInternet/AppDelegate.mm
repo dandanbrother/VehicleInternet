@@ -17,6 +17,9 @@
 #import <BmobPay/BmobPay.h>
 #import <AlipaySDK/AlipaySDK.h>
 
+static NSString *const kAVIMInstallationKeyChannels = @"channels";
+
+
 @interface AppDelegate () <UITabBarControllerDelegate>
 {
     BMKMapManager* _mapManager;
@@ -45,7 +48,8 @@
     }
 
     [AVOSCloud registerForRemoteNotification];
-
+    [AVPush setProductionMode:YES];
+    [AVOSCloud setAllLogsEnabled:YES];
     
     
     [[UITabBar appearance] setTintColor:[UIColor blueColor]];
@@ -96,15 +100,25 @@
 }
 
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-
+    NSLog(@"device %@",[[NSString alloc] initWithData:deviceToken encoding:NSUTF8StringEncoding]);
     AVInstallation *currentInstallation = [AVInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
-    NSLog(@"%@",currentInstallation);
-    [currentInstallation saveInBackground];
+//    NSLog(@"%@",currentInstallation);
+    if ([AVUser currentUser].objectId) {
+        
+        [currentInstallation addUniqueObject:[AVUser currentUser].objectId forKey:kAVIMInstallationKeyChannels];
+    }
+    [currentInstallation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"成功");
+        } else {
+            NSLog(@"error %@ ",error);
+        }
+    }];
     //    NSLog(@"%@",deviceToken);
     
     [AVOSCloud handleRemoteNotificationsWithDeviceToken:deviceToken constructingInstallationWithBlock:^(AVInstallation *currentInstallation) {
-        currentInstallation.deviceProfile = @"driver-push-certificate";
+        currentInstallation.deviceProfile = @"VehicleInternet";
 
     }];
     
@@ -116,6 +130,9 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSLog(@"userinfo:%@",userInfo);
+    NSLog(@"收到推送消息:%@",[[userInfo objectForKey:@"aps"] objectForKey:@"alert"]);
+    
     if (application.applicationState == UIApplicationStateActive) {
         // 转换成一个本地通知，显示到通知栏，你也可以直接显示出一个 alertView，只是那样稍显 aggressive：）
         UILocalNotification *localNotification = [[UILocalNotification alloc] init];
@@ -179,7 +196,7 @@
      *  tomorrow.VehicleInternet       CpVALBsZIouu5TAt485fEBRX
      *
      */
-    BOOL ret = [_mapManager start:@"CpVALBsZIouu5TAt485fEBRX"  generalDelegate:self];
+    BOOL ret = [_mapManager start:@"o3DCdN1FZZKaT3gK0B8f3TkT"  generalDelegate:self];
     
     if (!ret) {
         NSLog(@"baiduMap failed");
@@ -189,7 +206,7 @@
     }
 
     //初始化导航SDK
-    [BNCoreServices_Instance initServices:@"CpVALBsZIouu5TAt485fEBRX"];
+    [BNCoreServices_Instance initServices:@"o3DCdN1FZZKaT3gK0B8f3TkT"];
     [BNCoreServices_Instance startServicesAsyn:nil fail:nil];
 }
 

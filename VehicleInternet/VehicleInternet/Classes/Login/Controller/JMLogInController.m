@@ -224,7 +224,7 @@
         if (user != nil) //登录成功
         {
             [LCCoolHUD showSuccess:@"登陆成功" zoom:YES shadow:YES];
-            NSLog(@"登录成功---%@",user);
+//            NSLog(@"登录成功---%@",user);
             [self.navigationController dismissViewControllerAnimated:YES completion:nil];
             
             

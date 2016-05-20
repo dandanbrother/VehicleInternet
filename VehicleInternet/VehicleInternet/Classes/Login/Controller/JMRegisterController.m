@@ -86,7 +86,7 @@
     
     [AVOSCloud verifySmsCode:self.idenCodeTF.text mobilePhoneNumber:self.phoneNumTF.text callback:^(BOOL succeeded, NSError *error) {
         if(succeeded){            //验证码正确
-            NSLog(@"验证成功");
+//            NSLog(@"验证成功");
             //web注册
             AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
             NSMutableDictionary *params = [NSMutableDictionary dictionary];
