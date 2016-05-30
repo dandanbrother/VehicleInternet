@@ -73,46 +73,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VehicleInternet/Classes/Personal/Controller/VIPeccancyInfotmation.m"
-            timestampString = "484104779.439791"
+            filePath = "VehicleInternet/Classes/Login/Controller/JMLogInController.m"
+            timestampString = "486305227.909484"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "-loginBtnClicked"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[VIPeccancyInfotmation viewDidLoad]"
-                  moduleName = "VehicleInternet"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nidingfan/Desktop/%E6%AF%94%E8%B5%9B/VehicleInternet/VehicleInternet/VehicleInternet/Classes/Personal/Controller/VIPeccancyInfotmation.m"
-                  timestampString = "485249937.076013"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "232">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__36-[VIPeccancyInfotmation viewDidLoad]_block_invoke"
-                  moduleName = "VehicleInternet"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nidingfan/Desktop/%E6%AF%94%E8%B5%9B/VehicleInternet/VehicleInternet/VehicleInternet/Classes/Personal/Controller/VIPeccancyInfotmation.m"
-                  timestampString = "485249937.076136"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "136">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -121,46 +89,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VehicleInternet/Classes/Personal/Controller/VICheckIllegalInformation.m"
-            timestampString = "485174690.907311"
+            filePath = "VehicleInternet/Classes/Login/Controller/JMLogInController.m"
+            timestampString = "486305242.39296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "-loginBtnClicked"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[VICheckIllegalInformation viewWillAppear:]"
-                  moduleName = "VehicleInternet"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nidingfan/Desktop/%E6%AF%94%E8%B5%9B/VehicleInternet/VehicleInternet/VehicleInternet/Classes/Personal/Controller/VICheckIllegalInformation.m"
-                  timestampString = "485249937.07707"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "96">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__44-[VICheckIllegalInformation viewWillAppear:]_block_invoke"
-                  moduleName = "VehicleInternet"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nidingfan/Desktop/%E6%AF%94%E8%B5%9B/VehicleInternet/VehicleInternet/VehicleInternet/Classes/Personal/Controller/VICheckIllegalInformation.m"
-                  timestampString = "485249937.077301"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "124">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -169,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VehicleInternet/Classes/Personal/Controller/VICheckIllegalInformation.m"
-            timestampString = "485176683.717972"
+            filePath = "VehicleInternet/Classes/Login/Controller/JMLogInController.m"
+            timestampString = "486305242.669519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "-loginBtnClicked"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
