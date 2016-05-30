@@ -50,43 +50,44 @@
 
 - (IBAction)save:(id)sender {
     //web修改
-    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"car_id"] = [NSNumber numberWithInt:_car.car_id.intValue];
-    params[@"carBrand"] = self.carBrand.text;
-    params[@"licenseNum"] = self.licenseNum.text;
-    params[@"mileage"] = self.mileage.text;
-    params[@"petrol"] = self.petrol.text;
-    params[@"frameNum"] = self.frameNum.text;
-    params[@"engineNum"] = self.engineNum.text;
-    params[@"isLightGood"] = @"1";
-    params[@"isEngineGood"] = @"1";
-    params[@"isTransGood"] = @"1";
-    
-    
-    
-    [session POST:URLSTR(@"modifyCar") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            if ([responseObject[@"status"] isEqualToString:@"1"])
-            {
-                //leancloud修改
-                [self leancloud];
+//    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"car_id"] = [NSNumber numberWithInt:_car.car_id.intValue];
+//    params[@"carBrand"] = self.carBrand.text;
+//    params[@"licenseNum"] = self.licenseNum.text;
+//    params[@"mileage"] = self.mileage.text;
+//    params[@"petrol"] = self.petrol.text;
+//    params[@"frameNum"] = self.frameNum.text;
+//    params[@"engineNum"] = self.engineNum.text;
+//    params[@"isLightGood"] = @"1";
+//    params[@"isEngineGood"] = @"1";
+//    params[@"isTransGood"] = @"1";
+//    
+//    
+//    
+//    [session POST:URLSTR(@"modifyCar") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+//        
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+//            if ([responseObject[@"status"] isEqualToString:@"1"])
+//            {
+//                //leancloud修改
+//                [self leancloud];
+//
+//                [LCCoolHUD showSuccess:@"修改成功" zoom:YES shadow:YES];
+//                [self.navigationController popViewControllerAnimated:YES];
+//            }else
+//            {
+//                NSLog(@"web修改失败");
+//                [LCCoolHUD showSuccess:@"修改失败" zoom:YES shadow:YES];
+//            }
+//        }
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        
+//    }];
 
-                [LCCoolHUD showSuccess:@"修改成功" zoom:YES shadow:YES];
-                [self.navigationController popViewControllerAnimated:YES];
-            }else
-            {
-                NSLog(@"web修改失败");
-                [LCCoolHUD showSuccess:@"修改失败" zoom:YES shadow:YES];
-            }
-        }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-    }];
-
+    [self leancloud];
     
     //leancloud修改
 
@@ -163,13 +164,19 @@
 - (void)leancloud
 {
     [_car saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        [_car setObject:self.carBrand.text forKey:@"carBrand"];
-        [_car setObject:self.licenseNum.text forKey:@"licenseNum"];
-        [_car setObject:self.mileage.text forKey:@"mileage"];
-        [_car setObject:self.petrol.text forKey:@"petrol"];
-        [_car setObject:self.frameNum.text forKey:@"frameNum"];
-        [_car setObject:self.engineNum forKey:@"engineNum"];
-        [_car saveInBackground];
+        if (succeeded) {
+            [_car setObject:self.carBrand.text forKey:@"carBrand"];
+            [_car setObject:self.licenseNum.text forKey:@"licenseNum"];
+            [_car setObject:self.mileage.text forKey:@"mileage"];
+            [_car setObject:self.petrol.text forKey:@"petrol"];
+            [_car setObject:self.frameNum.text forKey:@"frameNum"];
+            [_car setObject:self.engineNum forKey:@"engineNum"];
+            [_car saveInBackground];
+            [LCCoolHUD showSuccess:@"修改成功" zoom:YES shadow:YES];
+            [self.navigationController popViewControllerAnimated:YES];
+
+        }
+
     }];
 }
 

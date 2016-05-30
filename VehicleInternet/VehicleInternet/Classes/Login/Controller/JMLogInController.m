@@ -172,35 +172,47 @@
 
 - (IBAction)loginBtnClicked
 {
-    //web修改昵称
-    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"username"] = self.userNameTF.text;
-    params[@"password"] = self.passwordTF.text;
     
-    [session POST:URLSTR(@"login") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            if ([responseObject[@"status"] isEqualToString:@"1"])
-            {
-                NSLog(@"web登录成功");
-                //本地存储
-                NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-                [user setObject:responseObject[@"user_id"] forKey:@"user_id"];
-                [user setObject:responseObject[@"phone_number"] forKey:@"phone_number"];
-                //leancloud登录
-                [self leancloudlogin];
- 
-            }else
-            {
-                NSLog(@"web登录失败");
-            }
-        }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-    }];
+    if (_userNameTF.text.length == 0) {
+        [LCCoolHUD showFailure:@"请输入用户名" zoom:YES shadow:YES];
+        return;
+    }
+    
+    if (_passwordTF.text.length == 0) {
+        [LCCoolHUD showFailure:@"请输入密码" zoom:YES shadow:YES];
+        return;
+    }
+//    //web修改昵称
+//    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"username"] = self.userNameTF.text;
+//    params[@"password"] = self.passwordTF.text;
+//    
+//    [session POST:URLSTR(@"login") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+//        
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+//            if ([responseObject[@"status"] isEqualToString:@"1"])
+//            {
+//                NSLog(@"web登录成功");
+//                //本地存储
+//                NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+//                [user setObject:responseObject[@"user_id"] forKey:@"user_id"];
+//                [user setObject:responseObject[@"phone_number"] forKey:@"phone_number"];
+//                //leancloud登录
+//                [self leancloudlogin];
+// 
+//            }else
+//            {
+//                NSLog(@"web登录失败");
+//            }
+//        }
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        
+//    }];
+    
+    [self leancloudlogin];
     
 
 }
@@ -230,11 +242,7 @@
             
         } else //登录失败
         {
-            if (!self.userNameTF.text.length) {
-                [LCCoolHUD showFailure:@"用户名不能为空" zoom:YES shadow:YES];
-            } else if (!self.passwordTF.text.length) {
-                [LCCoolHUD showFailure:@"密码不能为空" zoom:YES shadow:YES];
-            } else if (self.userNameTF.text.length && error.code == 211) {
+            if (error.code == 211) {
                 [LCCoolHUD showFailure:@"用户未注册" zoom:YES shadow:YES];
             } else if (error.code == 210) {
                 [LCCoolHUD showFailure:@"密码错误" zoom:YES shadow:YES];

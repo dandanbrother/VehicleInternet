@@ -117,6 +117,10 @@
 		F317A3501CB6253600394F65 /* iconfont-geren@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F317A34D1CB6253600394F65 /* iconfont-geren@2x.png */; };
 		F317A3511CB6253600394F65 /* iconfont-iconfontbiaozhunmoban01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F317A34E1CB6253600394F65 /* iconfont-iconfontbiaozhunmoban01@2x.png */; };
 		F317A3521CB6253600394F65 /* iconfont-yuyue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F317A34F1CB6253600394F65 /* iconfont-yuyue@2x.png */; };
+		F32EFE451CF3520500033E29 /* VIRegisterTwoController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32EFE431CF3520500033E29 /* VIRegisterTwoController.m */; };
+		F32EFE461CF3520500033E29 /* VIRegisterTwoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32EFE441CF3520500033E29 /* VIRegisterTwoController.xib */; };
+		F32EFE4A1CF35F4700033E29 /* VIResetPasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32EFE481CF35F4700033E29 /* VIResetPasswordController.m */; };
+		F32EFE4B1CF35F4700033E29 /* VIResetPasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32EFE491CF35F4700033E29 /* VIResetPasswordController.xib */; };
 		F32FD8F31C97AA9800804053 /* AVOSCloud.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F30F7EFF1C97A8B20081A41E /* AVOSCloud.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F32FD8F51C97B3F800804053 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F41C97B3F800804053 /* libstdc++.6.0.9.tbd */; };
 		F32FD8F71C97B40500804053 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32FD8F61C97B40500804053 /* CoreTelephony.framework */; };
@@ -195,6 +199,7 @@
 		F3E4480F1CB29321006B62E1 /* JMRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E4480B1CB29321006B62E1 /* JMRegisterController.m */; };
 		F3E448101CB29321006B62E1 /* JMRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3E4480C1CB29321006B62E1 /* JMRegisterController.xib */; };
 		F3E448131CB29387006B62E1 /* VIUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E448121CB29387006B62E1 /* VIUserModel.m */; };
+		F3E585ED1CEDA647002B6712 /* CustomPopOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E585EC1CEDA647002B6712 /* CustomPopOverView.m */; };
 		F3F0B2B31C95099F00989506 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F0B2B21C95099F00989506 /* main.m */; };
 		F3F0B2B61C95099F00989506 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = F3F0B2B51C95099F00989506 /* AppDelegate.mm */; };
 		F3F0B2BC1C95099F00989506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F0B2BA1C95099F00989506 /* Main.storyboard */; };
@@ -400,6 +405,17 @@
 		F317A34D1CB6253600394F65 /* iconfont-geren@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-geren@2x.png"; sourceTree = "<group>"; };
 		F317A34E1CB6253600394F65 /* iconfont-iconfontbiaozhunmoban01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-iconfontbiaozhunmoban01@2x.png"; sourceTree = "<group>"; };
 		F317A34F1CB6253600394F65 /* iconfont-yuyue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-yuyue@2x.png"; sourceTree = "<group>"; };
+		F32EFE3D1CF34DFA00033E29 /* VehicleInternetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleInternetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32EFE3E1CF34DFA00033E29 /* VehicleInternetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleInternetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32EFE3F1CF34DFA00033E29 /* text1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = text1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32EFE401CF34DFA00033E29 /* text1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = text1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32EFE411CF34DFA00033E29 /* text1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = text1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32EFE421CF3520500033E29 /* VIRegisterTwoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterTwoController.h; sourceTree = "<group>"; };
+		F32EFE431CF3520500033E29 /* VIRegisterTwoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterTwoController.m; sourceTree = "<group>"; };
+		F32EFE441CF3520500033E29 /* VIRegisterTwoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIRegisterTwoController.xib; sourceTree = "<group>"; };
+		F32EFE471CF35F4700033E29 /* VIResetPasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIResetPasswordController.h; sourceTree = "<group>"; };
+		F32EFE481CF35F4700033E29 /* VIResetPasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIResetPasswordController.m; sourceTree = "<group>"; };
+		F32EFE491CF35F4700033E29 /* VIResetPasswordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIResetPasswordController.xib; sourceTree = "<group>"; };
 		F32FD8F41C97B3F800804053 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		F32FD8F61C97B40500804053 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		F32FD8F81C97B41A00804053 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -526,11 +542,6 @@
 		F3CC8BA51CE7054100B8C285 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		F3CC8BB01CE8A47100B8C285 /* NSString+extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extension.h"; sourceTree = "<group>"; };
 		F3CC8BB11CE8A47100B8C285 /* NSString+extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extension.m"; sourceTree = "<group>"; };
-		F3CE85661CEC4174005C7AED /* VehicleInternetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VehicleInternetTests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/VehicleInternetTests.xctest"; sourceTree = "<absolute>"; };
-		F3CE85671CEC4174005C7AED /* VehicleInternetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VehicleInternetUITests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/VehicleInternetUITests.xctest"; sourceTree = "<absolute>"; };
-		F3CE85681CEC4174005C7AED /* text1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = text1.app; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/text1.app"; sourceTree = "<absolute>"; };
-		F3CE85691CEC4174005C7AED /* text1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = text1Tests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/text1Tests.xctest"; sourceTree = "<absolute>"; };
-		F3CE856A1CEC4174005C7AED /* text1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = text1UITests.xctest; path = "/Users/joker/GitHub/VehicleInternet/VehicleInternet/build/Debug-iphoneos/text1UITests.xctest"; sourceTree = "<absolute>"; };
 		F3DA65441CA373CE00E26AE4 /* VIAppointmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIAppointmentModel.h; sourceTree = "<group>"; };
 		F3DA65451CA373CE00E26AE4 /* VIAppointmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIAppointmentModel.m; sourceTree = "<group>"; };
 		F3E447E01CB12608006B62E1 /* UUDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUDatePicker.h; sourceTree = "<group>"; };
@@ -556,6 +567,8 @@
 		F3E4480C1CB29321006B62E1 /* JMRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JMRegisterController.xib; sourceTree = "<group>"; };
 		F3E448111CB29387006B62E1 /* VIUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIUserModel.h; sourceTree = "<group>"; };
 		F3E448121CB29387006B62E1 /* VIUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIUserModel.m; sourceTree = "<group>"; };
+		F3E585EB1CEDA647002B6712 /* CustomPopOverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPopOverView.h; sourceTree = "<group>"; };
+		F3E585EC1CEDA647002B6712 /* CustomPopOverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPopOverView.m; sourceTree = "<group>"; };
 		F3F0B2B21C95099F00989506 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3F0B2B41C95099F00989506 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F3F0B2B51C95099F00989506 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -882,6 +895,7 @@
 		F32FD9011C97CA0000804053 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				F3E585EA1CEDA647002B6712 /* PopView */,
 				F3CC8B981CE7054100B8C285 /* AFNetworking */,
 				F30725501CBFB8FD004502AB /* SCLAlertView */,
 				F30725331CBE22DD004502AB /* MBProgressHUD */,
@@ -1059,12 +1073,18 @@
 				F3E448071CB29321006B62E1 /* JMLogInController.h */,
 				F3E448081CB29321006B62E1 /* JMLogInController.m */,
 				F3E448091CB29321006B62E1 /* JMLogInController.xib */,
-				F3E4480A1CB29321006B62E1 /* JMRegisterController.h */,
-				F3E4480B1CB29321006B62E1 /* JMRegisterController.m */,
-				F3E4480C1CB29321006B62E1 /* JMRegisterController.xib */,
 				94E005FD1CB630E600684362 /* VISettingController.h */,
 				94E005FE1CB630E600684362 /* VISettingController.m */,
 				94E005FF1CB630E600684362 /* VISettingController.xib */,
+				F3E4480A1CB29321006B62E1 /* JMRegisterController.h */,
+				F3E4480B1CB29321006B62E1 /* JMRegisterController.m */,
+				F3E4480C1CB29321006B62E1 /* JMRegisterController.xib */,
+				F32EFE421CF3520500033E29 /* VIRegisterTwoController.h */,
+				F32EFE431CF3520500033E29 /* VIRegisterTwoController.m */,
+				F32EFE441CF3520500033E29 /* VIRegisterTwoController.xib */,
+				F32EFE471CF35F4700033E29 /* VIResetPasswordController.h */,
+				F32EFE481CF35F4700033E29 /* VIResetPasswordController.m */,
+				F32EFE491CF35F4700033E29 /* VIResetPasswordController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1312,6 +1332,15 @@
 			path = Ewm;
 			sourceTree = "<group>";
 		};
+		F3E585EA1CEDA647002B6712 /* PopView */ = {
+			isa = PBXGroup;
+			children = (
+				F3E585EB1CEDA647002B6712 /* CustomPopOverView.h */,
+				F3E585EC1CEDA647002B6712 /* CustomPopOverView.m */,
+			);
+			path = PopView;
+			sourceTree = "<group>";
+		};
 		F3F0B2A51C95099F00989506 = {
 			isa = PBXGroup;
 			children = (
@@ -1338,6 +1367,11 @@
 				F3F0B2CA1C9509A000989506 /* VehicleInternetTests */,
 				F3F0B2D51C9509A000989506 /* VehicleInternetUITests */,
 				F382BF2E1CEB819100D3DD62 /* VehicleInternet.app */,
+				F32EFE3D1CF34DFA00033E29 /* VehicleInternetTests.xctest */,
+				F32EFE3E1CF34DFA00033E29 /* VehicleInternetUITests.xctest */,
+				F32EFE3F1CF34DFA00033E29 /* text1.app */,
+				F32EFE401CF34DFA00033E29 /* text1Tests.xctest */,
+				F32EFE411CF34DFA00033E29 /* text1UITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1424,7 +1458,7 @@
 			);
 			name = text1;
 			productName = text1;
-			productReference = F3CE85681CEC4174005C7AED /* text1.app */;
+			productReference = F32EFE3F1CF34DFA00033E29 /* text1.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F382BED31CEB7FF000D3DD62 /* text1Tests */ = {
@@ -1442,7 +1476,7 @@
 			);
 			name = text1Tests;
 			productName = text1Tests;
-			productReference = F3CE85691CEC4174005C7AED /* text1Tests.xctest */;
+			productReference = F32EFE401CF34DFA00033E29 /* text1Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		F382BEDE1CEB7FF000D3DD62 /* text1UITests */ = {
@@ -1460,7 +1494,7 @@
 			);
 			name = text1UITests;
 			productName = text1UITests;
-			productReference = F3CE856A1CEC4174005C7AED /* text1UITests.xctest */;
+			productReference = F32EFE411CF34DFA00033E29 /* text1UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		F3F0B2AD1C95099F00989506 /* VehicleInternet */ = {
@@ -1497,7 +1531,7 @@
 			);
 			name = VehicleInternetTests;
 			productName = VehicleInternetTests;
-			productReference = F3CE85661CEC4174005C7AED /* VehicleInternetTests.xctest */;
+			productReference = F32EFE3D1CF34DFA00033E29 /* VehicleInternetTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		F3F0B2D11C9509A000989506 /* VehicleInternetUITests */ = {
@@ -1515,7 +1549,7 @@
 			);
 			name = VehicleInternetUITests;
 			productName = VehicleInternetUITests;
-			productReference = F3CE85671CEC4174005C7AED /* VehicleInternetUITests.xctest */;
+			productReference = F32EFE3E1CF34DFA00033E29 /* VehicleInternetUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -1655,6 +1689,7 @@
 				949013371C9F7F5700253715 /* playing_btn_pre_h@2x.png in Resources */,
 				F307254B1CBFAA15004502AB /* 类型.png in Resources */,
 				949013341C9F7F5700253715 /* playing_btn_pause_n@2x.png in Resources */,
+				F32EFE461CF3520500033E29 /* VIRegisterTwoController.xib in Resources */,
 				94E005FC1CB627EB00684362 /* VIMyCarCell.xib in Resources */,
 				949013411C9F7F5700253715 /* joy.jpg in Resources */,
 				949013311C9F7F5700253715 /* playing_btn_next_h@2x.png in Resources */,
@@ -1669,6 +1704,7 @@
 				F307254A1CBFAA15004502AB /* 加油站.png in Resources */,
 				94A740D21CBA487600688160 /* CarCell@2x.png in Resources */,
 				F3E448101CB29321006B62E1 /* JMRegisterController.xib in Resources */,
+				F32EFE4B1CF35F4700033E29 /* VIResetPasswordController.xib in Resources */,
 				94A740CA1CBA465900688160 /* BG@2x.png in Resources */,
 				F317A3461CB620CB00394F65 /* scanLine@2x.png in Resources */,
 				949013451C9F7F5700253715 /* 安静.mp3 in Resources */,
@@ -1759,6 +1795,7 @@
 				F30725631CBFB8FD004502AB /* SCLAlertViewResponder.m in Sources */,
 				F3E447EA1CB16BA6006B62E1 /* VIAppointmentCell.m in Sources */,
 				94F2AA501CC120CF007D94EB /* VIProtectCarInfoController.m in Sources */,
+				F32EFE451CF3520500033E29 /* VIRegisterTwoController.m in Sources */,
 				F3E4480F1CB29321006B62E1 /* JMRegisterController.m in Sources */,
 				F3CC8BB21CE8A47100B8C285 /* NSString+extension.m in Sources */,
 				F37221AB1CB64A18005F124C /* JGProgressHUDSuccessIndicatorView.m in Sources */,
@@ -1821,9 +1858,11 @@
 				F3E447F51CB21F46006B62E1 /* UIImage+QRCode.m in Sources */,
 				F30725311CBD49A6004502AB /* VIScanResultController.m in Sources */,
 				F362F24B1CC3DF160008608A /* CJSONSerialization.m in Sources */,
+				F32EFE4A1CF35F4700033E29 /* VIResetPasswordController.m in Sources */,
 				F30725681CBFB8FD004502AB /* SCLTimerDisplay.m in Sources */,
 				947BD38A1CE2C23300FAC0B6 /* VICheckIllegalInformation.m in Sources */,
 				94E006001CB630E600684362 /* VISettingController.m in Sources */,
+				F3E585ED1CEDA647002B6712 /* CustomPopOverView.m in Sources */,
 				F3CC8BA91CE7054100B8C285 /* AFURLRequestSerialization.m in Sources */,
 				94E8AA301CBCF041003A371F /* VIModifyPersonalInfoController.m in Sources */,
 				94D56BEF1CC6736800BC3332 /* VIProtectCarInfoEwmController.m in Sources */,

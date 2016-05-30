@@ -67,17 +67,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="目的地" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="eSU-Qt-6bJ" customClass="VISearchSiteTextField">
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="目的地" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="eSU-Qt-6bJ" customClass="VISearchSiteTextField">
                                 <rect key="frame" x="33" y="104" width="233" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="shY-dO-zSf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="08b-IO-78k" id="Ktv-fO-rmC"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="va9-st-5I3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="va9-st-5I3">
                                 <rect key="frame" x="274" y="72" width="81" height="62"/>
                                 <color key="backgroundColor" red="0.34901960780000002" green="0.5450980392" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="KRB-ek-8AQ"/>
+                                    <constraint firstAttribute="width" constant="81" id="kIV-U5-muc"/>
+                                </constraints>
                                 <state key="normal" title="查询">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -85,9 +92,10 @@
                                     <action selector="queryPathBtnClicked:" destination="08b-IO-78k" eventType="touchUpInside" id="yua-jC-5z0"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="起始点" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="paR-De-sWi" customClass="VISearchSiteTextField">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="起始点" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="paR-De-sWi" customClass="VISearchSiteTextField">
                                 <rect key="frame" x="33" y="72" width="233" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Kqb-bh-5fv"/>
                                     <constraint firstAttribute="width" constant="233" id="f9T-5f-XbZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -96,8 +104,12 @@
                                     <outlet property="delegate" destination="08b-IO-78k" id="aFe-pf-Mri"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDY-S4-k8W">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDY-S4-k8W">
                                 <rect key="frame" x="5" y="90" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="ZW9-ek-7mt"/>
+                                    <constraint firstAttribute="height" constant="25" id="e4f-HA-q2A"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="交换.png"/>
                                 <connections>
                                     <action selector="switchAddressBtnClicked" destination="08b-IO-78k" eventType="touchUpInside" id="hfk-sc-Mr0"/>
@@ -105,14 +117,20 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="va9-st-5I3" firstAttribute="leading" secondItem="paR-De-sWi" secondAttribute="trailing" constant="8" id="Dnw-Tm-fbF"/>
+                            <constraint firstItem="ZDY-S4-k8W" firstAttribute="top" secondItem="YeQ-DG-6WR" secondAttribute="bottom" constant="26" id="FrQ-NK-58j"/>
+                            <constraint firstItem="paR-De-sWi" firstAttribute="leading" secondItem="ZDY-S4-k8W" secondAttribute="trailing" constant="3" id="Ixi-AK-pXV"/>
+                            <constraint firstItem="va9-st-5I3" firstAttribute="leading" secondItem="eSU-Qt-6bJ" secondAttribute="trailing" constant="8" id="W9l-zf-Sdh"/>
+                            <constraint firstItem="ZDY-S4-k8W" firstAttribute="leading" secondItem="wiz-mx-rqo" secondAttribute="leading" constant="5" id="XHi-jO-Lry"/>
+                            <constraint firstItem="paR-De-sWi" firstAttribute="top" secondItem="YeQ-DG-6WR" secondAttribute="bottom" constant="8" id="et5-xa-g2o"/>
+                            <constraint firstItem="va9-st-5I3" firstAttribute="top" secondItem="YeQ-DG-6WR" secondAttribute="bottom" constant="8" id="gu1-W9-Syf"/>
+                            <constraint firstAttribute="trailing" secondItem="va9-st-5I3" secondAttribute="trailing" constant="20" id="p8f-8i-vDy"/>
+                            <constraint firstItem="eSU-Qt-6bJ" firstAttribute="top" secondItem="paR-De-sWi" secondAttribute="bottom" constant="2" id="rOi-wP-5t3"/>
+                            <constraint firstItem="eSU-Qt-6bJ" firstAttribute="leading" secondItem="ZDY-S4-k8W" secondAttribute="trailing" constant="3" id="wgX-cW-GvD"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="地图" id="dx7-nt-2YS">
-                        <barButtonItem key="rightBarButtonItem" title="今日油价" id="0Qm-Hz-Dbx">
-                            <connections>
-                                <action selector="getPetrolPriceClicked:" destination="08b-IO-78k" id="jbB-Tn-bO0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="地图" id="dx7-nt-2YS"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="destinationTF" destination="eSU-Qt-6bJ" id="O0u-I8-iZw"/>
