@@ -57,45 +57,54 @@
     if (!self.nameText.text.length) {
         [LCCoolHUD showFailure:@"昵称不能为空" zoom:YES shadow:YES];
     } else {
-        NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-        NSString *user_id = [user objectForKey:@"user_id"];
-        //web修改昵称
-        AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
-        NSMutableDictionary *params = [NSMutableDictionary dictionary];
-        params[@"nickName"] = self.nameText.text;
-        params[@"user_id"] = [NSNumber numberWithInt:user_id.intValue];
-        
-        [session POST:URLSTR(@"set_nickName") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
-            
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            if ([responseObject isKindOfClass:[NSDictionary class]]) {
-                if ([responseObject[@"status"] isEqualToString:@"1"])
-                {
-                    //本地存储
-                    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-                    [user setObject:self.nameText.text forKey:@"nickName"];
-                    //leancloud修改
-                    VIUserModel *user1 = [VIUserModel currentUser];
-                    user1.nickName = self.nameText.text;
-                    [user1 saveInBackground];
-                    [LCCoolHUD showSuccess:@"设置成功" zoom:YES shadow:YES];
-                    [self.navigationController popViewControllerAnimated:YES];
-                }else
-                {
-                    NSLog(@"web修改失败");
-                }
-            }
-            
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            
-        }];
-
+        [self leancloud];
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)web {
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSString *user_id = [user objectForKey:@"user_id"];
+    //web修改昵称
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"nickName"] = self.nameText.text;
+    params[@"user_id"] = [NSNumber numberWithInt:user_id.intValue];
+    
+    [session POST:URLSTR(@"set_nickName") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            if ([responseObject[@"status"] isEqualToString:@"1"])
+            {
+                //本地存储
+                NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+                [user setObject:self.nameText.text forKey:@"nickName"];
+                //leancloud修改
+                VIUserModel *user1 = [VIUserModel currentUser];
+                user1.nickName = self.nameText.text;
+                [user1 saveInBackground];
+                [LCCoolHUD showSuccess:@"设置成功" zoom:YES shadow:YES];
+                [self.navigationController popViewControllerAnimated:YES];
+            }else
+            {
+                NSLog(@"web修改失败");
+            }
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+
+}
+
+- (void)leancloud
+{
+    //leancloud修改
+    VIUserModel *user1 = [VIUserModel currentUser];
+    user1.nickName = self.nameText.text;
+    [user1 saveInBackground];
+    [LCCoolHUD showSuccess:@"设置成功" zoom:YES shadow:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

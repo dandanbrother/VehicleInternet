@@ -27,10 +27,10 @@
 #import "BNCoreServices.h"
 #import "AFNetworking.h"
 #import "NSString+extension.h"
+#import "CustomPopOverView.h"
 
 
-
-@interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,BNNaviUIManagerDelegate,BNNaviRoutePlanDelegate,UIAlertViewDelegate>
+@interface VIHomeMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKRouteSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,BNNaviUIManagerDelegate,BNNaviRoutePlanDelegate,UIAlertViewDelegate,CustomPopOverViewDelegate>
 
 @property (nonatomic,strong) BMKMapView *mapView;
 
@@ -68,7 +68,6 @@
 
 - (IBAction)queryPathBtnClicked:(id)sender;
 
-- (IBAction)getPetrolPriceClicked:(id)sender;
 
 @end
 
@@ -220,6 +219,15 @@
     self.poiMatchTableView.dataSource = self;
     self.poiMatchTableView.hidden = YES;
     [self.view addSubview:self.poiMatchTableView];
+    
+    //右上角按钮
+    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 0, 80, 40)];
+    [rightBtn setTitle:@"今日油价" forState:UIControlStateNormal];
+    rightBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [rightBtn.titleLabel setFont:[UIFont systemFontOfSize:15]];
+    [rightBtn addTarget:self action:@selector(getPetrolPriceClicked:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
+    
     
     
 }
@@ -825,7 +833,7 @@
 }
 
 
-- (IBAction)getPetrolPriceClicked:(id)sender
+- (void)getPetrolPriceClicked:(UIButton *)button
 {
     NSLog(@"getPetrolPriceClicked");
 //    if ([_cityItem.title isEqualToString:@"城市"])
@@ -842,13 +850,14 @@
     
     NSString *httpUrl = @"http://apis.baidu.com/showapi_open_bus/oil_price/find";
     NSString *httpArg = [NSString stringWithFormat:@"prov=%@",[@"江苏" urlencode]];
-    [self request: httpUrl withHttpArg: httpArg];
+    [self request: httpUrl withHttpArg: httpArg sender:button];
     
 
 
 
 }
--(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg  {
+-(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg sender:(UIView *)sender
+{
     NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];
     NSURL *url = [NSURL URLWithString: urlStr];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
@@ -877,6 +886,12 @@
                                        [user setObject:str97 forKey:@"p97"];
                                        [user setObject:str93 forKey:@"p93"];
                                        [user setObject:str90 forKey:@"p90"];
+                                       //弹出视图
+                                       NSArray * titles = @[[NSString stringWithFormat:@"97号:%@元/升",str97], [NSString stringWithFormat:@"93号:%@元/升",str93], [NSString stringWithFormat:@"90号:%@元/升",str90]];
+                                       CustomPopOverView *view = [[CustomPopOverView alloc]initWithBounds:CGRectMake(0, 0, 200, 44*3) titleMenus:titles];;
+                                       view.containerBackgroudColor = [UIColor blueColor];
+                                       view.delegate = self;
+                                       [view showFrom:sender alignStyle:CPAlignStyleRight];
                                        
                                    }
                                    

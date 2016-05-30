@@ -139,46 +139,46 @@
         
 
         //Web保存
-        NSUserDefaults *user1 = [NSUserDefaults standardUserDefaults];
-        NSString *user_id = [user1 objectForKey:@"user_id"];
-        AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
-        NSMutableDictionary *params = [NSMutableDictionary dictionary];
-        params[@"user_id"] = [NSNumber numberWithInt:user_id.intValue];
-        params[@"carBrand"] = self.carBrand.text;
-        params[@"licenseNum"] = self.licenseNum.text;
-        params[@"mileage"] = self.mileage.text;
-        params[@"petrol"] = self.petrol.text;
-        params[@"engineNum"] = self.engineNum.text;
-        params[@"frameNum"] = self.frameNum.text;
-        params[@"isLightGood"] = @"1";
-        params[@"isEngineGood"] = @"1";
-        params[@"isTransGood"] = @"1";
+//        NSUserDefaults *user1 = [NSUserDefaults standardUserDefaults];
+//        NSString *user_id = [user1 objectForKey:@"user_id"];
+//        AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+//        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//        params[@"user_id"] = [NSNumber numberWithInt:user_id.intValue];
+//        params[@"carBrand"] = self.carBrand.text;
+//        params[@"licenseNum"] = self.licenseNum.text;
+//        params[@"mileage"] = self.mileage.text;
+//        params[@"petrol"] = self.petrol.text;
+//        params[@"engineNum"] = self.engineNum.text;
+//        params[@"frameNum"] = self.frameNum.text;
+//        params[@"isLightGood"] = @"1";
+//        params[@"isEngineGood"] = @"1";
+//        params[@"isTransGood"] = @"1";
         
 
+        [self leancloudsaveWithCar_id:@"1"];
         
-        
-        [session POST:URLSTR(@"bindCar") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
-            
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            if ([responseObject isKindOfClass:[NSDictionary class]]) {
-                if ([responseObject[@"status"] isEqualToString:@"1"])
-                {
-                    NSLog(@"%@,%@,%@",responseObject[@"status"],responseObject[@"msg"],responseObject[@"car_id"]);
-                    //leancloud修改
-                    [self leancloudsaveWithCar_id:responseObject[@"car_id"]];
-                    
-                    [LCCoolHUD showSuccess:@"添加成功" zoom:YES shadow:YES];
-                    
-                    [self.navigationController popViewControllerAnimated:YES];
-                }else
-                {
-                    NSLog(@"web添加车辆失败");
-                }
-            }
-            
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            
-        }];
+//        [session POST:URLSTR(@"bindCar") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+//            
+//        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+//                if ([responseObject[@"status"] isEqualToString:@"1"])
+//                {
+//                    NSLog(@"%@,%@,%@",responseObject[@"status"],responseObject[@"msg"],responseObject[@"car_id"]);
+//                    //leancloud修改
+//                    [self leancloudsaveWithCar_id:responseObject[@"car_id"]];
+//                    
+//                    [LCCoolHUD showSuccess:@"添加成功" zoom:YES shadow:YES];
+//                    
+//                    [self.navigationController popViewControllerAnimated:YES];
+//                }else
+//                {
+//                    NSLog(@"web添加车辆失败");
+//                }
+//            }
+//            
+//        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//            
+//        }];
 
         
     } else {
@@ -234,9 +234,11 @@
     model.isEngineGood = @"1";
     model.isTransGood = @"1";
     model.ownerID = user.objectId;
-    model.car_id = car_id;
+//    model.car_id = car_id;
     model.engineNum = self.engineNum.text;
     model.frameNum = self.frameNum.text;
     [model saveInBackground];
+    [LCCoolHUD showSuccess:@"添加成功" zoom:YES shadow:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
