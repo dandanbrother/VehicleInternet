@@ -122,6 +122,7 @@
             
         } else //验证码错误
         {
+            NSLog(@"error %@",error);
             [LCCoolHUD showFailure:@"验证码错误" zoom:YES shadow:YES];
 
         }
