@@ -17,8 +17,6 @@
 		94437AE91CE6CD560022F012 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94437AE81CE6CD560022F012 /* libz.tbd */; };
 		94437AEB1CE6CD600022F012 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94437AEA1CE6CD600022F012 /* libc++.tbd */; };
 		945089591CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */; };
-		9464648B1CEB3C8100BFD071 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 946464891CEB3C8100BFD071 /* AVOSCloud.framework */; };
-		9464648F1CEB3CAA00BFD071 /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9464648A1CEB3C8100BFD071 /* AVOSCloudIM.framework */; };
 		947BD38A1CE2C23300FAC0B6 /* VICheckIllegalInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 947BD3891CE2C23300FAC0B6 /* VICheckIllegalInformation.m */; };
 		948C87E11C9FD1D5006EB17A /* VIMusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 948C87E01C9FD1D5006EB17A /* VIMusicModel.m */; };
 		948C87E41C9FD791006EB17A /* VIMusicListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948C87E31C9FD791006EB17A /* VIMusicListController.m */; };
@@ -69,6 +67,8 @@
 		94CE0D7A1C985ED40065D966 /* VIPersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D771C985ED40065D966 /* VIPersonalController.m */; };
 		94CE0D7F1C985EDA0065D966 /* VICarInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE0D7D1C985EDA0065D966 /* VICarInfoModel.m */; };
 		94D56BEF1CC6736800BC3332 /* VIProtectCarInfoEwmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D56BEE1CC6736800BC3332 /* VIProtectCarInfoEwmController.m */; };
+		94D76C7D1D61DC5A00FF2415 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D76C7B1D61DC5A00FF2415 /* AVOSCloud.framework */; };
+		94D76C7E1D61DC5A00FF2415 /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D76C7C1D61DC5A00FF2415 /* AVOSCloudIM.framework */; };
 		94E005FA1CB627D100684362 /* VIMyCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E005F91CB627D100684362 /* VIMyCarCell.m */; };
 		94E005FC1CB627EB00684362 /* VIMyCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E005FB1CB627EB00684362 /* VIMyCarCell.xib */; };
 		94E006001CB630E600684362 /* VISettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E005FE1CB630E600684362 /* VISettingController.m */; };
@@ -255,15 +255,13 @@
 		94437AEA1CE6CD600022F012 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		94481B911CEC41FE00B06FFA /* VehicleInternetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleInternetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94481B921CEC41FE00B06FFA /* VehicleInternetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleInternetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94481B931CEC41FE00B06FFA /* text1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = text1.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		94481B941CEC41FE00B06FFA /* text1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = text1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94481B951CEC41FE00B06FFA /* text1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = text1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		945089571CC4D56E0037DEE2 /* VIProtectCarEwmScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProtectCarEwmScanController.h; sourceTree = "<group>"; };
 		945089581CC4D56E0037DEE2 /* VIProtectCarEwmScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProtectCarEwmScanController.m; sourceTree = "<group>"; };
-		946464891CEB3C8100BFD071 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
-		9464648A1CEB3C8100BFD071 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
 		947BD3881CE2C23300FAC0B6 /* VICheckIllegalInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICheckIllegalInformation.h; sourceTree = "<group>"; };
 		947BD3891CE2C23300FAC0B6 /* VICheckIllegalInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICheckIllegalInformation.m; sourceTree = "<group>"; };
+		94812A651D636000009C0604 /* text1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = text1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94812A661D636000009C0604 /* text1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = text1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94812A671D636000009C0604 /* text1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = text1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		948C87DF1C9FD1D5006EB17A /* VIMusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMusicModel.h; sourceTree = "<group>"; };
 		948C87E01C9FD1D5006EB17A /* VIMusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMusicModel.m; sourceTree = "<group>"; };
 		948C87E21C9FD791006EB17A /* VIMusicListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMusicListController.h; sourceTree = "<group>"; };
@@ -324,6 +322,8 @@
 		94CE0D7D1C985EDA0065D966 /* VICarInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICarInfoModel.m; sourceTree = "<group>"; };
 		94D56BED1CC6736800BC3332 /* VIProtectCarInfoEwmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProtectCarInfoEwmController.h; sourceTree = "<group>"; };
 		94D56BEE1CC6736800BC3332 /* VIProtectCarInfoEwmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProtectCarInfoEwmController.m; sourceTree = "<group>"; };
+		94D76C7B1D61DC5A00FF2415 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
+		94D76C7C1D61DC5A00FF2415 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
 		94E005F81CB627D100684362 /* VIMyCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMyCarCell.h; sourceTree = "<group>"; };
 		94E005F91CB627D100684362 /* VIMyCarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMyCarCell.m; sourceTree = "<group>"; };
 		94E005FB1CB627EB00684362 /* VIMyCarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIMyCarCell.xib; sourceTree = "<group>"; };
@@ -595,18 +595,17 @@
 				F362F25F1CC3E9EA0008608A /* MediaPlayer.framework in Frameworks */,
 				F362F25D1CC3E9CD0008608A /* CoreMotion.framework in Frameworks */,
 				F362F25B1CC3E9BE0008608A /* ImageIO.framework in Frameworks */,
-				9464648B1CEB3C8100BFD071 /* AVOSCloud.framework in Frameworks */,
 				F362F2591CC3E9B40008608A /* AudioToolbox.framework in Frameworks */,
 				F32FD8FB1C97B42800804053 /* SystemConfiguration.framework in Frameworks */,
 				F32FD8F71C97B40500804053 /* CoreTelephony.framework in Frameworks */,
 				F32FD8F51C97B3F800804053 /* libstdc++.6.0.9.tbd in Frameworks */,
 				94437AE71CE6CD100022F012 /* BmobPay.framework in Frameworks */,
-				9464648F1CEB3CAA00BFD071 /* AVOSCloudIM.framework in Frameworks */,
 				F362F2561CC3DF160008608A /* libbaiduNaviSDK.a in Frameworks */,
 				F39F9D0C1C950AD8001B8D69 /* libsqlite3.0.tbd in Frameworks */,
 				F39F9D0A1C950ACD001B8D69 /* OpenGLES.framework in Frameworks */,
 				F39F9D081C950AC3001B8D69 /* QuartzCore.framework in Frameworks */,
 				F39F9D061C950AB7001B8D69 /* CoreLocation.framework in Frameworks */,
+				94D76C7E1D61DC5A00FF2415 /* AVOSCloudIM.framework in Frameworks */,
 				F362F2471CC3DF160008608A /* libBaiduMobStatForSDK.a in Frameworks */,
 				F3F0B2F41C9509ED00989506 /* BaiduMapAPI_Radar.framework in Frameworks */,
 				F3F0B2F01C9509ED00989506 /* BaiduMapAPI_Base.framework in Frameworks */,
@@ -616,6 +615,7 @@
 				F3F0B2F31C9509ED00989506 /* BaiduMapAPI_Map.framework in Frameworks */,
 				F3F0B2F21C9509ED00989506 /* BaiduMapAPI_Location.framework in Frameworks */,
 				F3F0B2F51C9509ED00989506 /* BaiduMapAPI_Search.framework in Frameworks */,
+				94D76C7D1D61DC5A00FF2415 /* AVOSCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,8 +639,8 @@
 		946464881CEB3C8100BFD071 /* AVOSCloud */ = {
 			isa = PBXGroup;
 			children = (
-				946464891CEB3C8100BFD071 /* AVOSCloud.framework */,
-				9464648A1CEB3C8100BFD071 /* AVOSCloudIM.framework */,
+				94D76C7B1D61DC5A00FF2415 /* AVOSCloud.framework */,
+				94D76C7C1D61DC5A00FF2415 /* AVOSCloudIM.framework */,
 			);
 			path = AVOSCloud;
 			sourceTree = "<group>";
@@ -1338,9 +1338,9 @@
 				F382BF2E1CEB819100D3DD62 /* VehicleInternet.app */,
 				94481B911CEC41FE00B06FFA /* VehicleInternetTests.xctest */,
 				94481B921CEC41FE00B06FFA /* VehicleInternetUITests.xctest */,
-				94481B931CEC41FE00B06FFA /* text1.app */,
-				94481B941CEC41FE00B06FFA /* text1Tests.xctest */,
-				94481B951CEC41FE00B06FFA /* text1UITests.xctest */,
+				94812A651D636000009C0604 /* text1.app */,
+				94812A661D636000009C0604 /* text1Tests.xctest */,
+				94812A671D636000009C0604 /* text1UITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1427,7 +1427,7 @@
 			);
 			name = text1;
 			productName = text1;
-			productReference = 94481B931CEC41FE00B06FFA /* text1.app */;
+			productReference = 94812A651D636000009C0604 /* text1.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F382BED31CEB7FF000D3DD62 /* text1Tests */ = {
@@ -1445,7 +1445,7 @@
 			);
 			name = text1Tests;
 			productName = text1Tests;
-			productReference = 94481B941CEC41FE00B06FFA /* text1Tests.xctest */;
+			productReference = 94812A661D636000009C0604 /* text1Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		F382BEDE1CEB7FF000D3DD62 /* text1UITests */ = {
@@ -1463,7 +1463,7 @@
 			);
 			name = text1UITests;
 			productName = text1UITests;
-			productReference = 94481B951CEC41FE00B06FFA /* text1UITests.xctest */;
+			productReference = 94812A671D636000009C0604 /* text1UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		F3F0B2AD1C95099F00989506 /* VehicleInternet */ = {
@@ -1532,6 +1532,7 @@
 				TargetAttributes = {
 					F382BEBB1CEB7FEF00D3DD62 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 936BVCV3GX;
 					};
 					F382BED31CEB7FF000D3DD62 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1918,12 +1919,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dingfan Ni (936BVCV3GX)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = text1/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/VehicleInternet/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.text1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianming.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "963ed517-1dd8-4735-8fed-6f86856dd684";
 			};
 			name = Debug;
 		};
@@ -1932,12 +1935,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dingfan Ni (936BVCV3GX)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = text1/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/VehicleInternet/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tomorrow.text1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianming.VehicleInternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "963ed517-1dd8-4735-8fed-6f86856dd684";
 			};
 			name = Release;
 		};

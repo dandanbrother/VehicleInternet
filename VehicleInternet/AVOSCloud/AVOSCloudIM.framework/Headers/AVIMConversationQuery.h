@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 LeanCloud Inc. All rights reserved.
 //
 
+#import <AVOSCloud/AVOSCloud.h>
+
 #import <Foundation/Foundation.h>
 #import "AVIMCommon.h"
 
@@ -51,6 +53,18 @@ extern NSString *const kAVIMKeyConversationId;
  * @return an query that is the AND of the passed in queries.
  */
 + (instancetype)andQueryWithSubqueries:(NSArray<AVIMConversationQuery *> *)queries;
+
+/*!
+ Add a constraint that requires a particular key exists.
+ @param key The key that should exist.
+ */
+- (void)whereKeyExists:(NSString *)key;
+
+/*!
+ Add a constraint that requires a key not exist.
+ @param key The key that should not exist.
+ */
+- (void)whereKeyDoesNotExist:(NSString *)key;
 
 /*!
  添加等于条件

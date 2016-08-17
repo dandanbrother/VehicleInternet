@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/AVConstants.h</key>
 		<data>
-		C5pt4ECkliUWj2rWSH6oM6oDx6I=
+		vIann7zwtl3nFDK10bqmf7K983Y=
 		</data>
 		<key>Headers/AVFile.h</key>
 		<data>
@@ -78,11 +78,11 @@
 		</data>
 		<key>Headers/AVObject.h</key>
 		<data>
-		y7STRB064SfME5mutMoz5TDcwu0=
+		sq56xJySl2Q43Mc318J7st6KNpw=
 		</data>
 		<key>Headers/AVPush.h</key>
 		<data>
-		V1zo8/1i3Ibyd+gM7SOZaq9eHJ4=
+		zXo3U7p5DKPevUBetZCSY8ZVW3w=
 		</data>
 		<key>Headers/AVQuery.h</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Headers/AVSearchQuery.h</key>
 		<data>
-		arw3hE2H/yTSZoOPtwhyVvE/2sU=
+		IarqM97K9Db3vn9SOyka99swjUY=
 		</data>
 		<key>Headers/AVSearchSortBuilder.h</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		6mPueZVXPEhcqHDO4NBkYm/L1V0=
+		yCruI9BXcRTdprSs/xMQxCQLrV8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -213,11 +213,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			C5pt4ECkliUWj2rWSH6oM6oDx6I=
+			vIann7zwtl3nFDK10bqmf7K983Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			4rfHt5hcZgoyVRyrDrO9wMGYzAAiI9bOpc3hwQIBif0=
+			aZrTq0GBGQABc9hLK9Uo447CGTVlOU/EqBAZQeZNX2o=
 			</data>
 		</dict>
 		<key>Headers/AVFile.h</key>
@@ -345,22 +345,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			y7STRB064SfME5mutMoz5TDcwu0=
+			sq56xJySl2Q43Mc318J7st6KNpw=
 			</data>
 			<key>hash2</key>
 			<data>
-			TuJzYM1/8PxEV2C7v2cTQF0PcMrUehnsDzXl+U5B7Bc=
+			T8XDPzjtByMnF9CAQ3EgTCJJ0FHopirvc7f01BDBRlw=
 			</data>
 		</dict>
 		<key>Headers/AVPush.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			V1zo8/1i3Ibyd+gM7SOZaq9eHJ4=
+			zXo3U7p5DKPevUBetZCSY8ZVW3w=
 			</data>
 			<key>hash2</key>
 			<data>
-			MZA6BAdmvvkliwksGlxCZYwsHveHIS5basnCh2eX4Z4=
+			OxrciP4YDsqxqCgOaPAbJ1DpStWRV6asvHwl8M3yE6Q=
 			</data>
 		</dict>
 		<key>Headers/AVQuery.h</key>
@@ -411,11 +411,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			arw3hE2H/yTSZoOPtwhyVvE/2sU=
+			IarqM97K9Db3vn9SOyka99swjUY=
 			</data>
 			<key>hash2</key>
 			<data>
-			pdTDSCkicGFTrE4KQRnIRzOndVb0UfU90b55ryBTczY=
+			oYSr1lm4ZKt7ZdrD1CvSJL+jeoqyEHjMoyTmuuqjyWg=
 			</data>
 		</dict>
 		<key>Headers/AVSearchSortBuilder.h</key>

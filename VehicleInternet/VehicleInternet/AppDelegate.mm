@@ -16,6 +16,7 @@
 #import "VIMusicPlayerController.h"
 #import <BmobPay/BmobPay.h>
 #import <AlipaySDK/AlipaySDK.h>
+#import "AFNetworking.h"
 
 static NSString *const kAVIMInstallationKeyChannels = @"channels";
 
@@ -40,16 +41,9 @@ static NSString *const kAVIMInstallationKeyChannels = @"channels";
     [self baiduMapSetup];
     //初始化支付SDK
     [BmobPaySDK registerWithAppKey:@"285549832d04465b3d5e3db77e1a2525"];
-    
-    //初始化消息推送
-    if (launchOptions) {
-        NSLog(@"%@",launchOptions[@"alert"]);
-        [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    }
 
     [AVOSCloud registerForRemoteNotification];
-    [AVPush setProductionMode:YES];
-    [AVOSCloud setAllLogsEnabled:YES];
+//    [AVPush setProductionMode:NO];
     
     
     [[UITabBar appearance] setTintColor:[UIColor blueColor]];
@@ -75,6 +69,9 @@ static NSString *const kAVIMInstallationKeyChannels = @"channels";
     player.volume = 0.5;
     [player play];
     
+//    AVPush *push = [[AVPush alloc] init];
+//    [push setMessage:@"2333"];
+//    [push sendPushInBackground];
     
     return YES;
 }
@@ -100,29 +97,9 @@ static NSString *const kAVIMInstallationKeyChannels = @"channels";
 }
 
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    NSLog(@"device %@",[[NSString alloc] initWithData:deviceToken encoding:NSUTF8StringEncoding]);
     AVInstallation *currentInstallation = [AVInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
-//    NSLog(@"%@",currentInstallation);
-    if ([AVUser currentUser].objectId) {
-        
-        [currentInstallation addUniqueObject:[AVUser currentUser].objectId forKey:kAVIMInstallationKeyChannels];
-    }
-    [currentInstallation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"成功");
-        } else {
-            NSLog(@"error %@ ",error);
-        }
-    }];
-    //    NSLog(@"%@",deviceToken);
-    
-    [AVOSCloud handleRemoteNotificationsWithDeviceToken:deviceToken constructingInstallationWithBlock:^(AVInstallation *currentInstallation) {
-        currentInstallation.deviceProfile = @"VehicleInternet";
-
-    }];
-    
-    
+    [currentInstallation saveInBackground];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -144,6 +121,8 @@ static NSString *const kAVIMInstallationKeyChannels = @"channels";
     } else {
         [AVAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
     }
+    
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

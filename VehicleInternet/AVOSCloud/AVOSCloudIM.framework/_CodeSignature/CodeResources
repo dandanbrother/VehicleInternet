@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/AVIMClient.h</key>
 		<data>
-		3c6502pgzelJhVEbFbGOA4XdqJE=
+		dF9pD8GGu0/ZlRWe5tk1Jh6HPbg=
 		</data>
 		<key>Headers/AVIMClientOpenOption.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/AVIMConversationQuery.h</key>
 		<data>
-		cQbzOMBCl7FI8PUJhhpCbj0WSnY=
+		cIlUl7o8sINmhAO5qFeHeQ7U4T4=
 		</data>
 		<key>Headers/AVIMConversationUpdateBuilder.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Headers/AVIMTypedMessage.h</key>
 		<data>
-		ybohzxUXmfeH0FwG8B8Ruo4rZ54=
+		R7N0SGrjDHkbx3pnDU1g3+bUAVI=
 		</data>
 		<key>Headers/AVIMUserOptions.h</key>
 		<data>
@@ -121,11 +121,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3c6502pgzelJhVEbFbGOA4XdqJE=
+			dF9pD8GGu0/ZlRWe5tk1Jh6HPbg=
 			</data>
 			<key>hash2</key>
 			<data>
-			F/ywLMSSHrb99k/DmLiotPqc3KQZebqd5k/9DKEUw/o=
+			b/KugkVi6Rg9gY5nnJvBEO1OzMIvfRqJX8d4WQ8j0vI=
 			</data>
 		</dict>
 		<key>Headers/AVIMClientOpenOption.h</key>
@@ -165,11 +165,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cQbzOMBCl7FI8PUJhhpCbj0WSnY=
+			cIlUl7o8sINmhAO5qFeHeQ7U4T4=
 			</data>
 			<key>hash2</key>
 			<data>
-			nBhVXkHYxXQyVjoYa5w0Mfwlc4oZwNFoADO8gnKMDFk=
+			eJXTUVYRYARN2vOTq9chj4J7VhvWv3ivsN5N5gnnbug=
 			</data>
 		</dict>
 		<key>Headers/AVIMConversationUpdateBuilder.h</key>
@@ -264,11 +264,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ybohzxUXmfeH0FwG8B8Ruo4rZ54=
+			R7N0SGrjDHkbx3pnDU1g3+bUAVI=
 			</data>
 			<key>hash2</key>
 			<data>
-			y45UwfaF4S7Q+R/8ZXAixbtTOZVwpj1l0zQHUtjN3gU=
+			JCwDk89/3/WGpVFopqC1lVdSfFE4klZ/ktOzut7EDsA=
 			</data>
 		</dict>
 		<key>Headers/AVIMUserOptions.h</key>
