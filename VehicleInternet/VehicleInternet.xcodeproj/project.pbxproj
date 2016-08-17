@@ -10,6 +10,7 @@
 		941B3B8E1CD9C0B3004217D0 /* 单曲循环.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B3B8B1CD9C0B3004217D0 /* 单曲循环.png */; };
 		941B3B8F1CD9C0B3004217D0 /* 随机.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B3B8C1CD9C0B3004217D0 /* 随机.png */; };
 		941B3B901CD9C0B3004217D0 /* 循环.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B3B8D1CD9C0B3004217D0 /* 循环.png */; };
+		94292CE61D644C8400AD94E8 /* libbaiduNaviSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94292CE51D644C8400AD94E8 /* libbaiduNaviSDK.a */; };
 		943270831CE08B5800696A20 /* VIRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 943270821CE08B5800696A20 /* VIRequestManager.m */; };
 		94437AE51CE6CD100022F012 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 94437AE21CE6CD100022F012 /* AlipaySDK.bundle */; };
 		94437AE61CE6CD100022F012 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94437AE31CE6CD100022F012 /* AlipaySDK.framework */; };
@@ -146,7 +147,6 @@
 		F362F2531CC3DF160008608A /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = F362F2341CC3DF160008608A /* CJSONScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F362F2541CC3DF160008608A /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F362F2361CC3DF160008608A /* CJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F362F2551CC3DF160008608A /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = F362F2381CC3DF160008608A /* CSerializedJSONData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F362F2561CC3DF160008608A /* libbaiduNaviSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F362F2441CC3DF160008608A /* libbaiduNaviSDK.a */; };
 		F362F2571CC3DF160008608A /* updatelog.txt in Resources */ = {isa = PBXBuildFile; fileRef = F362F2451CC3DF160008608A /* updatelog.txt */; };
 		F362F2591CC3E9B40008608A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F362F2581CC3E9B40008608A /* AudioToolbox.framework */; };
 		F362F25B1CC3E9BE0008608A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F362F25A1CC3E9BE0008608A /* ImageIO.framework */; };
@@ -246,6 +246,7 @@
 		941B3B8B1CD9C0B3004217D0 /* 单曲循环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "单曲循环.png"; sourceTree = "<group>"; };
 		941B3B8C1CD9C0B3004217D0 /* 随机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "随机.png"; sourceTree = "<group>"; };
 		941B3B8D1CD9C0B3004217D0 /* 循环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "循环.png"; sourceTree = "<group>"; };
+		94292CE51D644C8400AD94E8 /* libbaiduNaviSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbaiduNaviSDK.a; path = inc/libbaiduNaviSDK.a; sourceTree = "<group>"; };
 		943270811CE08B5800696A20 /* VIRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRequestManager.h; sourceTree = "<group>"; };
 		943270821CE08B5800696A20 /* VIRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRequestManager.m; sourceTree = "<group>"; };
 		94437AE21CE6CD100022F012 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
@@ -457,7 +458,6 @@
 		F362F2411CC3DF160008608A /* BNSoundEventProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNSoundEventProtocol.h; sourceTree = "<group>"; };
 		F362F2421CC3DF160008608A /* BNStrategyManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNStrategyManagerProtocol.h; sourceTree = "<group>"; };
 		F362F2431CC3DF160008608A /* BNUIManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNUIManagerProtocol.h; sourceTree = "<group>"; };
-		F362F2441CC3DF160008608A /* libbaiduNaviSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbaiduNaviSDK.a; sourceTree = "<group>"; };
 		F362F2451CC3DF160008608A /* updatelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = updatelog.txt; sourceTree = "<group>"; };
 		F362F2581CC3E9B40008608A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F362F25A1CC3E9BE0008608A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
@@ -600,7 +600,6 @@
 				F32FD8F71C97B40500804053 /* CoreTelephony.framework in Frameworks */,
 				F32FD8F51C97B3F800804053 /* libstdc++.6.0.9.tbd in Frameworks */,
 				94437AE71CE6CD100022F012 /* BmobPay.framework in Frameworks */,
-				F362F2561CC3DF160008608A /* libbaiduNaviSDK.a in Frameworks */,
 				F39F9D0C1C950AD8001B8D69 /* libsqlite3.0.tbd in Frameworks */,
 				F39F9D0A1C950ACD001B8D69 /* OpenGLES.framework in Frameworks */,
 				F39F9D081C950AC3001B8D69 /* QuartzCore.framework in Frameworks */,
@@ -612,6 +611,7 @@
 				F3F0B2F11C9509ED00989506 /* BaiduMapAPI_Cloud.framework in Frameworks */,
 				94437AE61CE6CD100022F012 /* AlipaySDK.framework in Frameworks */,
 				F3F0B2F61C9509ED00989506 /* BaiduMapAPI_Utils.framework in Frameworks */,
+				94292CE61D644C8400AD94E8 /* libbaiduNaviSDK.a in Frameworks */,
 				F3F0B2F31C9509ED00989506 /* BaiduMapAPI_Map.framework in Frameworks */,
 				F3F0B2F21C9509ED00989506 /* BaiduMapAPI_Location.framework in Frameworks */,
 				F3F0B2F51C9509ED00989506 /* BaiduMapAPI_Search.framework in Frameworks */,
@@ -1119,10 +1119,10 @@
 		F362F2131CC3DF160008608A /* BaiduNaviSDK */ = {
 			isa = PBXGroup;
 			children = (
+				94292CE51D644C8400AD94E8 /* libbaiduNaviSDK.a */,
 				F362F2141CC3DF160008608A /* baiduNaviSDK.bundle */,
 				F362F2151CC3DF160008608A /* BaiduStatistics */,
 				F362F23A1CC3DF160008608A /* inc */,
-				F362F2441CC3DF160008608A /* libbaiduNaviSDK.a */,
 				F362F2451CC3DF160008608A /* updatelog.txt */,
 			);
 			path = BaiduNaviSDK;
@@ -2111,6 +2111,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK/BaiduStatistics",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
+					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK/inc",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -2149,6 +2150,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK/BaiduStatistics",
 					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK",
+					"$(PROJECT_DIR)/VehicleInternet/Framework/BaiduMap/BaiduNaviSDK/inc",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
